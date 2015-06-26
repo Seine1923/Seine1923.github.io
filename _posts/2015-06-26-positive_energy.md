@@ -1,5 +1,6 @@
 ---
 layout: post
+title: 吾日三省吾身
 ---
 ##吾日三省吾身##
 <p class="meta">26 June 2015 - Kumming</p>
