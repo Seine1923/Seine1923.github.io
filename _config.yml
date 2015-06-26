@@ -1,2 +1,2 @@
-﻿markdown: markdown
+﻿markdown: kramdown
 highlighter: pygments
