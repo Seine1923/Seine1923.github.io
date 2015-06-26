@@ -3,7 +3,7 @@ layout: post
 title: 我的第一个GitHub博客
 ---
 ##我的第一个GitHub博客##
-<p class="meta">24 June 2015 - Kumming</p>
+<p class="meta">24 Jun 2015 - Kumming</p>
 忙碌了两天，终于把我的GitHub博客搭好了，在效果完成后，心里忍不住喊了一声“YES”。
 
 在搭建我的GitHub博客过程中，首先要感谢[阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)，是在他的日志指导下我才能顺利掌握一些基本搭建技巧，包括很多Git命令。其次要感谢的是模板提供者[Tom Preston-Werner](https://github.com/mojombo/)，没有他的经验我不可能能够拥有这么简洁，完整，令人舒服的博客页面。当然我们都不能忘记模板先驱，博客之友，静态网页生成器[Jekyll](http://jekyll.bootcss.com/)，一定要记住他的[GitHub](https://github.com/jekyll/jekyll/)。
