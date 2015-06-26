@@ -3,7 +3,7 @@ layout: post
 title: 集群分布式Hadoop系统安装基本步骤
 ---
 # 集群分布式Hadoop系统安装基本步骤##
-<p class="meta">24 June 2015 - Kumming</p>
+<p class="meta">25 June 2015 - Kumming</p>
 ## 1. Linux准备
 ### 1.1 修改机器名
 - hostname<机器名>
