@@ -1,19 +1,50 @@
----
-layout: default
-title: Seine's Blog
----
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Seine's Blog</title>
+   <meta name="author" content="Seine's Blog" />
+   <link href="http://Seine1923.github.io" rel="alternate" title="Seine's Blog" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
 
-<div id="home">
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <a href="/">Seine's Blog</a>
+    <a class="extra" href="/">home</a>
+  </div>
+
+  <div id="home">
   <h1>Blog Posts</h1>
   <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+    
+      <li><span>26 Jun 2015</span> &raquo; <a href="/2015/06/26/Positive_Energy.html">吾日三省吾身</a></li>
+    
+      <li><span>25 Jun 2015</span> &raquo; <a href="/2015/06/25/HadoopSetup.html">集群分布式Hadoop系统安装基本步骤</a></li>
+    
+      <li><span>24 Jun 2015</span> &raquo; <a href="/2015/06/24/MyFirstBlog.html">我的第一个GitHub博客</a></li>
+    
   </ul>
 
   <h1>Highlighted Media</h1>
   <ul class="posts">
-	<li><span>27 Jun 2015</span> &raquo; <a href="https://spark-summit.org/2015/">SPARK SUMMIT 2015: DATA SCIENCE AND ENGINEERING AT SCALE</a></li>
     <li><span>02 Sep 2013</span> &raquo; <a href="http://www.wired.com/wiredenterprise/2013/09/github-for-anything/all/">Article: WIRED - GitHub Is Going Mainstream</a></li>
     <li><span>09 Nov 2011</span> &raquo; <a href="http://vimeo.com/39016099">Video: RubyConf Argentina - Optimizing For Happiness</a></li>
     <li><span>01 Oct 2011</span> &raquo; <a href="http://confreaks.com/videos/712-rubyconf2011-github-flavored-ruby">Video: RubyConf - GitHub Flavored Ruby</a></li>
@@ -82,3 +113,57 @@ title: Seine's Blog
     <li><a href="http://github.com/mojombo/ernie/">Ernie:</a> Ruby/Erlang Hybrid BERT-RPC server.</li>
   </ul>
 </div>
+
+
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Seine1923
+        <br />
+        Cofounder of
+          <a href="https://codestarter.org/">Codestarter</a>,
+          <a href="https://github.com/">GitHub</a>
+        <br />
+        xdyeung@qq.com
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/Seine1923/">github.com/Seine1923</a><br />
+        <a href="http://weibo.com/339180809">主页君的新浪微博</a><br />
+      </p>
+    </div>
+<!--	<div class="rss">
+      <a href="http://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>-->
+  </div>
+</div>
+
+<a href="http://github.com/Seine1923"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
