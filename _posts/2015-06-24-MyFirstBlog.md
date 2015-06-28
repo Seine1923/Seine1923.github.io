@@ -11,7 +11,7 @@ comments: true
 
 Git是一个版本控制工具，诞生于2005年。[GitHub](https://github.com/)，Build software better, together，诞生于2008年，是一个用git做版本控制的项目托管平台，这几年尤其火热。作为程序员欢乐的世界大舞台，在程序员心中她具有无可比拟的坚实地位。有经验、有技术、有想法和爱好分享的人早已在GitHub上玩了很多年，不仅向大牛们学习，也记录自己的成长历史，分享自己的代码库。在我看来，这些是一件多么有意义的事情。我作为一个OUTMAN，多年迷失自我，终于在今天开启我的GitHub之旅，也许晚，但是既然已经开始做了，就不晚。
 
-但是要想真正把GitHub玩好，真是一件不容易的事情。尤其是管理一个博客，不仅要学会前端设计，还需要掌握jekyll的知识，标记语言[Markdown](http://baike.baidu.com/link?url=LBEhOTuIP0Fxz4iGR6A7kM9gup4UFIZimszqf-0jUkdyrIrMhQWXF5sZL0ScmqvmEADN8DuLVLWnY3QeU6fSYa)，以及他的文档编辑器[MarkdownPad](http://markdownpad.com/)，为了能够让读者能够评论，还外挂了评论系统[Disqus](https://disqus.com/)。总之，学习是件快乐的事情，越难越要敢于挑战，不要忘记努力就一定会成功。
+但是要想真正把GitHub玩好，真是一件不容易的事情。尤其是管理一个博客，不仅要学会前端设计，还需要掌握jekyll的知识，标记语言[Markdown](http://baike.baidu.com/link?url=LBEhOTuIP0Fxz4iGR6A7kM9gup4UFIZimszqf-0jUkdyrIrMhQWXF5sZL0ScmqvmEADN8DuLVLWnY3QeU6fSYa)，以及他的文档编辑器[MarkdownPad](http://markdownpad.com/)，为了让读者能够评论和留言，还外挂了评论系统[Disqus](https://disqus.com/)。总之，学习是件快乐的事情，越难越要敢于挑战，不要忘记努力就一定会成功。
 
 Write the Code,Change the world.追求卓越，成功就会在不经意之间追上你。我喜欢安静的在电脑前码代码，让自己的代码越来越可爱，越来越丰富，越来越富有生气，是一件多么美妙的事情。永远不要在意自己是否多么弱小，只应该不断的督促自己每一天都要Stay Hungry, Stay Foolish.
 
