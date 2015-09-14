@@ -32,7 +32,7 @@
 			<li>。。。</li>
 		</ul>
 	<h2>一些图片</h2>
-	<img src="/images/snow.png" alt="john snow">
+	<img src="../images/snow.png" alt="john snow">
 	<h3>这是三级标题h3</h3>
 	<h4>这是四级标题h4</h4>
 	<h5>这是五级标题h5</h5>
