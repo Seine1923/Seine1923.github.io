@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>test deploy | Seine1923</title>
+  <title>Web技术开发(三) | Seine1923</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sharing is the best thing in the world.">
+  <meta name="description" content="##Web技术开发(三)##
+22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+    style 适用于当前网页，页内定义.    .css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用    直接定义标签上，内联/行内标记’ul style=” “‘    
+优">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test deploy">
-<meta property="og:url" content="http://yoursite.com/2015/10/06/test-deploy/index.html">
+<meta property="og:title" content="Web技术开发(三)">
+<meta property="og:url" content="http://yoursite.com/2015/10/06/2015-09-22-Web技术开发三/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="sharing is the best thing in the world.">
-<meta property="og:updated_time" content="2015-10-06T08:07:39.779Z">
+<meta property="og:description" content="##Web技术开发(三)##
+22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+    style 适用于当前网页，页内定义.    .css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用    直接定义标签上，内联/行内标记’ul style=” “‘    
+优">
+<meta property="og:updated_time" content="2015-10-06T04:55:25.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test deploy">
-<meta name="twitter:description" content="sharing is the best thing in the world.">
+<meta name="twitter:title" content="Web技术开发(三)">
+<meta name="twitter:description" content="##Web技术开发(三)##
+22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+    style 适用于当前网页，页内定义.    .css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用    直接定义标签上，内联/行内标记’ul style=” “‘    
+优">
   
     <link rel="alternative" href="/atom.xml" title="Seine1923" type="application/atom+xml">
   
@@ -64,10 +76,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-test-deploy" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2015-09-22-Web技术开发三" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/10/06/test-deploy/" class="article-date">
-  <time datetime="2015-10-06T08:07:39.000Z" itemprop="datePublished">2015-10-06</time>
+    <a href="/2015/10/06/2015-09-22-Web技术开发三/" class="article-date">
+  <time datetime="2015-10-06T08:49:35.471Z" itemprop="datePublished">2015-10-06</time>
 </a>
     
   </div>
@@ -78,7 +90,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test deploy
+      Web技术开发(三)
     </h1>
   
 
@@ -86,13 +98,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>##Web技术开发(三)##</p>
+<p></p><p class="meta">22 Sep 2015 - Kumming</p><p></p>
+<p></p><h3>html中使用样式表的三种方式</h3><p></p>
+<p><ol><br>    <li>style 适用于当前网页，页内定义.</li><br>    <li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用</li><br>    <li>直接定义标签上，内联/行内标记’ul style=” “‘</li><br></ol>    </p>
+<p></p><p>优先级3&gt;1&gt;2,即越靠近越优先</p><p></p>
+<p></p><h3>样式规则</h3><p></p>
+<p></p><p>选择符 {样式属性：样式值;}</p><p></p>
+<p></p><h3>数值</h3><p></p>
+<p><ul><br>    <li>长度</li><br>    <li>大小</li><br>    <li>百分比：通常为100%</li><br>    <li>颜色：以#开始</li><br>    <li>函数：rgb(),rgba(),url(),hsl()</li><br></ul></p>
+<p></p><h3>调试</h3><p></p>
+<p></p><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p><p></p>
+<p></p><h3>选择符</h3><p></p>
+<p><ol><br>    <li>标记选择符</li><br>    <li>ID选择符</li><br>    <li>类选择符</li><br>    <li>包含关系/上下文选择符</li><br>    <li>并列关系</li><br>    <li>属性选择符</li><br></ol></p>
+<p></p><h4>标记选择符</h4><p></p>
+<blockquote>
+<p>a {color:white}</p>
+<p></p><h4>ID选择符</h4><br>‘#menu <br><br>ul id=”menu” style=””<p></p>
+<p></p><h4>类选择符</h4><br>.menuItem {float:left… <br><br>li class=”menuItem”<p></p>
+<p></p><h4>包含关系/上下文选择符</h4><br>menu li {float… <br><br>须是li,其次要在id为menu下的包含<p></p>
+<p></p><h4>并列关系</h4><br>选择符1，选择符2….  共用，多个重叠<p></p>
+<p></p><h4>属性选择符</h4><br>p[text]{}<br>p text=”忽略值” <br><br>p[text=”abc”]{} <br><br>p text=”abc”  <br><p></p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/06/test-deploy/" data-id="ciff4c4ip0002h8kg11oe90la" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/06/2015-09-22-Web技术开发三/" data-id="ciff4l7070001wokg49tzch52" class="article-share-link">Share</a>
       
-        <a href="http://yoursite.com/2015/10/06/test-deploy/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://yoursite.com/2015/10/06/2015-09-22-Web技术开发三/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -101,19 +135,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/10/06/test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          test
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/10/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/06/2015-09-15-Web技术开发二/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Web技术开发(二)</div>
     </a>
   
 </nav>
@@ -201,7 +226,7 @@
 <script>
   var disqus_shortname = 'Seine1923';
   
-  var disqus_url = 'http://yoursite.com/2015/10/06/test-deploy/';
+  var disqus_url = 'http://yoursite.com/2015/10/06/2015-09-22-Web技术开发三/';
   
   (function(){
     var dsq = document.createElement('script');
