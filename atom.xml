@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A beautiful life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-06T09:25:01.980Z</updated>
+  <updated>2015-10-06T14:42:56.229Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Web技术开发(二)]]></title>
+    <link href="http://yoursite.com/2015/10/06/2015-09-15-Web%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91%E4%BA%8C/"/>
+    <id>http://yoursite.com/2015/10/06/2015-09-15-Web技术开发二/</id>
+    <published>2015-10-06T14:42:56.229Z</published>
+    <updated>2015-10-06T14:42:56.229Z</updated>
+    <content type="html"><![CDATA[<p>15 Sep 2015 - Kumming</p>
+<h2 id="本节主要学习一些基本样式">本节主要学习一些基本样式</h2><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"Web技术开发二.html"</span>&gt;</span>YNU<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+link:让浏览器解析加载，典型如样式表文件CSS，统一风格
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+     &lt;!<span class="tag">--</span>声明一个样式表<span class="tag">--</span>&gt;
+     <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
+     <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left}
+</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><p>block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a</p>
+<p>大小、位置－&gt;盒子模型，任何一个标记为盒子</p>
+<p>盒子＝内容+边框(border)+padding(内边际)</p>
+<p>元素 高:height，宽:width</p>
+<p>盒子与盒子之间：margin</p>
+<h3 id="长度单位：">长度单位：</h3><p>px 像素，相对量，如1080p，指水平方向可显示1080像素</p>
+<p>em 定义字体多大，1em=16px</p>
+<p>pt 类如word磅，绝对大小，根据dpi指定，dot per inch </p>
+<p>公式：px = pt * dpi / 72</p>
+<pre><code>&lt;<span class="attribute">padding</span>&gt;
+     <span class="attribute">left</span>
+     <span class="attribute">right</span>
+     <span class="attribute">top</span> 
+    <span class="attribute">bottom</span>
+</code></pre><p>或</p>
+<table><br><tbody><br><tr><td><em> </em></td><td><em>top</em></td><td><em>right</em></td><td><em>bottom</em></td><td><em>left</em></td></tr><br><tr><td>padding:</td><td>10px</td><td>20px</td><td>30px</td><td>40px(带单位）</td></tr><br><tr><td></td><td>上下</td><td>左右</td></tr><br><tr><td>padding:</td><td>10px</td><td>20px</td></tr><br><tr><td></td><td>全部</td></tr><br><tr><td>padding:</td><td>10px</td></tr><br></tbody><br></table>
+
+<p><strong>行内标记只有左右边际</strong></p>
+<h3 id="浏览器渲染模式：">浏览器渲染模式：</h3><ol>
+<li>正常流</li>
+<li>浮动流float(相对位置，绝对位置)</li>
+</ol>
+<h3 id="颜色表示：">颜色表示：</h3><ol>
+<li>li {float:left; background-color:#fff;} 颜色RGB，自发光；CMYK,反光，用于印刷<br>表示颜色以#号开始，#<em>**；一个</em>的表示0-FF,两个一样简写为一个；</li>
+<li>可用一些单词，如red,yellow…</li>
+<li>函数rgb(十进制，十进制，十进制）</li>
+</ol>
+<h3 id="透明度：">透明度：</h3><pre><code>opacity:<span class="number">0</span>-<span class="number">1</span> 
+</code></pre><h3 id="前景色：">前景色：</h3><pre><code><span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;}</span>去掉下划线
+</code></pre><h3 id="状态定义：">状态定义：</h3><p>是伪类，优先正常定义<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">li</span><span class="pseudo">:hover</span> &#123;<span class="attribute">background-color</span>:...&#125; 鼠标悬停</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">li:first-child &#123;border-radius:<span class="number">8</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">8</span>px&#125; 圆角</span><br><span class="line">   last-child</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span>即边框，默认为零</span><br></pre></td></tr></table></figure>
+<h3 id="案例：">案例：</h3><pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
+    <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>; <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#699</span></span></span>; <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">10px</span> <span class="number">20px</span></span></span>;}</span>
+    <span class="rule"><span class="attribute">li</span>:<span class="value">hover {background-color: <span class="hexcolor">#569</span></span></span>;}
+    <span class="rule"><span class="attribute">li</span>:<span class="value">first-child {border-radius:<span class="number">8px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span>}
+    li:last-child {border-radius:<span class="number">0</span> <span class="number">8px</span> <span class="number">8px</span> <span class="number">0</span>}
+    a {color:white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><h3 id="效果展示：">效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>15 Sep 2015 - Kumming</p>
+<h2 id="本节主要学习一些基本样式">本节主要学习一些基本样式</h2><pre><code><span class="tag">&lt;<span class="title">a</span> <span clas]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Web技术开发(三)]]></title>
@@ -60,54 +123,6 @@ p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
 <h2 id="html中使用样式表的三种方式">html中使用样式表的三种方式</h2><ol>
 <li>style 适用于当前网页，页内定义.</li>
 <li>.css 共享所有风格，link通常放在head内.<c]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Web技术开发(二)]]></title>
-    <link href="http://yoursite.com/2015/10/06/2015-09-15-Web%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91%E4%BA%8C/"/>
-    <id>http://yoursite.com/2015/10/06/2015-09-15-Web技术开发二/</id>
-    <published>2015-10-06T08:49:35.470Z</published>
-    <updated>2015-10-06T01:43:20.276Z</updated>
-    <content type="html"><![CDATA[<p>##Web技术开发(二)##</p>
-<p></p><p class="meta">15 Sep 2015 - Kumming</p><p></p>
-<p></p><h2>本节主要学习一些基本样式</h2><br><br><a href="Web技术开发二.html">HOME</a><code>&lt;a href=&quot;Web技术开发二.html&quot;&gt;YNU&lt;/a&gt;</code><p></p>
-<p></p><p>link:让浏览器解析加载，典型如样式表文件CSS，统一风格</p><p></p>
-<blockquote>
-<pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    &lt;!<span class="tag">--</span>声明一个样式表<span class="tag">--</span>&gt;
-    <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
-    <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left}
-</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-</code></pre><p></p><p>block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a</p><p></p>
-<p></p><p>大小、位置－&gt;盒子模型，任何一个标记为盒子</p><p></p>
-<p></p><p>盒子＝内容+边框(border)+padding(内边际)</p><p></p>
-<p></p><p>元素 高:height，宽:width</p><p></p>
-<p></p><p>盒子与盒子之间：margin</p><p></p>
-<p></p><p><br>长度单位：<br><br>px 像素，相对量，如1080p，指水平方向可显示1080像素<br><br>em 定义字体多大，1em=16px<br><br>pt 类如word磅，绝对大小，根据dpi指定，dot per inch <br><br>公式：px = pt * dpi / 72<br>    <padding><br>        left<br>        right<br>        top<br>        bottom</padding></p>
-</blockquote>
-<p>或</p>
-<blockquote>
-<pre><code>            top      right    bottom    left
-padding:<span class="number">10</span>px    <span class="number">20</span>px    <span class="number">30</span>px    <span class="number">40</span>px(带单位）
-        上下        左右
-padding:<span class="number">10</span>px     <span class="number">20</span>px
-        全部
-padding:<span class="number">10</span>px
-</code></pre></blockquote>
-<p></p><p>行内标记只有左右边际</p><p></p>
-<p></p><p>浏览器渲染模式：正常流，浮动流float(相对位置，绝对位置)</p><p></p>
-<ol>
-<li>li {float:left; background-color:#fff;} 颜色RGB，自发光；CMYK,反光，用于印刷；<br>表示颜色以#号开始，#<em>**；一个</em>的表示0-FF,两个一样简写为一个；</li>
-<li>可用一些单词，如red,yellow…</li>
-<li>函数rgb(十进制，十进制，十进制）<br><br>opacity:0-1 透明度<br><br>前景色：a {color:white; text-decoration:none;}去掉下划线<br><br>状态定义：伪类，优先正常定义<br><br>li:hover {background-color:…}鼠标悬停<br><br>li:first-child {border-radius:8px 0 0 8px} 圆角<br><br last-child="" <br="">border即边框，默认为零</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>##Web技术开发(二)##</p>
-<p></p><p class="meta">15 Sep 2015 - Kumming</p><p></p>
-<p></p><h2>本节主要学习一些基本样式</h2><br><br><a href="Web技术开发二.html">HO]]>
     </summary>
     
   </entry>
