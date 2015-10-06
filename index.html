@@ -68,7 +68,7 @@
     <article id="post-2015-09-22-Web技术开发三" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/06/2015-09-22-Web技术开发三/" class="article-date">
-  <time datetime="2015-10-06T08:49:35.471Z" itemprop="datePublished">2015-10-06</time>
+  <time datetime="2015-10-06T09:22:14.830Z" itemprop="datePublished">2015-10-06</time>
 </a>
     
   </div>
@@ -87,28 +87,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##Web技术开发(三)##</p>
-<p></p><p class="meta">22 Sep 2015 - Kumming</p><p></p>
-<p></p><h3>html中使用样式表的三种方式</h3><p></p>
-<p><ol><br>    <li>style 适用于当前网页，页内定义.</li><br>    <li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用</li><br>    <li>直接定义标签上，内联/行内标记’ul style=” “‘</li><br></ol>    </p>
-<p></p><p>优先级3&gt;1&gt;2,即越靠近越优先</p><p></p>
-<p></p><h3>样式规则</h3><p></p>
-<p></p><p>选择符 {样式属性：样式值;}</p><p></p>
-<p></p><h3>数值</h3><p></p>
-<p><ul><br>    <li>长度</li><br>    <li>大小</li><br>    <li>百分比：通常为100%</li><br>    <li>颜色：以#开始</li><br>    <li>函数：rgb(),rgba(),url(),hsl()</li><br></ul></p>
-<p></p><h3>调试</h3><p></p>
-<p></p><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p><p></p>
-<p></p><h3>选择符</h3><p></p>
-<p><ol><br>    <li>标记选择符</li><br>    <li>ID选择符</li><br>    <li>类选择符</li><br>    <li>包含关系/上下文选择符</li><br>    <li>并列关系</li><br>    <li>属性选择符</li><br></ol></p>
-<p></p><h4>标记选择符</h4><p></p>
-<blockquote>
-<p>a {color:white}</p>
-<p></p><h4>ID选择符</h4><br>‘#menu <br><br>ul id=”menu” style=””<p></p>
-<p></p><h4>类选择符</h4><br>.menuItem {float:left… <br><br>li class=”menuItem”<p></p>
-<p></p><h4>包含关系/上下文选择符</h4><br>menu li {float… <br><br>须是li,其次要在id为menu下的包含<p></p>
-<p></p><h4>并列关系</h4><br>选择符1，选择符2….  共用，多个重叠<p></p>
-<p></p><h4>属性选择符</h4><br>p[text]{}<br>p text=”忽略值” <br><br>p[text=”abc”]{} <br><br>p text=”abc”  <br><p></p>
-</blockquote>
+        <p>22 Sep 2015 - Kumming</p>
+<p>##html中使用样式表的三种方式</p>
+<ol>
+<li>style 适用于当前网页，页内定义.</li>
+<li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用.</li>
+<li>直接定义标签上，内联/行内标记’ul style=” “‘</li>
+</ol>
+<p>###优先级3&gt;1&gt;2,即越靠近越优先</p>
+<p>##样式规则</p>
+<p>###选择符 {样式属性：样式值;}</p>
+<p>####数值</p>
+<ul>
+<li>长度</li>
+<li>大小</li>
+<li>百分比：通常为100%</li>
+<li>颜色：以#开始</li>
+<li>函数：rgb(),rgba(),url(),hsl()</li>
+</ul>
+<p>####调试<br>调度样式通常在属性前加数字当使该属性无效以测试效果。</p>
+<p>####选择符</p>
+<ol>
+<li>标记选择符</li>
+<li>ID选择符</li>
+<li>类选择符</li>
+<li>包含关系/上下文选择符</li>
+<li>并列关系</li>
+<li>属性选择符</li>
+</ol>
+<p>####1.标记选择符<br>    a {color:white}</p>
+<p>####2.ID选择符</p>
+<pre><code><span class="id">#menu</span> 
+&lt;<span class="tag">ul</span> id=<span class="string">"menu"</span> style=<span class="string">""</span>&gt;
+</code></pre><p>####3.类选择符<br>    .menuItem {float:left…<br>    li class=”menuItem”</p>
+<p>####4.包含关系/上下文选择符<br>    menu li {float…<br>    须是li,其次要在id为menu下的包含</p>
+<p>####5.并列关系<br>    选择符1，选择符2….  共用，多个重叠</p>
+<p>####6.属性选择符<br>    p[text]{}<br>    p text=”忽略值” <br><br>    p[text=”abc”]{} <br><br>    p text=”abc”  <br></p>
 
       
     </div>
