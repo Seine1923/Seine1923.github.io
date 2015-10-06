@@ -11,11 +11,7 @@
  <body>
 	<style>
 		ul {list-style-type:none;}
-		li {float:left; background-color:#699; padding:10px 20px;}
-		li:hover {background-color: #569;}
-		li:first-child {border-radius:8px 0 0 8px}
-		li:last-child {border-radius:0 8px 8px 0}
-		a {color:white; text-decoration: none;}
+		li {float:left}
 	</style>
 	<h1>小東洋的自我介绍</h1>
 		<p>这是一个简短的自我介绍：<br/>
