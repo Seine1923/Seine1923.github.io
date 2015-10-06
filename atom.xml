@@ -4,7 +4,7 @@
   <subtitle><![CDATA[A beautiful life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-06T14:55:53.111Z</updated>
+  <updated>2015-10-06T15:03:49.103Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,128 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[集群分布式Hadoop系统安装基本步骤]]></title>
+    <link href="http://yoursite.com/2015/10/06/2015-06-25-HadoopSetup/"/>
+    <id>http://yoursite.com/2015/10/06/2015-06-25-HadoopSetup/</id>
+    <published>2015-10-06T15:03:49.103Z</published>
+    <updated>2015-10-06T15:03:49.103Z</updated>
+    <content type="html"><![CDATA[<h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
+<li>hostname&lt;机器名&gt;</li>
+<li>vim /etc/sysconfig/network</li>
+<li>HOSTNAME=&lt;机器名&gt; 保存退出，重启<h3 id="1-2_修改主机名和IP的映射关系(/etc/hosts)">1.2 修改主机名和IP的映射关系(/etc/hosts)</h3><h3 id="参考：">参考：</h3></li>
+<li>192.168.110.128 hadoop0</li>
+<li>192.168.110.144 hadoop1</li>
+<li>192.168.110.154 hadoop2<h3 id="1-3_关闭防火墙">1.3 关闭防火墙</h3></li>
+<li>service iptables status 查看防火墙状态</li>
+<li>service iptables stop 关闭防火墙</li>
+<li>chkconfig iptables –list 查看防火墙启动状态</li>
+<li><p>chkconfig iptables off 关闭防火墙开机启动</p>
+<h3 id="1-4_重启Linux(reboot)">1.4 重启Linux(reboot)</h3><h2 id="2-_JDK安装">2. JDK安装</h2><h3 id="2-1_上传">2.1 上传</h3><h3 id="2-2_解压">2.2 解压</h3><p>  tar -xzvf jdk-8u45-linux-x64.tar.gz -C /usr/java</p>
+<h3 id="2-3_将java添加到环境变量中">2.3 将java添加到环境变量中</h3><p>  vim /etc/profile</p>
+<h4 id="在文件最后添加：">在文件最后添加：</h4><p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export PATH=$PATH:$JAVA_HOME/bin</p>
+<h4 id="刷新配置">刷新配置</h4><p>  source /etc/profile</p>
+<h2 id="3-_Hadoop安装">3. Hadoop安装</h2><h3 id="3-1_上传Hadoop安装包">3.1 上传Hadoop安装包</h3><p>  mkdir /usr/hadoop</p>
+<h3 id="3-2_解压Hadoop安装包">3.2 解压Hadoop安装包</h3><p>  tar -xzvf hadoop-2.6.0.tar.gz -C /usr/hadoop</p>
+<h3 id="3-3修改配置文件">3.3修改配置文件</h3><p>第一个：hadoop-env.sh</p>
+<p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>第二个：core-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code>   <span class="comment">&lt;!--指定HDFS中namenode的通信地址--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>hdfs://hadoop0:9000<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第三个：hdfs-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--设置hdfs副本数量--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>1<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第四个：mapred-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--通知框架MR使用YARN--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第五个：yarn-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--reduce获取数据的方式是mapreduce_shuffle--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  </p>
+<h3 id="3-4_将Hadoop添加到环境变量">3.4 将Hadoop添加到环境变量</h3><p>  vim /etc/profile<br>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export HADOOP_HOME=/usr/hadoop/hadoop-2.6.0<br>  export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin<br>  source /etc/profile</p>
+<h3 id="3-5设置SSH免密码登录">3.5设置SSH免密码登录</h3><p>  vim /etc/selinux/config<br>  SELINUX=disabled<br>  ssh-keygen -t dsa<br>  cd ~/.ssh<br>  cat id_dsa.pub &gt;&gt; authorized_keys</p>
+<h3 id="3-6_格式化HDFS(namenode)第一次使用要格式化">3.6 格式化HDFS(namenode)第一次使用要格式化</h3><p>  hdfs namenode -format</p>
+<h3 id="3-7_启动Hadoop">3.7 启动Hadoop</h3><h4 id="先启动HDFS">先启动HDFS</h4><p>  sbin/start-dfs.sh</p>
+<h4 id="再启动YARN">再启动YARN</h4><p>  sbin/start-yarn.sh</p>
+<h3 id="3-8_验证是否启动成功">3.8 验证是否启动成功</h3><h4 id="使用jps命令">使用jps命令</h4><p>  NameNode<br>  Jps<br>  SecondaryNameNode<br>  NodeManager<br>  ResourceManager<br>  DataNode</p>
+<h4 id="HDFS管理界面：">HDFS管理界面：</h4><p><a href="http://hadoop0:50070" target="_blank" rel="external">http://hadoop0:50070</a></p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
+<li>hostname&lt;机器名&gt;</li>
+<li>vim /etc/sysconfig/network</li>
+<l]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[吾日三省吾身]]></title>
+    <link href="http://yoursite.com/2015/10/06/2015-06-26-Positive_Energy/"/>
+    <id>http://yoursite.com/2015/10/06/2015-06-26-Positive_Energy/</id>
+    <published>2015-10-06T15:01:40.406Z</published>
+    <updated>2015-10-06T15:01:40.406Z</updated>
+    <content type="html"><![CDATA[<p>26 Jun 2015 - Kumming</p>
+<p>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。</p>
+<p><img src="/images/1.jpg" alt=""><br><img src="/images/2.jpg" alt=""><br><img src="/images/3.jpg" alt=""><br><img src="/images/4.jpg" alt=""><br><img src="/images/5.jpg" alt=""><br><img src="/images/6.jpg" alt=""><br><img src="/images/7.jpg" alt=""></p>
+<p>说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：</p>
+<blockquote>
+<p>你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；<br>你要堂堂正正，在遇到挫折时能够昂首而不卑躬屈膝；<br>你要能够面对掌声，在胜利时能够谦逊而不趾高气昂。</p>
+</blockquote>
+<h3 id="真正的伟人直率真诚">真正的伟人直率真诚</h3><h3 id="真正的贤人虚怀若谷">真正的贤人虚怀若谷</h3><h3 id="真正的强者温文尔雅。">真正的强者温文尔雅。</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<p>26 Jun 2015 - Kumming</p>
+<p>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Write the code, Change my family]]></title>
+    <link href="http://yoursite.com/2015/10/06/2015-08-12-WriteAndChange/"/>
+    <id>http://yoursite.com/2015/10/06/2015-08-12-WriteAndChange/</id>
+    <published>2015-10-06T15:00:13.071Z</published>
+    <updated>2015-10-06T15:00:13.071Z</updated>
+    <content type="html"><![CDATA[<p>24 Jun 2015 - Kumming</p>
+<p>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。</p>
+<p>尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序设计的门外汉。那时候看着同学坚持要将Windows家庭版换成Windows旗舰版却不明白有什么区别，也第一次听说Windows有那么多版本，看着自己的笔记本在百分之九十八电量提示没有充电时心急如焚，却不知这是电源保护的机制……无知的年华。</p>
+<p>第一门学习的编程语言是C语言，现在想想那些练习题是多么的简单，写那些程序是多么幸福和有满足感的事情。不过那时候却并没有这种觉悟。第一次的实验课连“Hello World”都没有完成，真让我窘迫。还好那时候认识了一位低调的代码大神，每次实验都和他一起完成，向他学会了很多知识，狂补自己的不足，除此之外也变得像他一样低调做人，专注做事。后来他成为了我大学生涯做好的基友之一。</p>
+<p>此后渐渐的熟悉了计算机领域，开始学会独立学习，独立完成代码编写。作为信息安全最核心的课程之一，密码学，我付出了极大的努力，分别写了RC4，2048位的RSA，SHA128，SHA256，SHA512……那时候密码学老师就说，学习他这门课绝对是你大学生涯最充实的时候。确实如此，那时候日日夜夜都在写，就是简单的兴趣在驱动着努力。</p>
+<p>简单回首过去，虽然相比当年的懵懂，现在已经有了巨大的改变。但我只能给自己一个合格的评价。并没有特别突出的成就，并没有特别厉害的技能，并没有值得骄傲的经历，这些都让我清楚的认识并时刻提醒自己：人生就是在不停的战斗，凡是成功的人都必须付出比常人千百倍的努力。明白道理晚了点，后知后觉，很遗憾我过去还不够努力，现在还需要更加坚持的努力才行。</p>
+<p>我时常陷入自我松懈的状态，总不能坚持的做完一件艰难的事情。按照我的性格是属于那种一口气要把事情完成不愿拖沓的人。但也许任务真的艰难，也许就是我的惰性，也许我还不够热爱，在一些事情面前表现的松懈感是我不能满意的地方。写了一两个小时代码或者解决一个小问题就想松懈一下，然后可能任务就拖得更久，这真是坏毛病，尽管现在是物欲横流的社会，我本也该保持专注的。</p>
+<p>我的家庭一般，不穷不富很平凡。然而父母却一直含辛茹苦的抚养我，付出他们所有的精力和时间让我能够安心读书。有时候想放松的时候，想想父母的辛苦，想想他们期待的眼神，想想我的未来该如何回报父母，我便有点内疚，然后又充满了干劲，可以说，我的每一行代码都倾注了我的感情。</p>
+<p>所以，Write the code，Change my family。我希望我的努力能让我的家庭能有所不同，我希望我的未来不会因为我此刻的懒惰而遗憾。努力不一定会成功，但不努力一定不会成功。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>24 Jun 2015 - Kumming</p>
+<p>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。</p>
+<p>尽管接触计算机是在小学三年级，那时候是方正电脑的]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Web技术开发(一)]]></title>
     <link href="http://yoursite.com/2015/10/06/2015-09-08-Web%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91%E4%B8%80/"/>
     <id>http://yoursite.com/2015/10/06/2015-09-08-Web技术开发一/</id>
-    <published>2015-10-06T14:55:53.111Z</published>
-    <updated>2015-10-06T14:55:53.111Z</updated>
+    <published>2015-10-06T14:59:28.966Z</published>
+    <updated>2015-10-06T14:59:28.966Z</updated>
     <content type="html"><![CDATA[<p>8 Sep 2015 - Kumming</p>
 <h2 id="前端开发技术主要包括三个内容：">前端开发技术主要包括三个内容：</h2><ol>
 <li>Html</li>
@@ -43,7 +160,7 @@
 <p>img图片，也是单标记，形式为<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code></p>
 <p>不同的标记带有不同的属性，常用的标记有二十几个，总共则有上百个。在html里，若出现多个空格，多个回车都自动压缩为一个空格。</p>
 <h2 id="URL介绍">URL介绍</h2><p>URL是Uniform Resource Locator的简称，统一资源定位器。</p>
-<p>以<a href="http://www.ynu.edu.cn为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。" target="_blank" rel="external">http://www.ynu.edu.cn为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</a></p>
+<p>以<code>http://www.ynu.edu.cn</code>为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</p>
 <p>最主要的主页绑定IP地址后，其下可以有多个子系统。如<code>ynums.ynu.edu.cn</code>，<code>sei.ynu.edu.cn</code>。<code>sei.ynu.edu.cn</code>指向一个子服务器，访问到这个子服务器后还需要提供不同的端口后以访问不同的服务，如访问网页浏览<code>sei.ynu.edu.cn:8080</code>，或者SMTP服务在25号端口。确定访问服务后，还需要访问服务系统中的文件，在其后加上<code>/目录</code>，目录可能是文件或文件夹，也可以是虚拟文件夹。确定目录后，如果提供更详细的指定方式，即在访问同时调用参数，可附加查询串，在其后继续添加<code>/?a=3(查询串)&amp;b=4(查询串)</code>。如果还想定位到文件某一行，则在其后加上<code>/#...</code>，称为锚点。</p>
 <h2 id="插入图片">插入图片</h2><p>前面说到插入图片使用代码<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code>，这里的url可以为绝对路径也可以为相对路径（以当前目录为参考）。</p>
 <ol>
@@ -51,7 +168,15 @@
 <li>../../t1.png</li>
 </ol>
 <p>网页常用的图片格式有.jpg，.png，.bmp，.gif…这里，.jpg格式和.png都带压缩，但是.png图像更好，因此是主要图片格式。.gif色素只有256，不满足需求。动图通常也可以由多张静态图片合成。.bmp格式不带压缩，文件较大，不利于网络传输，尽量少用。</p>
-<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code><br>    <ul><br>        <li>无序1</li><br>        <li>无序2</li><br>    </ul><br>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code><br>    <ol><br>        <li>有序1</li><br>        <li>有序2</li><br>    </ol></p>
+<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code></p>
+<ul>
+<li>无序1</li>
+<li>无序2<br>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code></li>
+</ul>
+<ol>
+<li>有序1</li>
+<li>有序2</li>
+</ol>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>8 Sep 2015 - Kumming</p>
@@ -174,120 +299,6 @@ p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
 <h2 id="html中使用样式表的三种方式">html中使用样式表的三种方式</h2><ol>
 <li>style 适用于当前网页，页内定义.</li>
 <li>.css 共享所有风格，link通常放在head内.<c]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Write the code, Change my family]]></title>
-    <link href="http://yoursite.com/2015/10/06/2015-08-12-WriteAndChange/"/>
-    <id>http://yoursite.com/2015/10/06/2015-08-12-WriteAndChange/</id>
-    <published>2015-10-06T08:49:35.466Z</published>
-    <updated>2015-09-10T16:24:07.785Z</updated>
-    <content type="html"><![CDATA[<p>##Write the code, Change my family##</p>
-<p></p><p class="meta">24 Jun 2015 - Kumming</p><br>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。<p></p>
-<p>尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序设计的门外汉。那时候看着同学坚持要将Windows家庭版换成Windows旗舰版却不明白有什么区别，也第一次听说Windows有那么多版本，看着自己的笔记本在百分之九十八电量提示没有充电时心急如焚，却不知这是电源保护的机制……无知的年华。</p>
-<p>第一门学习的编程语言是C语言，现在想想那些练习题是多么的简单，写那些程序是多么幸福和有满足感的事情。不过那时候却并没有这种觉悟。第一次的实验课连“Hello World”都没有完成，真让我窘迫。还好那时候认识了一位低调的代码大神，每次实验都和他一起完成，向他学会了很多知识，狂补自己的不足，除此之外也变得像他一样低调做人，专注做事。后来他成为了我大学生涯做好的基友之一。</p>
-<p>此后渐渐的熟悉了计算机领域，开始学会独立学习，独立完成代码编写。作为信息安全最核心的课程之一，密码学，我付出了极大的努力，分别写了RC4，2048位的RSA，SHA128，SHA256，SHA512……那时候密码学老师就说，学习他这门课绝对是你大学生涯最充实的时候。确实如此，那时候日日夜夜都在写，就是简单的兴趣在驱动着努力。</p>
-<p>简单回首过去，虽然相比当年的懵懂，现在已经有了巨大的改变。但我只能给自己一个合格的评价。并没有特别突出的成就，并没有特别厉害的技能，并没有值得骄傲的经历，这些都让我清楚的认识并时刻提醒自己：人生就是在不停的战斗，凡是成功的人都必须付出比常人千百倍的努力。明白道理晚了点，后知后觉，很遗憾我过去还不够努力，现在还需要更加坚持的努力才行。</p>
-<p>我时常陷入自我松懈的状态，总不能坚持的做完一件艰难的事情。按照我的性格是属于那种一口气要把事情完成不愿拖沓的人。但也许任务真的艰难，也许就是我的惰性，也许我还不够热爱，在一些事情面前表现的松懈感是我不能满意的地方。写了一两个小时代码或者解决一个小问题就想松懈一下，然后可能任务就拖得更久，这真是坏毛病，尽管现在是物欲横流的社会，我本也该保持专注的。</p>
-<p>我的家庭一般，不穷不富很平凡。然而父母却一直含辛茹苦的抚养我，付出他们所有的精力和时间让我能够安心读书。有时候想放松的时候，想想父母的辛苦，想想他们期待的眼神，想想我的未来该如何回报父母，我便有点内疚，然后又充满了干劲，可以说，我的每一行代码都倾注了我的感情。</p>
-<p>所以，Write the code，Change my family。我希望我的努力能让我的家庭能有所不同，我希望我的未来不会因为我此刻的懒惰而遗憾。努力不一定会成功，但不努力一定不会成功。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>##Write the code, Change my family##</p>
-<p></p><p class="meta">24 Jun 2015 - Kumming</p><br>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[吾日三省吾身]]></title>
-    <link href="http://yoursite.com/2015/10/06/2015-06-26-Positive_Energy/"/>
-    <id>http://yoursite.com/2015/10/06/2015-06-26-Positive_Energy/</id>
-    <published>2015-10-06T08:49:35.465Z</published>
-    <updated>2015-09-10T16:13:17.693Z</updated>
-    <content type="html"><![CDATA[<p>##吾日三省吾身##</p>
-<p></p><p class="meta">26 Jun 2015 - Kumming</p><br>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。<p></p>
-<p><img src="/images/1.jpg" alt=""><br><img src="/images/2.jpg" alt=""><br><img src="/images/3.jpg" alt=""><br><img src="/images/4.jpg" alt=""><br><img src="/images/5.jpg" alt=""><br><img src="/images/6.jpg" alt=""><br><img src="/images/7.jpg" alt=""></p>
-<p>说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：</p>
-<blockquote>
-<p>你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；你要堂堂正正，在遇到挫折时能够昂首而不卑躬屈膝；你要能够面对掌声，在胜利时能够谦逊而不趾高气昂。</p>
-</blockquote>
-<p><strong>真正的伟人直率真诚，真正的贤人虚怀若谷，真正的强者温文尔雅。</strong></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>##吾日三省吾身##</p>
-<p></p><p class="meta">26 Jun 2015 - Kumming</p><br>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[集群分布式Hadoop系统安装基本步骤]]></title>
-    <link href="http://yoursite.com/2015/10/06/2015-06-25-HadoopSetup/"/>
-    <id>http://yoursite.com/2015/10/06/2015-06-25-HadoopSetup/</id>
-    <published>2015-10-06T08:49:35.462Z</published>
-    <updated>2015-09-10T16:13:17.690Z</updated>
-    <content type="html"><![CDATA[<h1 id="集群分布式Hadoop系统安装基本步骤">集群分布式Hadoop系统安装基本步骤</h1><h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
-<li>hostname&lt;机器名&gt;</li>
-<li>vim /etc/sysconfig/network</li>
-<li>HOSTNAME=&lt;机器名&gt; 保存退出，重启<h3 id="1-2_修改主机名和IP的映射关系(/etc/hosts)">1.2 修改主机名和IP的映射关系(/etc/hosts)</h3><h3 id="参考：">参考：</h3></li>
-<li>192.168.110.128 hadoop0</li>
-<li>192.168.110.144 hadoop1</li>
-<li>192.168.110.154 hadoop2<h3 id="1-3_关闭防火墙">1.3 关闭防火墙</h3></li>
-<li>service iptables status 查看防火墙状态</li>
-<li>service iptables stop 关闭防火墙</li>
-<li>chkconfig iptables –list 查看防火墙启动状态</li>
-<li><p>chkconfig iptables off 关闭防火墙开机启动</p>
-<h3 id="1-4_重启Linux(reboot)">1.4 重启Linux(reboot)</h3><h2 id="2-_JDK安装">2. JDK安装</h2><h3 id="2-1_上传">2.1 上传</h3><h3 id="2-2_解压">2.2 解压</h3><p>  tar -xzvf jdk-8u45-linux-x64.tar.gz -C /usr/java</p>
-<h3 id="2-3_将java添加到环境变量中">2.3 将java添加到环境变量中</h3><p>  vim /etc/profile</p>
-<h4 id="在文件最后添加：">在文件最后添加：</h4><p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export PATH=$PATH:$JAVA_HOME/bin</p>
-<h4 id="刷新配置">刷新配置</h4><p>  source /etc/profile</p>
-<h2 id="3-_Hadoop安装">3. Hadoop安装</h2><h3 id="3-1_上传Hadoop安装包">3.1 上传Hadoop安装包</h3><p>  mkdir /usr/hadoop</p>
-<h3 id="3-2_解压Hadoop安装包">3.2 解压Hadoop安装包</h3><p>  tar -xzvf hadoop-2.6.0.tar.gz -C /usr/hadoop</p>
-<h3 id="3-3修改配置文件">3.3修改配置文件</h3><p>第一个：hadoop-env.sh</p>
-<p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>第二个：core-site.xml</p>
-<p>  <configuration></configuration></p>
-<pre><code>   <span class="comment">&lt;!--指定HDFS中namenode的通信地址--&gt;</span>
-<span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>hdfs://hadoop0:9000<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><p>  <br>第三个：hdfs-site.xml</p>
-<p>  <configuration></configuration></p>
-<pre><code><span class="comment">&lt;!--设置hdfs副本数量--&gt;</span>
-<span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>1<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><p>  <br>第四个：mapred-site.xml</p>
-<p>  <configuration></configuration></p>
-<pre><code><span class="comment">&lt;!--通知框架MR使用YARN--&gt;</span>
-<span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><p>  <br>第五个：yarn-site.xml</p>
-<p>  <configuration></configuration></p>
-<pre><code><span class="comment">&lt;!--reduce获取数据的方式是mapreduce_shuffle--&gt;</span>
-<span class="tag">&lt;<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-</code></pre><p>  </p>
-<h3 id="3-4_将Hadoop添加到环境变量">3.4 将Hadoop添加到环境变量</h3><p>  vim /etc/profile<br>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export HADOOP_HOME=/usr/hadoop/hadoop-2.6.0<br>  export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin<br>  source /etc/profile</p>
-<h3 id="3-5设置SSH免密码登录">3.5设置SSH免密码登录</h3><p>  vim /etc/selinux/config<br>  SELINUX=disabled<br>  ssh-keygen -t dsa<br>  cd ~/.ssh<br>  cat id_dsa.pub &gt;&gt; authorized_keys</p>
-<h3 id="3-6_格式化HDFS(namenode)第一次使用要格式化">3.6 格式化HDFS(namenode)第一次使用要格式化</h3><p>  hdfs namenode -format</p>
-<h3 id="3-7_启动Hadoop">3.7 启动Hadoop</h3><h4 id="先启动HDFS">先启动HDFS</h4><p>  sbin/start-dfs.sh</p>
-<h4 id="再启动YARN">再启动YARN</h4><p>  sbin/start-yarn.sh</p>
-<h3 id="3-8_验证是否启动成功">3.8 验证是否启动成功</h3><h4 id="使用jps命令">使用jps命令</h4><p>  NameNode<br>  Jps<br>  SecondaryNameNode<br>  NodeManager<br>  ResourceManager<br>  DataNode<br>####HDFS管理界面：<br><a href="http://hadoop0:50070" target="_blank" rel="external">http://hadoop0:50070</a></p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="集群分布式Hadoop系统安装基本步骤">集群分布式Hadoop系统安装基本步骤</h1><h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
-<li>hostname&l]]>
     </summary>
     
   </entry>

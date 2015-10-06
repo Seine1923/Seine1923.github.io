@@ -5,34 +5,34 @@
   
   <title>集群分布式Hadoop系统安装基本步骤 | Seine1923</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="集群分布式Hadoop系统安装基本步骤1. Linux准备1.1 修改机器名
+  <meta name="description" content="1. Linux准备1.1 修改机器名
 hostname&amp;lt;机器名&amp;gt;
 vim /etc/sysconfig/network
 HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP的映射关系(/etc/hosts)参考：
 192.168.110.128 hadoop0
 192.168.110.144 hadoop1
-192.1">
+192.168.110.154 hadoop21">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集群分布式Hadoop系统安装基本步骤">
 <meta property="og:url" content="http://yoursite.com/2015/10/06/2015-06-25-HadoopSetup/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="集群分布式Hadoop系统安装基本步骤1. Linux准备1.1 修改机器名
+<meta property="og:description" content="1. Linux准备1.1 修改机器名
 hostname&amp;lt;机器名&amp;gt;
 vim /etc/sysconfig/network
 HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP的映射关系(/etc/hosts)参考：
 192.168.110.128 hadoop0
 192.168.110.144 hadoop1
-192.1">
-<meta property="og:updated_time" content="2015-09-10T16:13:17.690Z">
+192.168.110.154 hadoop21">
+<meta property="og:updated_time" content="2015-10-06T15:03:49.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集群分布式Hadoop系统安装基本步骤">
-<meta name="twitter:description" content="集群分布式Hadoop系统安装基本步骤1. Linux准备1.1 修改机器名
+<meta name="twitter:description" content="1. Linux准备1.1 修改机器名
 hostname&amp;lt;机器名&amp;gt;
 vim /etc/sysconfig/network
 HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP的映射关系(/etc/hosts)参考：
 192.168.110.128 hadoop0
 192.168.110.144 hadoop1
-192.1">
+192.168.110.154 hadoop21">
   
     <link rel="alternative" href="/atom.xml" title="Seine1923" type="application/atom+xml">
   
@@ -85,7 +85,7 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
         <section id="main"><article id="post-2015-06-25-HadoopSetup" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/06/2015-06-25-HadoopSetup/" class="article-date">
-  <time datetime="2015-10-06T08:49:35.462Z" itemprop="datePublished">2015-10-06</time>
+  <time datetime="2015-10-06T15:03:49.103Z" itemprop="datePublished">2015-10-06</time>
 </a>
     
   </div>
@@ -104,7 +104,7 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="集群分布式Hadoop系统安装基本步骤">集群分布式Hadoop系统安装基本步骤</h1><h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
+        <h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
 <li>hostname&lt;机器名&gt;</li>
 <li>vim /etc/sysconfig/network</li>
 <li>HOSTNAME=&lt;机器名&gt; 保存退出，重启<h3 id="1-2_修改主机名和IP的映射关系(/etc/hosts)">1.2 修改主机名和IP的映射关系(/etc/hosts)</h3><h3 id="参考：">参考：</h3></li>
@@ -156,7 +156,8 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
 <h3 id="3-6_格式化HDFS(namenode)第一次使用要格式化">3.6 格式化HDFS(namenode)第一次使用要格式化</h3><p>  hdfs namenode -format</p>
 <h3 id="3-7_启动Hadoop">3.7 启动Hadoop</h3><h4 id="先启动HDFS">先启动HDFS</h4><p>  sbin/start-dfs.sh</p>
 <h4 id="再启动YARN">再启动YARN</h4><p>  sbin/start-yarn.sh</p>
-<h3 id="3-8_验证是否启动成功">3.8 验证是否启动成功</h3><h4 id="使用jps命令">使用jps命令</h4><p>  NameNode<br>  Jps<br>  SecondaryNameNode<br>  NodeManager<br>  ResourceManager<br>  DataNode<br>####HDFS管理界面：<br><a href="http://hadoop0:50070" target="_blank" rel="external">http://hadoop0:50070</a></p>
+<h3 id="3-8_验证是否启动成功">3.8 验证是否启动成功</h3><h4 id="使用jps命令">使用jps命令</h4><p>  NameNode<br>  Jps<br>  SecondaryNameNode<br>  NodeManager<br>  ResourceManager<br>  DataNode</p>
+<h4 id="HDFS管理界面：">HDFS管理界面：</h4><p><a href="http://hadoop0:50070" target="_blank" rel="external">http://hadoop0:50070</a></p>
 </li>
 </ul>
 
@@ -174,19 +175,10 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
     
 <nav id="article-nav">
   
-    <a href="/2015/10/06/2015-06-26-Positive_Energy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          吾日三省吾身
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/10/06/2015-06-24-MyFirstBlog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/10/06/2015-06-26-Positive_Energy/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">我的第一个GitHub博客</div>
+      <div class="article-nav-title">吾日三省吾身</div>
     </a>
   
 </nav>
@@ -226,15 +218,11 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
       <ul>
         
           <li>
-            <a href="/2015/10/06/2015-09-08-Web技术开发一/">Web技术开发(一)</a>
+            <a href="/2015/10/06/2015-06-25-HadoopSetup/">集群分布式Hadoop系统安装基本步骤</a>
           </li>
         
           <li>
-            <a href="/2015/10/06/2015-09-15-Web技术开发二/">Web技术开发(二)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/06/2015-09-22-Web技术开发三/">Web技术开发(三)</a>
+            <a href="/2015/10/06/2015-06-26-Positive_Energy/">吾日三省吾身</a>
           </li>
         
           <li>
@@ -242,7 +230,11 @@ HOSTNAME=&amp;lt;机器名&amp;gt; 保存退出，重启1.2 修改主机名和IP
           </li>
         
           <li>
-            <a href="/2015/10/06/2015-06-26-Positive_Energy/">吾日三省吾身</a>
+            <a href="/2015/10/06/2015-09-08-Web技术开发一/">Web技术开发(一)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/06/2015-09-15-Web技术开发二/">Web技术开发(二)</a>
           </li>
         
       </ul>

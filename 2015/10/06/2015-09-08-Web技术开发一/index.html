@@ -26,7 +26,7 @@ JavaScript
 html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
 一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN">
 <meta property="og:image" content="http://yoursite.com/images/Editplus.png">
-<meta property="og:updated_time" content="2015-10-06T14:55:53.111Z">
+<meta property="og:updated_time" content="2015-10-06T14:59:28.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(一)">
 <meta name="twitter:description" content="8 Sep 2015 - Kumming
@@ -89,7 +89,7 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
         <section id="main"><article id="post-2015-09-08-Web技术开发一" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/06/2015-09-08-Web技术开发一/" class="article-date">
-  <time datetime="2015-10-06T14:55:53.111Z" itemprop="datePublished">2015-10-06</time>
+  <time datetime="2015-10-06T14:59:28.966Z" itemprop="datePublished">2015-10-06</time>
 </a>
     
   </div>
@@ -131,7 +131,7 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
 <p>img图片，也是单标记，形式为<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code></p>
 <p>不同的标记带有不同的属性，常用的标记有二十几个，总共则有上百个。在html里，若出现多个空格，多个回车都自动压缩为一个空格。</p>
 <h2 id="URL介绍">URL介绍</h2><p>URL是Uniform Resource Locator的简称，统一资源定位器。</p>
-<p>以<a href="http://www.ynu.edu.cn为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。" target="_blank" rel="external">http://www.ynu.edu.cn为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</a></p>
+<p>以<code>http://www.ynu.edu.cn</code>为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</p>
 <p>最主要的主页绑定IP地址后，其下可以有多个子系统。如<code>ynums.ynu.edu.cn</code>，<code>sei.ynu.edu.cn</code>。<code>sei.ynu.edu.cn</code>指向一个子服务器，访问到这个子服务器后还需要提供不同的端口后以访问不同的服务，如访问网页浏览<code>sei.ynu.edu.cn:8080</code>，或者SMTP服务在25号端口。确定访问服务后，还需要访问服务系统中的文件，在其后加上<code>/目录</code>，目录可能是文件或文件夹，也可以是虚拟文件夹。确定目录后，如果提供更详细的指定方式，即在访问同时调用参数，可附加查询串，在其后继续添加<code>/?a=3(查询串)&amp;b=4(查询串)</code>。如果还想定位到文件某一行，则在其后加上<code>/#...</code>，称为锚点。</p>
 <h2 id="插入图片">插入图片</h2><p>前面说到插入图片使用代码<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code>，这里的url可以为绝对路径也可以为相对路径（以当前目录为参考）。</p>
 <ol>
@@ -139,7 +139,15 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
 <li>../../t1.png</li>
 </ol>
 <p>网页常用的图片格式有.jpg，.png，.bmp，.gif…这里，.jpg格式和.png都带压缩，但是.png图像更好，因此是主要图片格式。.gif色素只有256，不满足需求。动图通常也可以由多张静态图片合成。.bmp格式不带压缩，文件较大，不利于网络传输，尽量少用。</p>
-<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code><br>    <ul><br>        <li>无序1</li><br>        <li>无序2</li><br>    </ul><br>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code><br>    <ol><br>        <li>有序1</li><br>        <li>有序2</li><br>    </ol></p>
+<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code></p>
+<ul>
+<li>无序1</li>
+<li>无序2<br>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code></li>
+</ul>
+<ol>
+<li>有序1</li>
+<li>有序2</li>
+</ol>
 
       
     </div>
@@ -154,6 +162,15 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/10/06/2015-08-12-WriteAndChange/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Write the code, Change my family
+        
+      </div>
+    </a>
   
   
     <a href="/2015/10/06/2015-09-15-Web技术开发二/" id="article-nav-older" class="article-nav-link-wrap">
@@ -198,15 +215,11 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
       <ul>
         
           <li>
-            <a href="/2015/10/06/2015-09-08-Web技术开发一/">Web技术开发(一)</a>
+            <a href="/2015/10/06/2015-06-25-HadoopSetup/">集群分布式Hadoop系统安装基本步骤</a>
           </li>
         
           <li>
-            <a href="/2015/10/06/2015-09-15-Web技术开发二/">Web技术开发(二)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/06/2015-09-22-Web技术开发三/">Web技术开发(三)</a>
+            <a href="/2015/10/06/2015-06-26-Positive_Energy/">吾日三省吾身</a>
           </li>
         
           <li>
@@ -214,7 +227,11 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
           </li>
         
           <li>
-            <a href="/2015/10/06/2015-06-26-Positive_Energy/">吾日三省吾身</a>
+            <a href="/2015/10/06/2015-09-08-Web技术开发一/">Web技术开发(一)</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/06/2015-09-15-Web技术开发二/">Web技术开发(二)</a>
           </li>
         
       </ul>
