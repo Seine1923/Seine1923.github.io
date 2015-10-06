@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Seine1923]]></title>
-  
+  <subtitle><![CDATA[A beautiful life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-06T08:07:39.779Z</updated>
+  <updated>2015-10-06T08:42:37.497Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[test]]></title>
+    <link href="http://yoursite.com/2015/10/06/test/"/>
+    <id>http://yoursite.com/2015/10/06/test/</id>
+    <published>2015-10-06T08:42:37.000Z</published>
+    <updated>2015-10-06T08:42:37.497Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[test deploy]]></title>
