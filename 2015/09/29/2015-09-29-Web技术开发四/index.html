@@ -67,7 +67,7 @@ lorem50 + tab
 叠加样式&amp;lt;div class=&quot;class1 class2 class3&quot;&amp;gt;content&amp;lt;/div&amp;gt;
 因此网络中有定义好一些基本样式供开发者直接使用，如著名的BootStrap
 位置描述不">
-<meta property="og:updated_time" content="2015-10-07T04:34:52.622Z">
+<meta property="og:updated_time" content="2015-10-14T08:58:12.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(四)">
 <meta name="twitter:description" content="29 Sep 2015 - Kumming
@@ -314,10 +314,17 @@ lorem50 + tab
 <li>相对定位</li>
 </ol>
 <h4 id="绝对定位">绝对定位</h4><pre><code><span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">right</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">bottom</span>:<span class="value"><span class="number">100px</span>}</span></span></span>
-</code></pre><h3 id="案例">案例</h3><pre><code><span class="class">.class1</span> <span class="rules">{<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对应该在的位置
+</code></pre><h3 id="案例1">案例1</h3><pre><code><span class="class">.class1</span> <span class="rules">{<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对应该在的位置
 .class2 {position:absolute</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对屏幕边框</span></span></span>
 </code></pre><p>不管是绝对定位或者相对定位都不在正常流里</p>
-</span>
+<h3 id="案例2">案例2</h3><pre><code>.<span class="keyword">class</span><span class="number">1</span> {}
+.<span class="keyword">class</span><span class="number">2</span> {}
+.<span class="keyword">class</span><span class="number">1</span>.<span class="keyword">class</span><span class="number">2</span>{}
+&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;content&lt;/p&gt;<span class="comment">//三者叠加</span>
+若.<span class="keyword">class</span> .<span class="keyword">class</span>{} 则是包含关系
+&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;
+    &lt;p <span class="keyword">class</span>=<span class="string">"class2&gt;满足条件</span>
+</code></pre></span>
       
     </div>
 
@@ -337,6 +344,8 @@ lorem50 + tab
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/10/2015-10-10-Web技术开发五/" rel="prev">Web技术开发(五)-如何设计并实现一个下拉菜单条</a>
             
           </div>
 
@@ -408,7 +417,7 @@ lorem50 + tab
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -467,7 +476,7 @@ lorem50 + tab
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#容器"><span class="nav-number">1.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editplus"><span class="nav-number">2.</span> <span class="nav-text">Editplus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机生成一段单词"><span class="nav-number">2.1.</span> <span class="nav-text">随机生成一段单词</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#叠加样式"><span class="nav-number">3.</span> <span class="nav-text">叠加样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位置描述"><span class="nav-number">4.</span> <span class="nav-text">位置描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不叠加"><span class="nav-number">4.1.</span> <span class="nav-text">不叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可叠加"><span class="nav-number">4.2.</span> <span class="nav-text">可叠加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.2.1.</span> <span class="nav-text">绝对定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">4.3.</span> <span class="nav-text">案例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#容器"><span class="nav-number">1.</span> <span class="nav-text">容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editplus"><span class="nav-number">2.</span> <span class="nav-text">Editplus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#随机生成一段单词"><span class="nav-number">2.1.</span> <span class="nav-text">随机生成一段单词</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#叠加样式"><span class="nav-number">3.</span> <span class="nav-text">叠加样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位置描述"><span class="nav-number">4.</span> <span class="nav-text">位置描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不叠加"><span class="nav-number">4.1.</span> <span class="nav-text">不叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可叠加"><span class="nav-number">4.2.</span> <span class="nav-text">可叠加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.2.1.</span> <span class="nav-text">绝对定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例1"><span class="nav-number">4.3.</span> <span class="nav-text">案例1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例2"><span class="nav-number">4.4.</span> <span class="nav-text">案例2</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
