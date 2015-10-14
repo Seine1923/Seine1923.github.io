@@ -40,8 +40,8 @@
 
 
 <meta name="description" content="10 Oct 2015 - Kumming
-1.初始状态
-2.更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+初始状态
+更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
@@ -49,18 +49,18 @@ li{
     float: left;
 }
 
-3.隐藏第二级ulul ul{
+隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
 
-4.鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hove">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web技术开发(五)-如何设计并实现一个下拉菜单条">
 <meta property="og:url" content="http://yoursite.com/2015/10/10/2015-10-10-Web技术开发五/index.html">
 <meta property="og:site_name" content="Seine1923">
 <meta property="og:description" content="10 Oct 2015 - Kumming
-1.初始状态
-2.更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+初始状态
+更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
@@ -68,21 +68,22 @@ li{
     float: left;
 }
 
-3.隐藏第二级ulul ul{
+隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
 
-4.鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hove">
 <meta property="og:image" content="http://yoursite.com/images/web5/1.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/2.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/3.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/1.gif">
-<meta property="og:updated_time" content="2015-10-14T09:51:00.881Z">
+<meta property="og:image" content="http://yoursite.com/images/web5/2.gif">
+<meta property="og:updated_time" content="2015-10-14T10:06:43.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(五)-如何设计并实现一个下拉菜单条">
 <meta name="twitter:description" content="10 Oct 2015 - Kumming
-1.初始状态
-2.更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+初始状态
+更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
@@ -90,11 +91,11 @@ li{
     float: left;
 }
 
-3.隐藏第二级ulul ul{
+隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
 
-4.鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hove">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -309,8 +310,8 @@ li{
 
       
         <span itemprop="articleBody"><p>10 Oct 2015 - Kumming</p>
-<h2 id="1-初始状态">1.初始状态</h2><p><img src="/images/web5/1.png" alt=""></p>
-<h2 id="2-更改ul样式">2.更改ul样式</h2><p>去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
+<h2 id="初始状态">初始状态</h2><p><img src="/images/web5/1.png" alt=""></p>
+<h2 id="更改ul样式">更改ul样式</h2><p>去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
 <pre><code><span class="tag">ul</span><span class="rules">{
     <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
 }</span>
@@ -318,14 +319,20 @@ li{
     <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
 }</span>
 </code></pre><p><img src="/images/web5/2.png" alt=""></p>
-<h2 id="3-隐藏第二级ul">3.隐藏第二级ul</h2><pre><code>ul ul{
+<h2 id="隐藏第二级ul">隐藏第二级ul</h2><pre><code>ul ul{
     display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
 }
 </code></pre><p><img src="/images/web5/3.png" alt=""></p>
-<h2 id="4-鼠标移动显示">4.鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
+<h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
     <span class="attribute">display</span>: block;
 }
 </code></pre><p><img src="/images/web5/1.gif" alt=""></p>
+<h2 id="调整二级菜单为横排">调整二级菜单为横排</h2><p>给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
+<pre><code>.menu &gt; li {
+    <span class="keyword">float</span>: left;
+}
+&lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
+</code></pre><p><img src="/images/web5/2.gif" alt=""></p>
 </span>
       
     </div>
@@ -476,7 +483,7 @@ li{
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-初始状态"><span class="nav-number">1.</span> <span class="nav-text">1.初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">2.更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">3.隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">4.鼠标移动显示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
