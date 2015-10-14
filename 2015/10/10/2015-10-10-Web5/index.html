@@ -39,38 +39,82 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
 
 
-<meta name="description" content="8 Sep 2015 - Kumming
-前端开发技术主要包括三个内容：
-Html
-CSS
-JavaScript
+<meta name="description" content="10 Oct 2015 - Kumming 
 
-html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
-一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN">
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+ 
+
+隐藏二级菜单ul ul{
+    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
+}
+ 
+
+鼠标移动显示ul&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web技术开发(一)">
-<meta property="og:url" content="http://Seine1923.github.io/2015/09/08/2015-09-08-Web技术开发一/index.html">
+<meta property="og:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
+<meta property="og:url" content="http://Seine1923.github.io/2015/10/10/2015-10-10-Web5/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="8 Sep 2015 - Kumming
-前端开发技术主要包括三个内容：
-Html
-CSS
-JavaScript
+<meta property="og:description" content="10 Oct 2015 - Kumming 
 
-html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
-一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN">
-<meta property="og:image" content="http://Seine1923.github.io/images/Editplus.png">
-<meta property="og:updated_time" content="2015-10-07T04:20:49.400Z">
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+ 
+
+隐藏二级菜单ul ul{
+    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
+}
+ 
+
+鼠标移动显示ul&amp;gt">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/4.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/6.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/7.gif">
+<meta property="og:image" content="http://Seine1923.github.io/images/web5/8.gif">
+<meta property="og:updated_time" content="2015-10-14T16:01:26.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web技术开发(一)">
-<meta name="twitter:description" content="8 Sep 2015 - Kumming
-前端开发技术主要包括三个内容：
-Html
-CSS
-JavaScript
+<meta name="twitter:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
+<meta name="twitter:description" content="10 Oct 2015 - Kumming 
 
-html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
-一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN">
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+ul{
+    list-style-type: none;
+}
+li{
+    float: left;
+}
+ 
+
+隐藏二级菜单ul ul{
+    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
+}
+ 
+
+鼠标移动显示ul&amp;gt">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -80,7 +124,7 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
   };
 </script>
 
-  <title> Web技术开发(一) | Seine1923 </title>
+  <title> Web技术开发(五)-设计并实现一个下拉菜单条 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +278,7 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
           
           
             
-              Web技术开发(一)
+              Web技术开发(五)-设计并实现一个下拉菜单条
             
           
         </h1>
@@ -243,8 +287,8 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-08T00:00:00+08:00" content="2015-09-08">
-            2015-09-08
+          <time itemprop="dateCreated" datetime="2015-10-10T00:00:00+08:00" content="2015-10-10">
+            2015-10-10
           </time>
         </span>
 
@@ -269,8 +313,8 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/08/2015-09-08-Web技术开发一/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/08/2015-09-08-Web技术开发一/" itemprop="commentsCount"></span>
+              <a href="/2015/10/10/2015-10-10-Web5/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/2015-10-10-Web5/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -284,46 +328,128 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
       
 
       
-        <span itemprop="articleBody"><p>8 Sep 2015 - Kumming</p>
-<h2 id="前端开发技术主要包括三个内容：">前端开发技术主要包括三个内容：</h2><ol>
-<li>Html</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ol>
-<p>html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js</p>
-<h2 id="一些学习资料">一些学习资料</h2><p>学习Web技术的一些资料，大家可以参考<a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3School</a>，或者<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">MDN</a>。MDN是Mozilla Developer Network，Mozilla开发者网络。类似于MSDN，MSDN的全称是Microsoft Developer Network，这是微软公司面向软件开发者的一种信息服务。</p>
-<h2 id="开发工具">开发工具</h2><p>开发Web前端只需要文本编辑器即可，如<a href="https://www.editplus.com/download.html" target="_blank" rel="external">Editplus</a>，<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime</a>，…不推荐使用集成开发环境等采用拖拽方式程序设计的平台。</p>
-<h2 id="Html文档的基本结构">Html文档的基本结构</h2><p>打开Editplus,新建一个Html Page后，会显示html文件的一个基本结构，如下图所示：<br><img src="/images/Editplus.png" alt=""></p>
-<p>第一个结构是<code>&lt;!DOCTYPE&gt;</code>声明，它对大小写不敏感。<code>&lt;!doctype html&gt;</code>是告诉浏览器要使用的版本，指示web浏览器关于页面使用哪个HTML版本进行编写的指令，声明必须是HTML文档的第一行，位于<code>&lt;html&gt;</code>标签之前。声明没有结束标签。</p>
-<p>第二个结构是<code>&lt;html&gt;&lt;/html&gt;</code>里面包含了<code>&lt;head&gt;&lt;/head&gt;</code>,<code>&lt;body&gt;&lt;/body&gt;</code>两个子结构。</p>
-<p>子结构一<code>&lt;head&gt;&lt;/head&gt;</code>里面可以包含:</p>
-<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">title</span>&gt;</span>显示在浏览器上的文档名称<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-</code></pre><p>meta是元数据，描述数据的数据。<code>charset=&quot;UTF-8&quot;</code>表明本文档文件格式是UTF-8，最初的文档格式是ANSI，即一个字节表示一个字符，对于英文来说完全可以。但是对于中日韩来说，不能满足表示文字的需求，于是出现了CJK标准，Chinese,Japanese,Korean。后来中国出现了GB2312，采用两个字节的形式表示一个汉字。随后国际组织发行了Unicode，统一编码，用2~4个字节表示一个文字。Unicode包含了UTF-8和UTF-16。</p>
-<p>字符集的声明要与文件保存类型一致！否则网页会出现乱码！</p>
-<h2 id="Html排版">Html排版</h2><p>H1~H6代表各级标题，如<code>&lt;h1&gt;这是h1标题&lt;/h1&gt;</code></p>
-<p>p代表段落,如<code>&lt;p&gt;这是一个段落&lt;/p&gt;</code></p>
-<p>br是换行(break row)的意思，<code>&lt;br&gt;</code>是单标记，没有结束标签，但为了规范，可以写成<code>&lt;br/&gt;</code>，代表既是开始，又是结束。</p>
-<p>img图片，也是单标记，形式为<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code></p>
-<p>不同的标记带有不同的属性，常用的标记有二十几个，总共则有上百个。在html里，若出现多个空格，多个回车都自动压缩为一个空格。</p>
-<h2 id="URL介绍">URL介绍</h2><p>URL是Uniform Resource Locator的简称，统一资源定位器。</p>
-<p>以<code>http://www.ynu.edu.cn</code>为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</p>
-<p>最主要的主页绑定IP地址后，其下可以有多个子系统。如<code>ynums.ynu.edu.cn</code>，<code>sei.ynu.edu.cn</code>。<code>sei.ynu.edu.cn</code>指向一个子服务器，访问到这个子服务器后还需要提供不同的端口后以访问不同的服务，如访问网页浏览<code>sei.ynu.edu.cn:8080</code>，或者SMTP服务在25号端口。确定访问服务后，还需要访问服务系统中的文件，在其后加上<code>/目录</code>，目录可能是文件或文件夹，也可以是虚拟文件夹。确定目录后，如果提供更详细的指定方式，即在访问同时调用参数，可附加查询串，在其后继续添加<code>/?a=3(查询串)&amp;b=4(查询串)</code>。如果还想定位到文件某一行，则在其后加上<code>/#...</code>，称为锚点。</p>
-<h2 id="插入图片">插入图片</h2><p>前面说到插入图片使用代码<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code>，这里的url可以为绝对路径也可以为相对路径（以当前目录为参考）。</p>
+        <span itemprop="articleBody"><p><strong> 10 Oct 2015 - Kumming </strong></p>
 <ol>
-<li>t1.png</li>
-<li>../../t1.png</li>
-</ol>
-<p>网页常用的图片格式有.jpg，.png，.bmp，.gif…这里，.jpg格式和.png都带压缩，但是.png图像更好，因此是主要图片格式。.gif色素只有256，不满足需求。动图通常也可以由多张静态图片合成。.bmp格式不带压缩，文件较大，不利于网络传输，尽量少用。</p>
-<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code></p>
-<ul>
-<li>无序1</li>
-<li>无序2</li>
-</ul>
-<p>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code></p>
+<li><h2 id="初始状态">初始状态</h2><p> <img src="/images/web5/1.png" alt=""></p>
+</li>
+<li><h2 id="更改ul样式">更改ul样式</h2><p> 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
+<pre><code><span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+}</span>
+<span class="tag">li</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/2.png" alt=""></p>
+</li>
+<li><h2 id="隐藏二级菜单">隐藏二级菜单</h2><pre><code>ul ul{
+    display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
+}
+</code></pre><p> <img src="/images/web5/3.png" alt=""></p>
+</li>
+<li><h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
+    <span class="attribute">display</span>: block;
+}
+</code></pre><p> <img src="/images/web5/1.gif" alt=""></p>
+</li>
+<li><h2 id="调整二级菜单为横排">调整二级菜单为横排</h2><p> 给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
+<pre><code>.menu &gt; li {
+    <span class="keyword">float</span>: left;
+}
+&lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
+</code></pre><p> <img src="/images/web5/2.gif" alt=""></p>
+</li>
+<li><h2 id="添加背景颜色">添加背景颜色</h2><p> 当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br> p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
 <ol>
-<li>有序1</li>
-<li>有序2</li>
+<li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
+<li><p>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</p>
+<p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
+<p> .menu {</p>
+<pre><code><span class="rule"><span class="attribute">background-color</span>:<span class="value"> gray</span></span>;
+</code></pre><p> }<br> .clearfix {</p>
+<pre><code><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+</code></pre><p> }</p>
+ <div class="clearfix"></div>
+
+<p><img src="/images/web5/3.gif" alt=""></p>
+</li>
+</ol>
+</li>
+<li><h2 id="使用after添加内容">使用after添加内容</h2><p> 通常不要添加没有意义的语句放在ul内容中，因此我们定义一个伪类，达到同样的效果。</p>
+<pre><code><span class="rule"><span class="attribute">.menu</span>:<span class="value"> after{content: <span class="string">"after content"</span>}
+.menu: before{content: <span class="string">"before content"</span>}
+.menu: after{
+    content: <span class="string">""</span></span></span>;
+    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
+}
+</code></pre><p> 代码的含义就是在使用类选择符menu的元素后添加新的空内容。</p>
+</li>
+<li><h2 id="修正二级菜单位置">修正二级菜单位置</h2><p> 现在的子菜单显示的时候会改变一级菜单的位置，因此要将二级菜单从正常流中取走。    </p>
+<pre><code><span class="tag">ul</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> 或</p>
+<pre><code><span class="class">.menu</span> <span class="tag">ul</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/4.gif" alt=""></p>
+</li>
+<li><h2 id="进一步装饰">进一步装饰</h2><ol>
+<li><h3 id="改变字体颜色及去除字体下划线">改变字体颜色及去除字体下划线</h3><pre><code><span class="class">.menu</span> <span class="tag">a</span><span class="rules">{
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
+    <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.png" alt=""></p>
+</li>
+<li><h3 id="加大字体边框">加大字体边框</h3><pre><code><span class="class">.menu</span> <span class="tag">li</span><span class="rules">{                
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="定义所有ul的样式">定义所有ul的样式</h3><p> 包括改变ul的背景颜色，box-shadow是给元素块添加周边阴影效果。<br> 对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</p>
+<pre><code><span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#111</span></span></span>; 
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> hoff voff radius color</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.gif" alt="">        </p>
+</li>
+<li><h3 id="给菜单添加圆角、渐变及阴影效果">给菜单添加圆角、渐变及阴影效果</h3><pre><code><span class="class">.menu</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">100px</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(<span class="hexcolor">#444</span>,<span class="hexcolor">#111</span>)</span></span>;    
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">30px</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span></span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/6.gif" alt="">        </p>
+</li>
+<li><h3 id="设置鼠标移动时项目有阴影及渐变效果">设置鼠标移动时项目有阴影及渐变效果</h3><pre><code>.menu li:hover{
+    background: linear-gradient(hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">40</span>%),hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">20</span>%));
+    box-shadow: <span class="number">4</span>px <span class="number">4</span>px <span class="number">8</span>px <span class="number">4</span>px gray;
+}
+</code></pre><p> <img src="/images/web5/7.gif" alt="">    </p>
+</li>
+<li><h3 id="调整二级菜单的位置为绝对位置">调整二级菜单的位置为绝对位置</h3><pre><code><span class="class">.menu</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">2.3em</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="去除二级菜单名字前空格">去除二级菜单名字前空格</h3><pre><code>*<span class="rules">{  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+ }</span>
+</code></pre><p> 以及设置二级菜单的移动效果</p>
+<pre><code><span class="class">.menu</span>&gt;<span class="rule"><span class="attribute">li</span>:<span class="value">hover ul{
+    display:block</span></span>;    
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+}
+</code></pre></li>
+</ol>
+</li>
+<li><h2 id="最终效果">最终效果</h2><p><img src="/images/web5/8.gif" alt="">        </p>
+</li>
 </ol>
 </span>
       
@@ -346,13 +472,11 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/15/2015-09-15-Web技术开发二/" rel="prev">Web技术开发(二)</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/12/2015-08-12-WriteAndChange/" rel="next">Write the code, Change my family</a>
+              <a href="/2015/09/29/2015-09-29-Web4/" rel="next">Web技术开发(四)</a>
             
           </div>
         </div>
@@ -377,8 +501,8 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/08/2015-09-08-Web技术开发一/"
-                   data-title="Web技术开发(一)" data-url="http://Seine1923.github.io/2015/09/08/2015-09-08-Web技术开发一/">
+              <div class="ds-thread" data-thread-key="2015/10/10/2015-10-10-Web5/"
+                   data-title="Web技术开发(五)-设计并实现一个下拉菜单条" data-url="http://Seine1923.github.io/2015/10/10/2015-10-10-Web5/">
               </div>
             
           </div>
@@ -477,7 +601,7 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端开发技术主要包括三个内容："><span class="nav-number">1.</span> <span class="nav-text">前端开发技术主要包括三个内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些学习资料"><span class="nav-number">2.</span> <span class="nav-text">一些学习资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具"><span class="nav-number">3.</span> <span class="nav-text">开发工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html文档的基本结构"><span class="nav-number">4.</span> <span class="nav-text">Html文档的基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html排版"><span class="nav-number">5.</span> <span class="nav-text">Html排版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL介绍"><span class="nav-number">6.</span> <span class="nav-text">URL介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">7.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">8.</span> <span class="nav-text">列表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏二级菜单"><span class="nav-number">3.</span> <span class="nav-text">隐藏二级菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加背景颜色"><span class="nav-number">6.</span> <span class="nav-text">添加背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用after添加内容"><span class="nav-number">7.</span> <span class="nav-text">使用after添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正二级菜单位置"><span class="nav-number">8.</span> <span class="nav-text">修正二级菜单位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进一步装饰"><span class="nav-number">9.</span> <span class="nav-text">进一步装饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改变字体颜色及去除字体下划线"><span class="nav-number">9.1.</span> <span class="nav-text">改变字体颜色及去除字体下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加大字体边框"><span class="nav-number">9.2.</span> <span class="nav-text">加大字体边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义所有ul的样式"><span class="nav-number">9.3.</span> <span class="nav-text">定义所有ul的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给菜单添加圆角、渐变及阴影效果"><span class="nav-number">9.4.</span> <span class="nav-text">给菜单添加圆角、渐变及阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置鼠标移动时项目有阴影及渐变效果"><span class="nav-number">9.5.</span> <span class="nav-text">设置鼠标移动时项目有阴影及渐变效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整二级菜单的位置为绝对位置"><span class="nav-number">9.6.</span> <span class="nav-text">调整二级菜单的位置为绝对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除二级菜单名字前空格"><span class="nav-number">9.7.</span> <span class="nav-text">去除二级菜单名字前空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果"><span class="nav-number">10.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

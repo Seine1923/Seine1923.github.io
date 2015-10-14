@@ -39,82 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
 
 
-<meta name="description" content="10 Oct 2015 - Kumming 
+<meta name="description" content="22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+style 适用于当前网页，页内定义.
+.css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用.
+直接定义标签上，内联/行内标记’ul style=” “‘
 
-初始状态 
-
-更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
-ul{
-    list-style-type: none;
-}
-li{
-    float: left;
-}
- 
-
-隐藏二级菜单ul ul{
-    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
-}
- 
-
-鼠标移动显示ul&amp;gt">
+优先级3&amp;gt;1&amp;gt;2,即越靠近越优先样式规则选择">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
-<meta property="og:url" content="http://Seine1923.github.io/2015/10/10/2015-10-10-Web技术开发五/index.html">
+<meta property="og:title" content="Web技术开发(三)">
+<meta property="og:url" content="http://Seine1923.github.io/2015/09/22/2015-09-22-Web3/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="10 Oct 2015 - Kumming 
+<meta property="og:description" content="22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+style 适用于当前网页，页内定义.
+.css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用.
+直接定义标签上，内联/行内标记’ul style=” “‘
 
-初始状态 
-
-更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
-ul{
-    list-style-type: none;
-}
-li{
-    float: left;
-}
- 
-
-隐藏二级菜单ul ul{
-    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
-}
- 
-
-鼠标移动显示ul&amp;gt">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/4.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/6.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/7.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/8.gif">
-<meta property="og:updated_time" content="2015-10-14T16:01:26.821Z">
+优先级3&amp;gt;1&amp;gt;2,即越靠近越优先样式规则选择">
+<meta property="og:updated_time" content="2015-10-07T04:21:13.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
-<meta name="twitter:description" content="10 Oct 2015 - Kumming 
+<meta name="twitter:title" content="Web技术开发(三)">
+<meta name="twitter:description" content="22 Sep 2015 - Kumming
+html中使用样式表的三种方式
+style 适用于当前网页，页内定义.
+.css 共享所有风格，link通常放在head内.link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css最常用.
+直接定义标签上，内联/行内标记’ul style=” “‘
 
-初始状态 
-
-更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
-ul{
-    list-style-type: none;
-}
-li{
-    float: left;
-}
- 
-
-隐藏二级菜单ul ul{
-    display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
-}
- 
-
-鼠标移动显示ul&amp;gt">
+优先级3&amp;gt;1&amp;gt;2,即越靠近越优先样式规则选择">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -124,7 +76,7 @@ li{
   };
 </script>
 
-  <title> Web技术开发(五)-设计并实现一个下拉菜单条 | Seine1923 </title>
+  <title> Web技术开发(三) | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +230,7 @@ li{
           
           
             
-              Web技术开发(五)-设计并实现一个下拉菜单条
+              Web技术开发(三)
             
           
         </h1>
@@ -287,8 +239,8 @@ li{
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-10T00:00:00+08:00" content="2015-10-10">
-            2015-10-10
+          <time itemprop="dateCreated" datetime="2015-09-22T00:00:00+08:00" content="2015-09-22">
+            2015-09-22
           </time>
         </span>
 
@@ -313,8 +265,8 @@ li{
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/10/2015-10-10-Web技术开发五/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/2015-10-10-Web技术开发五/" itemprop="commentsCount"></span>
+              <a href="/2015/09/22/2015-09-22-Web3/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/22/2015-09-22-Web3/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -328,130 +280,41 @@ li{
       
 
       
-        <span itemprop="articleBody"><p><strong> 10 Oct 2015 - Kumming </strong></p>
-<ol>
-<li><h2 id="初始状态">初始状态</h2><p> <img src="/images/web5/1.png" alt=""></p>
-</li>
-<li><h2 id="更改ul样式">更改ul样式</h2><p> 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
-<pre><code><span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
-}</span>
-<span class="tag">li</span><span class="rules">{
-    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-}</span>
-</code></pre><p> <img src="/images/web5/2.png" alt=""></p>
-</li>
-<li><h2 id="隐藏二级菜单">隐藏二级菜单</h2><pre><code>ul ul{
-    display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
-}
-</code></pre><p> <img src="/images/web5/3.png" alt=""></p>
-</li>
-<li><h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
-    <span class="attribute">display</span>: block;
-}
-</code></pre><p> <img src="/images/web5/1.gif" alt=""></p>
-</li>
-<li><h2 id="调整二级菜单为横排">调整二级菜单为横排</h2><p> 给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
-<pre><code>.menu &gt; li {
-    <span class="keyword">float</span>: left;
-}
-&lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
-</code></pre><p> <img src="/images/web5/2.gif" alt=""></p>
-</li>
-<li><h2 id="添加背景颜色">添加背景颜色</h2><p> 当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br> p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
-<ol>
-<li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
-<li><p>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</p>
-<p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
-<p> .menu {</p>
-<pre><code><span class="rule"><span class="attribute">background-color</span>:<span class="value"> gray</span></span>;
-</code></pre><p> }<br> .clearfix {</p>
-<pre><code><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-</code></pre><p> }</p>
- <div class="clearfix"></div>
-
-<p><img src="/images/web5/3.gif" alt=""></p>
-</li>
+        <span itemprop="articleBody"><p>22 Sep 2015 - Kumming</p>
+<h2 id="html中使用样式表的三种方式">html中使用样式表的三种方式</h2><ol>
+<li>style 适用于当前网页，页内定义.</li>
+<li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用.</li>
+<li>直接定义标签上，内联/行内标记’ul style=” “‘</li>
 </ol>
-</li>
-<li><h2 id="使用after添加内容">使用after添加内容</h2><p> 通常不要添加没有意义的语句放在ul内容中，因此我们定义一个伪类，达到同样的效果。</p>
-<pre><code><span class="rule"><span class="attribute">.menu</span>:<span class="value"> after{content: <span class="string">"after content"</span>}
-.menu: before{content: <span class="string">"before content"</span>}
-.menu: after{
-    content: <span class="string">""</span></span></span>;
-    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
-}
-</code></pre><p> 代码的含义就是在使用类选择符menu的元素后添加新的空内容。</p>
-</li>
-<li><h2 id="修正二级菜单位置">修正二级菜单位置</h2><p> 现在的子菜单显示的时候会改变一级菜单的位置，因此要将二级菜单从正常流中取走。    </p>
-<pre><code><span class="tag">ul</span> <span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-}</span>
-</code></pre><p> 或</p>
-<pre><code><span class="class">.menu</span> <span class="tag">ul</span> <span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-}</span>
-</code></pre><p> <img src="/images/web5/4.gif" alt=""></p>
-</li>
-<li><h2 id="进一步装饰">进一步装饰</h2><ol>
-<li><h3 id="改变字体颜色及去除字体下划线">改变字体颜色及去除字体下划线</h3><pre><code><span class="class">.menu</span> <span class="tag">a</span><span class="rules">{
-    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;
-}</span>
-</code></pre><p> <img src="/images/web5/5.png" alt=""></p>
-</li>
-<li><h3 id="加大字体边框">加大字体边框</h3><pre><code><span class="class">.menu</span> <span class="tag">li</span><span class="rules">{                
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;
-}</span>
-</code></pre></li>
-<li><h3 id="定义所有ul的样式">定义所有ul的样式</h3><p> 包括改变ul的背景颜色，box-shadow是给元素块添加周边阴影效果。<br> 对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</p>
-<pre><code><span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#111</span></span></span>; 
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> hoff voff radius color</span></span>;
-}</span>
-</code></pre><p> <img src="/images/web5/5.gif" alt="">        </p>
-</li>
-<li><h3 id="给菜单添加圆角、渐变及阴影效果">给菜单添加圆角、渐变及阴影效果</h3><pre><code><span class="class">.menu</span><span class="rules">{
-    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">100px</span></span></span>;
-    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(<span class="hexcolor">#444</span>,<span class="hexcolor">#111</span>)</span></span>;    
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">30px</span></span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span></span></span>;
-}</span>
-</code></pre><p> <img src="/images/web5/6.gif" alt="">        </p>
-</li>
-<li><h3 id="设置鼠标移动时项目有阴影及渐变效果">设置鼠标移动时项目有阴影及渐变效果</h3><pre><code>.menu li:hover{
-    background: linear-gradient(hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">40</span>%),hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">20</span>%));
-    box-shadow: <span class="number">4</span>px <span class="number">4</span>px <span class="number">8</span>px <span class="number">4</span>px gray;
-}
-</code></pre><p> <img src="/images/web5/7.gif" alt="">    </p>
-</li>
-<li><h3 id="调整二级菜单的位置为绝对位置">调整二级菜单的位置为绝对位置</h3><pre><code><span class="class">.menu</span> <span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">2.3em</span></span></span>;
-}</span>
-</code></pre></li>
-<li><h3 id="去除二级菜单名字前空格">去除二级菜单名字前空格</h3><pre><code>*<span class="rules">{  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
- }</span>
-</code></pre><p> 以及设置二级菜单的移动效果</p>
-<pre><code><span class="class">.menu</span>&gt;<span class="rule"><span class="attribute">li</span>:<span class="value">hover ul{
-    display:block</span></span>;    
-    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
-}
-</code></pre></li>
+<h3 id="优先级3&gt;1&gt;2,即越靠近越优先">优先级3&gt;1&gt;2,即越靠近越优先</h3><h2 id="样式规则">样式规则</h2><h3 id="选择符_{样式属性：样式值;}">选择符 {样式属性：样式值;}</h3><h4 id="数值">数值</h4><ul>
+<li>长度</li>
+<li>大小</li>
+<li>百分比：通常为100%</li>
+<li>颜色：以#开始</li>
+<li>函数：rgb(),rgba(),url(),hsl()</li>
+</ul>
+<h4 id="调试">调试</h4><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p>
+<h4 id="选择符">选择符</h4><ol>
+<li>标记选择符</li>
+<li>ID选择符</li>
+<li>类选择符</li>
+<li>包含关系/上下文选择符</li>
+<li>并列关系</li>
+<li>属性选择符</li>
 </ol>
-</li>
-<li><h2 id="最终效果">最终效果</h2><p><img src="/images/web5/8.gif" alt="">        </p>
-</li>
-</ol>
-</span>
+<h4 id="1-标记选择符">1.标记选择符</h4><pre><code><span class="tag">a</span> {<span class="attribute">color</span>:white}
+</code></pre><h4 id="2-ID选择符">2.ID选择符</h4><pre><code><span class="id">#menu</span> 
+&lt;<span class="tag">ul</span> id=<span class="string">"menu"</span> style=<span class="string">""</span>&gt;
+</code></pre><h4 id="3-类选择符">3.类选择符</h4><pre><code>.menuItem {<span class="keyword">float</span>:left... 
+li <span class="keyword">class</span>=<span class="string">"menuItem"</span>
+</code></pre><h4 id="4-包含关系/上下文选择符">4.包含关系/上下文选择符</h4><pre><code><span class="keyword">menu</span> li {<span class="keyword">float</span>... 
+须是li,其次要在id为<span class="keyword">menu</span>下的包含
+</code></pre><h4 id="5-并列关系">5.并列关系</h4><pre><code>选择符<span class="number">1</span>，选择符<span class="number">2.</span>...  共用，多个重叠
+</code></pre><h4 id="6-属性选择符">6.属性选择符</h4><pre><code>p[<span class="type">text</span>]{}
+p <span class="type">text</span>=<span class="string">"忽略值"</span> &lt;br/&gt;
+p[<span class="type">text</span>=<span class="string">"abc"</span>]{} &lt;br/&gt;
+p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
+</code></pre></span>
       
     </div>
 
@@ -472,11 +335,13 @@ li{
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/09/29/2015-09-29-Web4/" rel="prev">Web技术开发(四)</a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/29/2015-09-29-Web技术开发四/" rel="next">Web技术开发(四)</a>
+              <a href="/2015/09/15/2015-09-15-Web2/" rel="next">Web技术开发(二)</a>
             
           </div>
         </div>
@@ -501,8 +366,8 @@ li{
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/10/2015-10-10-Web技术开发五/"
-                   data-title="Web技术开发(五)-设计并实现一个下拉菜单条" data-url="http://Seine1923.github.io/2015/10/10/2015-10-10-Web技术开发五/">
+              <div class="ds-thread" data-thread-key="2015/09/22/2015-09-22-Web3/"
+                   data-title="Web技术开发(三)" data-url="http://Seine1923.github.io/2015/09/22/2015-09-22-Web3/">
               </div>
             
           </div>
@@ -601,7 +466,7 @@ li{
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏二级菜单"><span class="nav-number">3.</span> <span class="nav-text">隐藏二级菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加背景颜色"><span class="nav-number">6.</span> <span class="nav-text">添加背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用after添加内容"><span class="nav-number">7.</span> <span class="nav-text">使用after添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正二级菜单位置"><span class="nav-number">8.</span> <span class="nav-text">修正二级菜单位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进一步装饰"><span class="nav-number">9.</span> <span class="nav-text">进一步装饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改变字体颜色及去除字体下划线"><span class="nav-number">9.1.</span> <span class="nav-text">改变字体颜色及去除字体下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加大字体边框"><span class="nav-number">9.2.</span> <span class="nav-text">加大字体边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义所有ul的样式"><span class="nav-number">9.3.</span> <span class="nav-text">定义所有ul的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给菜单添加圆角、渐变及阴影效果"><span class="nav-number">9.4.</span> <span class="nav-text">给菜单添加圆角、渐变及阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置鼠标移动时项目有阴影及渐变效果"><span class="nav-number">9.5.</span> <span class="nav-text">设置鼠标移动时项目有阴影及渐变效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整二级菜单的位置为绝对位置"><span class="nav-number">9.6.</span> <span class="nav-text">调整二级菜单的位置为绝对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除二级菜单名字前空格"><span class="nav-number">9.7.</span> <span class="nav-text">去除二级菜单名字前空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果"><span class="nav-number">10.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html中使用样式表的三种方式"><span class="nav-number">1.</span> <span class="nav-text">html中使用样式表的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级3>1>2,即越靠近越优先"><span class="nav-number">1.1.</span> <span class="nav-text">优先级3>1>2,即越靠近越优先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式规则"><span class="nav-number">2.</span> <span class="nav-text">样式规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择符_{样式属性：样式值;}"><span class="nav-number">2.1.</span> <span class="nav-text">选择符 {样式属性：样式值;}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值"><span class="nav-number">2.1.1.</span> <span class="nav-text">数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调试"><span class="nav-number">2.1.2.</span> <span class="nav-text">调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择符"><span class="nav-number">2.1.3.</span> <span class="nav-text">选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-标记选择符"><span class="nav-number">2.1.4.</span> <span class="nav-text">1.标记选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ID选择符"><span class="nav-number">2.1.5.</span> <span class="nav-text">2.ID选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-类选择符"><span class="nav-number">2.1.6.</span> <span class="nav-text">3.类选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-包含关系/上下文选择符"><span class="nav-number">2.1.7.</span> <span class="nav-text">4.包含关系/上下文选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-并列关系"><span class="nav-number">2.1.8.</span> <span class="nav-text">5.并列关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-属性选择符"><span class="nav-number">2.1.9.</span> <span class="nav-text">6.属性选择符</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
