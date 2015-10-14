@@ -78,7 +78,8 @@ li{
 <meta property="og:image" content="http://yoursite.com/images/web5/3.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/1.gif">
 <meta property="og:image" content="http://yoursite.com/images/web5/2.gif">
-<meta property="og:updated_time" content="2015-10-14T10:06:43.484Z">
+<meta property="og:image" content="http://yoursite.com/images/web5/3.gif">
+<meta property="og:updated_time" content="2015-10-14T10:32:31.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(五)-如何设计并实现一个下拉菜单条">
 <meta name="twitter:description" content="10 Oct 2015 - Kumming
@@ -333,6 +334,20 @@ li{
 }
 &lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
 </code></pre><p><img src="/images/web5/2.gif" alt=""></p>
+<h2 id="添加背景颜色">添加背景颜色</h2><p>当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br>p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
+<ol>
+<li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
+<li>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</li>
+</ol>
+<p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
+<pre><code>.menu {
+    background-color: gray;
+}
+.clearfix {
+    clear: both;
+}
+&lt;<span class="keyword">div</span> <span class="type">class</span> = <span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p><img src="/images/web5/3.gif" alt=""></p>
 </span>
       
     </div>
@@ -483,7 +498,7 @@ li{
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加背景颜色"><span class="nav-number">6.</span> <span class="nav-text">添加背景颜色</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
