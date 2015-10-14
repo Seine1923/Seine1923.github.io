@@ -39,9 +39,7 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
 
 
-<meta name="description" content="10 Oct 2015 - Kumming 
-
-初始状态 
+<meta name="description" content="初始状态 
 
 更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
@@ -57,14 +55,13 @@ li{
 }
  
 
-鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hover ul{
+    displa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
 <meta property="og:url" content="http://Seine1923.github.io/2015/10/10/2015-10-10-Web5/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="10 Oct 2015 - Kumming 
-
-初始状态 
+<meta property="og:description" content="初始状态 
 
 更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
@@ -80,7 +77,8 @@ li{
 }
  
 
-鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hover ul{
+    displa">
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/1.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/2.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/3.png">
@@ -93,12 +91,10 @@ li{
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/6.gif">
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/7.gif">
 <meta property="og:image" content="http://Seine1923.github.io/images/web5/8.gif">
-<meta property="og:updated_time" content="2015-10-14T16:01:26.821Z">
+<meta property="og:updated_time" content="2015-10-14T16:38:58.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
-<meta name="twitter:description" content="10 Oct 2015 - Kumming 
-
-初始状态 
+<meta name="twitter:description" content="初始状态 
 
 更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
@@ -114,7 +110,8 @@ li{
 }
  
 
-鼠标移动显示ul&amp;gt">
+鼠标移动显示ul&amp;gt;li:hover ul{
+    displa">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -328,8 +325,7 @@ li{
       
 
       
-        <span itemprop="articleBody"><p><strong> 10 Oct 2015 - Kumming </strong></p>
-<ol>
+        <span itemprop="articleBody"><ol>
 <li><h2 id="初始状态">初始状态</h2><p> <img src="/images/web5/1.png" alt=""></p>
 </li>
 <li><h2 id="更改ul样式">更改ul样式</h2><p> 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
@@ -362,15 +358,15 @@ li{
 <ol>
 <li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
 <li><p>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</p>
-<p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
-<p> .menu {</p>
-<pre><code><span class="rule"><span class="attribute">background-color</span>:<span class="value"> gray</span></span>;
-</code></pre><p> }<br> .clearfix {</p>
-<pre><code><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-</code></pre><p> }</p>
- <div class="clearfix"></div>
-
-<p><img src="/images/web5/3.gif" alt=""></p>
+<p> clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
+<pre><code>.menu {
+    background-color: gray;
+}
+.clearfix {
+    clear: both;
+}
+&lt;<span class="keyword">div</span> <span class="type">class</span> = <span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p> <img src="/images/web5/3.gif" alt=""></p>
 </li>
 </ol>
 </li>
