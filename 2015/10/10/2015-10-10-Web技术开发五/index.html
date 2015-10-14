@@ -40,63 +40,81 @@
 
 
 <meta name="description" content="10 Oct 2015 - Kumming
-初始状态
-更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
 li{
     float: left;
 }
+ 
 
 隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
+ 
 
-鼠标移动显示ul&amp;gt;li:hove">
+鼠标移动显示ul&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web技术开发(五)-如何设计并实现一个下拉菜单条">
+<meta property="og:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
 <meta property="og:url" content="http://yoursite.com/2015/10/10/2015-10-10-Web技术开发五/index.html">
 <meta property="og:site_name" content="Seine1923">
 <meta property="og:description" content="10 Oct 2015 - Kumming
-初始状态
-更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
 li{
     float: left;
 }
+ 
 
 隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
+ 
 
-鼠标移动显示ul&amp;gt;li:hove">
+鼠标移动显示ul&amp;gt">
 <meta property="og:image" content="http://yoursite.com/images/web5/1.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/2.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/3.png">
 <meta property="og:image" content="http://yoursite.com/images/web5/1.gif">
 <meta property="og:image" content="http://yoursite.com/images/web5/2.gif">
 <meta property="og:image" content="http://yoursite.com/images/web5/3.gif">
-<meta property="og:updated_time" content="2015-10-14T10:32:31.774Z">
+<meta property="og:image" content="http://yoursite.com/images/web5/4.gif">
+<meta property="og:image" content="http://yoursite.com/images/web5/5.png">
+<meta property="og:image" content="http://yoursite.com/images/web5/5.gif">
+<meta property="og:image" content="http://yoursite.com/images/web5/6.gif">
+<meta property="og:image" content="http://yoursite.com/images/web5/7.gif">
+<meta property="og:image" content="http://yoursite.com/images/web5/8.gif">
+<meta property="og:updated_time" content="2015-10-14T15:45:11.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web技术开发(五)-如何设计并实现一个下拉菜单条">
+<meta name="twitter:title" content="Web技术开发(五)-设计并实现一个下拉菜单条">
 <meta name="twitter:description" content="10 Oct 2015 - Kumming
-初始状态
-更改ul样式去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
+
+初始状态 
+
+更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
 ul{
     list-style-type: none;
 }
 li{
     float: left;
 }
+ 
 
 隐藏第二级ulul ul{
     display: none; &amp;lt;!--表示被另一个ul包含的ul--&amp;gt;
 }
+ 
 
-鼠标移动显示ul&amp;gt;li:hove">
+鼠标移动显示ul&amp;gt">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -106,7 +124,7 @@ li{
   };
 </script>
 
-  <title> Web技术开发(五)-如何设计并实现一个下拉菜单条 | Seine1923 </title>
+  <title> Web技术开发(五)-设计并实现一个下拉菜单条 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -260,7 +278,7 @@ li{
           
           
             
-              Web技术开发(五)-如何设计并实现一个下拉菜单条
+              Web技术开发(五)-设计并实现一个下拉菜单条
             
           
         </h1>
@@ -311,43 +329,128 @@ li{
 
       
         <span itemprop="articleBody"><p>10 Oct 2015 - Kumming</p>
-<h2 id="初始状态">初始状态</h2><p><img src="/images/web5/1.png" alt=""></p>
-<h2 id="更改ul样式">更改ul样式</h2><p>去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
+<ol>
+<li><h2 id="初始状态">初始状态</h2><p> <img src="/images/web5/1.png" alt=""></p>
+</li>
+<li><h2 id="更改ul样式">更改ul样式</h2><p> 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
 <pre><code><span class="tag">ul</span><span class="rules">{
     <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
 }</span>
 <span class="tag">li</span><span class="rules">{
     <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
 }</span>
-</code></pre><p><img src="/images/web5/2.png" alt=""></p>
-<h2 id="隐藏第二级ul">隐藏第二级ul</h2><pre><code>ul ul{
+</code></pre><p> <img src="/images/web5/2.png" alt=""></p>
+</li>
+<li><h2 id="隐藏第二级ul">隐藏第二级ul</h2><pre><code>ul ul{
     display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
 }
-</code></pre><p><img src="/images/web5/3.png" alt=""></p>
-<h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
+</code></pre><p> <img src="/images/web5/3.png" alt=""></p>
+</li>
+<li><h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
     <span class="attribute">display</span>: block;
 }
-</code></pre><p><img src="/images/web5/1.gif" alt=""></p>
-<h2 id="调整二级菜单为横排">调整二级菜单为横排</h2><p>给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
+</code></pre><p> <img src="/images/web5/1.gif" alt=""></p>
+</li>
+<li><h2 id="调整二级菜单为横排">调整二级菜单为横排</h2><p> 给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
 <pre><code>.menu &gt; li {
     <span class="keyword">float</span>: left;
 }
 &lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
-</code></pre><p><img src="/images/web5/2.gif" alt=""></p>
-<h2 id="添加背景颜色">添加背景颜色</h2><p>当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br>p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
+</code></pre><p> <img src="/images/web5/2.gif" alt=""></p>
+</li>
+<li><h2 id="添加背景颜色">添加背景颜色</h2><p> 当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br> p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
 <ol>
 <li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
-<li>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</li>
-</ol>
+<li><p>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</p>
 <p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
-<pre><code>.menu {
-    background-color: gray;
+<p> .menu {</p>
+<pre><code><span class="rule"><span class="attribute">background-color</span>:<span class="value"> gray</span></span>;
+</code></pre><p> }<br> .clearfix {</p>
+<pre><code><span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+</code></pre><p> }</p>
+ <div class="clearfix"></div>
+
+<p><img src="/images/web5/3.gif" alt=""></p>
+</li>
+</ol>
+</li>
+<li><h2 id="使用after添加内容">使用after添加内容</h2><p> 通常不要添加没有意义的语句放在ul内容中，因此我们定义一个伪类，达到同样的效果。</p>
+<pre><code><span class="rule"><span class="attribute">.menu</span>:<span class="value"> after{content: <span class="string">"after content"</span>}
+.menu: before{content: <span class="string">"before content"</span>}
+.menu: after{
+    content: <span class="string">""</span></span></span>;
+    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
 }
-.clearfix {
-    clear: both;
+</code></pre><p> 代码的含义就是在使用类选择符menu的元素后添加新的空内容。</p>
+</li>
+<li><h2 id="修正二级菜单位置">修正二级菜单位置</h2><p> 现在的子菜单显示的时候会改变一级菜单的位置，因此要将二级菜单从正常流中取走。    </p>
+<pre><code><span class="tag">ul</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> 或</p>
+<pre><code><span class="class">.menu</span> <span class="tag">ul</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/4.gif" alt=""></p>
+</li>
+<li><h2 id="进一步装饰">进一步装饰</h2><ol>
+<li><h3 id="改变字体颜色及去除字体下划线">改变字体颜色及去除字体下划线</h3><pre><code><span class="class">.menu</span> <span class="tag">a</span><span class="rules">{
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
+    <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.png" alt=""></p>
+</li>
+<li><h3 id="加大字体边框">加大字体边框</h3><pre><code><span class="class">.menu</span> <span class="tag">li</span><span class="rules">{                
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="定义所有ul的样式">定义所有ul的样式</h3><p> 包括改变ul的背景颜色，box-shadow是给元素块添加周边阴影效果。<br> 对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</p>
+<pre><code><span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#111</span></span></span>; 
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> hoff voff radius color</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.gif" alt="">        </p>
+</li>
+<li><h3 id="给菜单添加圆角、渐变及阴影效果">给菜单添加圆角、渐变及阴影效果</h3><pre><code><span class="class">.menu</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">100px</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(<span class="hexcolor">#444</span>,<span class="hexcolor">#111</span>)</span></span>;    
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">30px</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span></span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/6.gif" alt="">        </p>
+</li>
+<li><h3 id="设置鼠标移动时项目有阴影及渐变效果">设置鼠标移动时项目有阴影及渐变效果</h3><pre><code>.menu li:hover{
+    background: linear-gradient(hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">40</span>%),hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">20</span>%));
+    box-shadow: <span class="number">4</span>px <span class="number">4</span>px <span class="number">8</span>px <span class="number">4</span>px gray;
 }
-&lt;<span class="keyword">div</span> <span class="type">class</span> = <span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><img src="/images/web5/3.gif" alt=""></p>
+</code></pre><p> <img src="/images/web5/7.gif" alt="">    </p>
+</li>
+<li><h3 id="调整二级菜单的位置为绝对位置">调整二级菜单的位置为绝对位置</h3><pre><code><span class="class">.menu</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">2.3em</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="去除二级菜单名字前空格">去除二级菜单名字前空格</h3><pre><code>*<span class="rules">{  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+ }</span>
+</code></pre><p> 以及设置二级菜单的移动效果</p>
+<pre><code><span class="class">.menu</span>&gt;<span class="rule"><span class="attribute">li</span>:<span class="value">hover ul{
+    display:block</span></span>;    
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+}
+</code></pre></li>
+</ol>
+</li>
+<li><h2 id="最终效果">最终效果</h2><p><img src="/images/web5/8.gif" alt="">        </p>
+</li>
+</ol>
 </span>
       
     </div>
@@ -399,7 +502,7 @@ li{
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/10/10/2015-10-10-Web技术开发五/"
-                   data-title="Web技术开发(五)-如何设计并实现一个下拉菜单条" data-url="http://yoursite.com/2015/10/10/2015-10-10-Web技术开发五/">
+                   data-title="Web技术开发(五)-设计并实现一个下拉菜单条" data-url="http://yoursite.com/2015/10/10/2015-10-10-Web技术开发五/">
               </div>
             
           </div>
@@ -498,7 +601,7 @@ li{
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加背景颜色"><span class="nav-number">6.</span> <span class="nav-text">添加背景颜色</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始状态"><span class="nav-number">1.</span> <span class="nav-text">初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改ul样式"><span class="nav-number">2.</span> <span class="nav-text">更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏第二级ul"><span class="nav-number">3.</span> <span class="nav-text">隐藏第二级ul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鼠标移动显示"><span class="nav-number">4.</span> <span class="nav-text">鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调整二级菜单为横排"><span class="nav-number">5.</span> <span class="nav-text">调整二级菜单为横排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加背景颜色"><span class="nav-number">6.</span> <span class="nav-text">添加背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用after添加内容"><span class="nav-number">7.</span> <span class="nav-text">使用after添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修正二级菜单位置"><span class="nav-number">8.</span> <span class="nav-text">修正二级菜单位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进一步装饰"><span class="nav-number">9.</span> <span class="nav-text">进一步装饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改变字体颜色及去除字体下划线"><span class="nav-number">9.1.</span> <span class="nav-text">改变字体颜色及去除字体下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加大字体边框"><span class="nav-number">9.2.</span> <span class="nav-text">加大字体边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义所有ul的样式"><span class="nav-number">9.3.</span> <span class="nav-text">定义所有ul的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给菜单添加圆角、渐变及阴影效果"><span class="nav-number">9.4.</span> <span class="nav-text">给菜单添加圆角、渐变及阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置鼠标移动时项目有阴影及渐变效果"><span class="nav-number">9.5.</span> <span class="nav-text">设置鼠标移动时项目有阴影及渐变效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调整二级菜单的位置为绝对位置"><span class="nav-number">9.6.</span> <span class="nav-text">调整二级菜单的位置为绝对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除二级菜单名字前空格"><span class="nav-number">9.7.</span> <span class="nav-text">去除二级菜单名字前空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终效果"><span class="nav-number">10.</span> <span class="nav-text">最终效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
