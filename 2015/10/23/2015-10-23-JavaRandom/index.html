@@ -53,7 +53,7 @@ for(int i = 0; i &amp;lt; 10; ++i){
  实验代码：
 for(int i = 0; i &amp;lt; 10; ++i){
     System.out.println(Math.rando">
-<meta property="og:updated_time" content="2015-10-23T04:50:01.892Z">
+<meta property="og:updated_time" content="2015-10-23T04:55:46.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java随机数">
 <meta name="twitter:description" content="java.lang.Math.Random
@@ -404,7 +404,7 @@ RandomNum R3:
 </ol>
 </li>
 <li><h2 id="总结">总结</h2><ol>
-<li>两者都可以生成指定范围的不重复随机数，但效率来讲，由于math.random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random更适合。</li>
+<li>两者都可以生成指定范围的不重复随机数，但从效率来讲，由于java.lang.Math.Random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random效率更高。</li>
 <li>在java.util.Random中，一旦指定了同样的种子，那么无论什么时候运行，无论生成多长的随机数，都完全一致。通常按照默认指定种子为当前时间可避免这个问题，但是两个生成器之间尽量要有一定时间间隔，否则两者时间会一致，导致依然一样。</li>
 </ol>
 </li>
