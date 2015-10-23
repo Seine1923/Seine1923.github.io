@@ -53,7 +53,7 @@ for(int i = 0; i &amp;lt; 10; ++i){
  实验代码：
 for(int i = 0; i &amp;lt; 10; ++i){
     System.out.println(Math.rando">
-<meta property="og:updated_time" content="2015-10-23T03:29:18.049Z">
+<meta property="og:updated_time" content="2015-10-23T04:50:01.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java随机数">
 <meta name="twitter:description" content="java.lang.Math.Random
@@ -316,19 +316,37 @@ System.out.<span class="built_in">println</span>(<span class="string">"RandomNum
 <li>java.util.Random类中实现的随机算法是伪随机，也就是有规则的随机，所谓有规则的就是在给定种(seed)的区间内随机生成数字；</li>
 <li>相同种子数的Random对象，相同次数生成的随机数字是完全相同的；</li>
 <li><p>Random类中各方法生成的随机数字都是均匀分布的，也就是说区间内部的数字生成的几率均等；</p>
-<p>实验代码：</p>
-<p> System.out.println(“r1:”);<br> Random r1 = new Random(1);<br> for(int i = 0; i &lt; 5; ++i){</p>
-<pre><code><span class="tag">System</span><span class="class">.out</span><span class="class">.print</span>(<span class="tag">r1</span><span class="class">.nextInt</span>(5) + "\<span class="tag">t</span>");
-</code></pre><p> }<br> System.out.println(“\nr2:”);<br> Random r2 = new Random();<br> for(int i = 0; i &lt; 5; ++i){</p>
-<pre><code><span class="tag">System</span><span class="class">.out</span><span class="class">.print</span>(<span class="tag">r2</span><span class="class">.nextInt</span>(5) + "\<span class="tag">t</span>");
-</code></pre><p> }<br> System.out.println(“\nr3:”);<br> Random r3 = new Random(1);<br> for(int i = 0; i &lt; 5; ++i){</p>
-<pre><code><span class="tag">System</span><span class="class">.out</span><span class="class">.print</span>(<span class="tag">r3</span><span class="class">.nextInt</span>(5) + "\<span class="tag">t</span>");
-</code></pre><p> }</p>
-<p>实验结果，第一次运行：</p>
-<p> r1:<br> 0    3    2    3    4<br> r2:<br> 1    0    1    0    3<br> r3:<br> 0    3    2    3    4</p>
-<p>实验结果，第二次运行：</p>
-<p> r1:<br> 0    3    2    3    4<br> r2:<br> 1    4    3    1    4<br> r3:<br> 0    3    2    3    4</p>
-</li>
+<p> 实验代码：</p>
+<pre><code>System.out.println(<span class="string">"r1:"</span>);
+Random r1 = <span class="keyword">new</span> Random(<span class="number">1</span>);
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r1.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+System.out.println(<span class="string">"\nr2:"</span>);
+Random r2 = <span class="keyword">new</span> Random();
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r2.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+System.out.println(<span class="string">"\nr3:"</span>);
+Random r3 = <span class="keyword">new</span> Random(<span class="number">1</span>);
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r3.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+</code></pre><p> 实验结果，第一次运行：</p>
+<pre><code>r1:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    
+r2:
+<span class="number">1</span>    <span class="number">0</span>    <span class="number">1</span>    <span class="number">0</span>    <span class="number">3</span>    
+r3:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>
+</code></pre><p> 实验结果，第二次运行：</p>
+<pre><code>r1:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    
+r2:
+<span class="number">1</span>    <span class="number">4</span>    <span class="number">3</span>    <span class="number">1</span>    <span class="number">4</span>    
+r3:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>
+</code></pre></li>
 </ol>
 </li>
 <li><h3 id="扩展-1">扩展</h3><p> 从0－6中生成6个不重复的随机数</p>
