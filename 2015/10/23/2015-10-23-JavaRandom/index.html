@@ -51,28 +51,19 @@
 
 
 
-<meta name="description" content="java.lang.Math.Random
-基础 调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是[0.0,1.0)的左闭右开区间，返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。
- 实验代码：
-for(int i = 0; i &amp;lt; 10; ++i){
-    System.out.println(Math.rando">
+<meta name="description" content="java.lang.Math.Random和java.util.Random的随机函数都可以生成指定范围的不重复随机数，但从效率来讲，由于java.lang.Math.Random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random效率更高。
+而在java.util.Random中，一旦指定了同样的种子，那么无论什么时候运行，无论生成多长的随机数，都完全一致。通常按照默认">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java随机数">
 <meta property="og:url" content="http://Seine1923.github.io/2015/10/23/2015-10-23-JavaRandom/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="java.lang.Math.Random
-基础 调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是[0.0,1.0)的左闭右开区间，返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。
- 实验代码：
-for(int i = 0; i &amp;lt; 10; ++i){
-    System.out.println(Math.rando">
-<meta property="og:updated_time" content="2015-10-23T04:55:46.024Z">
+<meta property="og:description" content="java.lang.Math.Random和java.util.Random的随机函数都可以生成指定范围的不重复随机数，但从效率来讲，由于java.lang.Math.Random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random效率更高。
+而在java.util.Random中，一旦指定了同样的种子，那么无论什么时候运行，无论生成多长的随机数，都完全一致。通常按照默认">
+<meta property="og:updated_time" content="2015-12-26T05:32:22.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java随机数">
-<meta name="twitter:description" content="java.lang.Math.Random
-基础 调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是[0.0,1.0)的左闭右开区间，返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。
- 实验代码：
-for(int i = 0; i &amp;lt; 10; ++i){
-    System.out.println(Math.rando">
+<meta name="twitter:description" content="java.lang.Math.Random和java.util.Random的随机函数都可以生成指定范围的不重复随机数，但从效率来讲，由于java.lang.Math.Random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random效率更高。
+而在java.util.Random中，一旦指定了同样的种子，那么无论什么时候运行，无论生成多长的随机数，都完全一致。通常按照默认">
 
 
 
