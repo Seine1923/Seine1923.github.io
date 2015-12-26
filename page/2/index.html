@@ -1,11 +1,5 @@
 <!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion">
+<html class="theme-next   use-motion ">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -38,7 +32,7 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -50,7 +44,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
 
@@ -70,16 +64,10 @@
 
 
 <script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
-    sidebar: '[object Object]',
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
+    scheme: '',
+    sidebar: 'post',
+    motion: true
   };
 </script>
 
@@ -88,6 +76,15 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
   
 
 
@@ -105,14 +102,9 @@
 
 
 
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left 
+  <div class="container one-column 
    page-home 
- ">
+">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -176,7 +168,6 @@
 
       
       
-      
         <li class="menu-item menu-item-search">
           <a href="#" class="st-search-show-outputs">
             
@@ -192,9 +183,7 @@
   
     <div class="site-search">
       
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
+  
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -216,9 +205,8 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+        <div id="content" class="content">
+          
   <section id="posts" class="posts-expand">
 
     
@@ -263,10 +251,7 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-09-15T00:00:00+08:00" content="2015-09-15">
               2015-09-15
             </time>
@@ -274,11 +259,7 @@
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Web技术开发/" itemprop="url" rel="index">
@@ -306,22 +287,21 @@
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
         
-          
-            <p>15 Sep 2015 - Kumming</p>
+          <span itemprop="articleBody">
+            
+              <p>15 Sep 2015 - Kumming</p>
 <h3 id="基本样式">基本样式</h3><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"Web技术开发二.html"</span>&gt;</span>YNU<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
 link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
@@ -362,7 +342,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
 </code></pre><h3 id="效果展示：">效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
 
-          
+            
+          </span>
         
       
     </div>
@@ -412,10 +393,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-09-08T00:00:00+08:00" content="2015-09-08">
               2015-09-08
             </time>
@@ -423,11 +401,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Web技术开发/" itemprop="url" rel="index">
@@ -455,22 +429,21 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
         
-          
-            <p>8 Sep 2015 - Kumming</p>
+          <span itemprop="articleBody">
+            
+              <p>8 Sep 2015 - Kumming</p>
 <h2 id="前端开发技术主要包括三个内容：">前端开发技术主要包括三个内容：</h2><ol>
 <li>Html</li>
 <li>CSS</li>
@@ -512,7 +485,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 <li>有序2</li>
 </ol>
 
-          
+            
+          </span>
         
       
     </div>
@@ -562,10 +536,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-08-12T00:00:00+08:00" content="2015-08-12">
               2015-08-12
             </time>
@@ -573,11 +544,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/个人日志/" itemprop="url" rel="index">
@@ -605,22 +572,21 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
         
-          
-            <p>24 Jun 2015 - Kumming</p>
+          <span itemprop="articleBody">
+            
+              <p>24 Jun 2015 - Kumming</p>
 <p>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。</p>
 <p>尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序设计的门外汉。那时候看着同学坚持要将Windows家庭版换成Windows旗舰版却不明白有什么区别，也第一次听说Windows有那么多版本，看着自己的笔记本在百分之九十八电量提示没有充电时心急如焚，却不知这是电源保护的机制……无知的年华。</p>
 <p>第一门学习的编程语言是C语言，现在想想那些练习题是多么的简单，写那些程序是多么幸福和有满足感的事情。不过那时候却并没有这种觉悟。第一次的实验课连“Hello World”都没有完成，真让我窘迫。还好那时候认识了一位低调的代码大神，每次实验都和他一起完成，向他学会了很多知识，狂补自己的不足，除此之外也变得像他一样低调做人，专注做事。后来他成为了我大学生涯做好的基友之一。</p>
@@ -630,7 +596,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 <p>我的家庭一般，不穷不富很平凡。然而父母却一直含辛茹苦的抚养我，付出他们所有的精力和时间让我能够安心读书。有时候想放松的时候，想想父母的辛苦，想想他们期待的眼神，想想我的未来该如何回报父母，我便有点内疚，然后又充满了干劲，可以说，我的每一行代码都倾注了我的感情。</p>
 <p>所以，Write the code，Change my family。我希望我的努力能让我的家庭能有所不同，我希望我的未来不会因为我此刻的懒惰而遗憾。努力不一定会成功，但不努力一定不会成功。</p>
 
-          
+            
+          </span>
         
       
     </div>
@@ -680,10 +647,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-06-26T00:00:00+08:00" content="2015-06-26">
               2015-06-26
             </time>
@@ -691,11 +655,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/好文珍藏/" itemprop="url" rel="index">
@@ -723,22 +683,21 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
         
-          
-            <p>26 Jun 2015 - Kumming</p>
+          <span itemprop="articleBody">
+            
+              <p>26 Jun 2015 - Kumming</p>
 <p>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。</p>
 <p><img src="/images/1.jpg" alt=""><br><img src="/images/2.jpg" alt=""><br><img src="/images/3.jpg" alt=""><br><img src="/images/4.jpg" alt=""><br><img src="/images/5.jpg" alt=""><br><img src="/images/6.jpg" alt=""><br><img src="/images/7.jpg" alt=""></p>
 <p>说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：</p>
@@ -746,7 +705,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 <p>你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；<br>你要堂堂正正，在遇到挫折时能够昂首而不卑躬屈膝；<br>你要能够面对掌声，在胜利时能够谦逊而不趾高气昂。</p>
 </blockquote>
 <h3 id="真正的伟人直率真诚">真正的伟人直率真诚</h3><h3 id="真正的贤人虚怀若谷">真正的贤人虚怀若谷</h3><h3 id="真正的强者温文尔雅。">真正的强者温文尔雅。</h3>
-          
+            
+          </span>
         
       
     </div>
@@ -796,10 +756,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2015-06-25T00:00:00+08:00" content="2015-06-25">
               2015-06-25
             </time>
@@ -807,11 +764,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Hadoop/" itemprop="url" rel="index">
@@ -839,22 +792,21 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
           
 
-          
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
         
-          
-            <h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
+          <span itemprop="articleBody">
+            
+              <h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
 <li>hostname&lt;机器名&gt;</li>
 <li>vim /etc/sysconfig/network</li>
 <li>HOSTNAME=&lt;机器名&gt; 保存退出，重启<h3 id="1-2_修改主机名和IP的映射关系(/etc/hosts)">1.2 修改主机名和IP的映射关系(/etc/hosts)</h3><h3 id="参考：">参考：</h3></li>
@@ -911,7 +863,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 </li>
 </ul>
 
-          
+            
+          </span>
         
       
     </div>
@@ -940,15 +893,17 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
 
 
-          </div>
-          
-
-
-          
-
         </div>
+
         
-          
+
+
+        
+
+      </div>
+
+      
+        
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -967,12 +922,10 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/person.jpg"
-               alt="敲代码的小東洋" />
+          <img class="site-author-image" src="/images/person.jpg" alt="敲代码的小東洋" itemprop="image"/>
           <p class="site-author-name" itemprop="name">敲代码的小東洋</p>
-          <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         </div>
+        <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -1043,8 +996,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
   </aside>
 
 
-        
-      </div>
+      
     </main>
 
     <footer id="footer" class="footer">
@@ -1066,7 +1018,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT
   </a>
 </div>
 
@@ -1078,48 +1030,13 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
     <div class="back-to-top"></div>
   </div>
 
-  
-
-
-  
-
-
-
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
-
-
-
   
   
 
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
-
-
-
-  
+    
 
   
     
@@ -1137,21 +1054,37 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+    
+     
 
-  
+
     
   
 
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   
   
 
   
   
-
 
 </body>
 </html>
