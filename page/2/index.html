@@ -316,12 +316,7 @@
 link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 &lt;style&gt;
      &lt;!--声明一个样式表--&gt;
-     ul {list-style-type:none;}
-     li {float:left}
-&lt;/style&gt;
-block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a
-盒子大小、位置－&gt;盒子模型，任何一个标记为盒子盒子＝内容+边框(border)+padding(内边际)元素 高:height，宽:width盒子与盒子之间：margin
-长度单位：px 像素，相对量，如1080p，指水平方向可显示1080像素em 定义字体多大，1em=16pxpt 类如word磅，绝对大小，根据dpi指定，dot per inch公式：px = pt * dpi 
+     ul {
             ...
           </span>
           <div class="post-more-link text-center">
@@ -434,11 +429,7 @@ Html
 CSS
 JavaScript
 
-html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
-一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN是Mozilla Developer Network，Mozilla开发者网络。类似于MSDN，MSDN的全称是Microsoft Developer Network，这是微软公司面向软件开发者的一种信息服务。
-开发工具开发Web前端只需要文本编辑器即可，如Editplus，Sublime，…不推荐使用集成开发环境等采用拖拽方式程序设计的平台。
-Html文档的基本结构打开Editplus,新建一个Html Page后，会显示html文件的一个基本结构，如下图所示：
-第一个结构是&lt;!DOCT
+html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后
             ...
           </span>
           <div class="post-more-link text-center">
@@ -547,8 +538,7 @@ Html文档的基本结构打开Editplus,新建一个Html Page后，会显示html
             
             24 Jun 2015 - Kumming
 五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。
-尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序设计的门外汉。那时候看着同学坚持要将Windows家庭版换成Windows旗舰版却不明白有什么区别，也第一次听说Windows有那么多版本，看着自己的笔记本在百分之九十八电量提示没有充电时心急如焚，却不知这是电源保护的机制……无知的年华。
-第一门学习的编程语言是C语言，现在想想那些练习题是多么的简单，写那些程序是多么幸福和有满足感的事情。不过那时候却并没有这种觉悟。第一次的实验课连“Hello World”都没有完成，真让我窘迫。还好那时候认识了一位低调的代码大神，每次实验都和他一起完成，向他学
+尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠
             ...
           </span>
           <div class="post-more-link text-center">
@@ -658,12 +648,8 @@ Html文档的基本结构打开Editplus,新建一个Html Page后，会显示html
             26 Jun 2015 - Kumming
 社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。
 
-说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：
-
-你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；你要堂堂正正，在遇到挫折时能够昂首而不卑躬屈膝；你要能够面对掌声，在胜利时能够谦逊而不趾高气昂。
-
-真正的伟人直率真诚真正的贤人虚怀若谷真正的强者温文尔雅。
-            
+说得都太好了，必须Mark一下。最
+            ...
           </span>
           <div class="post-more-link text-center">
             <a class="btn" href="/2015/06/26/2015-06-26-Positive_Energy/#more" rel="contents">
@@ -773,15 +759,7 @@ Html文档的基本结构打开Editplus,新建一个Html Page后，会显示html
 hostname&lt;机器名&gt;
 vim /etc/sysconfig/network
 HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映射关系(/etc/hosts)参考：
-192.168.110.128 hadoop0
-192.168.110.144 hadoop1
-192.168.110.154 hadoop21.3 关闭防火墙
-service iptables status 查看防火墙状态
-service iptables stop 关闭防火墙
-chkconfig iptables –list 查看防火墙启动状态
-chkconfig iptables off 关闭防火墙开机启动
-1.4 重启Linux(reboot)2. JDK安装2.1 上传2.2 解压  tar -xzvf jdk-8u45-linux-x64.tar.gz -C /usr/java
-2.3 将java添加到环境变量中  vim 
+192.168.110.128 hadoop
             ...
           </span>
           <div class="post-more-link text-center">
