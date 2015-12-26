@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,25 +23,38 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
-
-
-    <meta name="description" content="Stay Hungry, Stay Foolish." />
-
-
-
-  <meta name="keywords" content="Hexo,next" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+
+
+
+
 
 
 <meta name="description" content="Stay Hungry, Stay Foolish.">
@@ -50,10 +68,18 @@
 <meta name="twitter:description" content="Stay Hungry, Stay Foolish.">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Muse',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -62,16 +88,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -85,22 +104,30 @@
 
 
 
-  <div class="container one-column 
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">Seine1923</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -119,31 +146,19 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -151,21 +166,25 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon icon-next-commonweal"></i> <br />
-            公益404
           </a>
         </li>
       
 
       
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -173,11 +192,9 @@
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -199,85 +216,121 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
+
+    
+
+    
+    
+      
+      
+
+      
+    
+
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/24/2015-06-24-MyFirstBlog/" itemprop="url">
-                我的第一个GitHub博客
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-06-24T00:00:00+08:00" content="2015-06-24">
-            2015-06-24
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/个人日志/" itemprop="url" rel="index">
-                  <span itemprop="name">个人日志</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/24/2015-06-24-MyFirstBlog/" itemprop="url">
+                  我的第一个GitHub博客
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-24T00:00:00+08:00" content="2015-06-24">
+              2015-06-24
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/06/24/2015-06-24-MyFirstBlog/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/24/2015-06-24-MyFirstBlog/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/个人日志/" itemprop="url" rel="index">
+                    <span itemprop="name">个人日志</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            24 Jun 2015 - Kumming
-忙碌了两天，终于把我的GitHub博客搭好了，在效果完成后，心里忍不住喊了一声“YES”。
-在搭建我的GitHub博客过程中，首先要感谢阮一峰的网络日志，是在他的日志指导下我才能顺利掌握一些基本搭建技巧，包括很多Git命令。其次要感谢的是模板提供者Tom Preston-Werner，没有他的经验我不可能能够拥有这么简洁，完整，令人舒服的博客页面。当然我
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/24/2015-06-24-MyFirstBlog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/24/2015-06-24-MyFirstBlog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/24/2015-06-24-MyFirstBlog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>24 Jun 2015 - Kumming</p>
+<p>忙碌了两天，终于把我的GitHub博客搭好了，在效果完成后，心里忍不住喊了一声“YES”。</p>
+<p>在搭建我的GitHub博客过程中，首先要感谢<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰的网络日志</a>，是在他的日志指导下我才能顺利掌握一些基本搭建技巧，包括很多Git命令。其次要感谢的是模板提供者<a href="https://github.com/mojombo/" target="_blank" rel="external">Tom Preston-Werner</a>，没有他的经验我不可能能够拥有这么简洁，完整，令人舒服的博客页面。当然我们都不能忘记模板先驱，博客之友，静态网页生成器<a href="http://jekyll.bootcss.com/" target="_blank" rel="external">Jekyll</a>，一定要记住他的<a href="https://github.com/jekyll/jekyll/" target="_blank" rel="external">GitHub</a>。</p>
+<p>Git是一个版本控制工具，诞生于2005年。<a href="https://github.com/" target="_blank" rel="external">GitHub</a>，Build software better, together，诞生于2008年，是一个用git做版本控制的项目托管平台，这几年尤其火热。作为程序员欢乐的世界大舞台，在程序员心中她具有无可比拟的坚实地位。有经验、有技术、有想法和爱好分享的人早已在GitHub上玩了很多年，不仅向大牛们学习，也记录自己的成长历史，分享自己的代码库。在我看来，这些是一件多么有意义的事情。我作为一个OUTMAN，多年迷失自我，终于在今天开启我的GitHub之旅，也许晚，但是既然已经开始做了，就不晚。</p>
+<p>但是要想真正把GitHub玩好，真是一件不容易的事情。尤其是管理一个博客，不仅要学会前端设计，还需要掌握jekyll的知识，标记语言<a href="http://baike.baidu.com/link?url=LBEhOTuIP0Fxz4iGR6A7kM9gup4UFIZimszqf-0jUkdyrIrMhQWXF5sZL0ScmqvmEADN8DuLVLWnY3QeU6fSYa" target="_blank" rel="external">Markdown</a>，以及他的文档编辑器<a href="http://markdownpad.com/" target="_blank" rel="external">MarkdownPad</a>，为了让读者能够评论和留言，还外挂了评论系统<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>。总之，学习是件快乐的事情，越难越要敢于挑战，不要忘记努力就一定会成功。</p>
+<p>Write the Code,Change the world.追求卓越，成功就会在不经意之间追上你。我喜欢安静的在电脑前码代码，让自己的代码越来越可爱，越来越丰富，越来越富有生气，是一件多么美妙的事情。永远不要在意自己是否多么弱小，只应该不断的督促自己每一天都要Stay Hungry, Stay Foolish.</p>
+<p>程序员是不是Nerd无所谓，太在意别人的评论只会迷失自己。抓住自己想要的生活，抓住快乐的尾巴，我们不仅要写得一手好代码，还要用文字记录成长的历程，或是一个技术分享，或者一次心情交流，或是一个对世界的一点点认识，总之，文字可以代表我们的历程，多年以后，老而不孤独，碎片式的回忆录会是我们一生的心灵伴侣。</p>
+<p>最近特别喜欢一句话：A little learning is a dangerous thing.[浅学薄识是一件危险的事情]。拿出来与君共勉。今天的随想就写到了这里，愿我在GitHub上玩得愉快。</p>
+
+          
         
       
     </div>
@@ -296,21 +349,25 @@
 
 
     
+
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
- </div>
 
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-
-        
-      </div>
-
-      
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -325,12 +382,16 @@
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/person.jpg" alt="敲代码的小東洋" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/person.jpg"
+               alt="敲代码的小東洋" />
           <p class="site-author-name" itemprop="name">敲代码的小東洋</p>
+          <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -340,10 +401,10 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -361,11 +422,19 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Seine1923" target="_blank">github</a>
+                <a href="https://github.com/Seine1923" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/yxd1013" target="_blank">weibo</a>
+                <a href="http://weibo.com/yxd1013" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
               </span>
             
           
@@ -379,7 +448,7 @@
             <p class="site-author-name">Links</p>
             
               <span class="links-of-author-item">
-              <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
               </span>
             
           
@@ -393,15 +462,18 @@
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp; 
+  &copy; 
   <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="icon-next-heart fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">敲代码的小東洋</span>
 </div>
@@ -413,23 +485,60 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
     <div class="back-to-top"></div>
   </div>
 
+  
+
+
+  
+
+
+
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
+
+
 
   
   
+
   
-    
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+
+
+
+  
 
   
     
@@ -440,63 +549,28 @@
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
 
 
 
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
-
-  
 
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+  
+
+
 </body>
 </html>

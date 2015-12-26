@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,25 +23,38 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
-
-
-    <meta name="description" content="Stay Hungry, Stay Foolish." />
-
-
-
-  <meta name="keywords" content="Hexo,next" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+
+
+
+
 
 
 <meta name="description" content="Stay Hungry, Stay Foolish.">
@@ -50,10 +68,18 @@
 <meta name="twitter:description" content="Stay Hungry, Stay Foolish.">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Muse',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -62,16 +88,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -85,22 +104,30 @@
 
 
 
-  <div class="container one-column 
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">Seine1923</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -119,31 +146,19 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -151,21 +166,25 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon icon-next-commonweal"></i> <br />
-            公益404
           </a>
         </li>
       
 
       
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -173,11 +192,9 @@
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -199,83 +216,155 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
+
+    
+
+    
+    
+
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/26/2015-12-26-Mathematica/" itemprop="url">
-                Mathematic
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-26T00:00:00+08:00" content="2015-12-26">
-            2015-12-26
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/tool/" itemprop="url" rel="index">
-                  <span itemprop="name">tool</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/26/2015-12-26-Mathematica/" itemprop="url">
+                  Mathematic
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-26T00:00:00+08:00" content="2015-12-26">
+              2015-12-26
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/12/26/2015-12-26-Mathematica/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/2015-12-26-Mathematica/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">tool</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            Mathematica是世界上最强大的通用计算系统。自1988首次发布以来，它对如何在科技和其它领运用计算机产生了深刻的影响。基于20年世界级运算法则和软件的开发，Mathematica在扩展涉及领域和适用性上做出了重大突破并重新定义了我们对计算方法的理解。Mathematica独特的符号结构使Mathematica可以给我们带来一个全新的语言与界面的统一。这种概念可以使运算法则的自动计算、人机对
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/26/2015-12-26-Mathematica/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/26/2015-12-26-Mathematica/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/2015-12-26-Mathematica/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Mathematica是世界上最强大的通用计算系统。自1988首次发布以来，它对如何在科技和其它领运用计算机产生了深刻的影响。基于20年世界级运算法则和软件的开发，Mathematica在扩展涉及领域和适用性上做出了重大突破并重新定义了我们对计算方法的理解。Mathematica独特的符号结构使Mathematica可以给我们带来一个全新的语言与界面的统一。这种概念可以使运算法则的自动计算、人机对话的操作以及动态表示都到达一个新的水平，同时可创造一个与数据世界相连接的新方式。</p>
+<p>自Mathematica首次发布以来，它的用户群一直在稳步的增长，目前用户总数以百万计。Mathematica已成为许多机构的标准工具使用范围包括财富50强的所有公司，美国政府15个主要机构，和全球最大的50所大学。</p>
+<p>主要功能特性</p>
+<ol>
+<li>动态交互性</li>
+<li>引入全新的即时界面，Mathematica实现了一个前所未有的交互计算方式</li>
+<li>高效果自适应可视化</li>
+<li>自动创建高保真度的函数和数据图形</li>
+<li>数据集成语言</li>
+<li>包括数百种标准数据格式的自动集成</li>
+<li>可供随时使用的已归类数据</li>
+<li>数学、物理学、化学、金融学、地理学、语言学…</li>
+<li>符号界面结构</li>
+<li>从简易程序中即时创建任意界面</li>
+<li>自动化计算美学</li>
+<li>全新算法优化的视觉展示</li>
+<li>图形、文本和控制的统一性</li>
+<li>让动态图形和控制结构完美融入文字编辑和其它输入</li>
+<li>集成几何计算</li>
+<li>全自动图形显示</li>
+<li>组合优化</li>
+<li>约束非线性优化</li>
+<li>新一代数值积分</li>
+<li>新类特殊函数</li>
+<li>数字理论辅助的扩展</li>
+<li>公式理论的证明</li>
+<li>探索性数据分析</li>
+<li>符号统计计算</li>
+<li>高阶字符串计算</li>
+<li>排列计算的扩展</li>
+<li>符号性声音辅助</li>
+<li>动态图形输入</li>
+<li>集成图形编辑和绘制</li>
+<li>扩展图形语言</li>
+<li>即时三维图形</li>
+<li>内建游戏手柄及HID辅助</li>
+<li>三维打印及扫描辅助</li>
+<li>瞬时多媒体编程</li>
+<li>讲演创建结构的流水线过程</li>
+<li>自动报表显示</li>
+<li>符号报告的生成</li>
+<li>即时编码注释</li>
+<li>瞬时高阶调试</li>
+<li>全新参考结构</li>
+</ol>
+<p><img src="/images/tools/Mathematica.png" alt=""><br><img src="/images/tools/mathematics10_3.png" alt=""></p>
+<p>=============================<br><a href="http://www.madio.net/thread-254601-1-1.html" title="下载地址" target="_blank" rel="external">http://www.madio.net/thread-254601-1-1.html</a><br><a href="http://v.youku.com/v_show/id_XMTM2NDQxMDQwNA==.html" title="激活方法" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTM2NDQxMDQwNA==.html</a></p>
+
+          
         
       
     </div>
@@ -296,193 +385,230 @@
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/23/2015-10-23-JavaRandom/" itemprop="url">
-                Java随机数
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-23T00:00:00+08:00" content="2015-10-23">
-            2015-10-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Java/" itemprop="url" rel="index">
-                  <span itemprop="name">Java</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/10/23/2015-10-23-JavaRandom/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/23/2015-10-23-JavaRandom/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-            
-java.lang.Math.Random
-基础 调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是[0.0,1.0)的左闭右开区间，返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。
- 实验代码：
-for(int i = 0; i &lt; 10; ++i){
-    System.out.println(Math.rand
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/23/2015-10-23-JavaRandom/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/10/10/2015-10-10-Web5/" itemprop="url">
-                Web技术开发(五)-设计并实现一个下拉菜单条
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-10-10T00:00:00+08:00" content="2015-10-10">
-            2015-10-10
-          </time>
-        </span>
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                  <span itemprop="name">Web技术开发</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/23/2015-10-23-JavaRandom/" itemprop="url">
+                  Java随机数
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-23T00:00:00+08:00" content="2015-10-23">
+              2015-10-23
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/10/10/2015-10-10-Web5/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/2015-10-10-Web5/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/23/2015-10-23-JavaRandom/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/23/2015-10-23-JavaRandom/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
-初始状态 
+          
 
-更改ul样式 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。
-ul{
-    list-style-type: none;
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><h2 id="java-lang-Math-Random">java.lang.Math.Random</h2><ol>
+<li><h3 id="基础">基础</h3><p> 调用这个Math.Random()函数能够返回带正号的double值，该值大于等于0.0且小于1.0，即取值范围是[0.0,1.0)的左闭右开区间，返回值是一个伪随机选择的数，在该范围内（近似）均匀分布。</p>
+<p> 实验代码：</p>
+<pre><code><span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span><span class="comment">; i &lt; 10; ++i){</span>
+    System.out.println(Math.<span class="built_in">random</span>())<span class="comment">;</span>
 }
-li{
-    float: left;
+</code></pre><p> 实验结果：</p>
+<pre><code><span class="number">0.667240435</span><span class="number">1456087</span>
+<span class="number">0.00342142</span><span class="number">6855892973</span>
+<span class="number">0.244437944</span><span class="number">43889943</span>
+<span class="number">0.49547249</span><span class="number">792952275</span>
+<span class="number">0.926216745</span><span class="number">6092021</span>
+<span class="number">0.06891844</span><span class="number">395293878</span>
+<span class="number">0.46254877</span><span class="number">56961171</span>
+<span class="number">0.603853195</span><span class="number">7482409</span>
+<span class="number">0.57255744</span><span class="number">75956846</span>
+<span class="number">0.136797700</span><span class="number">63093388</span>
+</code></pre></li>
+<li><h3 id="扩展">扩展</h3><p> 从0－6中生成6个不重复的随机数</p>
+<p> 实验代码：</p>
+<pre><code>ArrayList&lt;Integer&gt; randNum = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+<span class="keyword">while</span>(randNum.<span class="built_in">size</span>() &lt; <span class="number">6</span>){
+    <span class="built_in">int</span> num = (<span class="built_in">int</span>)(Math.<span class="built_in">random</span>() * <span class="number">6</span>);
+    <span class="keyword">if</span>(!randNum.contains(num))
+        randNum.<span class="built_in">add</span>(num);
 }
- 
-
-隐藏二级菜单ul ul{
-    display: none; &lt;!--表示被另一个ul包含的ul--&gt;
+System.out.<span class="built_in">println</span>(<span class="string">"RandomNum:"</span>);
+<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; ++i){
+    System.out.<span class="built_in">print</span>(randNum.<span class="built_in">get</span>(i) + <span class="string">"\t"</span>);
 }
- 
+</code></pre><p> 实验结果：</p>
+<pre><code>RandomNum:
+<span class="number">4</span>    <span class="number">0</span>    <span class="number">1</span>    <span class="number">5</span>    <span class="number">3</span>    <span class="number">2</span>
+</code></pre></li>
+</ol>
+</li>
+<li><h2 id="java-util-Random">java.util.Random</h2><ol>
+<li><h3 id="基础-1">基础</h3><ol>
+<li>java.util.Random类中实现的随机算法是伪随机，也就是有规则的随机，所谓有规则的就是在给定种(seed)的区间内随机生成数字；</li>
+<li>相同种子数的Random对象，相同次数生成的随机数字是完全相同的；</li>
+<li><p>Random类中各方法生成的随机数字都是均匀分布的，也就是说区间内部的数字生成的几率均等；</p>
+<p> 实验代码：</p>
+<pre><code>System.out.println(<span class="string">"r1:"</span>);
+Random r1 = <span class="keyword">new</span> Random(<span class="number">1</span>);
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r1.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+System.out.println(<span class="string">"\nr2:"</span>);
+Random r2 = <span class="keyword">new</span> Random();
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r2.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+System.out.println(<span class="string">"\nr3:"</span>);
+Random r3 = <span class="keyword">new</span> Random(<span class="number">1</span>);
+<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i){
+    System.out.print(r3.nextInt(<span class="number">5</span>) + <span class="string">"\t"</span>);
+}
+</code></pre><p> 实验结果，第一次运行：</p>
+<pre><code>r1:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    
+r2:
+<span class="number">1</span>    <span class="number">0</span>    <span class="number">1</span>    <span class="number">0</span>    <span class="number">3</span>    
+r3:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>
+</code></pre><p> 实验结果，第二次运行：</p>
+<pre><code>r1:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    
+r2:
+<span class="number">1</span>    <span class="number">4</span>    <span class="number">3</span>    <span class="number">1</span>    <span class="number">4</span>    
+r3:
+<span class="number">0</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>
+</code></pre></li>
+</ol>
+</li>
+<li><h3 id="扩展-1">扩展</h3><p> 从0－6中生成6个不重复的随机数</p>
+<p> 实验代码：</p>
+<pre><code>ArrayList&lt;Integer&gt; randNumR1 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+Random r1 = <span class="keyword">new</span> Random(<span class="number">1</span>);
+<span class="keyword">while</span>(randNumR1.size() &lt; <span class="number">6</span>){
+    <span class="built_in">int</span> <span class="built_in">num</span> = r1.nextInt(<span class="number">6</span>);
+    <span class="keyword">if</span>(!randNumR1.contains(<span class="built_in">num</span>))
+        randNumR1.add(<span class="built_in">num</span>);
+}
+System.out.println(<span class="string">"RandomNum R1:"</span>);
+<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; ++i){
+    System.out.<span class="built_in">print</span>(randNumR1.<span class="literal">get</span>(i) + <span class="string">"\t"</span>);
+}
 
-鼠标移动显示ul&gt;li:hover ul{
-    displ
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/10/2015-10-10-Web5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+ArrayList&lt;Integer&gt; randNumR2 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+Random r2 = <span class="keyword">new</span> Random();
+<span class="keyword">while</span>(randNumR2.size() &lt; <span class="number">6</span>){
+    <span class="built_in">int</span> <span class="built_in">num</span> = r2.nextInt(<span class="number">6</span>);
+    <span class="keyword">if</span>(!randNumR2.contains(<span class="built_in">num</span>))
+        randNumR2.add(<span class="built_in">num</span>);
+}
+System.out.println(<span class="string">"\nRandomNum R2:"</span>);
+<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; ++i){
+    System.out.<span class="built_in">print</span>(randNumR2.<span class="literal">get</span>(i) + <span class="string">"\t"</span>);
+}
+
+ArrayList&lt;Integer&gt; randNumR3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();
+Random r3 = <span class="keyword">new</span> Random();
+<span class="keyword">while</span>(randNumR3.size() &lt; <span class="number">6</span>){
+    <span class="built_in">int</span> <span class="built_in">num</span> = r3.nextInt(<span class="number">6</span>);
+    <span class="keyword">if</span>(!randNumR3.contains(<span class="built_in">num</span>))
+        randNumR3.add(<span class="built_in">num</span>);
+}
+System.out.println(<span class="string">"\nRandomNum R3:"</span>);
+<span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; ++i){
+    System.out.<span class="built_in">print</span>(randNumR3.<span class="literal">get</span>(i) + <span class="string">"\t"</span>);
+}
+</code></pre><p> 实验结果，第一次运行：</p>
+<pre><code>RandomNum R1:
+<span class="number">3</span>    <span class="number">4</span>    <span class="number">1</span>    <span class="number">2</span>    <span class="number">0</span>    <span class="number">5</span>    
+RandomNum R2:
+<span class="number">1</span>    <span class="number">2</span>    <span class="number">4</span>    <span class="number">3</span>    <span class="number">0</span>    <span class="number">5</span>    
+RandomNum R3:
+<span class="number">3</span>    <span class="number">4</span>    <span class="number">1</span>    <span class="number">0</span>    <span class="number">5</span>    <span class="number">2</span>
+</code></pre><p> 实验结果，第二次运行：</p>
+<pre><code>RandomNum R1:
+<span class="number">3</span>    <span class="number">4</span>    <span class="number">1</span>    <span class="number">2</span>    <span class="number">0</span>    <span class="number">5</span>    
+RandomNum R2:
+<span class="number">1</span>    <span class="number">5</span>    <span class="number">3</span>    <span class="number">0</span>    <span class="number">4</span>    <span class="number">2</span>    
+RandomNum R3:
+<span class="number">4</span>    <span class="number">1</span>    <span class="number">5</span>    <span class="number">3</span>    <span class="number">2</span>    <span class="number">0</span>
+</code></pre></li>
+</ol>
+</li>
+<li><h2 id="总结">总结</h2><ol>
+<li>两者都可以生成指定范围的不重复随机数，但从效率来讲，由于java.lang.Math.Random还需要浮点数乘法，以及强制类型转换，因此，显然java.util.Random效率更高。</li>
+<li>在java.util.Random中，一旦指定了同样的种子，那么无论什么时候运行，无论生成多长的随机数，都完全一致。通常按照默认指定种子为当前时间可避免这个问题，但是两个生成器之间尽量要有一定时间间隔，否则两者时间会一致，导致依然一样。</li>
+</ol>
+</li>
+</ol>
+
+          
         
       
     </div>
@@ -502,90 +628,218 @@ li{
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/29/2015-09-29-Web4/" itemprop="url">
-                Web技术开发(四)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-29T00:00:00+08:00" content="2015-09-29">
-            2015-09-29
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                  <span itemprop="name">Web技术开发</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/10/10/2015-10-10-Web5/" itemprop="url">
+                  Web技术开发(五)-设计并实现一个下拉菜单条
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-10T00:00:00+08:00" content="2015-10-10">
+              2015-10-10
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/09/29/2015-09-29-Web4/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/29/2015-09-29-Web4/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web技术开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            29 Sep 2015 - Kumming
-容器
-Div 分隔区域，块容器
-SPAN 行内容器
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/10/2015-10-10-Web5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/2015-10-10-Web5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-Editplus随机生成一段单词
-lorem + tab
-lorem50 + tab
+          
 
-叠加样式&lt;div class="class1 class2 class3"&gt;content&lt;/div&gt;
-因此网络中有定义好一些基本样式供开发者直接使用，如著名的BootStrap
-位置描述不
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/29/2015-09-29-Web4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><h2 id="初始状态">初始状态</h2><p> <img src="/images/web5/1.png" alt=""></p>
+</li>
+<li><h2 id="更改ul样式">更改ul样式</h2><p> 去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
+<pre><code><span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+}</span>
+<span class="tag">li</span><span class="rules">{
+    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/2.png" alt=""></p>
+</li>
+<li><h2 id="隐藏二级菜单">隐藏二级菜单</h2><pre><code>ul ul{
+    display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
+}
+</code></pre><p> <img src="/images/web5/3.png" alt=""></p>
+</li>
+<li><h2 id="鼠标移动显示">鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
+    <span class="attribute">display</span>: block;
+}
+</code></pre><p> <img src="/images/web5/1.gif" alt=""></p>
+</li>
+<li><h2 id="调整二级菜单为竖排">调整二级菜单为竖排</h2><p> 给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
+<pre><code>.menu &gt; li {
+    <span class="keyword">float</span>: left;
+}
+&lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
+</code></pre><p> <img src="/images/web5/2.gif" alt=""></p>
+</li>
+<li><h2 id="添加背景颜色">添加背景颜色</h2><p> 当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素<br> p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
+<ol>
+<li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
+<li><p>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</p>
+<p> clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
+<pre><code>.menu {
+    background-color: gray;
+}
+.clearfix {
+    clear: both;
+}
+&lt;<span class="keyword">div</span> <span class="type">class</span> = <span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p> <img src="/images/web5/3.gif" alt=""></p>
+</li>
+</ol>
+</li>
+<li><h2 id="使用after添加内容">使用after添加内容</h2><p> 通常不要添加没有意义的语句放在ul内容中，因此我们定义一个伪类，达到同样的效果。</p>
+<pre><code><span class="rule"><span class="attribute">.menu</span>:<span class="value"> after{content: <span class="string">"after content"</span>}
+.menu: before{content: <span class="string">"before content"</span>}
+.menu: after{
+    content: <span class="string">""</span></span></span>;
+    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
+}
+</code></pre><p> 代码的含义就是在使用类选择符menu的元素后添加新的空内容。</p>
+</li>
+<li><h2 id="修正二级菜单位置">修正二级菜单位置</h2><p> 现在的子菜单显示的时候会改变一级菜单的位置，因此要将二级菜单从正常流中取走。    </p>
+<pre><code><span class="tag">ul</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> 或</p>
+<pre><code><span class="class">.menu</span> <span class="tag">ul</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/4.gif" alt=""></p>
+</li>
+<li><h2 id="进一步装饰">进一步装饰</h2><ol>
+<li><h3 id="改变字体颜色及去除字体下划线">改变字体颜色及去除字体下划线</h3><pre><code><span class="class">.menu</span> <span class="tag">a</span><span class="rules">{
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
+    <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.png" alt=""></p>
+</li>
+<li><h3 id="加大字体边框">加大字体边框</h3><pre><code><span class="class">.menu</span> <span class="tag">li</span><span class="rules">{                
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="定义所有ul的样式">定义所有ul的样式</h3><p> 包括改变ul的背景颜色，box-shadow是给元素块添加周边阴影效果。<br> 对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</p>
+<pre><code><span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#111</span></span></span>; 
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> hoff voff radius color</span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/5.gif" alt="">        </p>
+</li>
+<li><h3 id="给菜单添加圆角、渐变及阴影效果">给菜单添加圆角、渐变及阴影效果</h3><pre><code><span class="class">.menu</span><span class="rules">{
+    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">100px</span></span></span>;
+    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(<span class="hexcolor">#444</span>,<span class="hexcolor">#111</span>)</span></span>;    
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">30px</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span></span></span>;
+}</span>
+</code></pre><p> <img src="/images/web5/6.gif" alt="">        </p>
+</li>
+<li><h3 id="设置鼠标移动时项目有阴影及渐变效果">设置鼠标移动时项目有阴影及渐变效果</h3><pre><code>.menu li:hover{
+    background: linear-gradient(hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">40</span>%),hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">20</span>%));
+    box-shadow: <span class="number">4</span>px <span class="number">4</span>px <span class="number">8</span>px <span class="number">4</span>px gray;
+}
+</code></pre><p> <img src="/images/web5/7.gif" alt="">    </p>
+</li>
+<li><h3 id="调整二级菜单的位置为绝对位置">调整二级菜单的位置为绝对位置</h3><pre><code><span class="class">.menu</span> <span class="tag">ul</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">2.3em</span></span></span>;
+}</span>
+</code></pre></li>
+<li><h3 id="去除二级菜单名字前空格">去除二级菜单名字前空格</h3><pre><code>*<span class="rules">{  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+ }</span>
+</code></pre><p> 以及设置二级菜单的移动效果</p>
+<pre><code><span class="class">.menu</span>&gt;<span class="rule"><span class="attribute">li</span>:<span class="value">hover ul{
+    display:block</span></span>;    
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
+    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
+}
+</code></pre></li>
+</ol>
+</li>
+<li><h2 id="最终效果">最终效果</h2><p><img src="/images/web5/8.gif" alt="">        </p>
+</li>
+</ol>
+
+          
         
       
     </div>
@@ -605,85 +859,125 @@ lorem50 + tab
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/22/2015-09-22-Web3/" itemprop="url">
-                Web技术开发(三)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-22T00:00:00+08:00" content="2015-09-22">
-            2015-09-22
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                  <span itemprop="name">Web技术开发</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/29/2015-09-29-Web4/" itemprop="url">
+                  Web技术开发(四)
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-29T00:00:00+08:00" content="2015-09-29">
+              2015-09-29
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/09/22/2015-09-22-Web3/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/22/2015-09-22-Web3/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web技术开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            22 Sep 2015 - Kumming
-html中使用样式表的三种方式
-style 适用于当前网页，页内定义.
-.css 共享所有风格，link通常放在head内.link rel=&quot;stylesheet&quot; href=&quot;style.css最常用.
-直接定义标签上，内联/行内标记’ul style=” “‘
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/29/2015-09-29-Web4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/29/2015-09-29-Web4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-优先级3&gt;1&gt;2,即越靠近越优先样式规则选择
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/22/2015-09-22-Web3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>29 Sep 2015 - Kumming</p>
+<h2 id="容器">容器</h2><ol>
+<li>Div 分隔区域，块容器</li>
+<li>SPAN 行内容器</li>
+</ol>
+<h2 id="Editplus">Editplus</h2><h3 id="随机生成一段单词">随机生成一段单词</h3><ol>
+<li>lorem + tab</li>
+<li>lorem50 + tab</li>
+</ol>
+<h2 id="叠加样式">叠加样式</h2><pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"class1 class2 class3"</span>&gt;content&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>因此网络中有定义好一些基本样式供开发者直接使用，如著名的BootStrap</p>
+<h2 id="位置描述">位置描述</h2><h3 id="不叠加">不叠加</h3><p>浮动float, left or right</p>
+<h3 id="可叠加">可叠加</h3><p>定位某一元素position:</p>
+<ol>
+<li>auto</li>
+<li>绝对定位 <code>img {position:absolute;}</code></li>
+<li>相对定位</li>
+</ol>
+<h4 id="绝对定位">绝对定位</h4><pre><code><span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">right</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">bottom</span>:<span class="value"><span class="number">100px</span>}</span></span></span>
+</code></pre><h3 id="案例1">案例1</h3><pre><code><span class="class">.class1</span> <span class="rules">{<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对应该在的位置
+.class2 {position:absolute</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对屏幕边框</span></span></span>
+</code></pre><p>不管是绝对定位或者相对定位都不在正常流里</p>
+<h3 id="案例2">案例2</h3><pre><code>.<span class="keyword">class</span><span class="number">1</span> {}
+.<span class="keyword">class</span><span class="number">2</span> {}
+.<span class="keyword">class</span><span class="number">1</span>.<span class="keyword">class</span><span class="number">2</span>{}
+&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;content&lt;/p&gt;<span class="comment">//三者叠加</span>
+若.<span class="keyword">class</span> .<span class="keyword">class</span>{} 则是包含关系
+&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;
+    &lt;p <span class="keyword">class</span>=<span class="string">"class2&gt;满足条件</span>
+</code></pre>
+          
         
       
     </div>
@@ -702,21 +996,168 @@ style 适用于当前网页，页内定义.
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/22/2015-09-22-Web3/" itemprop="url">
+                  Web技术开发(三)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-22T00:00:00+08:00" content="2015-09-22">
+              2015-09-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web技术开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/22/2015-09-22-Web3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/22/2015-09-22-Web3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>22 Sep 2015 - Kumming</p>
+<h2 id="html中使用样式表的三种方式">html中使用样式表的三种方式</h2><ol>
+<li>style 适用于当前网页，页内定义.</li>
+<li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用.</li>
+<li>直接定义标签上，内联/行内标记’ul style=” “‘</li>
+</ol>
+<h3 id="优先级3&gt;1&gt;2,即越靠近越优先">优先级3&gt;1&gt;2,即越靠近越优先</h3><h2 id="样式规则">样式规则</h2><h3 id="选择符_{样式属性：样式值;}">选择符 {样式属性：样式值;}</h3><h4 id="数值">数值</h4><ul>
+<li>长度</li>
+<li>大小</li>
+<li>百分比：通常为100%</li>
+<li>颜色：以#开始</li>
+<li>函数：rgb(),rgba(),url(),hsl()</li>
+</ul>
+<h4 id="调试">调试</h4><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p>
+<h4 id="选择符">选择符</h4><ol>
+<li>标记选择符</li>
+<li>ID选择符</li>
+<li>类选择符</li>
+<li>包含关系/上下文选择符</li>
+<li>并列关系</li>
+<li>属性选择符</li>
+</ol>
+<h4 id="1-标记选择符">1.标记选择符</h4><pre><code><span class="tag">a</span> {<span class="attribute">color</span>:white}
+</code></pre><h4 id="2-ID选择符">2.ID选择符</h4><pre><code><span class="id">#menu</span> 
+&lt;<span class="tag">ul</span> id=<span class="string">"menu"</span> style=<span class="string">""</span>&gt;
+</code></pre><h4 id="3-类选择符">3.类选择符</h4><pre><code>.menuItem {<span class="keyword">float</span>:left... 
+li <span class="keyword">class</span>=<span class="string">"menuItem"</span>
+</code></pre><h4 id="4-包含关系/上下文选择符">4.包含关系/上下文选择符</h4><pre><code><span class="keyword">menu</span> li {<span class="keyword">float</span>... 
+须是li,其次要在id为<span class="keyword">menu</span>下的包含
+</code></pre><h4 id="5-并列关系">5.并列关系</h4><pre><code>选择符<span class="number">1</span>，选择符<span class="number">2.</span>...  共用，多个重叠
+</code></pre><h4 id="6-属性选择符">6.属性选择符</h4><pre><code>p[<span class="type">text</span>]{}
+p <span class="type">text</span>=<span class="string">"忽略值"</span> &lt;br/&gt;
+p[<span class="type">text</span>=<span class="string">"abc"</span>]{} &lt;br/&gt;
+p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
+</code></pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
- </div>
 
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-
-        
-      </div>
-
-      
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -731,12 +1172,16 @@ style 适用于当前网页，页内定义.
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/person.jpg" alt="敲代码的小東洋" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/person.jpg"
+               alt="敲代码的小東洋" />
           <p class="site-author-name" itemprop="name">敲代码的小東洋</p>
+          <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -746,10 +1191,10 @@ style 适用于当前网页，页内定义.
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -767,11 +1212,19 @@ style 适用于当前网页，页内定义.
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Seine1923" target="_blank">github</a>
+                <a href="https://github.com/Seine1923" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/yxd1013" target="_blank">weibo</a>
+                <a href="http://weibo.com/yxd1013" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
               </span>
             
           
@@ -785,7 +1238,7 @@ style 适用于当前网页，页内定义.
             <p class="site-author-name">Links</p>
             
               <span class="links-of-author-item">
-              <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
               </span>
             
           
@@ -799,15 +1252,18 @@ style 适用于当前网页，页内定义.
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp; 
+  &copy; 
   <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="icon-next-heart fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">敲代码的小東洋</span>
 </div>
@@ -819,23 +1275,60 @@ style 适用于当前网页，页内定义.
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
     <div class="back-to-top"></div>
   </div>
 
+  
+
+
+  
+
+
+
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
+
+
 
   
   
+
   
-    
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+
+
+
+  
 
   
     
@@ -846,63 +1339,28 @@ style 适用于当前网页，页内定义.
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
 
 
 
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
-
-  
 
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+  
+
+
 </body>
 </html>

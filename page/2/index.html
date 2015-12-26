@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,25 +23,38 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
-
-
-    <meta name="description" content="Stay Hungry, Stay Foolish." />
-
-
-
-  <meta name="keywords" content="Hexo,next" />
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
 
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.jpg?v=0.4.5.1" />
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+
+
+
+
 
 
 <meta name="description" content="Stay Hungry, Stay Foolish.">
@@ -50,10 +68,18 @@
 <meta name="twitter:description" content="Stay Hungry, Stay Foolish.">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Muse',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -62,16 +88,9 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -85,22 +104,30 @@
 
 
 
-  <div class="container one-column 
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">Seine1923</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -119,31 +146,19 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br />
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            <i class="menu-item-icon icon-next-categories"></i> <br />
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            <i class="menu-item-icon icon-next-about"></i> <br />
-            关于
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br />
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             归档
           </a>
         </li>
@@ -151,21 +166,25 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br />
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon icon-next-commonweal"></i> <br />
-            公益404
           </a>
         </li>
       
 
       
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -173,11 +192,9 @@
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -199,90 +216,148 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
+
+    
+
+    
+    
+
     
       
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/15/2015-09-15-Web2/" itemprop="url">
-                Web技术开发(二)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-15T00:00:00+08:00" content="2015-09-15">
-            2015-09-15
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                  <span itemprop="name">Web技术开发</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/15/2015-09-15-Web2/" itemprop="url">
+                  Web技术开发(二)
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-15T00:00:00+08:00" content="2015-09-15">
+              2015-09-15
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/09/15/2015-09-15-Web2/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/15/2015-09-15-Web2/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web技术开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            15 Sep 2015 - Kumming
-基本样式&lt;a href="Web技术开发二.html"&gt;YNU&lt;/a&gt;
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/15/2015-09-15-Web2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/15/2015-09-15-Web2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>15 Sep 2015 - Kumming</p>
+<h3 id="基本样式">基本样式</h3><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"Web技术开发二.html"</span>&gt;</span>YNU<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
 link:让浏览器解析加载，典型如样式表文件CSS，统一风格
-&lt;style&gt;
-     &lt;!--声明一个样式表--&gt;
-     ul {list-style-type:none;}
-     li {float:left}
-&lt;/s
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/15/2015-09-15-Web2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+     &lt;!<span class="tag">--</span>声明一个样式表<span class="tag">--</span>&gt;
+     <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
+     <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left}
+</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><p>block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a</p>
+<h3 id="盒子">盒子</h3><p>大小、位置－&gt;盒子模型，任何一个标记为盒子<br>盒子＝内容+边框(border)+padding(内边际)<br>元素 高:height，宽:width<br>盒子与盒子之间：margin</p>
+<h3 id="长度单位：">长度单位：</h3><p>px 像素，相对量，如1080p，指水平方向可显示1080像素<br>em 定义字体多大，1em=16px<br>pt 类如word磅，绝对大小，根据dpi指定，dot per inch<br>公式：px = pt * dpi / 72</p>
+<pre><code>&lt;<span class="attribute">padding</span>&gt;
+     <span class="attribute">left</span>
+     <span class="attribute">right</span>
+     <span class="attribute">top</span> 
+    <span class="attribute">bottom</span>
+</code></pre><table><br>    <tr><br>        <td></td><td>top</td><td>right</td><td>bottom</td><td>left</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>2opx</td><td>30px</td><td>40px(带单位)</td><br>    </tr><br>    <tr><br>        <td></td><td>上下</td><td>左右</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>20px</td><br>    </tr><br>    <tr><br>        <td></td><td>全部</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><br>    </tr><br></table>
+
+<p><strong> 行内标记只有左右边际 </strong></p>
+<h3 id="浏览器渲染模式：">浏览器渲染模式：</h3><ol>
+<li>正常流</li>
+<li>浮动流float(相对位置，绝对位置)</li>
+</ol>
+<h3 id="颜色表示：">颜色表示：</h3><ol>
+<li>li {float:left; background-color:#fff;} 颜色RGB，自发光；CMYK,反光，用于印刷<br>表示颜色以#号开始，#<em>**；一个</em>的表示0-FF,两个一样简写为一个；</li>
+<li>可用一些单词，如red,yellow…</li>
+<li>函数rgb(十进制，十进制，十进制）</li>
+</ol>
+<h3 id="透明度：">透明度：</h3><pre><code>opacity:<span class="number">0</span>-<span class="number">1</span> 
+</code></pre><h3 id="前景色：">前景色：</h3><pre><code><span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;}</span>去掉下划线
+</code></pre><h3 id="状态定义：">状态定义：</h3><p>是伪类，优先正常定义<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:hover &#123;background-color:...&#125; 鼠标悬停</span><br><span class="line">li:first-child &#123;border-radius:<span class="number">8</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">8</span>px&#125; 圆角</span><br><span class="line">   last-child</span><br><span class="line">border即边框，默认为零</span><br></pre></td></tr></table></figure></p>
+<h3 id="案例：">案例：</h3><pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
+    <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>; <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#699</span></span></span>; <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">10px</span> <span class="number">20px</span></span></span>;}</span>
+    <span class="rule"><span class="attribute">li</span>:<span class="value">hover {background-color: <span class="hexcolor">#569</span></span></span>;}
+    <span class="rule"><span class="attribute">li</span>:<span class="value">first-child {border-radius:<span class="number">8px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span>}
+    li:last-child {border-radius:<span class="number">0</span> <span class="number">8px</span> <span class="number">8px</span> <span class="number">0</span>}
+    a {color:white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre><h3 id="效果展示：">效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
+
+          
         
       
     </div>
@@ -302,86 +377,137 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/08/2015-09-08-Web1/" itemprop="url">
-                Web技术开发(一)
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-08T00:00:00+08:00" content="2015-09-08">
-            2015-09-08
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                  <span itemprop="name">Web技术开发</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/09/08/2015-09-08-Web1/" itemprop="url">
+                  Web技术开发(一)
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-09-08T00:00:00+08:00" content="2015-09-08">
+              2015-09-08
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/09/08/2015-09-08-Web1/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/08/2015-09-08-Web1/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web技术开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            8 Sep 2015 - Kumming
-前端开发技术主要包括三个内容：
-Html
-CSS
-JavaScript
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/08/2015-09-08-Web1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/08/2015-09-08-Web1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js
-一些学习资料学习Web技术的一些资料，大家可以参考W3School，或者MDN。MDN
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/08/2015-09-08-Web1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>8 Sep 2015 - Kumming</p>
+<h2 id="前端开发技术主要包括三个内容：">前端开发技术主要包括三个内容：</h2><ol>
+<li>Html</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ol>
+<p>html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为。Html和CSS属于标记语言，后缀名为.htm或.html。JavaScript是编程语言，也叫做脚本，后缀名为.js</p>
+<h2 id="一些学习资料">一些学习资料</h2><p>学习Web技术的一些资料，大家可以参考<a href="http://www.w3school.com.cn/" target="_blank" rel="external">W3School</a>，或者<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">MDN</a>。MDN是Mozilla Developer Network，Mozilla开发者网络。类似于MSDN，MSDN的全称是Microsoft Developer Network，这是微软公司面向软件开发者的一种信息服务。</p>
+<h2 id="开发工具">开发工具</h2><p>开发Web前端只需要文本编辑器即可，如<a href="https://www.editplus.com/download.html" target="_blank" rel="external">Editplus</a>，<a href="http://www.sublimetext.com/" target="_blank" rel="external">Sublime</a>，…不推荐使用集成开发环境等采用拖拽方式程序设计的平台。</p>
+<h2 id="Html文档的基本结构">Html文档的基本结构</h2><p>打开Editplus,新建一个Html Page后，会显示html文件的一个基本结构，如下图所示：<br><img src="/images/Editplus.png" alt=""></p>
+<p>第一个结构是<code>&lt;!DOCTYPE&gt;</code>声明，它对大小写不敏感。<code>&lt;!doctype html&gt;</code>是告诉浏览器要使用的版本，指示web浏览器关于页面使用哪个HTML版本进行编写的指令，声明必须是HTML文档的第一行，位于<code>&lt;html&gt;</code>标签之前。声明没有结束标签。</p>
+<p>第二个结构是<code>&lt;html&gt;&lt;/html&gt;</code>里面包含了<code>&lt;head&gt;&lt;/head&gt;</code>,<code>&lt;body&gt;&lt;/body&gt;</code>两个子结构。</p>
+<p>子结构一<code>&lt;head&gt;&lt;/head&gt;</code>里面可以包含:</p>
+<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">title</span>&gt;</span>显示在浏览器上的文档名称<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+</code></pre><p>meta是元数据，描述数据的数据。<code>charset=&quot;UTF-8&quot;</code>表明本文档文件格式是UTF-8，最初的文档格式是ANSI，即一个字节表示一个字符，对于英文来说完全可以。但是对于中日韩来说，不能满足表示文字的需求，于是出现了CJK标准，Chinese,Japanese,Korean。后来中国出现了GB2312，采用两个字节的形式表示一个汉字。随后国际组织发行了Unicode，统一编码，用2~4个字节表示一个文字。Unicode包含了UTF-8和UTF-16。</p>
+<p>字符集的声明要与文件保存类型一致！否则网页会出现乱码！</p>
+<h2 id="Html排版">Html排版</h2><p>H1~H6代表各级标题，如<code>&lt;h1&gt;这是h1标题&lt;/h1&gt;</code></p>
+<p>p代表段落,如<code>&lt;p&gt;这是一个段落&lt;/p&gt;</code></p>
+<p>br是换行(break row)的意思，<code>&lt;br&gt;</code>是单标记，没有结束标签，但为了规范，可以写成<code>&lt;br/&gt;</code>，代表既是开始，又是结束。</p>
+<p>img图片，也是单标记，形式为<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code></p>
+<p>不同的标记带有不同的属性，常用的标记有二十几个，总共则有上百个。在html里，若出现多个空格，多个回车都自动压缩为一个空格。</p>
+<h2 id="URL介绍">URL介绍</h2><p>URL是Uniform Resource Locator的简称，统一资源定位器。</p>
+<p>以<code>http://www.ynu.edu.cn</code>为例，http是协议，其他协议还有ftp。://代表特殊分隔符。ynu.edu.cn为一个三级域名，即三级DNS。第一级为cn，第二级为edu，第三级为ynu。域名对应着一台主机，主机拥有一个固定IP地址。一个域名对应一台主机，一台主机可以对应多个域名。主机与普通PC的一个重要区别在于它拥有一个独立固定IP，而普通PC每次的IP地址由于是在局域网内可能不断变化。</p>
+<p>最主要的主页绑定IP地址后，其下可以有多个子系统。如<code>ynums.ynu.edu.cn</code>，<code>sei.ynu.edu.cn</code>。<code>sei.ynu.edu.cn</code>指向一个子服务器，访问到这个子服务器后还需要提供不同的端口后以访问不同的服务，如访问网页浏览<code>sei.ynu.edu.cn:8080</code>，或者SMTP服务在25号端口。确定访问服务后，还需要访问服务系统中的文件，在其后加上<code>/目录</code>，目录可能是文件或文件夹，也可以是虚拟文件夹。确定目录后，如果提供更详细的指定方式，即在访问同时调用参数，可附加查询串，在其后继续添加<code>/?a=3(查询串)&amp;b=4(查询串)</code>。如果还想定位到文件某一行，则在其后加上<code>/#...</code>，称为锚点。</p>
+<h2 id="插入图片">插入图片</h2><p>前面说到插入图片使用代码<code>&lt;img sr=&quot;url&quot; alt=&quot;若图片不能显示，则显示此条内容&quot; /&gt;</code>，这里的url可以为绝对路径也可以为相对路径（以当前目录为参考）。</p>
+<ol>
+<li>t1.png</li>
+<li>../../t1.png</li>
+</ol>
+<p>网页常用的图片格式有.jpg，.png，.bmp，.gif…这里，.jpg格式和.png都带压缩，但是.png图像更好，因此是主要图片格式。.gif色素只有256，不满足需求。动图通常也可以由多张静态图片合成。.bmp格式不带压缩，文件较大，不利于网络传输，尽量少用。</p>
+<h2 id="列表">列表</h2><p>列表有两种，一种是无序列表，用ul(unordered list，无序列表）表示。另一种是有序列表，用ol(ordered list，有序列表）表示。分别演示如下：<br>无序列表：<code>&lt;ul&gt;&lt;li&gt;无序1&lt;/li&gt;&lt;li&gt;无序2&lt;/li&gt;&lt;/ul&gt;</code></p>
+<ul>
+<li>无序1</li>
+<li>无序2</li>
+</ul>
+<p>有序列表：<code>&lt;ol&gt;&lt;li&gt;有序1&lt;/li&gt;&lt;li&gt;有序2&lt;/li&gt;&lt;/ol&gt;</code></p>
+<ol>
+<li>有序1</li>
+<li>有序2</li>
+</ol>
+
+          
         
       
     </div>
@@ -401,81 +527,105 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/12/2015-08-12-WriteAndChange/" itemprop="url">
-                Write the code, Change my family
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-12T00:00:00+08:00" content="2015-08-12">
-            2015-08-12
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/个人日志/" itemprop="url" rel="index">
-                  <span itemprop="name">个人日志</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/08/12/2015-08-12-WriteAndChange/" itemprop="url">
+                  Write the code, Change my family
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-12T00:00:00+08:00" content="2015-08-12">
+              2015-08-12
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/08/12/2015-08-12-WriteAndChange/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/12/2015-08-12-WriteAndChange/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/个人日志/" itemprop="url" rel="index">
+                    <span itemprop="name">个人日志</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            24 Jun 2015 - Kumming
-五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。
-尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/12/2015-08-12-WriteAndChange/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/12/2015-08-12-WriteAndChange/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/12/2015-08-12-WriteAndChange/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>24 Jun 2015 - Kumming</p>
+<p>五年前刚进大学的时候，我还不清楚信息安全专业是干嘛的。填报志愿的时候，舅舅说这个专业学费要一万二，肯定是不错的。就这样，没有一点点准备就踏上了IT大门。</p>
+<p>尽管接触计算机是在小学三年级，那时候是方正电脑的天下，记忆中只是在电脑上熟悉一些基本的技能，练习打地鼠，用Excel进入赛车游戏。接触得早却没有深入学习，不得不说是遗憾，以至于进了大学依然是计算机、程序设计的门外汉。那时候看着同学坚持要将Windows家庭版换成Windows旗舰版却不明白有什么区别，也第一次听说Windows有那么多版本，看着自己的笔记本在百分之九十八电量提示没有充电时心急如焚，却不知这是电源保护的机制……无知的年华。</p>
+<p>第一门学习的编程语言是C语言，现在想想那些练习题是多么的简单，写那些程序是多么幸福和有满足感的事情。不过那时候却并没有这种觉悟。第一次的实验课连“Hello World”都没有完成，真让我窘迫。还好那时候认识了一位低调的代码大神，每次实验都和他一起完成，向他学会了很多知识，狂补自己的不足，除此之外也变得像他一样低调做人，专注做事。后来他成为了我大学生涯做好的基友之一。</p>
+<p>此后渐渐的熟悉了计算机领域，开始学会独立学习，独立完成代码编写。作为信息安全最核心的课程之一，密码学，我付出了极大的努力，分别写了RC4，2048位的RSA，SHA128，SHA256，SHA512……那时候密码学老师就说，学习他这门课绝对是你大学生涯最充实的时候。确实如此，那时候日日夜夜都在写，就是简单的兴趣在驱动着努力。</p>
+<p>简单回首过去，虽然相比当年的懵懂，现在已经有了巨大的改变。但我只能给自己一个合格的评价。并没有特别突出的成就，并没有特别厉害的技能，并没有值得骄傲的经历，这些都让我清楚的认识并时刻提醒自己：人生就是在不停的战斗，凡是成功的人都必须付出比常人千百倍的努力。明白道理晚了点，后知后觉，很遗憾我过去还不够努力，现在还需要更加坚持的努力才行。</p>
+<p>我时常陷入自我松懈的状态，总不能坚持的做完一件艰难的事情。按照我的性格是属于那种一口气要把事情完成不愿拖沓的人。但也许任务真的艰难，也许就是我的惰性，也许我还不够热爱，在一些事情面前表现的松懈感是我不能满意的地方。写了一两个小时代码或者解决一个小问题就想松懈一下，然后可能任务就拖得更久，这真是坏毛病，尽管现在是物欲横流的社会，我本也该保持专注的。</p>
+<p>我的家庭一般，不穷不富很平凡。然而父母却一直含辛茹苦的抚养我，付出他们所有的精力和时间让我能够安心读书。有时候想放松的时候，想想父母的辛苦，想想他们期待的眼神，想想我的未来该如何回报父母，我便有点内疚，然后又充满了干劲，可以说，我的每一行代码都倾注了我的感情。</p>
+<p>所以，Write the code，Change my family。我希望我的努力能让我的家庭能有所不同，我希望我的未来不会因为我此刻的懒惰而遗憾。努力不一定会成功，但不努力一定不会成功。</p>
+
+          
         
       
     </div>
@@ -495,84 +645,103 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/26/2015-06-26-Positive_Energy/" itemprop="url">
-                吾日三省吾身
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-06-26T00:00:00+08:00" content="2015-06-26">
-            2015-06-26
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/好文珍藏/" itemprop="url" rel="index">
-                  <span itemprop="name">好文珍藏</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/26/2015-06-26-Positive_Energy/" itemprop="url">
+                  吾日三省吾身
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-26T00:00:00+08:00" content="2015-06-26">
+              2015-06-26
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/06/26/2015-06-26-Positive_Energy/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/26/2015-06-26-Positive_Energy/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/好文珍藏/" itemprop="url" rel="index">
+                    <span itemprop="name">好文珍藏</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            26 Jun 2015 - Kumming
-社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/26/2015-06-26-Positive_Energy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/26/2015-06-26-Positive_Energy/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
 
-说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：
+          
 
-你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/26/2015-06-26-Positive_Energy/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>26 Jun 2015 - Kumming</p>
+<p>社会太复杂，一不小心就迷失自己。认识的人也不都是那么友好，总有人令你感到莫名其妙。内心的正能量不都能饱满的，稍不注意就变成火爆辣椒。今天看到几条关于成功人士的一些基本素养，解开了不少内心的不快，特此作文留念，常温常新。</p>
+<p><img src="/images/1.jpg" alt=""><br><img src="/images/2.jpg" alt=""><br><img src="/images/3.jpg" alt=""><br><img src="/images/4.jpg" alt=""><br><img src="/images/5.jpg" alt=""><br><img src="/images/6.jpg" alt=""><br><img src="/images/7.jpg" alt=""></p>
+<p>说得都太好了，必须Mark一下。最后再分享一段很喜欢的话：</p>
+<blockquote>
+<p>你要坚强，坚强得足以认识自己的弱点；你要勇敢，勇敢得足以面对自己的恐惧；<br>你要堂堂正正，在遇到挫折时能够昂首而不卑躬屈膝；<br>你要能够面对掌声，在胜利时能够谦逊而不趾高气昂。</p>
+</blockquote>
+<h3 id="真正的伟人直率真诚">真正的伟人直率真诚</h3><h3 id="真正的贤人虚怀若谷">真正的贤人虚怀若谷</h3><h3 id="真正的强者温文尔雅。">真正的强者温文尔雅。</h3>
+          
         
       
     </div>
@@ -592,85 +761,152 @@ html主要提供网页的结构，CSS提供样式，而JavaScript则提供行为
 
     
       
+
+  
+  
+
+  
+  
+  
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/25/2015-06-25-HadoopSetup/" itemprop="url">
-                集群分布式Hadoop系统安装基本步骤
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-06-25T00:00:00+08:00" content="2015-06-25">
-            2015-06-25
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Hadoop/" itemprop="url" rel="index">
-                  <span itemprop="name">Hadoop</span>
+            
+              
+                
+                <a class="post-title-link" href="/2015/06/25/2015-06-25-HadoopSetup/" itemprop="url">
+                  集群分布式Hadoop系统安装基本步骤
                 </a>
-              </span>
-
               
-              
-
             
-          </span>
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-06-25T00:00:00+08:00" content="2015-06-25">
+              2015-06-25
+            </time>
+          </span>
+
           
-            <span class="post-comments-count">
+            <span class="post-category" >
               &nbsp; | &nbsp;
-              <a href="/2015/06/25/2015-06-25-HadoopSetup/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/25/2015-06-25-HadoopSetup/" itemprop="commentsCount"></span>
-              </a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">Hadoop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
             </span>
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
+          
             
-            1. Linux准备1.1 修改机器名
-hostname&lt;机器名&gt;
-vim /etc/sysconfig/network
-HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映射关系(/etc/hosts)参考：
-192.168.110.128 hadoop0
-192.168.110.144 hadoop1
-192.168.110.154 hadoop21
-            ...
-          </span>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/25/2015-06-25-HadoopSetup/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/06/25/2015-06-25-HadoopSetup/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/25/2015-06-25-HadoopSetup/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-_Linux准备">1. Linux准备</h2><h3 id="1-1_修改机器名">1.1 修改机器名</h3><ul>
+<li>hostname&lt;机器名&gt;</li>
+<li>vim /etc/sysconfig/network</li>
+<li>HOSTNAME=&lt;机器名&gt; 保存退出，重启<h3 id="1-2_修改主机名和IP的映射关系(/etc/hosts)">1.2 修改主机名和IP的映射关系(/etc/hosts)</h3><h3 id="参考：">参考：</h3></li>
+<li>192.168.110.128 hadoop0</li>
+<li>192.168.110.144 hadoop1</li>
+<li>192.168.110.154 hadoop2<h3 id="1-3_关闭防火墙">1.3 关闭防火墙</h3></li>
+<li>service iptables status 查看防火墙状态</li>
+<li>service iptables stop 关闭防火墙</li>
+<li>chkconfig iptables –list 查看防火墙启动状态</li>
+<li><p>chkconfig iptables off 关闭防火墙开机启动</p>
+<h3 id="1-4_重启Linux(reboot)">1.4 重启Linux(reboot)</h3><h2 id="2-_JDK安装">2. JDK安装</h2><h3 id="2-1_上传">2.1 上传</h3><h3 id="2-2_解压">2.2 解压</h3><p>  tar -xzvf jdk-8u45-linux-x64.tar.gz -C /usr/java</p>
+<h3 id="2-3_将java添加到环境变量中">2.3 将java添加到环境变量中</h3><p>  vim /etc/profile</p>
+<h4 id="在文件最后添加：">在文件最后添加：</h4><p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export PATH=$PATH:$JAVA_HOME/bin</p>
+<h4 id="刷新配置">刷新配置</h4><p>  source /etc/profile</p>
+<h2 id="3-_Hadoop安装">3. Hadoop安装</h2><h3 id="3-1_上传Hadoop安装包">3.1 上传Hadoop安装包</h3><p>  mkdir /usr/hadoop</p>
+<h3 id="3-2_解压Hadoop安装包">3.2 解压Hadoop安装包</h3><p>  tar -xzvf hadoop-2.6.0.tar.gz -C /usr/hadoop</p>
+<h3 id="3-3修改配置文件">3.3修改配置文件</h3><p>第一个：hadoop-env.sh</p>
+<p>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>第二个：core-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code>   <span class="comment">&lt;!--指定HDFS中namenode的通信地址--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>hdfs://hadoop0:9000<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第三个：hdfs-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--设置hdfs副本数量--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>1<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第四个：mapred-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--通知框架MR使用YARN--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  <br>第五个：yarn-site.xml</p>
+<p>  <configuration></configuration></p>
+<pre><code><span class="comment">&lt;!--reduce获取数据的方式是mapreduce_shuffle--&gt;</span>
+<span class="tag">&lt;<span class="title">property</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+</code></pre><p>  </p>
+<h3 id="3-4_将Hadoop添加到环境变量">3.4 将Hadoop添加到环境变量</h3><p>  vim /etc/profile<br>  export JAVA_HOME=/usr/java/jdk1.8.0_45<br>  export HADOOP_HOME=/usr/hadoop/hadoop-2.6.0<br>  export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin<br>  source /etc/profile</p>
+<h3 id="3-5设置SSH免密码登录">3.5设置SSH免密码登录</h3><p>  vim /etc/selinux/config<br>  SELINUX=disabled<br>  ssh-keygen -t dsa<br>  cd ~/.ssh<br>  cat id_dsa.pub &gt;&gt; authorized_keys</p>
+<h3 id="3-6_格式化HDFS(namenode)第一次使用要格式化">3.6 格式化HDFS(namenode)第一次使用要格式化</h3><p>  hdfs namenode -format</p>
+<h3 id="3-7_启动Hadoop">3.7 启动Hadoop</h3><h4 id="先启动HDFS">先启动HDFS</h4><p>  sbin/start-dfs.sh</p>
+<h4 id="再启动YARN">再启动YARN</h4><p>  sbin/start-yarn.sh</p>
+<h3 id="3-8_验证是否启动成功">3.8 验证是否启动成功</h3><h4 id="使用jps命令">使用jps命令</h4><p>  NameNode<br>  Jps<br>  SecondaryNameNode<br>  NodeManager<br>  ResourceManager<br>  DataNode</p>
+<h4 id="HDFS管理界面：">HDFS管理界面：</h4><p><a href="http://hadoop0:50070" target="_blank" rel="external">http://hadoop0:50070</a></p>
+</li>
+</ul>
+
+          
         
       
     </div>
@@ -689,21 +925,25 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
 
 
     
+
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
- </div>
 
+
+          </div>
+          
+
+
+          
+
+        </div>
         
-
-        
-      </div>
-
-      
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -718,12 +958,16 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
 
       
 
-      <section class="site-overview">
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/person.jpg" alt="敲代码的小東洋" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/person.jpg"
+               alt="敲代码的小東洋" />
           <p class="site-author-name" itemprop="name">敲代码的小東洋</p>
+          <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -733,10 +977,10 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -754,11 +998,19 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/Seine1923" target="_blank">github</a>
+                <a href="https://github.com/Seine1923" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="http://weibo.com/yxd1013" target="_blank">weibo</a>
+                <a href="http://weibo.com/yxd1013" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> weibo
+                  
+                </a>
               </span>
             
           
@@ -772,7 +1024,7 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
             <p class="site-author-name">Links</p>
             
               <span class="links-of-author-item">
-              <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
               </span>
             
           
@@ -786,15 +1038,18 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
-  &copy; &nbsp; 
+  &copy; 
   <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="icon-next-heart fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">敲代码的小東洋</span>
 </div>
@@ -806,23 +1061,60 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
     <div class="back-to-top"></div>
   </div>
 
+  
+
+
+  
+
+
+
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
+
+
 
   
   
+
   
-    
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+
+
+
+  
 
   
     
@@ -833,63 +1125,28 @@ HOSTNAME=&lt;机器名&gt; 保存退出，重启1.2 修改主机名和IP的映�
     (function() {
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
 
 
 
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
-
-  
 
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+  
+
+
 </body>
 </html>
