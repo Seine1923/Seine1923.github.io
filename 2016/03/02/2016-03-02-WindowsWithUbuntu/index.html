@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://Seine1923.github.io/2016/03/02/2016-03-02-WindowsWithUbuntu/index.html">
 <meta property="og:site_name" content="Seine1923">
 <meta property="og:description" content="对于全新PC,首先安装好Windows10,再安装Ubuntu15.10详细安装步骤请阅读全文">
-<meta property="og:updated_time" content="2016-03-17T07:15:03.406Z">
+<meta property="og:updated_time" content="2016-03-18T01:38:32.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10与Ubuntu15.10双系统安装">
 <meta name="twitter:description" content="对于全新PC,首先安装好Windows10,再安装Ubuntu15.10详细安装步骤请阅读全文">
@@ -303,8 +303,9 @@
 <li>出现menu.lst文件，填写如下内容<br> title Install Ubuntu<br> root (hd0,0)<br> kernel (hd0,0)/vmlinuz boot=casper iso‐scan/filename=/ubuntu.iso<br> ro quiet splash locale=zh_CN.UTF‐8<br> initrd (hd0,0)/initrd.lz<br>ubuntu.iso改为你下载的ubuntu的iso名字  </li>
 </ol>
 <h3 id="2-3_解压缩ubuntu-iso文件">2.3 解压缩ubuntu.iso文件</h3><p>windows系统默认自带装载iso文件的功能，装载成功后将里面文件initrd.lz、vmlinuz文件和.disk文件夹复制到C盘根目录，同时将ubuntu.iso也拷贝到C盘根目录。（注意：如果是64位版本的ubuntu，vmlinuz文件可能为vmlinuz.efi，把vmlinuz.efi的文件名改成vmlinuz）  </p>
-<h3 id="2-4_重启Windows即可看到系统给出两个启动菜单">2.4 重启Windows即可看到系统给出两个启动菜单</h3><h2 id="3-_安装Ubuntu">3. 安装Ubuntu</h2><h3 id="3-1_选择NeoGrub引导加载器">3.1 选择NeoGrub引导加载器</h3><p>进入到Ubuntu后，默认桌面有2个文件，一个是演示，不用管。另一个是安装Ubuntu，先不点。打开终端Ctrl+Alt+T，输入命令,取消掉对光盘所在驱动器的挂载，否则分区界面找不到分区：<br>    sudo umount -i /isodevice  </p>
-<h3 id="3-2_点击桌面上的“安装Ubuntu15-10”">3.2 点击桌面上的“安装Ubuntu15.10”</h3><ol>
+<h3 id="2-4_重启Windows即可看到系统给出两个启动菜单">2.4 重启Windows即可看到系统给出两个启动菜单</h3><h2 id="3-_安装Ubuntu">3. 安装Ubuntu</h2><h3 id="3-1_选择NeoGrub引导加载器">3.1 选择NeoGrub引导加载器</h3><p>进入到Ubuntu后，默认桌面有2个文件，一个是演示，不用管。另一个是安装Ubuntu，先不点。打开终端Ctrl+Alt+T，输入命令,取消掉对光盘所在驱动器的挂载，否则分区界面找不到分区：  </p>
+<pre><code>sudo umount -<span class="tag">i</span> /isodevice  
+</code></pre><h3 id="3-2_点击桌面上的“安装Ubuntu15-10”">3.2 点击桌面上的“安装Ubuntu15.10”</h3><ol>
 <li>安装类型选择“其他选项”</li>
 <li>分区：<ol>
 <li>根分区“/”，50G，ext4,逻辑分区</li>
@@ -347,6 +348,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/03/2016-03-03-Hadoop2.6.4Deploy/" rel="prev" title="Hadoop 2.6.4集群部署">
+                Hadoop 2.6.4集群部署 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -418,7 +423,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -432,7 +437,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -493,7 +498,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Windows10"><span class="nav-number">1.</span> <span class="nav-text">1. 安装Windows10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_Ubuntu安装前准备"><span class="nav-number">2.</span> <span class="nav-text">2. Ubuntu安装前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_获取Ubuntu空间"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 获取Ubuntu空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_下载EasyBCD软件，并安装"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 下载EasyBCD软件，并安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3_解压缩ubuntu-iso文件"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 解压缩ubuntu.iso文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4_重启Windows即可看到系统给出两个启动菜单"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 重启Windows即可看到系统给出两个启动菜单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Ubuntu"><span class="nav-number">3.</span> <span class="nav-text">3. 安装Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_选择NeoGrub引导加载器"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 选择NeoGrub引导加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_点击桌面上的“安装Ubuntu15-10”"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 点击桌面上的“安装Ubuntu15.10”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_后续清理"><span class="nav-number">4.</span> <span class="nav-text">4. 后续清理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Windows10"><span class="nav-text">1. 安装Windows10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_Ubuntu安装前准备"><span class="nav-text">2. Ubuntu安装前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_获取Ubuntu空间"><span class="nav-text">2.1 获取Ubuntu空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_下载EasyBCD软件，并安装"><span class="nav-text">2.2 下载EasyBCD软件，并安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3_解压缩ubuntu-iso文件"><span class="nav-text">2.3 解压缩ubuntu.iso文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4_重启Windows即可看到系统给出两个启动菜单"><span class="nav-text">2.4 重启Windows即可看到系统给出两个启动菜单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Ubuntu"><span class="nav-text">3. 安装Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_选择NeoGrub引导加载器"><span class="nav-text">3.1 选择NeoGrub引导加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_点击桌面上的“安装Ubuntu15-10”"><span class="nav-text">3.2 点击桌面上的“安装Ubuntu15.10”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_后续清理"><span class="nav-text">4. 后续清理</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
