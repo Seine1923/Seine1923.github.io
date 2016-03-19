@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="markdown,programming," />
+  <meta name="keywords" content="Big Data,Deploy,Spark1.6.0," />
 
 
 
@@ -51,16 +51,17 @@
 
 
 
-<meta name="description" content="1. 段落与段落之间空一行表示。分节的时候可以多空一行。单个回车视为空格，连续回车才是换行。（行尾加两个空格，可以段内强制换行，一般用户可以忽略。）2. 其实在网络上你可以完全抛弃开头空两格的习惯，代之以段落之间空一行的习惯。如果只要要开头空两格，那么可以输入&amp;ensp来表示一个空格，&amp;emsp为两个。">
+<meta name="description" content="欢迎来到Spark的世界详细Hadoop-1.6.0集群部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown语法及规范">
-<meta property="og:url" content="http://Seine1923.github.io/2015/12/12/2015-12-12-Markdown语法及规范/index.html">
+<meta property="og:title" content="Spark-1.6.0集群部署">
+<meta property="og:url" content="http://Seine1923.github.io/2016/03/04/2016-03-04-Spark1.6.0Deploy/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="1. 段落与段落之间空一行表示。分节的时候可以多空一行。单个回车视为空格，连续回车才是换行。（行尾加两个空格，可以段内强制换行，一般用户可以忽略。）2. 其实在网络上你可以完全抛弃开头空两格的习惯，代之以段落之间空一行的习惯。如果只要要开头空两格，那么可以输入&amp;ensp来表示一个空格，&amp;emsp为两个。">
-<meta property="og:updated_time" content="2015-12-26T07:24:54.675Z">
+<meta property="og:description" content="欢迎来到Spark的世界详细Hadoop-1.6.0集群部署请阅读全文">
+<meta property="og:image" content="http://Seine1923.github.io/images/spark/sparkdownload.jpg">
+<meta property="og:updated_time" content="2016-03-19T10:36:47.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown语法及规范">
-<meta name="twitter:description" content="1. 段落与段落之间空一行表示。分节的时候可以多空一行。单个回车视为空格，连续回车才是换行。（行尾加两个空格，可以段内强制换行，一般用户可以忽略。）2. 其实在网络上你可以完全抛弃开头空两格的习惯，代之以段落之间空一行的习惯。如果只要要开头空两格，那么可以输入&amp;ensp来表示一个空格，&amp;emsp为两个。">
+<meta name="twitter:title" content="Spark-1.6.0集群部署">
+<meta name="twitter:description" content="欢迎来到Spark的世界详细Hadoop-1.6.0集群部署请阅读全文">
 
 
 
@@ -72,7 +73,7 @@
   };
 </script>
 
-  <title> Markdown语法及规范 | Seine1923 </title>
+  <title> Spark-1.6.0集群部署 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +239,7 @@
             
             
               
-                Markdown语法及规范
+                Spark-1.6.0集群部署
               
             
           </h1>
@@ -247,8 +248,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-12T00:00:00+08:00" content="2015-12-12">
-              2015-12-12
+            <time itemprop="dateCreated" datetime="2016-03-04T00:00:00+08:00" content="2016-03-04">
+              2016-03-04
             </time>
           </span>
 
@@ -257,8 +258,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">programming</span>
+                  <a href="/categories/Spark/" itemprop="url" rel="index">
+                    <span itemprop="name">Spark</span>
                   </a>
                 </span>
 
@@ -273,8 +274,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/12/2015-12-12-Markdown语法及规范/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/12/2015-12-12-Markdown语法及规范/" itemprop="commentsCount"></span>
+                <a href="/2016/03/04/2016-03-04-Spark1.6.0Deploy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/04/2016-03-04-Spark1.6.0Deploy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -293,35 +294,55 @@
       
 
       
-        <span itemprop="articleBody"><ol>
-<li>段落与段落之间空一行表示。分节的时候可以多空一行。单个回车视为空格，连续回车才是换行。（行尾加两个空格，可以段内强制换行，一般用户可以忽略。）</li>
-<li>其实在网络上你可以完全抛弃开头空两格的习惯，代之以段落之间空一行的习惯。如果只要要开头空两格，那么可以输入&amp;ensp来表示一个空格，&amp;emsp为两个。</li>
-<li>标题：# 一级标题<br>“#”之后最好加一个空格，这在md单向标记中都最好使用。也可以把”=“写在标题（H1）下面的一行，表示上面一行的文字为标题，”-“写在下面便是小标题或是节标题（H2）。</li>
-<li>加粗，斜体：<strong>加粗</strong><code>**加粗**</code>，<em>斜体</em><code>*斜体*</code>，<em> <strong>粗斜体</strong></em><code>* **粗斜体***</code></li>
-<li>引用：&gt;</li>
-<li>行内源代码：‘代码’。行的开头空四个空格，缩进内容视为代码块。代码块也可以用’‘’代码‘’‘来完成。当然简单的用’代码’也可以显示。</li>
-<li>删除线：<del>删除</del><code>~~删除~~</code></li>
-<li>层次（也就是类似目录列表的东西）：“<em>” 后面要加空格，这是必须的，除了 </em>，还可以使用 + 或者 -。<ol>
-<li>第一节</li>
-<li>第二节<ul>
-<li>第一小节（推荐每层次缩进四个空格）<ul>
-<li>小小节 1</li>
-<li>小小节 2</li>
+        <span itemprop="articleBody"><h2 id="1-_运行环境">1. 运行环境</h2><p>本文搭建的是Spark Standalone模式，在已搭建好的Hadoop2.6.4集群上部署Spark。</p>
+<p>版本信息：</p>
+<ul>
+<li>JDK：1.8.0_74 64位</li>
+<li>Hadoop：2.6.4</li>
+<li>Spark：1.6.0</li>
+<li>Scala：2.12.0-M3</li>
 </ul>
-</li>
-<li>第二小节</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>链接，图片：<a href="链接,&quot;Title&quot;">想要显示的文字</a><code>[想要显示的文字](链接,&quot;Title&quot;)</code>，<a href="图片链接">（图片说明）</a><code>![（图片说明）](图片链接)</code>。段落内使用的时候左右各空一格，除非是使用列表的时候。此外，还可以以索引方式把url都列在文章的最后，例如这样：[文字][1]<code>[文字][1]</code>,[1]: 链接（不要忘记冒号后面的空格，title的写法与上类似）</li>
-<li>分割线：—<code>---</code>，上下各空一行,也可以用<strong><em>`</em></strong>`，其实只要三个以上，随便你怎么写。</li>
-<li>其他：<br>[链接标题][null-link]，可以生成一个伪链接样式，也就是存在链接的样式，但没有实质的链接。更高级的链接写法：[文字][hover],[hover]:链接”悬停文字”<br>若要在图片下说明：{ImagCap}说明{/ImgCap} </li>
-<li><p>跟其他的编程语言一样，利用转意字符”/“就可以输出”[“这类符号</p>
-<p>转自<a href="http://www.douban.com/note/485099162/" target="_blank" rel="external">http://www.douban.com/note/485099162/</a></p>
-</li>
-</ol>
-</span>
+<h2 id="2-_下载Spark">2. 下载Spark</h2><p><img src="/images/spark/sparkdownload.jpg" alt=""></p>
+<h2 id="3-_安装Scala">3. 安装Scala</h2><h3 id="3-1_解压缩">3.1 解压缩</h3><pre><code>sudo <span class="keyword">mkdir</span> /home/hadoop/<span class="keyword">scala</span>
+sudo tar -zxf <span class="keyword">scala</span>-2.12.0-M3.tgz -C /home/hadoop/<span class="keyword">scala</span>
+</code></pre><h3 id="3-2_修改环境变量">3.2 修改环境变量</h3><pre><code>sudo vim ~/.bashrc  
+SCALA_HOME=/home/hadoop/scala/scala-<span class="number">2.12</span>.<span class="number">0</span>-M3  
+export PATH=<span class="variable">$HADOOP</span>_HOME/bin:<span class="variable">$SCALA</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME/bin:<span class="variable">$JRE</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME:<span class="variable">$PATH</span>
+</code></pre><h3 id="3-3_使配置文件生效">3.3 使配置文件生效</h3><pre><code>source ~/<span class="class">.bashrc</span> 
+</code></pre><h3 id="3-4_显示版本及测试">3.4 显示版本及测试</h3><pre><code><span class="keyword">scala</span> -<span class="keyword">version</span>  
+<span class="keyword">scala</span>  
+5*5  
+:q or CTRL+<span class="keyword">D</span> 
+</code></pre><h2 id="4-_分发scala到各从节点">4. 分发scala到各从节点</h2><pre><code>scp -r /home/hadoop/scala hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
+scp -r /home/hadoop/.bashrc hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
+</code></pre><h2 id="5-_安装Spark">5. 安装Spark</h2><h3 id="5-1_解压缩">5.1 解压缩</h3><pre><code>sudo tar -zxf spark-<span class="number">1.6</span><span class="number">.0</span>-bin-hadoop2<span class="number">.6</span>.tgz -C /home/hadoop/  
+</code></pre><h3 id="5-2_配置环境变量">5.2 配置环境变量</h3><pre><code>sudo vim ~/.bashrc  
+export SPARK_HOME=/home/hadoop/spark-<span class="number">1.6</span>-bin-hadoop2.<span class="number">6</span>  
+export PATH=<span class="variable">$SPARK</span>_HOME/bin:<span class="variable">$HADOOP</span>_HOME/bin:<span class="variable">$SCALA</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME/bin:<span class="variable">$JRE</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME:<span class="variable">$PATH</span>   
+</code></pre><h3 id="5-3_使配置生效">5.3 使配置生效</h3><pre><code>source ~/<span class="class">.bashrc</span>  
+</code></pre><h3 id="5-4_spark-env-sh">5.4 spark-env.sh</h3><p>进入spark目录下的conf目录，将spark-env.sh.template拷贝到spark-env.sh，并添加信息:</p>
+<pre><code>cp spark-env.sh.<span class="keyword">template</span> spark-env.sh 
+
+<span class="keyword">export</span> JAVA_HOME=/home/hadoop/java/jdk1<span class="number">.8</span><span class="number">.0</span>_74   
+<span class="keyword">export</span> SCALA_HOME=/home/hadoop/scala/scala-<span class="number">2.12</span><span class="number">.0</span>-M3  
+<span class="keyword">export</span> SPARK_MASTER_IP=hadoop1  
+<span class="keyword">export</span> SPARK_WORKER_MEMORY=<span class="number">2</span>g  
+<span class="keyword">export</span> HADOOP_CONF_DIR=/home/hadoop/hadoop-<span class="number">2.6</span><span class="number">.4</span>/conf 
+</code></pre><h3 id="5-5_slavers">5.5 slavers</h3><p>在slavers文件中添加各个从节点hadoop2,hadoop3…</p>
+<h2 id="6-_分发spark到各个从节点">6. 分发spark到各个从节点</h2><pre><code>scp -r /home/hadoop/spark-<span class="number">1.6</span>.<span class="number">0</span>-bin-hadoop2.<span class="number">6</span> hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>  
+scp -r ~<span class="regexp">/.bashrc hadoop@hadoop2:~/</span>  
+</code></pre><h2 id="7-_启动集群">7. 启动集群</h2><h3 id="7-1_启动HDFS">7.1 启动HDFS</h3><pre><code>sbin/<span class="built_in">start</span>-dfs.sh
+</code></pre><h3 id="7-2_启动spark">7.2 启动spark</h3><pre><code>sbin/start-<span class="keyword">all</span>.<span class="keyword">sh</span>
+</code></pre><h3 id="7-3_新进程">7.3 新进程</h3><p>使用jps命令之后，hadoop1主节点出现Master进程，其他从节点出现Worker进程</p>
+<h3 id="7-4_Spark_UI">7.4 Spark UI</h3><pre><code><span class="string">http:</span><span class="comment">//hadoop1:8080</span>
+</code></pre><h3 id="7-5_Spark-Shell">7.5 Spark-Shell</h3><pre><code>bin/spark-<span class="built_in">shell</span>
+</code></pre><h2 id="8-_测试">8. 测试</h2><h3 id="8-1_spark-shell命令行下wordcount测试">8.1 spark-shell命令行下wordcount测试</h3><pre><code><span class="number">1</span>. spark-shell  
+<span class="number">2</span>. val file = sc.<span class="function"><span class="title">textFile</span><span class="params">(<span class="string">"hdfs://hadoop1:9000/input/"</span>)</span></span>  
+<span class="number">3</span>. val count = file.<span class="function"><span class="title">flatMap</span><span class="params">(line=&gt;(line.split(<span class="string">" "</span>)</span></span>)).<span class="function"><span class="title">map</span><span class="params">(word=&gt;(word,<span class="number">1</span>)</span></span>).<span class="function"><span class="title">reduceByKey</span><span class="params">(_+_)</span></span>  
+<span class="number">4</span>. count.<span class="function"><span class="title">collect</span><span class="params">()</span></span>  
+<span class="number">5</span>. count.<span class="function"><span class="title">saveAsTextFile</span><span class="params">(<span class="string">"hdfs://hadoop1:9000/output/wordcount"</span>)</span></span> 
+</code></pre><h3 id="8-2_jar包测试">8.2 jar包测试</h3><pre><code>bin<span class="regexp">/spark-submit --class WordCount.WordCount --master spark:/</span><span class="regexp">/hadoop1:7077 ~/</span>data<span class="regexp">/WordCount.jar hdfs:/</span><span class="regexp">/hadoop1:9000/i</span>nput<span class="regexp">/ hdfs:/</span><span class="regexp">/hadoop1:9000/</span>output<span class="regexp">/</span>
+</code></pre></span>
       
     </div>
 
@@ -329,9 +350,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/markdown/" rel="tag">#markdown</a>
+            <a href="/tags/Big-Data/" rel="tag">#Big Data</a>
           
-            <a href="/tags/programming/" rel="tag">#programming</a>
+            <a href="/tags/Deploy/" rel="tag">#Deploy</a>
+          
+            <a href="/tags/Spark1-6-0/" rel="tag">#Spark1.6.0</a>
           
         </div>
       
@@ -340,17 +363,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/25/2015-11-25-SigmaPlot/" rel="next" title="SigmaPlot">
-                <i class="fa fa-chevron-left"></i> SigmaPlot
+              <a href="/2016/03/03/2016-03-03-Hadoop2.6.4Deploy/" rel="next" title="Hadoop 2.6.4集群部署">
+                <i class="fa fa-chevron-left"></i> Hadoop 2.6.4集群部署
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/26/2015-12-26-Mathematica/" rel="prev" title="Mathematica">
-                Mathematica <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -377,8 +396,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/12/2015-12-12-Markdown语法及规范/"
-           data-title="Markdown语法及规范" data-url="http://Seine1923.github.io/2015/12/12/2015-12-12-Markdown语法及规范/">
+      <div class="ds-thread" data-thread-key="2016/03/04/2016-03-04-Spark1.6.0Deploy/"
+           data-title="Spark-1.6.0集群部署" data-url="http://Seine1923.github.io/2016/03/04/2016-03-04-Spark1.6.0Deploy/">
       </div>
     
   </div>
@@ -497,7 +516,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_运行环境"><span class="nav-text">1. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_下载Spark"><span class="nav-text">2. 下载Spark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Scala"><span class="nav-text">3. 安装Scala</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_解压缩"><span class="nav-text">3.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_修改环境变量"><span class="nav-text">3.2 修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3_使配置文件生效"><span class="nav-text">3.3 使配置文件生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4_显示版本及测试"><span class="nav-text">3.4 显示版本及测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_分发scala到各从节点"><span class="nav-text">4. 分发scala到各从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_安装Spark"><span class="nav-text">5. 安装Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1_解压缩"><span class="nav-text">5.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2_配置环境变量"><span class="nav-text">5.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3_使配置生效"><span class="nav-text">5.3 使配置生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4_spark-env-sh"><span class="nav-text">5.4 spark-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5_slavers"><span class="nav-text">5.5 slavers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_分发spark到各个从节点"><span class="nav-text">6. 分发spark到各个从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_启动集群"><span class="nav-text">7. 启动集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1_启动HDFS"><span class="nav-text">7.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2_启动spark"><span class="nav-text">7.2 启动spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3_新进程"><span class="nav-text">7.3 新进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4_Spark_UI"><span class="nav-text">7.4 Spark UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5_Spark-Shell"><span class="nav-text">7.5 Spark-Shell</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_测试"><span class="nav-text">8. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1_spark-shell命令行下wordcount测试"><span class="nav-text">8.1 spark-shell命令行下wordcount测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2_jar包测试"><span class="nav-text">8.2 jar包测试</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
