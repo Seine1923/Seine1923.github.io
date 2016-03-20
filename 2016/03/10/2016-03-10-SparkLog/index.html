@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Ubuntu15.10,Windows10," />
+  <meta name="keywords" content="Spark-1.6.0,log," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="对于全新PC,首先安装好Windows10,再安装Ubuntu15.10详细安装步骤请阅读全文">
+<meta name="description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows10与Ubuntu15.10双系统安装">
-<meta property="og:url" content="http://Seine1923.github.io/2016/03/02/2016-03-02-WindowsWithUbuntu/index.html">
+<meta property="og:title" content="Spark日志设置">
+<meta property="og:url" content="http://Seine1923.github.io/2016/03/10/2016-03-10-SparkLog/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="对于全新PC,首先安装好Windows10,再安装Ubuntu15.10详细安装步骤请阅读全文">
-<meta property="og:updated_time" content="2016-03-18T01:38:32.096Z">
+<meta property="og:description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
+<meta property="og:updated_time" content="2016-03-20T01:39:01.947Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows10与Ubuntu15.10双系统安装">
-<meta name="twitter:description" content="对于全新PC,首先安装好Windows10,再安装Ubuntu15.10详细安装步骤请阅读全文">
+<meta name="twitter:title" content="Spark日志设置">
+<meta name="twitter:description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> Windows10与Ubuntu15.10双系统安装 | Seine1923 </title>
+  <title> Spark日志设置 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                Windows10与Ubuntu15.10双系统安装
+                Spark日志设置
               
             
           </h1>
@@ -247,8 +247,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-03-02T00:00:00+08:00" content="2016-03-02">
-              2016-03-02
+            <time itemprop="dateCreated" datetime="2016-03-10T00:00:00+08:00" content="2016-03-10">
+              2016-03-10
             </time>
           </span>
 
@@ -257,8 +257,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/System/" itemprop="url" rel="index">
-                    <span itemprop="name">System</span>
+                  <a href="/categories/Spark/" itemprop="url" rel="index">
+                    <span itemprop="name">Spark</span>
                   </a>
                 </span>
 
@@ -273,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/02/2016-03-02-WindowsWithUbuntu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/2016-03-02-WindowsWithUbuntu/" itemprop="commentsCount"></span>
+                <a href="/2016/03/10/2016-03-10-SparkLog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/10/2016-03-10-SparkLog/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -293,35 +293,20 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_安装Windows10">1. 安装Windows10</h2><p>全新格式化时注意多分空间到磁盘0，即C盘，因为安装Ubuntu时需要从C盘中压缩磁盘来获取空间。  </p>
-<h2 id="2-_Ubuntu安装前准备">2. Ubuntu安装前准备</h2><h3 id="2-1_获取Ubuntu空间">2.1 获取Ubuntu空间</h3><p>从Windows10的C盘压缩磁盘用于安装Ubuntu，至少50GB，如果以后集群要处理大规模数据，应该尽可能的多分出空间到Ubuntu中。  </p>
-<h3 id="2-2_下载EasyBCD软件，并安装">2.2 下载EasyBCD软件，并安装</h3><ol>
-<li>添加新条目</li>
-<li>选择NeoGrub</li>
-<li>安装</li>
-<li>配置</li>
-<li>出现menu.lst文件，填写如下内容<br> title Install Ubuntu<br> root (hd0,0)<br> kernel (hd0,0)/vmlinuz boot=casper iso‐scan/filename=/ubuntu.iso<br> ro quiet splash locale=zh_CN.UTF‐8<br> initrd (hd0,0)/initrd.lz<br>ubuntu.iso改为你下载的ubuntu的iso名字  </li>
-</ol>
-<h3 id="2-3_解压缩ubuntu-iso文件">2.3 解压缩ubuntu.iso文件</h3><p>windows系统默认自带装载iso文件的功能，装载成功后将里面文件initrd.lz、vmlinuz文件和.disk文件夹复制到C盘根目录，同时将ubuntu.iso也拷贝到C盘根目录。（注意：如果是64位版本的ubuntu，vmlinuz文件可能为vmlinuz.efi，把vmlinuz.efi的文件名改成vmlinuz）  </p>
-<h3 id="2-4_重启Windows即可看到系统给出两个启动菜单">2.4 重启Windows即可看到系统给出两个启动菜单</h3><h2 id="3-_安装Ubuntu">3. 安装Ubuntu</h2><h3 id="3-1_选择NeoGrub引导加载器">3.1 选择NeoGrub引导加载器</h3><p>进入到Ubuntu后，默认桌面有2个文件，一个是演示，不用管。另一个是安装Ubuntu，先不点。打开终端Ctrl+Alt+T，输入命令,取消掉对光盘所在驱动器的挂载，否则分区界面找不到分区：  </p>
-<pre><code>sudo umount -<span class="tag">i</span> /isodevice  
-</code></pre><h3 id="3-2_点击桌面上的“安装Ubuntu15-10”">3.2 点击桌面上的“安装Ubuntu15.10”</h3><ol>
-<li>安装类型选择“其他选项”</li>
-<li>分区：<ol>
-<li>根分区“/”，50G，ext4,逻辑分区</li>
-<li>/boot分区，4G，如果计算机中有多个磁盘，那么Ubuntu的/boot应该和Windows的引导程序在同一个磁盘上。另外的/，/Swap，/home可以在另一块磁盘上。 </li>
-<li>/SWAP，交换空间，4G</li>
-<li>/home 剩余部分  </li>
-</ol>
-</li>
-<li>安装启动引导器的设备选择根磁盘位置即可</li>
-<li>点击现在安装即可完成  </li>
-</ol>
-<h2 id="4-_后续清理">4. 后续清理</h2><ol>
-<li>进入Windows,打开EasyBCD,点击编辑引导菜单，删除“Ubuntu的安装引导项”</li>
-<li>删除C盘下的vmlinuz,initrd.lz和Ubuntu.iso文件。</li>
-<li>可在EasyBCD中设置默认开机选项</li>
-</ol>
+        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>我们在运行Spark任务的时候，通过hadoop1:4040可以查看到当前的运行状态，包括各节点的任务量，完成的任务量等，可是当任务结束后，就访问不到这些信息了。本文将配置spark的运行日志，使得可以在任务结束后，依然可以查看到该任务执行过程中的各项系数。这不仅可以使我们对spark系统有更深入的了解，还可以便于我们查找程序问题，调试程序。</p>
+<h2 id="2-_配置">2. 配置</h2><h3 id="2-1_spark-default-conf">2.1 spark-default.conf</h3><p>在spark安装目录下的conf目录下，将spark-default.conf.template 改名为 spark-default.conf，并添加如下内容：</p>
+<pre><code>spark.eventLog.enabled true 
+spark.eventLog.dir <span class="link_url">file:/home/hadoop/log/spark</span>[<span class="link_label">hdfs://hadoop1:9000/log/spark</span>]
+spark.eventLog.compress true
+</code></pre><blockquote>
+<p>spark.eventLog.dir<br>默认值：file://tmp/spark-events<br>保存日志相关信息的路径，可以是hdfs://开头的HDFS路径，也可以是file://开头的本地路径，但都需要提前创建目录。</p>
+</blockquote>
+<h3 id="2-2_spark-env-sh">2.2 spark-env.sh</h3><p>添加如下内容：</p>
+<pre><code>Export SPARK_HISTORY_OPTS=-Dspark<span class="class">.history</span><span class="class">.fs</span><span class="class">.logDirectory</span>=hadoop1:<span class="number">9000</span>/log/spark -Dspark<span class="class">.history</span><span class="class">.ui</span><span class="class">.port</span>=<span class="number">18080</span> -Dspark<span class="class">.history</span><span class="class">.retainedApplications</span>=<span class="number">3</span> 
+</code></pre><blockquote>
+<p>spark.history.retainedApplications<br>默认值：50<br>在内存中保存Application历史记录的个数，如果超过这个值，旧的应用程序信息将被删除，当再次访问已被删除的应用信息时需要重新构建页面。</p>
+</blockquote>
+<h2 id="3-_启动">3. 启动</h2><p>SPARK_HOME/conf下：执行./start-history-server.sh，以后执行sbin/start-all.sh就可以了。</p>
 </span>
       
     </div>
@@ -330,9 +315,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu15-10/" rel="tag">#Ubuntu15.10</a>
+            <a href="/tags/Spark-1-6-0/" rel="tag">#Spark-1.6.0</a>
           
-            <a href="/tags/Windows10/" rel="tag">#Windows10</a>
+            <a href="/tags/log/" rel="tag">#log</a>
           
         </div>
       
@@ -341,17 +326,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/26/2015-12-26-Mathematica/" rel="next" title="Mathematica">
-                <i class="fa fa-chevron-left"></i> Mathematica
+              <a href="/2016/03/07/2016-03-07-Tachyon0.8.2Deploy/" rel="next" title="Spark集群下部署Tachyon-0.8.2">
+                <i class="fa fa-chevron-left"></i> Spark集群下部署Tachyon-0.8.2
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/03/2016-03-03-Hadoop2.6.4Deploy/" rel="prev" title="Hadoop 2.6.4集群部署">
-                Hadoop 2.6.4集群部署 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -378,8 +359,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/02/2016-03-02-WindowsWithUbuntu/"
-           data-title="Windows10与Ubuntu15.10双系统安装" data-url="http://Seine1923.github.io/2016/03/02/2016-03-02-WindowsWithUbuntu/">
+      <div class="ds-thread" data-thread-key="2016/03/10/2016-03-10-SparkLog/"
+           data-title="Spark日志设置" data-url="http://Seine1923.github.io/2016/03/10/2016-03-10-SparkLog/">
       </div>
     
   </div>
@@ -498,7 +479,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Windows10"><span class="nav-text">1. 安装Windows10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_Ubuntu安装前准备"><span class="nav-text">2. Ubuntu安装前准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_获取Ubuntu空间"><span class="nav-text">2.1 获取Ubuntu空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_下载EasyBCD软件，并安装"><span class="nav-text">2.2 下载EasyBCD软件，并安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3_解压缩ubuntu-iso文件"><span class="nav-text">2.3 解压缩ubuntu.iso文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4_重启Windows即可看到系统给出两个启动菜单"><span class="nav-text">2.4 重启Windows即可看到系统给出两个启动菜单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Ubuntu"><span class="nav-text">3. 安装Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_选择NeoGrub引导加载器"><span class="nav-text">3.1 选择NeoGrub引导加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_点击桌面上的“安装Ubuntu15-10”"><span class="nav-text">3.2 点击桌面上的“安装Ubuntu15.10”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_后续清理"><span class="nav-text">4. 后续清理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_spark-default-conf"><span class="nav-text">2.1 spark-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_spark-env-sh"><span class="nav-text">2.2 spark-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_启动"><span class="nav-text">3. 启动</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
