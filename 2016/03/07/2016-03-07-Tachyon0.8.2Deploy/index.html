@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Html,JavaScript," />
+  <meta name="keywords" content="Hadoop-2.6.4,Spark-1.6.0,Tachyon-0.8.0," />
 
 
 
@@ -51,17 +51,16 @@
 
 
 
-<meta name="description" content="本章将介绍如何实现一个基本的菜单栏：">
+<meta name="description" content="欢迎来到Tachyon的世界详细Tachyon-0.8.2集群部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web技术开发(二)">
-<meta property="og:url" content="http://Seine1923.github.io/2015/09/15/2015-09-15-Web2/index.html">
+<meta property="og:title" content="Spark集群下部署Tachyon-0.8.2">
+<meta property="og:url" content="http://Seine1923.github.io/2016/03/07/2016-03-07-Tachyon0.8.2Deploy/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="本章将介绍如何实现一个基本的菜单栏：">
-<meta property="og:image" content="http://Seine1923.github.io/images/web2/example.png">
-<meta property="og:updated_time" content="2015-12-26T06:15:25.173Z">
+<meta property="og:description" content="欢迎来到Tachyon的世界详细Tachyon-0.8.2集群部署请阅读全文">
+<meta property="og:updated_time" content="2016-03-20T01:14:55.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web技术开发(二)">
-<meta name="twitter:description" content="本章将介绍如何实现一个基本的菜单栏：">
+<meta name="twitter:title" content="Spark集群下部署Tachyon-0.8.2">
+<meta name="twitter:description" content="欢迎来到Tachyon的世界详细Tachyon-0.8.2集群部署请阅读全文">
 
 
 
@@ -73,7 +72,7 @@
   };
 </script>
 
-  <title> Web技术开发(二) | Seine1923 </title>
+  <title> Spark集群下部署Tachyon-0.8.2 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +238,7 @@
             
             
               
-                Web技术开发(二)
+                Spark集群下部署Tachyon-0.8.2
               
             
           </h1>
@@ -248,8 +247,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-09-15T00:00:00+08:00" content="2015-09-15">
-              2015-09-15
+            <time itemprop="dateCreated" datetime="2016-03-07T00:00:00+08:00" content="2016-03-07">
+              2016-03-07
             </time>
           </span>
 
@@ -258,8 +257,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Web技术开发</span>
+                  <a href="/categories/Tachyon/" itemprop="url" rel="index">
+                    <span itemprop="name">Tachyon</span>
                   </a>
                 </span>
 
@@ -274,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/09/15/2015-09-15-Web2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/15/2015-09-15-Web2/" itemprop="commentsCount"></span>
+                <a href="/2016/03/07/2016-03-07-Tachyon0.8.2Deploy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/07/2016-03-07-Tachyon0.8.2Deploy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,46 +293,54 @@
       
 
       
-        <span itemprop="articleBody"><p>15 Sep 2015 - Kumming</p>
-<h3 id="基本样式">基本样式</h3><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"Web技术开发二.html"</span>&gt;</span>YNU<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-link:让浏览器解析加载，典型如样式表文件CSS，统一风格
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-     &lt;!<span class="tag">--</span>声明一个样式表<span class="tag">--</span>&gt;
-     <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
-     <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left}
-</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-</code></pre><p>block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a</p>
-<h3 id="盒子">盒子</h3><p>大小、位置－&gt;盒子模型，任何一个标记为盒子<br>盒子＝内容+边框(border)+padding(内边际)<br>元素 高:height，宽:width<br>盒子与盒子之间：margin</p>
-<h3 id="长度单位：">长度单位：</h3><p>px 像素，相对量，如1080p，指水平方向可显示1080像素<br>em 定义字体多大，1em=16px<br>pt 类如word磅，绝对大小，根据dpi指定，dot per inch<br>公式：px = pt * dpi / 72</p>
-<pre><code>&lt;<span class="attribute">padding</span>&gt;
-     <span class="attribute">left</span>
-     <span class="attribute">right</span>
-     <span class="attribute">top</span> 
-    <span class="attribute">bottom</span>
-</code></pre><table><br>    <tr><br>        <td></td><td>top</td><td>right</td><td>bottom</td><td>left</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>2opx</td><td>30px</td><td>40px(带单位)</td><br>    </tr><br>    <tr><br>        <td></td><td>上下</td><td>左右</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>20px</td><br>    </tr><br>    <tr><br>        <td></td><td>全部</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><br>    </tr><br></table>
-
-<p><strong> 行内标记只有左右边际 </strong></p>
-<h3 id="浏览器渲染模式：">浏览器渲染模式：</h3><ol>
-<li>正常流</li>
-<li>浮动流float(相对位置，绝对位置)</li>
+        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>Tachyon是一个分布式内存文件系统，可以在集群里以访问内存的速度来访问存在tachyon里的文件。Tachyon是架构在最底层的分布式文件存储和上层的各种计算框架之间的一种中间件。主要职责是将那些不需要落地到DFS里的文件，落地到分布式内存文件系统中，来达到共享内存，从而提高效率。同时可以减少内存冗余，GC时间等。当前最新版本为1.0.0,并且改名为Alluxio。</p>
+<h2 id="2-_运行环境">2. 运行环境</h2><p>在已搭建好的Hadoop2.6.4+Spark-1.6.0集群上部署Tachyon。</p>
+<p>版本信息：</p>
+<ul>
+<li>JDK：1.8.0_74 64位</li>
+<li>Hadoop：2.6.4</li>
+<li>Scala：2.12.0-M3</li>
+<li>Spark：1.6.0</li>
+<li>Tachyon: 0.8.2</li>
+</ul>
+<h2 id="3-_安装">3. 安装</h2><p>下载tachyon-0.8.2-hadoop2.6-bin.tar.gz,解压缩到/home/hadoop/目录下。</p>
+<h2 id="4-_配置">4. 配置</h2><h3 id="4-1_slavers">4.1 slavers</h3><p>在$TACHYON_HOME/conf目录下的workers节点添加各个从节点hadoop2,hadoop3…</p>
+<h3 id="4-2_tachyon-env-sh">4.2 tachyon-env.sh</h3><p>在$TACHYON_HOME/conf目录下把tachyon-env.sh.template复制为tachyon-env.sh,在这里需要修改TachyonMaster地址及底层文件系统路径。</p>
+<pre><code><span class="keyword">export</span> JAVA_HOME=/home/hadoop/java/jdk1<span class="number">.8</span><span class="number">.0</span>_74  
+<span class="keyword">export</span> JAVA=<span class="string">"$JAVA_HOME/bin/java"</span>  
+<span class="keyword">export</span> TACHYON_MASTER_ADDRESS=hadoop1  
+<span class="keyword">export</span> TACHYON_UNDERFS_ADDRESS=hdfs:<span class="comment">//hadoop1:9000  </span>
+</code></pre><h2 id="5-_分发Tachyon">5. 分发Tachyon</h2><pre><code>scp -r /home/hadoop/tachyon-<span class="number">0.8</span>.<span class="number">2</span> hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
+</code></pre><h2 id="6-_启动Tachyon">6. 启动Tachyon</h2><h3 id="6-1_启动HDFS">6.1 启动HDFS</h3><pre><code>hadoop-<span class="number">2.6</span><span class="number">.4</span>/sbin/start-dfs.sh
+</code></pre><h3 id="6-2_格式化Tachyon">6.2 格式化Tachyon</h3><pre><code><span class="keyword">bin/tachyon </span>format
+</code></pre><h3 id="6-3_启动Tachyon">6.3 启动Tachyon</h3><pre><code>bin/tachyon-start<span class="class">.sh</span> all SudoMount 
+</code></pre><h3 id="6-4_验证">6.4 验证</h3><pre><code><span class="title">JPS</span>  
+TachyonMaster  
+TachyonWorker
+</code></pre><h3 id="6-5_Web_UI">6.5 Web UI</h3><pre><code><span class="string">http:</span><span class="comment">//hadoop1:19999</span>
+</code></pre><h2 id="7-_Tachyon上运行Spark">7. Tachyon上运行Spark</h2><h3 id="7-1_core-site-xml">7.1 core-site.xml</h3><p>在$SPARK_HOME/conf目录下新建core-site.xml,添加内容，并分发到各个从节点</p>
+<pre><code><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>   
+　　<span class="tag">&lt;<span class="title">property</span>&gt;</span>   
+　　　　<span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.tachyon.impl<span class="tag">&lt;/<span class="title">name</span>&gt;</span>   
+　　　　<span class="tag">&lt;<span class="title">value</span>&gt;</span>tachyon.hadoop.TFS<span class="tag">&lt;/<span class="title">value</span>&gt;</span>   
+　　<span class="tag">&lt;/<span class="title">property</span>&gt;</span>   
+<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>  
+</code></pre><h3 id="7-2_启动Spark集群">7.2 启动Spark集群</h3><pre><code>sbin/start-all<span class="class">.sh</span> 
+</code></pre><h3 id="7-3_测试">7.3 测试</h3><ol>
+<li><p>使用Tachyon命令行准备测试数据文件</p>
+<pre><code>cd <span class="regexp">/home/</span>hadoop<span class="regexp">/tachyon-0.8.2/</span>bin   
+.<span class="regexp">/tachyon tfs copyFromLocal /</span>localdata /tachyoninput  
+.<span class="regexp">/tachyon tfs ls /</span> 
+</code></pre></li>
+<li><p>启动Spark-shell</p>
+<pre><code><span class="keyword">bin/spark-shell </span> 
+</code></pre></li>
+<li><p>对测试数据文件进行计数并另存为</p>
+<pre><code>scala&gt;val s = sc.<span class="function"><span class="title">textFile</span><span class="params">(<span class="string">"tachyon://hadoop1:19998/tachyoninput"</span>)</span></span>   
+scala&gt;s.<span class="function"><span class="title">count</span><span class="params">()</span></span>  
+scala&gt;s.<span class="function"><span class="title">saveAsTextFile</span><span class="params">(<span class="string">"tachyon://hadoop1:19998/outputdata"</span>)</span></span> 
+</code></pre></li>
 </ol>
-<h3 id="颜色表示：">颜色表示：</h3><ol>
-<li>li {float:left; background-color:#fff;} 颜色RGB，自发光；CMYK,反光，用于印刷<br>表示颜色以#号开始，#<em>**；一个</em>的表示0-FF,两个一样简写为一个；</li>
-<li>可用一些单词，如red,yellow…</li>
-<li>函数rgb(十进制，十进制，十进制）</li>
-</ol>
-<h3 id="透明度：">透明度：</h3><pre><code>opacity:<span class="number">0</span>-<span class="number">1</span> 
-</code></pre><h3 id="前景色：">前景色：</h3><pre><code><span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;}</span>去掉下划线
-</code></pre><h3 id="状态定义：">状态定义：</h3><p>是伪类，优先正常定义<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:hover &#123;background-color:...&#125; 鼠标悬停</span><br><span class="line">li:first-child &#123;border-radius:<span class="number">8</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">8</span>px&#125; 圆角</span><br><span class="line">   last-child</span><br><span class="line">border即边框，默认为零</span><br></pre></td></tr></table></figure></p>
-<h3 id="案例：">案例：</h3><pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
-    <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>; <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#699</span></span></span>; <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">10px</span> <span class="number">20px</span></span></span>;}</span>
-    <span class="rule"><span class="attribute">li</span>:<span class="value">hover {background-color: <span class="hexcolor">#569</span></span></span>;}
-    <span class="rule"><span class="attribute">li</span>:<span class="value">first-child {border-radius:<span class="number">8px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span>}
-    li:last-child {border-radius:<span class="number">0</span> <span class="number">8px</span> <span class="number">8px</span> <span class="number">0</span>}
-    a {color:white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-</code></pre><h3 id="效果展示：">效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
 </span>
       
     </div>
@@ -342,11 +349,11 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/Hadoop-2-6-4/" rel="tag">#Hadoop-2.6.4</a>
           
-            <a href="/tags/Html/" rel="tag">#Html</a>
+            <a href="/tags/Spark-1-6-0/" rel="tag">#Spark-1.6.0</a>
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/Tachyon-0-8-0/" rel="tag">#Tachyon-0.8.0</a>
           
         </div>
       
@@ -355,17 +362,13 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/08/2015-09-08-Web1/" rel="next" title="Web技术开发(一)">
-                <i class="fa fa-chevron-left"></i> Web技术开发(一)
+              <a href="/2016/03/04/2016-03-04-Spark1.6.0Deploy/" rel="next" title="Spark-1.6.0集群部署">
+                <i class="fa fa-chevron-left"></i> Spark-1.6.0集群部署
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/09/22/2015-09-22-Web3/" rel="prev" title="Web技术开发(三)">
-                Web技术开发(三) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -392,8 +395,8 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/09/15/2015-09-15-Web2/"
-           data-title="Web技术开发(二)" data-url="http://Seine1923.github.io/2015/09/15/2015-09-15-Web2/">
+      <div class="ds-thread" data-thread-key="2016/03/07/2016-03-07-Tachyon0.8.2Deploy/"
+           data-title="Spark集群下部署Tachyon-0.8.2" data-url="http://Seine1923.github.io/2016/03/07/2016-03-07-Tachyon0.8.2Deploy/">
       </div>
     
   </div>
@@ -512,7 +515,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本样式"><span class="nav-text">基本样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子"><span class="nav-text">盒子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长度单位："><span class="nav-text">长度单位：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器渲染模式："><span class="nav-text">浏览器渲染模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色表示："><span class="nav-text">颜色表示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度："><span class="nav-text">透明度：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前景色："><span class="nav-text">前景色：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态定义："><span class="nav-text">状态定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例："><span class="nav-text">案例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果展示："><span class="nav-text">效果展示：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_运行环境"><span class="nav-text">2. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装"><span class="nav-text">3. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置"><span class="nav-text">4. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1_slavers"><span class="nav-text">4.1 slavers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2_tachyon-env-sh"><span class="nav-text">4.2 tachyon-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_分发Tachyon"><span class="nav-text">5. 分发Tachyon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_启动Tachyon"><span class="nav-text">6. 启动Tachyon</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1_启动HDFS"><span class="nav-text">6.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2_格式化Tachyon"><span class="nav-text">6.2 格式化Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3_启动Tachyon"><span class="nav-text">6.3 启动Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4_验证"><span class="nav-text">6.4 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5_Web_UI"><span class="nav-text">6.5 Web UI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Tachyon上运行Spark"><span class="nav-text">7. Tachyon上运行Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1_core-site-xml"><span class="nav-text">7.1 core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2_启动Spark集群"><span class="nav-text">7.2 启动Spark集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3_测试"><span class="nav-text">7.3 测试</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
