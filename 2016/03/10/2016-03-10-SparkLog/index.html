@@ -57,7 +57,11 @@
 <meta property="og:url" content="http://Seine1923.github.io/2016/03/10/2016-03-10-SparkLog/index.html">
 <meta property="og:site_name" content="Seine1923">
 <meta property="og:description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
-<meta property="og:updated_time" content="2016-03-20T01:39:01.947Z">
+<meta property="og:image" content="http://Seine1923.github.io/images/spark/n2.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/spark/n3.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/spark/n4.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/spark/n5.png">
+<meta property="og:updated_time" content="2016-03-20T12:39:36.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark日志设置">
 <meta name="twitter:description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
@@ -312,6 +316,12 @@ spark.eventLog.compress true
 <p>spark.history.retainedApplications<br>默认值：50<br>在内存中保存Application历史记录的个数，如果超过这个值，旧的应用程序信息将被删除，当再次访问已被删除的应用信息时需要重新构建页面。</p>
 </blockquote>
 <h2 id="3-_启动">3. 启动</h2><p>SPARK_HOME/conf下：执行./start-history-server.sh，以后执行sbin/start-all.sh就可以了。</p>
+<h2 id="4-_演示">4. 演示</h2><p>执行一个wordcount实例后产生的日志</p>
+<p><img src="/images/spark/n2.png" alt=""></p>
+<p>点击应用名字WordCountAPP后即可查看各项情况</p>
+<p><img src="/images/spark/n3.png" alt=""></p>
+<p><img src="/images/spark/n4.png" alt=""></p>
+<p><img src="/images/spark/n5.png" alt=""></p>
 </span>
       
     </div>
@@ -484,7 +494,7 @@ spark.eventLog.compress true
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_spark-default-conf"><span class="nav-text">2.1 spark-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_spark-env-sh"><span class="nav-text">2.2 spark-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_启动"><span class="nav-text">3. 启动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_spark-default-conf"><span class="nav-text">2.1 spark-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_spark-env-sh"><span class="nav-text">2.2 spark-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_启动"><span class="nav-text">3. 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_演示"><span class="nav-text">4. 演示</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
