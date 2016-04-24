@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Apache,Mysql,Php,Yii," />
+  <meta name="keywords" content="Apache,MySQL,PHP,Yii," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="Windows 7 X64下Apache2.4+Mysql5.7+Php7+Yii2网站开发配置指南详细部署请阅读全文">
+<meta name="description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows7X64_Apache24_Mysql57_Php7_Yii2">
-<meta property="og:url" content="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/index.html">
+<meta property="og:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+<meta property="og:url" content="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="Windows 7 X64下Apache2.4+Mysql5.7+Php7+Yii2网站开发配置指南详细部署请阅读全文">
-<meta property="og:updated_time" content="2016-04-24T02:56:13.808Z">
+<meta property="og:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
+<meta property="og:updated_time" content="2016-04-24T03:12:46.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows7X64_Apache24_Mysql57_Php7_Yii2">
-<meta name="twitter:description" content="Windows 7 X64下Apache2.4+Mysql5.7+Php7+Yii2网站开发配置指南详细部署请阅读全文">
+<meta name="twitter:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+<meta name="twitter:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> Windows7X64_Apache24_Mysql57_Php7_Yii2 | Seine1923 </title>
+  <title> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -238,7 +238,7 @@
             
             
               
-                Windows7X64_Apache24_Mysql57_Php7_Yii2
+                Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
               
             
           </h1>
@@ -273,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/" itemprop="commentsCount"></span>
+                <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -283,7 +283,7 @@
           
 			
 			
-		  	 <span id="/2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/"class="leancloud_visitors"  data-flag-title="Windows7X64_Apache24_Mysql57_Php7_Yii2">
+		  	 <span id="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/"class="leancloud_visitors"  data-flag-title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
@@ -298,33 +298,36 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>Windows下网站开发配置各组件版本信息如下：<br>Windows 7 X64<br>Apache 2.4.20<br>Mysql 5.7<br>Php 7.0.6<br>Yii 2.0.7<br>相比于<a href="https://sourceforge.net/projects/wampserver/files/latest/download" target="_blank" rel="external">WAMP Server</a>这一组集成开发软件，独自安装各个组件对于了解整个网站工作原理会有更大的帮助。</p>
+        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>Windows下网站开发配置各组件版本信息如下：<br>    Windows 7 X64<br>    Apache 2.4.20<br>    MySQL 5.7<br>    PHP 7.0.6<br>    Yii 2.0.7<br>相比于<a href="https://sourceforge.net/projects/wampserver/files/latest/download" target="_blank" rel="external">WAMP Server</a>这一组集成开发软件，独自安装各个组件对于了解整个网站工作原理会有更大的帮助。</p>
 <h2 id="2-_安装Apache_2-4-20">2. 安装Apache 2.4.20</h2><ol>
 <li>从Apache Haus上下载<a href="http://www.apachehaus.com/cgi-bin/download.plx" target="_blank" rel="external">Apache 2.4 VC14</a>,注意要下载X64版本(httpd-2.4.20-x64-vc14.zip)</li>
 <li>下载安装<a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145" target="_blank" rel="external">Visual C++ for Visual Studio 2015 (VC14)</a></li>
 <li>解压Apache到C:\Apache24</li>
 <li>为了能够通过Apache Monitor(C:\Apache24\bin\ApacheMonitor.exe)来启动和停止Apache服务，需要以管理员身份启动cmd,转到bin目录(<code>cd &quot;C:\Apache24\bin&quot;</code>),然后执行<code>httpd.exe -k install -n &quot;Apache 2.4&quot;</code>来将Apache2.4安装为一个Windows服务。</li>
 </ol>
-<h2 id="3-_安装php_7-0-6">3. 安装php 7.0.6</h2><ol>
+<h2 id="3-_安装PHP_7-0-6">3. 安装PHP 7.0.6</h2><ol>
 <li>下载<a href="http://windows.php.net/qa/" target="_blank" rel="external">VC14 x64 Thread Safe</a>.zip文件</li>
 <li>将文件解压到C:/php7</li>
 </ol>
 <h2 id="4-_配置Apache">4. 配置Apache</h2><ol>
 <li>打开Apache配置文件：C:\Apache24\conf\httpd.conf</li>
-<li><p>定位到ServerRoot来配置服务根目录为c:/Apache24<br> <code>ServerRoot &quot;c:/Apache24&quot;</code>  </p>
-<p> 注意是正斜杠”/“，而不是反斜杠”\”</p>
-</li>
-<li><p>将Apache的监听端口改为8080，默认的80容易与其他软件冲突，或者选择一个其他空闲的端口<br> <code>Listen 8080</code></p>
-</li>
-<li><p>定位到DocumentRoot来设置网站目录<br> <code>DocumentRoot &quot;C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web&quot;</code><br> <code>&lt;Directory &quot;C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web&quot;&gt;</code></p>
-</li>
-<li><p>复制以下代码到文档最顶端<br> <code>AddHandler application/x-httpd-php .php</code><br> <code>AddType application/x-httpd-php .php .html</code><br> <code>LoadModule php7_module &quot;c:/php7/php7apache2_4.dll&quot;</code><br> <code>PHPIniDir &quot;c:/php7&quot;</code></p>
-</li>
+<li>定位到ServerRoot来配置服务根目录为c:/Apache24<br> <code>ServerRoot &quot;c:/Apache24&quot;</code><br> 注意是正斜杠”/“，而不是反斜杠”\”  </li>
+<li>将Apache的监听端口改为8080，默认的80容易与其他软件冲突，或者选择一个其他空闲的端口<br> <code>Listen 8080</code>  </li>
+<li><p>定位到DocumentRoot来设置网站目录</p>
+<pre><code><span class="keyword"><span class="common">DocumentRoot</span></span> <span class="string">"C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web"</span>  
+<span class="tag">&lt;Directory "C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web"&gt;</span>
+</code></pre></li>
+<li><p>复制以下代码到文档最顶端</p>
+<pre><code>AddHandler application/x-httpd-php <span class="class">.php</span>
+AddType application/x-httpd-php <span class="class">.php</span> <span class="class">.html</span>
+LoadModule php7_module <span class="string">"c:/php7/php7apache2_4.dll"</span>
+PHPIniDir <span class="string">"c:/php7"</span>
+</code></pre></li>
 <li><p>虚拟主机配置</p>
 <ol>
 <li>为了能使Apache支持多个站点，需要添加虚拟主机</li>
 <li>在Windows的Host文件添加第二个网站的名称与域名<br> <code>127.0.0.1    local_website2</code></li>
-<li><p>在C:\Apache24\conf\httpd.conf文件底端添加如下设置    </p>
+<li><p>在C:\Apache24\conf\httpd.conf文件底端添加如下设置</p>
 <pre><code>&lt;<span class="constant">VirtualHost</span> <span class="number">127.0</span>.<span class="number">0.1</span><span class="symbol">:</span><span class="number">8080</span>&gt; 
       <span class="constant">ServerAdmin</span> webmaster<span class="variable">@local_website2</span> 
      <span class="constant">DocumentRoot</span> <span class="string">"C:/Users/Hary/Documents/GitHub/yii-advanced-app-2.0.7/advanced/frontend/web"</span> 
@@ -340,22 +343,23 @@
       &lt;<span class="regexp">/Directory&gt; 
 &lt;/</span><span class="constant">VirtualHost</span>&gt;
 </code></pre></li>
-<li><p>在浏览器输入<a href="http://local_website2:8080/index.php即可访问新站点。" target="_blank" rel="external">http://local_website2:8080/index.php即可访问新站点。</a></p>
-</li>
+<li>在浏览器输入<code>http://local_website2:8080/index.php</code>即可访问新站点。</li>
 <li>若访问时出现没有权限访问，则是由于没有在<directory></directory>之间加上<code>Require all granted</code></li>
 </ol>
 </li>
 </ol>
 <h2 id="5-_配置PHP">5. 配置PHP</h2><ol>
-<li>将C:\php7\php.ini-development文件重命名为php.ini，做好备份。</li>
-<li>在php.ini中找到extension_dir，添加扩展插件目录<br> <code>extension_dir = &quot;C:/php7/ext&quot;</code></li>
-<li>若出现Fatal error: Call to undefined function mb_strlen()错误，则是由于没有在php.ini中配置<code>extension_dir</code></li>
+<li>将<code>C:\php7\php.ini-development</code>文件重命名为<code>php.ini</code>，做好备份。</li>
+<li>在<code>php.ini</code>中找到<code>extension_dir</code>，添加扩展插件目录<br> <code>extension_dir = &quot;C:/php7/ext&quot;</code></li>
+<li>若出现<code>Fatal error: Call to undefined function mb_strlen()</code>错误，则是由于没有在<code>php.ini</code>中配置<code>extension_dir</code></li>
 </ol>
 <h2 id="6-_测试Apache和PHP">6. 测试Apache和PHP</h2><ol>
-<li><p>在网站目录下新建一个phpinfo.php文件，并附上如下代码<br> <code>&lt;?php</code><br> <code>phpinfo();</code><br> <code>?&gt;</code></p>
-</li>
-<li><p>在浏览器上访问<a href="http://localhost:8080/phpinfo.php即可查看到PHP配置信息" target="_blank" rel="external">http://localhost:8080/phpinfo.php即可查看到PHP配置信息</a></p>
-</li>
+<li><p>在网站目录下新建一个<code>phpinfo.php</code>文件，并附上如下代码</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> 
+    phpinfo();  
+<span class="preprocessor">?&gt;</span></span>
+</code></pre></li>
+<li>在浏览器上访问<code>http://localhost:8080/phpinfo.php</code>即可查看到PHP配置信息</li>
 </ol>
 <h2 id="7-_Yii2">7. Yii2</h2><ol>
 <li><a href="http://www.yiifans.com/yii2/guide/" target="_blank" rel="external">Yii2.0中文开发文档</a></li>
@@ -374,9 +378,9 @@
           
             <a href="/tags/Apache/" rel="tag">#Apache</a>
           
-            <a href="/tags/Mysql/" rel="tag">#Mysql</a>
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
           
-            <a href="/tags/Php/" rel="tag">#Php</a>
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
           
             <a href="/tags/Yii/" rel="tag">#Yii</a>
           
@@ -420,8 +424,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/"
-           data-title="Windows7X64_Apache24_Mysql57_Php7_Yii2" data-url="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_Mysql_Php_Yii/">
+      <div class="ds-thread" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/"
+           data-title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南" data-url="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/">
       </div>
     
   </div>
@@ -479,7 +483,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -540,7 +544,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装Apache_2-4-20"><span class="nav-text">2. 安装Apache 2.4.20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装php_7-0-6"><span class="nav-text">3. 安装php 7.0.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置Apache"><span class="nav-text">4. 配置Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置PHP"><span class="nav-text">5. 配置PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_测试Apache和PHP"><span class="nav-text">6. 测试Apache和PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Yii2"><span class="nav-text">7. Yii2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装MySql"><span class="nav-text">8. 安装MySql</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装Apache_2-4-20"><span class="nav-text">2. 安装Apache 2.4.20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装PHP_7-0-6"><span class="nav-text">3. 安装PHP 7.0.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置Apache"><span class="nav-text">4. 配置Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置PHP"><span class="nav-text">5. 配置PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_测试Apache和PHP"><span class="nav-text">6. 测试Apache和PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Yii2"><span class="nav-text">7. Yii2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装MySql"><span class="nav-text">8. 安装MySql</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
