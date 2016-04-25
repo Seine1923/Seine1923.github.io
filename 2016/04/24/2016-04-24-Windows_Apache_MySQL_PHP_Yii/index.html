@@ -57,7 +57,11 @@
 <meta property="og:url" content="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/index.html">
 <meta property="og:site_name" content="Seine1923">
 <meta property="og:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
-<meta property="og:updated_time" content="2016-04-24T03:43:40.090Z">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiidownload.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit1.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit2.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yii.png">
+<meta property="og:updated_time" content="2016-04-25T12:08:32.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
 <meta name="twitter:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
@@ -332,7 +336,7 @@ PHPIniDir <span class="string">"c:/php7"</span>
 <li><p>虚拟主机配置</p>
 <ol>
 <li>为了能使Apache支持多个站点，需要添加虚拟主机</li>
-<li>在Windows的Host文件添加第二个网站的名称与域名<br> <code>127.0.0.1    local_website2</code></li>
+<li>在Windows的Host文件添加第二个网站的名称与域名<code>cd C:/windows/system32/drivers/etc/</code><br> <code>127.0.0.1    local_website2</code></li>
 <li><p>在C:\Apache24\conf\httpd.conf文件底端添加如下设置</p>
 <pre><code>&lt;<span class="constant">VirtualHost</span> <span class="number">127.0</span>.<span class="number">0.1</span><span class="symbol">:</span><span class="number">8080</span>&gt; 
       <span class="constant">ServerAdmin</span> webmaster<span class="variable">@local_website2</span> 
@@ -371,6 +375,29 @@ PHPIniDir <span class="string">"c:/php7"</span>
 </ol>
 <h2 id="7-_Yii2">7. Yii2</h2><ol>
 <li><a href="http://www.yiifans.com/yii2/guide/" target="_blank" rel="external">Yii2.0中文开发文档</a></li>
+<li>去官网下载一个<a href="http://www.yiiframework.com/download/" target="_blank" rel="external">Yii的高级模版</a><br> <img src="/images/wamp/yiidownload.png" alt=""></li>
+<li>以管理员方式解压Yii的高级模板到web可访问目录，文件名advanced不做改动</li>
+<li>切换到advanced目录如图开始配置<br> <img src="/images/wamp/yiiInit1.png" alt=""><br> <img src="/images/wamp/yiiInit2.png" alt=""></li>
+<li><p>在Windows下的Host文件下添加：</p>
+<pre><code><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>    mysite
+</code></pre></li>
+<li><p>在Apache下的httpd.conf添加：</p>
+<pre><code>&lt;<span class="constant">VirtualHost</span> <span class="number">127.0</span>.<span class="number">0.1</span><span class="symbol">:</span><span class="number">8080</span>&gt; 
+  <span class="constant">ServerAdmin</span> webmaster<span class="variable">@mysite</span> 
+  <span class="constant">DocumentRoot</span> <span class="string">"C:/Users/Hary/Documents/GitHub/mysite/advanced/frontend/web"</span> 
+  <span class="constant">ServerName</span> mysite 
+  <span class="constant">ErrorLog</span> logs/mysite-error.log 
+  <span class="constant">CustomLog</span> logs/mysite-access_log common 
+
+  &lt;<span class="constant">Directory</span> <span class="constant">C</span><span class="symbol">:/Users/Hary/Documents/GitHub/mysite/advanced/frontend/web&gt;</span> 
+        <span class="constant">Options</span> <span class="constant">Indexes</span> <span class="constant">FollowSymLinks</span> <span class="constant">Includes</span> <span class="constant">ExecCGI</span>
+        <span class="constant">AllowOverride</span> <span class="constant">All</span>
+        <span class="constant">Order</span> deny,allow
+        <span class="constant">Require</span> all granted
+  &lt;<span class="regexp">/Directory&gt; 
+&lt;/</span><span class="constant">VirtualHost</span>&gt;
+</code></pre></li>
+<li>访问测试<code>http://mysite:8080/index.php</code><br> <img src="/images/wamp/yii.png" alt="">  </li>
 </ol>
 <h2 id="8-_安装MySql">8. 安装MySql</h2><ol>
 <li>下载<a href="http://dev.mysql.com/downloads/" target="_blank" rel="external">MySQL Community Server (GPL)</a>,选择Windows (X86,32bit), MySQL Install MSI安装包(mysql-installer-community-5.7.12.0.msi)。</li>
