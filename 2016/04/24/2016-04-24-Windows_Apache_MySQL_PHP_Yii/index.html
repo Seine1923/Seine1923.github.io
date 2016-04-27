@@ -61,7 +61,14 @@
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit1.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit2.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/yii.png">
-<meta property="og:updated_time" content="2016-04-25T12:08:32.856Z">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/dbconnect.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/modelGenerator.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/modelGeneratorResult.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDGenerator.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDPreview.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDfinish.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsprofile.png">
+<meta property="og:updated_time" content="2016-04-27T01:57:14.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
 <meta name="twitter:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
@@ -398,8 +405,53 @@ PHPIniDir <span class="string">"c:/php7"</span>
 &lt;/</span><span class="constant">VirtualHost</span>&gt;
 </code></pre></li>
 <li>访问测试<code>http://mysite:8080/index.php</code><br> <img src="/images/wamp/yii.png" alt="">  </li>
+<li>在安装好MySQL后，连接数据库设置，在mysite\advanced\common\config下设置main-local.php如下：<br> <img src="/images/wamp/dbconnect.png" alt=""></li>
+<li><p>在MySQL WorkBench下创建数据库</p>
+<pre><code><span class="operator"><span class="keyword">create</span> <span class="keyword">database</span> mysitedb</span>
+</code></pre></li>
+<li><p>创建user表（menu表可参考如下）</p>
+<pre><code><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`user`</span> (
+    <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'自增ID'</span>,  
+    <span class="string">`username`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户名'</span>,  
+    <span class="string">`auth_key`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'自动登录key'</span>,  
+    <span class="string">`password_hash`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'加密密码'</span>,  
+    <span class="string">`password_reset_token`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'重置密码token'</span>,  
+    <span class="string">`email`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'邮箱'</span>,  
+    <span class="string">`role`</span> <span class="built_in">smallint</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'10'</span> <span class="keyword">COMMENT</span> <span class="string">'角色等级'</span>,  
+    <span class="string">`status`</span> <span class="built_in">smallint</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'10'</span> <span class="keyword">COMMENT</span> <span class="string">'状态'</span>,  
+    <span class="string">`created_at`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建时间'</span>,  
+    <span class="string">`updated_at`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'更新时间'</span>,  
+    PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)
+) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">0</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'用户表'</span>;</span>
+</code></pre></li>
+<li>使用gii:<code>http://mysite2:8080/frontend/web/index.php?r=gii</code>,由数据库中的表创建Model,设置如下后点击Preview和Generate。<br><img src="/images/wamp/modelGenerator.png" alt=""><br><img src="/images/wamp/modelGeneratorResult.png" alt="">  </li>
+<li>有了数据模型以后，生成相应的CRUD(Create, Read, Update, Delete)操作：<br><img src="/images/wamp/CRUDGenerator.png" alt=""><br><img src="/images/wamp/CRUDPreview.png" alt=""><br><img src="/images/wamp/CRUDfinish.png" alt=""></li>
+<li><p>在backend/views/layouts/main.php中，添加代码如下：</p>
+<pre><code> <span class="variable">$menuItems</span> = [
+    [<span class="string">'label'</span> =&gt; <span class="string">'Home'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'news'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/news/index'</span>]],
+];
+</code></pre></li>
+<li><p>访问<code>http://mysite2:8080/backend/web/index.php</code>就可以看到news菜单并点击访问<br><img src="/images/wamp/newsprofile.png" alt=""><br>然后就可以对内容进行增删查改了。</p>
+</li>
+<li><p>backend/views/layouts下文件介绍：</p>
+<pre><code><span class="tag">main</span><span class="class">.php</span>：首页抬头（菜单）展示
+</code></pre></li>
+<li><p>backend/views/news下文件介绍：  </p>
+<pre><code>_form.php：新建/修改新闻的页面
+_search.php:搜索响应页面
+<span class="operator"><span class="keyword">create</span>.php：点击新建新闻的响应页面
+<span class="keyword">index</span>.php：新闻后台的主页面，为了使页面更简洁，可将代码<span class="string">'content:ntext'</span>隐去，以不显示新闻内容
+<span class="keyword">update</span>.php：点击修改新闻的响应页面
+<span class="keyword">view</span>.php：点击查看新闻的响应页面    </span>
+</code></pre></li>
+<li><p>backend/views/site下文件介绍：</p>
+<pre><code><span class="tag">error</span><span class="class">.php</span>：出错后页面展示
+<span class="tag">index</span><span class="class">.php</span>：首页内容展示
+<span class="tag">login</span><span class="class">.php</span>：登录页面展示      
+</code></pre></li>
 </ol>
-<h2 id="8-_安装MySql">8. 安装MySql</h2><ol>
+<h2 id="8-_安装MySQL">8. 安装MySQL</h2><ol>
 <li>下载<a href="http://dev.mysql.com/downloads/" target="_blank" rel="external">MySQL Community Server (GPL)</a>,选择Windows (X86,32bit), MySQL Install MSI安装包(mysql-installer-community-5.7.12.0.msi)。</li>
 <li>默认安装即可，安装时需要设置root密码。</li>
 </ol>
@@ -583,7 +635,7 @@ PHPIniDir <span class="string">"c:/php7"</span>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装Apache_2-4-20"><span class="nav-text">2. 安装Apache 2.4.20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装PHP_7-0-6"><span class="nav-text">3. 安装PHP 7.0.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置Apache"><span class="nav-text">4. 配置Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置PHP"><span class="nav-text">5. 配置PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_测试Apache和PHP"><span class="nav-text">6. 测试Apache和PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Yii2"><span class="nav-text">7. Yii2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装MySql"><span class="nav-text">8. 安装MySql</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_PHP开发工具"><span class="nav-text">9. PHP开发工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装Apache_2-4-20"><span class="nav-text">2. 安装Apache 2.4.20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装PHP_7-0-6"><span class="nav-text">3. 安装PHP 7.0.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置Apache"><span class="nav-text">4. 配置Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置PHP"><span class="nav-text">5. 配置PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_测试Apache和PHP"><span class="nav-text">6. 测试Apache和PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Yii2"><span class="nav-text">7. Yii2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装MySQL"><span class="nav-text">8. 安装MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_PHP开发工具"><span class="nav-text">9. PHP开发工具</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
