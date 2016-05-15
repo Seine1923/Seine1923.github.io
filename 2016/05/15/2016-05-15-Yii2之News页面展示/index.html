@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Apache,MySQL,PHP,Yii," />
+  <meta name="keywords" content="MySQL,PHP,Yii," />
 
 
 
@@ -51,27 +51,18 @@
 
 
 
-<meta name="description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
+<meta name="description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
-<meta property="og:url" content="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/index.html">
+<meta property="og:title" content="Yii2之News页面展示">
+<meta property="og:url" content="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2之News页面展示/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiidownload.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit1.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yiiInit2.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/yii.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/dbconnect.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/modelGenerator.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/modelGeneratorResult.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDGenerator.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDPreview.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/CRUDfinish.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsprofile.png">
-<meta property="og:updated_time" content="2016-04-27T01:57:14.577Z">
+<meta property="og:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsDetail.png">
+<meta property="og:updated_time" content="2016-05-15T05:04:08.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
-<meta name="twitter:description" content="Windows 7 X64下Apache2.4+MySQL5.7+PHP7+Yii2网站开发配置指南详细部署请阅读全文">
+<meta name="twitter:title" content="Yii2之News页面展示">
+<meta name="twitter:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 
 
 
@@ -83,7 +74,7 @@
   };
 </script>
 
-  <title> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南 | Seine1923 </title>
+  <title> Yii2之News页面展示 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +240,7 @@
             
             
               
-                Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
+                Yii2之News页面展示
               
             
           </h1>
@@ -258,8 +249,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-04-24T00:00:00+08:00" content="2016-04-24">
-              2016-04-24
+            <time itemprop="dateCreated" datetime="2016-05-15T00:00:00+08:00" content="2016-05-15">
+              2016-05-15
             </time>
           </span>
 
@@ -284,8 +275,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/" itemprop="commentsCount"></span>
+                <a href="/2016/05/15/2016-05-15-Yii2之News页面展示/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/15/2016-05-15-Yii2之News页面展示/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -294,7 +285,7 @@
           
 			
 			
-		  	 <span id="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/"class="leancloud_visitors"  data-flag-title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+		  	 <span id="/2016/05/15/2016-05-15-Yii2之News页面展示/"class="leancloud_visitors"  data-flag-title="Yii2之News页面展示">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
@@ -309,156 +300,110 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>Windows下网站开发配置各组件版本信息如下：</p>
-<pre><code>Windows <span class="number">7</span> X64
-Apache <span class="number">2.4</span><span class="number">.20</span>
-MySQL <span class="number">5.7</span>
-PHP <span class="number">7.0</span><span class="number">.6</span>
-Yii <span class="number">2.0</span><span class="number">.7</span>
-</code></pre><p>相比于<a href="https://sourceforge.net/projects/wampserver/files/latest/download" target="_blank" rel="external">WAMP Server</a>这一组集成开发软件，独自安装各个组件对于了解整个网站工作原理会有更大的帮助。</p>
-<h2 id="2-_安装Apache_2-4-20">2. 安装Apache 2.4.20</h2><ol>
-<li>从Apache Haus上下载<a href="http://www.apachehaus.com/cgi-bin/download.plx" target="_blank" rel="external">Apache 2.4 VC14</a>,注意要下载X64版本(httpd-2.4.20-x64-vc14.zip)</li>
-<li>下载安装<a href="https://www.microsoft.com/en-us/download/details.aspx?id=48145" target="_blank" rel="external">Visual C++ for Visual Studio 2015 (VC14)</a></li>
-<li>解压Apache到C:\Apache24</li>
-<li>为了能够通过Apache Monitor(C:\Apache24\bin\ApacheMonitor.exe)来启动和停止Apache服务，需要以管理员身份启动cmd,转到bin目录(<code>cd &quot;C:\Apache24\bin&quot;</code>),然后执行<code>httpd.exe -k install -n &quot;Apache 2.4&quot;</code>来将Apache2.4安装为一个Windows服务。</li>
-</ol>
-<h2 id="3-_安装PHP_7-0-6">3. 安装PHP 7.0.6</h2><ol>
-<li>下载<a href="http://windows.php.net/qa/" target="_blank" rel="external">VC14 x64 Thread Safe</a>.zip文件</li>
-<li>将文件解压到C:/php7</li>
-</ol>
-<h2 id="4-_配置Apache">4. 配置Apache</h2><ol>
-<li>打开Apache配置文件：C:\Apache24\conf\httpd.conf</li>
-<li>定位到ServerRoot来配置服务根目录为c:/Apache24<br> <code>ServerRoot &quot;c:/Apache24&quot;</code><br> 注意是正斜杠”/“，而不是反斜杠”\”  </li>
-<li>将Apache的监听端口改为8080，默认的80容易与其他软件冲突，或者选择一个其他空闲的端口<br> <code>Listen 8080</code>  </li>
-<li><p>定位到DocumentRoot来设置网站目录</p>
-<pre><code><span class="keyword"><span class="common">DocumentRoot</span></span> <span class="string">"C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web"</span>  
-<span class="tag">&lt;Directory "C:/Users/Hary/Documents/GitHub/sample/biaozhunhua/advanced/web"&gt;</span>
-</code></pre></li>
-<li><p>复制以下代码到文档最顶端</p>
-<pre><code>AddHandler application/x-httpd-php <span class="class">.php</span>
-AddType application/x-httpd-php <span class="class">.php</span> <span class="class">.html</span>
-LoadModule php7_module <span class="string">"c:/php7/php7apache2_4.dll"</span>
-PHPIniDir <span class="string">"c:/php7"</span>
-</code></pre></li>
-<li><p>虚拟主机配置</p>
-<ol>
-<li>为了能使Apache支持多个站点，需要添加虚拟主机</li>
-<li>在Windows的Host文件添加第二个网站的名称与域名<code>cd C:/windows/system32/drivers/etc/</code><br> <code>127.0.0.1    local_website2</code></li>
-<li><p>在C:\Apache24\conf\httpd.conf文件底端添加如下设置</p>
-<pre><code>&lt;<span class="constant">VirtualHost</span> <span class="number">127.0</span>.<span class="number">0.1</span><span class="symbol">:</span><span class="number">8080</span>&gt; 
-      <span class="constant">ServerAdmin</span> webmaster<span class="variable">@local_website2</span> 
-     <span class="constant">DocumentRoot</span> <span class="string">"C:/Users/Hary/Documents/GitHub/yii-advanced-app-2.0.7/advanced/frontend/web"</span> 
-      <span class="constant">ServerName</span> local_website2 
-      <span class="constant">ErrorLog</span> logs/local_website2-error.log 
-      <span class="constant">CustomLog</span> logs/local_website2-access_log common 
-
-      &lt;<span class="constant">Directory</span> <span class="constant">C</span><span class="symbol">:/Users/Hary/Documents/GitHub/yii-advanced-app-</span><span class="number">2.0</span>.<span class="number">7</span>/advanced/frontend/web&gt; 
-        <span class="constant">Options</span> <span class="constant">Indexes</span> <span class="constant">FollowSymLinks</span> <span class="constant">Includes</span> <span class="constant">ExecCGI</span>
-        <span class="constant">AllowOverride</span> <span class="constant">All</span>
-        <span class="constant">Order</span> deny,allow
-        <span class="constant">Require</span> all granted
-      &lt;<span class="regexp">/Directory&gt; 
-&lt;/</span><span class="constant">VirtualHost</span>&gt;
-</code></pre></li>
-<li><p>在浏览器输入<code>http://local_website2:8080/index.php</code>即可访问新站点。</p>
-</li>
-<li>若访问时出现没有权限访问，则是由于没有在<code>&lt;Directory&gt;&lt;/Directory&gt;</code>之间加上<code>Require all granted</code></li>
-</ol>
-</li>
-</ol>
-<h2 id="5-_配置PHP">5. 配置PHP</h2><ol>
-<li>将<code>C:\php7\php.ini-development</code>文件重命名为<code>php.ini</code>，做好备份。</li>
-<li>在<code>php.ini</code>中找到<code>extension_dir</code>，添加扩展插件目录<br> <code>extension_dir = &quot;C:/php7/ext&quot;</code></li>
-<li>若出现<code>Fatal error: Call to undefined function mb_strlen()</code>错误，则是由于没有在<code>php.ini</code>中配置<code>extension_dir</code></li>
-</ol>
-<h2 id="6-_测试Apache和PHP">6. 测试Apache和PHP</h2><ol>
-<li><p>在网站目录下新建一个<code>phpinfo.php</code>文件，并附上如下代码</p>
-<pre><code><span class="php"><span class="preprocessor">&lt;?php</span> 
-    phpinfo();  
-<span class="preprocessor">?&gt;</span></span>
-</code></pre></li>
-<li><p>在浏览器上访问<code>http://localhost:8080/phpinfo.php</code>即可查看到PHP配置信息</p>
-</li>
-</ol>
-<h2 id="7-_Yii2">7. Yii2</h2><ol>
-<li><a href="http://www.yiifans.com/yii2/guide/" target="_blank" rel="external">Yii2.0中文开发文档</a></li>
-<li>去官网下载一个<a href="http://www.yiiframework.com/download/" target="_blank" rel="external">Yii的高级模版</a><br> <img src="/images/wamp/yiidownload.png" alt=""></li>
-<li>以管理员方式解压Yii的高级模板到web可访问目录，文件名advanced不做改动</li>
-<li>切换到advanced目录如图开始配置<br> <img src="/images/wamp/yiiInit1.png" alt=""><br> <img src="/images/wamp/yiiInit2.png" alt=""></li>
-<li><p>在Windows下的Host文件下添加：</p>
-<pre><code><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>    mysite
-</code></pre></li>
-<li><p>在Apache下的httpd.conf添加：</p>
-<pre><code>&lt;<span class="constant">VirtualHost</span> <span class="number">127.0</span>.<span class="number">0.1</span><span class="symbol">:</span><span class="number">8080</span>&gt; 
-  <span class="constant">ServerAdmin</span> webmaster<span class="variable">@mysite</span> 
-  <span class="constant">DocumentRoot</span> <span class="string">"C:/Users/Hary/Documents/GitHub/mysite/advanced/frontend/web"</span> 
-  <span class="constant">ServerName</span> mysite 
-  <span class="constant">ErrorLog</span> logs/mysite-error.log 
-  <span class="constant">CustomLog</span> logs/mysite-access_log common 
-
-  &lt;<span class="constant">Directory</span> <span class="constant">C</span><span class="symbol">:/Users/Hary/Documents/GitHub/mysite/advanced/frontend/web&gt;</span> 
-        <span class="constant">Options</span> <span class="constant">Indexes</span> <span class="constant">FollowSymLinks</span> <span class="constant">Includes</span> <span class="constant">ExecCGI</span>
-        <span class="constant">AllowOverride</span> <span class="constant">All</span>
-        <span class="constant">Order</span> deny,allow
-        <span class="constant">Require</span> all granted
-  &lt;<span class="regexp">/Directory&gt; 
-&lt;/</span><span class="constant">VirtualHost</span>&gt;
-</code></pre></li>
-<li>访问测试<code>http://mysite:8080/index.php</code><br> <img src="/images/wamp/yii.png" alt="">  </li>
-<li>在安装好MySQL后，连接数据库设置，在mysite\advanced\common\config下设置main-local.php如下：<br> <img src="/images/wamp/dbconnect.png" alt=""></li>
-<li><p>在MySQL WorkBench下创建数据库</p>
-<pre><code><span class="operator"><span class="keyword">create</span> <span class="keyword">database</span> mysitedb</span>
-</code></pre></li>
-<li><p>创建user表（menu表可参考如下）</p>
-<pre><code><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`user`</span> (
-    <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT <span class="keyword">COMMENT</span> <span class="string">'自增ID'</span>,  
-    <span class="string">`username`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'用户名'</span>,  
-    <span class="string">`auth_key`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'自动登录key'</span>,  
-    <span class="string">`password_hash`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'加密密码'</span>,  
-    <span class="string">`password_reset_token`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'重置密码token'</span>,  
-    <span class="string">`email`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'邮箱'</span>,  
-    <span class="string">`role`</span> <span class="built_in">smallint</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'10'</span> <span class="keyword">COMMENT</span> <span class="string">'角色等级'</span>,  
-    <span class="string">`status`</span> <span class="built_in">smallint</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'10'</span> <span class="keyword">COMMENT</span> <span class="string">'状态'</span>,  
-    <span class="string">`created_at`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'创建时间'</span>,  
-    <span class="string">`updated_at`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'更新时间'</span>,  
-    PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)
-) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">0</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8 <span class="keyword">COMMENT</span>=<span class="string">'用户表'</span>;</span>
-</code></pre></li>
-<li>使用gii:<code>http://mysite2:8080/frontend/web/index.php?r=gii</code>,由数据库中的表创建Model,设置如下后点击Preview和Generate。<br><img src="/images/wamp/modelGenerator.png" alt=""><br><img src="/images/wamp/modelGeneratorResult.png" alt="">  </li>
-<li>有了数据模型以后，生成相应的CRUD(Create, Read, Update, Delete)操作：<br><img src="/images/wamp/CRUDGenerator.png" alt=""><br><img src="/images/wamp/CRUDPreview.png" alt=""><br><img src="/images/wamp/CRUDfinish.png" alt=""></li>
-<li><p>在backend/views/layouts/main.php中，添加代码如下：</p>
-<pre><code> <span class="variable">$menuItems</span> = [
-    [<span class="string">'label'</span> =&gt; <span class="string">'Home'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'news'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/news/index'</span>]],
+        <span itemprop="articleBody"><h2 id="1-_后台添加内容">1. 后台添加内容</h2><p>前一节我们通过gii生成了news的model、CRUD后，就可以通过后台添加news内容</p>
+<p><img src="/images/wamp/createNews.png" alt=""></p>
+<h2 id="2-_main-php">2. main.php</h2><pre><code><span class="variable">$menuItems</span> = [
+    [<span class="string">'label'</span> =&gt; <span class="string">'首页'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'新闻动态'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/newslist'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'组织机构'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/org'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'留言反馈'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'人才招聘'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/zhaopin'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'关于我们'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
 ];
-</code></pre></li>
-<li><p>访问<code>http://mysite2:8080/backend/web/index.php</code>就可以看到news菜单并点击访问<br><img src="/images/wamp/newsprofile.png" alt=""><br>然后就可以对内容进行增删查改了。</p>
-</li>
-<li><p>backend/views/layouts下文件介绍：</p>
-<pre><code><span class="tag">main</span><span class="class">.php</span>：首页抬头（菜单）展示
-</code></pre></li>
-<li><p>backend/views/news下文件介绍：  </p>
-<pre><code>_form.php：新建/修改新闻的页面
-_search.php:搜索响应页面
-<span class="operator"><span class="keyword">create</span>.php：点击新建新闻的响应页面
-<span class="keyword">index</span>.php：新闻后台的主页面，为了使页面更简洁，可将代码<span class="string">'content:ntext'</span>隐去，以不显示新闻内容
-<span class="keyword">update</span>.php：点击修改新闻的响应页面
-<span class="keyword">view</span>.php：点击查看新闻的响应页面    </span>
-</code></pre></li>
-<li><p>backend/views/site下文件介绍：</p>
-<pre><code><span class="tag">error</span><span class="class">.php</span>：出错后页面展示
-<span class="tag">index</span><span class="class">.php</span>：首页内容展示
-<span class="tag">login</span><span class="class">.php</span>：登录页面展示      
-</code></pre></li>
-</ol>
-<h2 id="8-_安装MySQL">8. 安装MySQL</h2><ol>
-<li>下载<a href="http://dev.mysql.com/downloads/" target="_blank" rel="external">MySQL Community Server (GPL)</a>,选择Windows (X86,32bit), MySQL Install MSI安装包(mysql-installer-community-5.7.12.0.msi)。</li>
-<li>默认安装即可，安装时需要设置root密码。</li>
-</ol>
-<h2 id="9-_PHP开发工具">9. PHP开发工具</h2><ol>
-<li><a href="https://www.jetbrains.com/phpstorm/download/" target="_blank" rel="external">phpStorm</a>是写PHP最好的IDE之一</li>
-<li><a href="http://idea.qinxi1992.cn/" target="_blank" rel="external">注册码</a></li>
-</ol>
+</code></pre><p>首页（frontend/views/layout/main.php）设置news菜单栏，菜单栏叫做“新闻动态”，点击以后，会跳转到frontend/controllers下的SiteController控制器，找到对应的响应叫actionNewslist</p>
+<h2 id="3-_SiteController-&gt;actionNewslist">3. SiteController-&gt;actionNewslist</h2><pre><code>public <span class="keyword">function</span> actionNewslist(<span class="variable">$offset</span>=<span class="number">0</span>,<span class="variable">$limit</span>=<span class="number">10</span>){
+    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level !=0  ORDER BY top_level DESC"</span>;
+    <span class="variable">$topNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
+    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level = 0 ORDER BY time DESC LIMIT "</span>.<span class="variable">$offset</span>.<span class="string">","</span>.<span class="variable">$limit</span>;
+    <span class="variable">$normalNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
+    return <span class="variable">$this-</span>&gt;render(<span class="string">'news-list'</span>,[
+            <span class="string">'topNews'</span> =&gt; <span class="variable">$topNews</span>,
+            <span class="string">'normalNews'</span> =&gt; <span class="variable">$normalNews</span>
+    ]);
+}
+</code></pre><p>查询数据库，将数据发送（render）给frontend/views/site/news-list</p>
+<h2 id="4-_news-list-php">4. news-list.php</h2><p>获得数据并且与视图结合，形成最终的页面效果展示给用户。</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+    <span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Html</span>;
+
+    <span class="variable">$this</span>-&gt;title = <span class="string">'新闻'</span>;
+    <span class="variable">$this</span>-&gt;params[<span class="string">'breadcrumbs'</span>][] = <span class="variable">$this</span>-&gt;title;
+<span class="preprocessor">?&gt;</span></span>
+<span class="php"><span class="preprocessor">&lt;?</span>=Html::cssFile(<span class="string">'@web/css/list.css'</span>)<span class="preprocessor">?&gt;</span></span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"message-list"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-hover"</span>&gt;</span>
+            <span class="comment">&lt;!--&lt;caption&gt;新闻动态&lt;/caption&gt;--&gt;</span>
+            <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">th</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">th</span>&gt;</span>日期<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$topNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
+            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$normalNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
+            <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><h2 id="5-_SiteController-&gt;actionNewsControl">5. SiteController-&gt;actionNewsControl</h2><p>在news-list.php显示的页面中，通过点击新闻标题首先到相应控制器获得数据后，跳转到news.php，并显示相应文章的内容</p>
+<pre><code>public <span class="keyword">function</span> actionNewsControl(<span class="variable">$id</span>){
+    if((<span class="variable">$model</span>=News::findOne(<span class="variable">$id</span>)) == null){
+        throw new NotFoundHttpException(<span class="string">'网页不存在!'</span>);
+    }else{
+        return <span class="variable">$this-</span>&gt;render(<span class="string">'news'</span>,[<span class="string">'model'</span> =&gt; <span class="variable">$model</span>]);
+    }
+}
+</code></pre><h2 id="5-_news-php">5. news.php</h2><pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+<span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">html</span>;
+<span class="variable">$this</span>-&gt;title = <span class="variable">$model</span>-&gt;title;
+<span class="preprocessor">?&gt;</span></span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="class">.time</span>,<span class="class">.author</span><span class="rules">{
+        <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
+        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
+    }</span>
+    <span class="class">.author</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">950px</span></span></span>;
+    }</span>
+    <span class="class">.info</span><span class="rules">{
+        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;
+        <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;
+    }</span>
+    <span class="class">.news-content</span><span class="rules">{
+        <span class="rule"><span class="attribute">text-indent</span>:<span class="value"><span class="number">2em</span></span></span>;
+    }</span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">acticle</span> <span class="attribute">class</span>=<span class="value">"news"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span> <span class="attribute">class</span>=<span class="value">"news-head"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"news-title"</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;title<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"info"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"time"</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;time<span class="preprocessor">?&gt;</span></span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"author"</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;author<span class="preprocessor">?&gt;</span></span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">br</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"news-content"</span>&gt;</span>
+    <span class="php"><span class="preprocessor">&lt;?</span>=\yii\helpers\Markdown::process(<span class="variable">$model</span>-&gt;content)<span class="preprocessor">?&gt;</span></span>
+    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">acticle</span>&gt;</span>
+</code></pre><h2 id="6_效果">6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
+<p>可以看到内容已经成果显示，但是可以看到几乎没有样式，为了使文档更富有色彩，可以在后台添加富文本编辑框，对内容样式修改后就可以看到富文本的效果。具体下节演示。</p>
 </span>
       
     </div>
@@ -466,8 +411,6 @@ _search.php:搜索响应页面
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/Apache/" rel="tag">#Apache</a>
           
             <a href="/tags/MySQL/" rel="tag">#MySQL</a>
           
@@ -482,8 +425,8 @@ _search.php:搜索响应页面
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/10/2016-03-10-SparkLog/" rel="next" title="Spark日志设置">
-                <i class="fa fa-chevron-left"></i> Spark日志设置
+              <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii - 副本/" rel="next" title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+                <i class="fa fa-chevron-left"></i> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
               </a>
             
           </div>
@@ -515,8 +458,8 @@ _search.php:搜索响应页面
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/"
-           data-title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南" data-url="http://Seine1923.github.io/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii/">
+      <div class="ds-thread" data-thread-key="2016/05/15/2016-05-15-Yii2之News页面展示/"
+           data-title="Yii2之News页面展示" data-url="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2之News页面展示/">
       </div>
     
   </div>
@@ -560,7 +503,7 @@ _search.php:搜索响应页面
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -635,7 +578,7 @@ _search.php:搜索响应页面
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装Apache_2-4-20"><span class="nav-text">2. 安装Apache 2.4.20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装PHP_7-0-6"><span class="nav-text">3. 安装PHP 7.0.6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置Apache"><span class="nav-text">4. 配置Apache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置PHP"><span class="nav-text">5. 配置PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_测试Apache和PHP"><span class="nav-text">6. 测试Apache和PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Yii2"><span class="nav-text">7. Yii2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装MySQL"><span class="nav-text">8. 安装MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_PHP开发工具"><span class="nav-text">9. PHP开发工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
