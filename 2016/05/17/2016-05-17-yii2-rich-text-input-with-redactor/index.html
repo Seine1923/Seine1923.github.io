@@ -60,7 +60,8 @@
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/installRedactor.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/richText.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/redactor.gif">
-<meta property="og:updated_time" content="2016-05-17T03:22:10.618Z">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/accesslog.png">
+<meta property="og:updated_time" content="2016-05-17T04:30:22.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2之后台集成富文本编辑器">
 <meta name="twitter:description" content="本节将详细记录Yii2后台集成富文本编辑器的步骤详细部署请阅读全文">
@@ -301,7 +302,7 @@
       
 
       
-        <span itemprop="articleBody"><p>上一节我们了解在Yii2后台添加新闻内容到数据库，再从前端显示的流程。但是如果只是使用textarea，文本内容太单调了，因此还需要集成一个富文本编辑器，这里选择功能强大的Redactor</p>
+        <span itemprop="articleBody"><p>上一节我们了解在Yii2后台添加新闻内容到数据库，再从前端显示的流程。但是如果只是使用textarea，文本内容太单调了，因此还需要集成一个富文本编辑器，这里选择功能强大的Redactor。</p>
 <h2 id="1-_安装Redactor">1. 安装Redactor</h2><p>通过composer安装：cmd-&gt;cd C:\Users\Hary\Documents\GitHub\sample\biaozhunhua\advanced&gt;<br>输入命令：</p>
 <pre><code><span class="label">composer</span> <span class="preprocessor">require</span> --prefer-dist yiidoc/yii2-redactor <span class="string">"*"</span>
 </code></pre><p><img src="/images/wamp/installRedactor.png" alt=""></p>
@@ -335,9 +336,16 @@
 </code></pre><p>clientOptions置了图片管理和上传，文件上传，显示语言，和一些小插件：字体颜色，字体背景色等。图片和文件的上传都是用的官方默认的上传配置，更多的配置和文档<a href="https://github.com/yiidoc/yii2-redactor" target="_blank" rel="external">点这里</a></p>
 <p><a href="https://digwp.com/2012/09/secure-media-uploads/" target="_blank" rel="external">文件上传安全配置</a></p>
 <h2 id="6-_演示">6. 演示</h2><p><img src="/images/wamp/redactor.gif" alt=""></p>
-<h2 id="6-_前提">6. 前提</h2><ol>
+<h2 id="7-_前提">7. 前提</h2><ol>
 <li>保证你的php支持fileinfo扩展。打开php.ini文件去掉extension=php_fileinfo.dll前面的分号。</li>
 <li>若项目在C盘，则会因为导致权限原因图片上传不成功。</li>
+</ol>
+<h2 id="8-_备忘录">8. 备忘录</h2><ol>
+<li><p>可通过查看Apache服务器信息调试程序，查找问题，具体访问@Apache24\logs\access.log,查看每次提交信息时服务器状态</p>
+<p> <img src="/images/wamp/accesslog.png" alt="">  </p>
+</li>
+<li><p>屏幕录像工具<a href="http://licecap.en.softonic.com/" target="_blank" rel="external">LICEcap</a></p>
+</li>
 </ol>
 </span>
       
@@ -513,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Redactor"><span class="nav-text">1. 安装Redactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_backend\config\main-php"><span class="nav-text">2. backend\config\main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_backend\views\news_form-php"><span class="nav-text">3. backend\views\news_form.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_效果"><span class="nav-text">4. 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_图片支持"><span class="nav-text">5. 图片支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_演示"><span class="nav-text">6. 演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_前提"><span class="nav-text">6. 前提</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Redactor"><span class="nav-text">1. 安装Redactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_backend\config\main-php"><span class="nav-text">2. backend\config\main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_backend\views\news_form-php"><span class="nav-text">3. backend\views\news_form.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_效果"><span class="nav-text">4. 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_图片支持"><span class="nav-text">5. 图片支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_演示"><span class="nav-text">6. 演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_前提"><span class="nav-text">7. 前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_备忘录"><span class="nav-text">8. 备忘录</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
