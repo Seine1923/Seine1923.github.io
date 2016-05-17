@@ -51,18 +51,19 @@
 
 
 
-<meta name="description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
+<meta name="description" content="本节将详细记录Yii2后台集成富文本编辑器的步骤详细部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yii2之News页面展示">
-<meta property="og:url" content="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2之News页面展示/index.html">
+<meta property="og:title" content="Yii2之后台集成富文本编辑器">
+<meta property="og:url" content="http://Seine1923.github.io/2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsDetail.png">
-<meta property="og:updated_time" content="2016-05-15T05:04:08.403Z">
+<meta property="og:description" content="本节将详细记录Yii2后台集成富文本编辑器的步骤详细部署请阅读全文">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/installRedactor.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/richText.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/redactor.gif">
+<meta property="og:updated_time" content="2016-05-17T03:22:10.618Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yii2之News页面展示">
-<meta name="twitter:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
+<meta name="twitter:title" content="Yii2之后台集成富文本编辑器">
+<meta name="twitter:description" content="本节将详细记录Yii2后台集成富文本编辑器的步骤详细部署请阅读全文">
 
 
 
@@ -74,7 +75,7 @@
   };
 </script>
 
-  <title> Yii2之News页面展示 | Seine1923 </title>
+  <title> Yii2之后台集成富文本编辑器 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +241,7 @@
             
             
               
-                Yii2之News页面展示
+                Yii2之后台集成富文本编辑器
               
             
           </h1>
@@ -249,8 +250,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-05-15T00:00:00+08:00" content="2016-05-15">
-              2016-05-15
+            <time itemprop="dateCreated" datetime="2016-05-17T00:00:00+08:00" content="2016-05-17">
+              2016-05-17
             </time>
           </span>
 
@@ -275,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/15/2016-05-15-Yii2之News页面展示/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/15/2016-05-15-Yii2之News页面展示/" itemprop="commentsCount"></span>
+                <a href="/2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -285,7 +286,7 @@
           
 			
 			
-		  	 <span id="/2016/05/15/2016-05-15-Yii2之News页面展示/"class="leancloud_visitors"  data-flag-title="Yii2之News页面展示">
+		  	 <span id="/2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/"class="leancloud_visitors"  data-flag-title="Yii2之后台集成富文本编辑器">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
@@ -300,110 +301,44 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_后台添加内容">1. 后台添加内容</h2><p>前一节我们通过gii生成了news的model、CRUD后，就可以通过后台添加news内容</p>
-<p><img src="/images/wamp/createNews.png" alt=""></p>
-<h2 id="2-_main-php">2. main.php</h2><pre><code><span class="variable">$menuItems</span> = [
-    [<span class="string">'label'</span> =&gt; <span class="string">'首页'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'新闻动态'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/newslist'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'组织机构'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/org'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'留言反馈'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'人才招聘'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/zhaopin'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'关于我们'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
-];
-</code></pre><p>首页（frontend/views/layout/main.php）设置news菜单栏，菜单栏叫做“新闻动态”，点击以后，会跳转到frontend/controllers下的SiteController控制器，找到对应的响应叫actionNewslist</p>
-<h2 id="3-_SiteController-&gt;actionNewslist">3. SiteController-&gt;actionNewslist</h2><pre><code>public <span class="keyword">function</span> actionNewslist(<span class="variable">$offset</span>=<span class="number">0</span>,<span class="variable">$limit</span>=<span class="number">10</span>){
-    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level !=0  ORDER BY top_level DESC"</span>;
-    <span class="variable">$topNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
-    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level = 0 ORDER BY time DESC LIMIT "</span>.<span class="variable">$offset</span>.<span class="string">","</span>.<span class="variable">$limit</span>;
-    <span class="variable">$normalNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
-    return <span class="variable">$this-</span>&gt;render(<span class="string">'news-list'</span>,[
-            <span class="string">'topNews'</span> =&gt; <span class="variable">$topNews</span>,
-            <span class="string">'normalNews'</span> =&gt; <span class="variable">$normalNews</span>
-    ]);
-}
-</code></pre><p>查询数据库，将数据发送（render）给frontend/views/site/news-list</p>
-<h2 id="4-_news-list-php">4. news-list.php</h2><p>获得数据并且与视图结合，形成最终的页面效果展示给用户。</p>
-<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
-    <span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Html</span>;
-
-    <span class="variable">$this</span>-&gt;title = <span class="string">'新闻'</span>;
-    <span class="variable">$this</span>-&gt;params[<span class="string">'breadcrumbs'</span>][] = <span class="variable">$this</span>-&gt;title;
-<span class="preprocessor">?&gt;</span></span>
-<span class="php"><span class="preprocessor">&lt;?</span>=Html::cssFile(<span class="string">'@web/css/list.css'</span>)<span class="preprocessor">?&gt;</span></span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"message-list"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-hover"</span>&gt;</span>
-            <span class="comment">&lt;!--&lt;caption&gt;新闻动态&lt;/caption&gt;--&gt;</span>
-            <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">th</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">th</span>&gt;</span>日期<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$topNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$normalNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
-                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
-            <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre><h2 id="5-_SiteController-&gt;actionNewsControl">5. SiteController-&gt;actionNewsControl</h2><p>在news-list.php显示的页面中，通过点击新闻标题首先到相应控制器获得数据后，跳转到news.php，并显示相应文章的内容</p>
-<pre><code>public <span class="keyword">function</span> actionNewsControl(<span class="variable">$id</span>){
-    if((<span class="variable">$model</span>=News::findOne(<span class="variable">$id</span>)) == null){
-        throw new NotFoundHttpException(<span class="string">'网页不存在!'</span>);
-    }else{
-        return <span class="variable">$this-</span>&gt;render(<span class="string">'news'</span>,[<span class="string">'model'</span> =&gt; <span class="variable">$model</span>]);
-    }
-}
-</code></pre><h2 id="5-_news-php">5. news.php</h2><pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
-<span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">html</span>;
-<span class="variable">$this</span>-&gt;title = <span class="variable">$model</span>-&gt;title;
-<span class="preprocessor">?&gt;</span></span>
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="class">.time</span>,<span class="class">.author</span><span class="rules">{
-        <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
-        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-    }</span>
-    <span class="class">.author</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">950px</span></span></span>;
-    }</span>
-    <span class="class">.info</span><span class="rules">{
-        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;
-        <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;
-    }</span>
-    <span class="class">.news-content</span><span class="rules">{
-        <span class="rule"><span class="attribute">text-indent</span>:<span class="value"><span class="number">2em</span></span></span>;
-    }</span>
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-<span class="tag">&lt;<span class="title">acticle</span> <span class="attribute">class</span>=<span class="value">"news"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span> <span class="attribute">class</span>=<span class="value">"news-head"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"news-title"</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;title<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"info"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"time"</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;time<span class="preprocessor">?&gt;</span></span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"author"</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;author<span class="preprocessor">?&gt;</span></span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">br</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"news-content"</span>&gt;</span>
-    <span class="php"><span class="preprocessor">&lt;?</span>=\yii\helpers\Markdown::process(<span class="variable">$model</span>-&gt;content)<span class="preprocessor">?&gt;</span></span>
-    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">acticle</span>&gt;</span>
-</code></pre><h2 id="6_效果">6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
-<p>可以看到内容已经成果显示，但是可以看到几乎没有样式，为了使文档更富有色彩，可以在后台添加富文本编辑框，对内容样式修改后就可以看到富文本的效果。具体下节演示。</p>
+        <span itemprop="articleBody"><p>上一节我们了解在Yii2后台添加新闻内容到数据库，再从前端显示的流程。但是如果只是使用textarea，文本内容太单调了，因此还需要集成一个富文本编辑器，这里选择功能强大的Redactor</p>
+<h2 id="1-_安装Redactor">1. 安装Redactor</h2><p>通过composer安装：cmd-&gt;cd C:\Users\Hary\Documents\GitHub\sample\biaozhunhua\advanced&gt;<br>输入命令：</p>
+<pre><code><span class="label">composer</span> <span class="preprocessor">require</span> --prefer-dist yiidoc/yii2-redactor <span class="string">"*"</span>
+</code></pre><p><img src="/images/wamp/installRedactor.png" alt=""></p>
+<h2 id="2-_backend\config\main-php">2. backend\config\main.php</h2><p>在modules下添加:</p>
+<pre><code><span class="string">'redactor'</span> =&gt; <span class="string">'yii\redactor\RedactorModule'</span>,
+</code></pre><p>整个代码如下：</p>
+<pre><code><span class="string">'params'</span> =&gt; <span class="variable">$params</span>,
+<span class="string">'modules'</span> =&gt; [
+    <span class="string">'redactor'</span> =&gt; <span class="string">'yii\redactor\RedactorModule'</span>,
+],
+</code></pre><h2 id="3-_backend\views\news_form-php">3. backend\views\news_form.php</h2><p>将<code>&lt;?= $form-&gt;field($model, &#39;content&#39;)-&gt;textarea([&#39;rows&#39; =&gt; 6]) ?&gt;</code>替换成<code>&lt;?= $form-&gt;field($model, &#39;content&#39;)-&gt;widget(\yii\redactor\widgets\Redactor::className()) ?&gt;</code></p>
+<h2 id="4-_效果">4. 效果</h2><p><img src="/images/wamp/richText.png" alt=""></p>
+<h2 id="5-_图片支持">5. 图片支持</h2><p>首先需要在web/目录下创建一个uploads/目录，这是Redactor默认的上传图片的存放目录；然后我们还需要修改一下backend\config\main.php这个文件中的Redactor的配置：</p>
+<pre><code><span class="string">'modules'</span> =&gt; [
+    <span class="string">'redactor'</span> =&gt; [
+        <span class="string">'class'</span> =&gt; <span class="string">'yii\redactor\RedactorModule'</span>,
+        <span class="string">'uploadDir'</span> =&gt; <span class="string">'@backend/web/uploads'</span>,
+        <span class="string">'imageAllowExtensions'</span>=&gt;[<span class="string">'jpg'</span>,<span class="string">'png'</span>,<span class="string">'gif'</span>]
+    ],
+],
+</code></pre><p>uploadUrl还不确定怎么设置，让其默认就好了。我们这里指定了上传图片的类型，演示时只支持jpg，png 和gif这三种，最后在backend\views\news_form.php中进行相应的设置：</p>
+<pre><code> <span class="php"><span class="preprocessor">&lt;?</span>= <span class="variable">$form</span>-&gt;field(<span class="variable">$model</span>, <span class="string">'content'</span>)-&gt;widget(\yii\redactor\widgets\Redactor::className(), [
+    <span class="string">'clientOptions'</span> =&gt; [
+        <span class="string">'imageManagerJson'</span> =&gt; [<span class="string">'/redactor/upload/image-json'</span>],
+        <span class="string">'imageUpload'</span> =&gt; [<span class="string">'/redactor/upload/image'</span>],
+        <span class="string">'fileUpload'</span> =&gt; [<span class="string">'/redactor/upload/file'</span>],
+        <span class="string">'lang'</span> =&gt; <span class="string">'zh_cn'</span>,
+        <span class="string">'plugins'</span> =&gt; [<span class="string">'clips'</span>, <span class="string">'fontcolor'</span>,<span class="string">'imagemanager'</span>]
+    ]
+])<span class="preprocessor">?&gt;</span></span>
+</code></pre><p>clientOptions置了图片管理和上传，文件上传，显示语言，和一些小插件：字体颜色，字体背景色等。图片和文件的上传都是用的官方默认的上传配置，更多的配置和文档<a href="https://github.com/yiidoc/yii2-redactor" target="_blank" rel="external">点这里</a></p>
+<p><a href="https://digwp.com/2012/09/secure-media-uploads/" target="_blank" rel="external">文件上传安全配置</a></p>
+<h2 id="6-_演示">6. 演示</h2><p><img src="/images/wamp/redactor.gif" alt=""></p>
+<h2 id="6-_前提">6. 前提</h2><ol>
+<li>保证你的php支持fileinfo扩展。打开php.ini文件去掉extension=php_fileinfo.dll前面的分号。</li>
+<li>若项目在C盘，则会因为导致权限原因图片上传不成功。</li>
+</ol>
 </span>
       
     </div>
@@ -425,8 +360,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii - 副本/" rel="next" title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
-                <i class="fa fa-chevron-left"></i> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
+              <a href="/2016/05/15/2016-05-15-Yii2_News_Display/" rel="next" title="Yii2之News页面展示">
+                <i class="fa fa-chevron-left"></i> Yii2之News页面展示
               </a>
             
           </div>
@@ -458,8 +393,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/15/2016-05-15-Yii2之News页面展示/"
-           data-title="Yii2之News页面展示" data-url="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2之News页面展示/">
+      <div class="ds-thread" data-thread-key="2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/"
+           data-title="Yii2之后台集成富文本编辑器" data-url="http://Seine1923.github.io/2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/">
       </div>
     
   </div>
@@ -503,7 +438,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -578,7 +513,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Redactor"><span class="nav-text">1. 安装Redactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_backend\config\main-php"><span class="nav-text">2. backend\config\main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_backend\views\news_form-php"><span class="nav-text">3. backend\views\news_form.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_效果"><span class="nav-text">4. 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_图片支持"><span class="nav-text">5. 图片支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_演示"><span class="nav-text">6. 演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_前提"><span class="nav-text">6. 前提</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

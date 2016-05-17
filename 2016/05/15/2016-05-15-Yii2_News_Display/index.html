@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Html,JavaScript," />
+  <meta name="keywords" content="MySQL,PHP,Yii," />
 
 
 
@@ -51,28 +51,18 @@
 
 
 
-<meta name="description" content="多级菜单栏的设计与实现：请阅读全文">
+<meta name="description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web技术开发(五)">
-<meta property="og:url" content="http://Seine1923.github.io/2015/10/10/2015-10-10-Web5/index.html">
+<meta property="og:title" content="Yii2之News页面展示">
+<meta property="og:url" content="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2_News_Display/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="多级菜单栏的设计与实现：请阅读全文">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/1.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/2.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/3.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/4.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.png">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/5.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/6.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/7.gif">
-<meta property="og:image" content="http://Seine1923.github.io/images/web5/8.gif">
-<meta property="og:updated_time" content="2016-03-18T03:04:26.000Z">
+<meta property="og:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
+<meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsDetail.png">
+<meta property="og:updated_time" content="2016-05-15T05:04:08.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web技术开发(五)">
-<meta name="twitter:description" content="多级菜单栏的设计与实现：请阅读全文">
+<meta name="twitter:title" content="Yii2之News页面展示">
+<meta name="twitter:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 
 
 
@@ -84,7 +74,7 @@
   };
 </script>
 
-  <title> Web技术开发(五) | Seine1923 </title>
+  <title> Yii2之News页面展示 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +240,7 @@
             
             
               
-                Web技术开发(五)
+                Yii2之News页面展示
               
             
           </h1>
@@ -259,8 +249,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-10T00:00:00+08:00" content="2015-10-10">
-              2015-10-10
+            <time itemprop="dateCreated" datetime="2016-05-15T00:00:00+08:00" content="2016-05-15">
+              2016-05-15
             </time>
           </span>
 
@@ -269,8 +259,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Web技术开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Web技术开发</span>
+                  <a href="/categories/Web开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web开发</span>
                   </a>
                 </span>
 
@@ -285,8 +275,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/10/2015-10-10-Web5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/2015-10-10-Web5/" itemprop="commentsCount"></span>
+                <a href="/2016/05/15/2016-05-15-Yii2_News_Display/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/15/2016-05-15-Yii2_News_Display/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -295,7 +285,7 @@
           
 			
 			
-		  	 <span id="/2015/10/10/2015-10-10-Web5/"class="leancloud_visitors"  data-flag-title="Web技术开发(五)">
+		  	 <span id="/2016/05/15/2016-05-15-Yii2_News_Display/"class="leancloud_visitors"  data-flag-title="Yii2之News页面展示">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
@@ -310,108 +300,110 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_初始状态">1. 初始状态</h2><p><img src="/images/web5/1.png" alt=""></p>
-<h2 id="2-_更改ul样式">2. 更改ul样式</h2><p>去掉小黑点，并且让菜单变成横排，通常一个样式占用一行。</p>
-<pre><code><span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
-}</span>
-<span class="tag">li</span><span class="rules">{
-    <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-}</span>
-</code></pre><p><img src="/images/web5/2.png" alt=""></p>
-<h2 id="3-_隐藏二级菜单">3. 隐藏二级菜单</h2><pre><code>ul ul{
-    display: none; <span class="comment">&lt;!--表示被另一个ul包含的ul--&gt;</span>
+        <span itemprop="articleBody"><h2 id="1-_后台添加内容">1. 后台添加内容</h2><p>前一节我们通过gii生成了news的model、CRUD后，就可以通过后台添加news内容</p>
+<p><img src="/images/wamp/createNews.png" alt=""></p>
+<h2 id="2-_main-php">2. main.php</h2><pre><code><span class="variable">$menuItems</span> = [
+    [<span class="string">'label'</span> =&gt; <span class="string">'首页'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'新闻动态'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/newslist'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'组织机构'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/org'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'留言反馈'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'人才招聘'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/zhaopin'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'关于我们'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
+];
+</code></pre><p>首页（frontend/views/layout/main.php）设置news菜单栏，菜单栏叫做“新闻动态”，点击以后，会跳转到frontend/controllers下的SiteController控制器，找到对应的响应叫actionNewslist</p>
+<h2 id="3-_SiteController-&gt;actionNewslist">3. SiteController-&gt;actionNewslist</h2><pre><code>public <span class="keyword">function</span> actionNewslist(<span class="variable">$offset</span>=<span class="number">0</span>,<span class="variable">$limit</span>=<span class="number">10</span>){
+    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level !=0  ORDER BY top_level DESC"</span>;
+    <span class="variable">$topNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
+    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level = 0 ORDER BY time DESC LIMIT "</span>.<span class="variable">$offset</span>.<span class="string">","</span>.<span class="variable">$limit</span>;
+    <span class="variable">$normalNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
+    return <span class="variable">$this-</span>&gt;render(<span class="string">'news-list'</span>,[
+            <span class="string">'topNews'</span> =&gt; <span class="variable">$topNews</span>,
+            <span class="string">'normalNews'</span> =&gt; <span class="variable">$normalNews</span>
+    ]);
 }
-</code></pre><p><img src="/images/web5/3.png" alt=""></p>
-<h2 id="4-_鼠标移动显示">4. 鼠标移动显示</h2><pre><code><span class="tag">ul</span>&gt;<span class="tag">li</span><span class="pseudo">:hover</span> <span class="tag">ul</span>{
-    <span class="attribute">display</span>: block;
+</code></pre><p>查询数据库，将数据发送（render）给frontend/views/site/news-list</p>
+<h2 id="4-_news-list-php">4. news-list.php</h2><p>获得数据并且与视图结合，形成最终的页面效果展示给用户。</p>
+<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+    <span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Html</span>;
+
+    <span class="variable">$this</span>-&gt;title = <span class="string">'新闻'</span>;
+    <span class="variable">$this</span>-&gt;params[<span class="string">'breadcrumbs'</span>][] = <span class="variable">$this</span>-&gt;title;
+<span class="preprocessor">?&gt;</span></span>
+<span class="php"><span class="preprocessor">&lt;?</span>=Html::cssFile(<span class="string">'@web/css/list.css'</span>)<span class="preprocessor">?&gt;</span></span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"message-list"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-hover"</span>&gt;</span>
+            <span class="comment">&lt;!--&lt;caption&gt;新闻动态&lt;/caption&gt;--&gt;</span>
+            <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">th</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">th</span>&gt;</span>日期<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$topNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
+            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$normalNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
+                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
+            <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><h2 id="5-_SiteController-&gt;actionNewsControl">5. SiteController-&gt;actionNewsControl</h2><p>在news-list.php显示的页面中，通过点击新闻标题首先到相应控制器获得数据后，跳转到news.php，并显示相应文章的内容</p>
+<pre><code>public <span class="keyword">function</span> actionNewsControl(<span class="variable">$id</span>){
+    if((<span class="variable">$model</span>=News::findOne(<span class="variable">$id</span>)) == null){
+        throw new NotFoundHttpException(<span class="string">'网页不存在!'</span>);
+    }else{
+        return <span class="variable">$this-</span>&gt;render(<span class="string">'news'</span>,[<span class="string">'model'</span> =&gt; <span class="variable">$model</span>]);
+    }
 }
-</code></pre><p><img src="/images/web5/1.gif" alt=""></p>
-<h2 id="5-_调整二级菜单为竖排">5. 调整二级菜单为竖排</h2><p>给第一级ul指定类名为.menu,同时还须指定直接的父子关系，使二级ul不受影响。</p>
-<pre><code>.menu &gt; li {
-    <span class="keyword">float</span>: left;
-}
-&lt;ul <span class="keyword">class</span>=<span class="string">"menu"</span>&gt;
-</code></pre><p><img src="/images/web5/2.gif" alt=""></p>
-<h2 id="6-_添加背景颜色">6. 添加背景颜色</h2><p>当元素设置为float后，在正常流里无内容，高度为0，如果要保留父空间，可以添加div元素</p>
-<p>p,div都是块元素，对于块元素显示时要求占用一整行。例：</p>
-<ol>
-<li>当页面首先有一张图片时，块元素只能从图片下新一行开始显示；</li>
-<li>当图片被定义为float时，正常流内无内容，但图片依然正常显示，而块元素则可以从图片右侧空间开始显示</li>
-</ol>
-<p>clear:both表示左右两边都不允许有内容，原本是要在float元素右侧，由于这一规则，自动把内容撑开。</p>
-<pre><code>.menu {
-    background-color: gray;
-}
-.clearfix {
-    clear: both;
-}
-&lt;<span class="keyword">div</span> <span class="type">class</span> = <span class="string">"clearfix"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p><img src="/images/web5/3.gif" alt=""></p>
-<h2 id="7-_使用after添加内容">7. 使用after添加内容</h2><p>通常不要添加没有意义的语句放在ul内容中，因此我们定义一个伪类，达到同样的效果。</p>
-<pre><code><span class="rule"><span class="attribute">.menu</span>:<span class="value"> after{content: <span class="string">"after content"</span>}
-.menu: before{content: <span class="string">"before content"</span>}
-.menu: after{
-    content: <span class="string">""</span></span></span>;
-    <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span></span>;
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
-}
-</code></pre><p>代码的含义就是在使用类选择符menu的元素后添加新的空内容。</p>
-<h2 id="8-_修正二级菜单位置">8. 修正二级菜单位置</h2><p>现在的子菜单显示的时候会改变一级菜单的位置，因此要将二级菜单从正常流中取走。    </p>
-<pre><code><span class="tag">ul</span> <span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-}</span>
-</code></pre><p>或</p>
-<pre><code><span class="class">.menu</span> <span class="tag">ul</span> <span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-}</span>
-</code></pre><p><img src="/images/web5/4.gif" alt=""></p>
-<h2 id="9-_进一步装饰">9. 进一步装饰</h2><h3 id="9-1_改变字体颜色及去除字体下划线">9.1 改变字体颜色及去除字体下划线</h3><pre><code><span class="class">.menu</span> <span class="tag">a</span><span class="rules">{
-    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
-    <span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>;
-}</span>
-</code></pre><p><img src="/images/web5/5.png" alt=""></p>
-<h3 id="9-2_加大字体边框">9.2 加大字体边框</h3><pre><code><span class="class">.menu</span> <span class="tag">li</span><span class="rules">{                
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">20px</span></span></span>;
-}</span>
-</code></pre><h3 id="9-3_定义所有ul的样式">9.3 定义所有ul的样式</h3><p>包括改变ul的背景颜色，box-shadow是给元素块添加周边阴影效果。</p>
-<p>对象选择器 {box-shadow:[投影方式] X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</p>
-<pre><code><span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#111</span></span></span>; 
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> hoff voff radius color</span></span>;
-}</span>
-</code></pre><p><img src="/images/web5/5.gif" alt="">        </p>
-<h3 id="9-4_给菜单添加圆角、渐变及阴影效果">9.4 给菜单添加圆角、渐变及阴影效果</h3><pre><code><span class="class">.menu</span><span class="rules">{
-    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">100px</span></span></span>;
-    <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(<span class="hexcolor">#444</span>,<span class="hexcolor">#111</span>)</span></span>;    
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">30px</span></span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">10px</span></span></span>;
-}</span>
-</code></pre><p><img src="/images/web5/6.gif" alt="">        </p>
-<h3 id="9-5_设置鼠标移动时项目有阴影及渐变效果">9.5 设置鼠标移动时项目有阴影及渐变效果</h3><pre><code>.menu li:hover{
-    background: linear-gradient(hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">40</span>%),hsl(<span class="number">200</span>,<span class="number">100</span>%,<span class="number">20</span>%));
-    box-shadow: <span class="number">4</span>px <span class="number">4</span>px <span class="number">8</span>px <span class="number">4</span>px gray;
-}
-</code></pre><p><img src="/images/web5/7.gif" alt="">    </p>
-<h3 id="9-6_调整二级菜单的位置为绝对位置">9.6 调整二级菜单的位置为绝对位置</h3><pre><code><span class="class">.menu</span> <span class="tag">ul</span><span class="rules">{
-    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;
-    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">2.3em</span></span></span>;
-}</span>
-</code></pre><h3 id="9-7_去除二级菜单名字前空格">9.7 去除二级菜单名字前空格</h3><pre><code>*<span class="rules">{  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
- }</span>
-</code></pre><p>以及设置二级菜单的移动效果</p>
-<pre><code><span class="class">.menu</span>&gt;<span class="rule"><span class="attribute">li</span>:<span class="value">hover ul{
-    display:block</span></span>;    
-    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0</span></span></span>;
-    <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">4px</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">4px</span> gray</span></span>;
-}
-</code></pre><h2 id="10-_最终效果">10. 最终效果</h2><p><img src="/images/web5/8.gif" alt="">        </p>
+</code></pre><h2 id="5-_news-php">5. news.php</h2><pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
+<span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">html</span>;
+<span class="variable">$this</span>-&gt;title = <span class="variable">$model</span>-&gt;title;
+<span class="preprocessor">?&gt;</span></span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+    <span class="class">.time</span>,<span class="class">.author</span><span class="rules">{
+        <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
+        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
+    }</span>
+    <span class="class">.author</span><span class="rules">{
+        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">950px</span></span></span>;
+    }</span>
+    <span class="class">.info</span><span class="rules">{
+        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;
+        <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;
+    }</span>
+    <span class="class">.news-content</span><span class="rules">{
+        <span class="rule"><span class="attribute">text-indent</span>:<span class="value"><span class="number">2em</span></span></span>;
+    }</span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;<span class="title">acticle</span> <span class="attribute">class</span>=<span class="value">"news"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span> <span class="attribute">class</span>=<span class="value">"news-head"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"news-title"</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;title<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"info"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"time"</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;time<span class="preprocessor">?&gt;</span></span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"author"</span>&gt;</span>
+            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;author<span class="preprocessor">?&gt;</span></span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">br</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"news-content"</span>&gt;</span>
+    <span class="php"><span class="preprocessor">&lt;?</span>=\yii\helpers\Markdown::process(<span class="variable">$model</span>-&gt;content)<span class="preprocessor">?&gt;</span></span>
+    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">acticle</span>&gt;</span>
+</code></pre><h2 id="6_效果">6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
+<p>可以看到内容已经成果显示，但是可以看到几乎没有样式，为了使文档更富有色彩，可以在后台添加富文本编辑框，对内容样式修改后就可以看到富文本的效果。具体下节演示。</p>
 </span>
       
     </div>
@@ -420,11 +412,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
           
-            <a href="/tags/Html/" rel="tag">#Html</a>
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
           
-            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+            <a href="/tags/Yii/" rel="tag">#Yii</a>
           
         </div>
       
@@ -433,16 +425,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/29/2015-09-29-Web4/" rel="next" title="Web技术开发(四)">
-                <i class="fa fa-chevron-left"></i> Web技术开发(四)
+              <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii - 副本/" rel="next" title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+                <i class="fa fa-chevron-left"></i> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/23/2015-10-23-JavaRandom/" rel="prev" title="Java随机数">
-                Java随机数 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/17/2016-05-17-yii2-rich-text-input-with-redactor/" rel="prev" title="Yii2之后台集成富文本编辑器">
+                Yii2之后台集成富文本编辑器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -470,8 +462,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/10/10/2015-10-10-Web5/"
-           data-title="Web技术开发(五)" data-url="http://Seine1923.github.io/2015/10/10/2015-10-10-Web5/">
+      <div class="ds-thread" data-thread-key="2016/05/15/2016-05-15-Yii2_News_Display/"
+           data-title="Yii2之News页面展示" data-url="http://Seine1923.github.io/2016/05/15/2016-05-15-Yii2_News_Display/">
       </div>
     
   </div>
@@ -590,7 +582,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_初始状态"><span class="nav-text">1. 初始状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_更改ul样式"><span class="nav-text">2. 更改ul样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_隐藏二级菜单"><span class="nav-text">3. 隐藏二级菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_鼠标移动显示"><span class="nav-text">4. 鼠标移动显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_调整二级菜单为竖排"><span class="nav-text">5. 调整二级菜单为竖排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_添加背景颜色"><span class="nav-text">6. 添加背景颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_使用after添加内容"><span class="nav-text">7. 使用after添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_修正二级菜单位置"><span class="nav-text">8. 修正二级菜单位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_进一步装饰"><span class="nav-text">9. 进一步装饰</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1_改变字体颜色及去除字体下划线"><span class="nav-text">9.1 改变字体颜色及去除字体下划线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2_加大字体边框"><span class="nav-text">9.2 加大字体边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3_定义所有ul的样式"><span class="nav-text">9.3 定义所有ul的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4_给菜单添加圆角、渐变及阴影效果"><span class="nav-text">9.4 给菜单添加圆角、渐变及阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-5_设置鼠标移动时项目有阴影及渐变效果"><span class="nav-text">9.5 设置鼠标移动时项目有阴影及渐变效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-6_调整二级菜单的位置为绝对位置"><span class="nav-text">9.6 调整二级菜单的位置为绝对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-7_去除二级菜单名字前空格"><span class="nav-text">9.7 去除二级菜单名字前空格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-_最终效果"><span class="nav-text">10. 最终效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
