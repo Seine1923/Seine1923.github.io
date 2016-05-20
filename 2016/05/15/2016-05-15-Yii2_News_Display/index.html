@@ -59,7 +59,7 @@
 <meta property="og:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsDetail.png">
-<meta property="og:updated_time" content="2016-05-15T05:04:08.403Z">
+<meta property="og:updated_time" content="2016-05-17T10:47:32.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2之News页面展示">
 <meta name="twitter:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
@@ -404,6 +404,16 @@
 <span class="tag">&lt;/<span class="title">acticle</span>&gt;</span>
 </code></pre><h2 id="6_效果">6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
 <p>可以看到内容已经成果显示，但是可以看到几乎没有样式，为了使文档更富有色彩，可以在后台添加富文本编辑框，对内容样式修改后就可以看到富文本的效果。具体下节演示。</p>
+<h2 id="7_urlManager">7 urlManager</h2><p>在不开启Yii2的enablePrettyUrl模式之前，我们访问新闻列表时的url是这样的：</p>
+<pre><code><span class="string">http:</span><span class="comment">//localhost:8080/web/index.php?r=site%2Fnewslist</span>
+</code></pre><p>来到frontend\config\main.php</p>
+<pre><code><span class="string">'urlManager'</span> =&gt; [
+        <span class="string">'enablePrettyUrl'</span> =&gt; <span class="keyword">true</span>,
+        <span class="string">'showScriptName'</span> =&gt; <span class="keyword">false</span>,
+        <span class="string">'rules'</span> =&gt; [
+        ],
+    ],
+</code></pre><p>开启后，就可以通过<code>http://localhost:8080/web/index.php/site/newslist</code>开访问内容了。</p>
 </span>
       
     </div>
@@ -425,7 +435,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii - 副本/" rel="next" title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
+              <a href="/2016/04/24/2016-04-24-Windows_Apache_MySQL_PHP_Yii2/" rel="next" title="Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南">
                 <i class="fa fa-chevron-left"></i> Windows7X64_Apache24_MySQL57_PHP7_Yii2配置指南
               </a>
             
@@ -507,7 +517,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -521,7 +531,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -582,7 +592,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7_urlManager"><span class="nav-text">7 urlManager</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
