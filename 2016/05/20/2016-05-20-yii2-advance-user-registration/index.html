@@ -80,7 +80,7 @@
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/dx-login.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/composer-user.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/migrate.png">
-<meta property="og:updated_time" content="2016-05-20T08:26:37.330Z">
+<meta property="og:updated_time" content="2016-05-22T08:51:16.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2 Advance下实现用户注册，验证，登录">
 <meta name="twitter:description" content="1. 初始Yii2 Advance自带了一个登录的选项，基于此我们进行改善，添加注册的时候邮箱的验证。
@@ -432,7 +432,7 @@
 ],
 </code></pre></li>
 <li><p>更新数据库模式</p>
-<p> 首先确保已配置好数据库连接组件，然后执行如下命令：</p>
+<p> 首先确保已配置好数据库连接组件，然后执行如下命令,安装Yii2-user所需要的数据库表：</p>
 <pre><code>`<span class="variable">$ </span>php yii migrate/up --migrationPath=<span class="variable">@vendor</span>/dektrium/yii2-user/migrations`
 </code></pre><p> <img src="/images/wamp/migrate.png" alt=""></p>
 <p> 这样就完成了Yii2-user的安装。</p>
@@ -452,20 +452,73 @@
     ...
 ],
 ...
-</code></pre><h2 id="5-_配置SwiftMailer">5. 配置SwiftMailer</h2><p><code>@common/config/main-local.php</code></p>
-<pre><code><span class="string">'mailer'</span> =&gt; [
-    <span class="string">'class'</span> =&gt; <span class="string">'yii\swiftmailer\Mailer'</span>,
-    <span class="string">'viewPath'</span> =&gt; <span class="string">'@app/mailer'</span>,
-    <span class="string">'useFileTransport'</span> =&gt; <span class="keyword">false</span>,
-    <span class="string">'transport'</span> =&gt; [
-        <span class="string">'class'</span> =&gt; <span class="string">'Swift_SmtpTransport'</span>,
-        <span class="string">'host'</span> =&gt; <span class="string">'smtp.live.com'</span>,
-        <span class="string">'username'</span> =&gt; <span class="string">'xdyeung@163.com'</span>,
-        <span class="string">'password'</span> =&gt; <span class="string">'YXD-1013'</span>,
-        <span class="string">'port'</span> =&gt; <span class="string">'587'</span>,
-        <span class="string">'encryption'</span> =&gt; <span class="string">'tls'</span>,
+</code></pre><h2 id="5-_激活SwiftMailer">5. 激活SwiftMailer</h2><p><code>@common/config/main-local.php</code></p>
+<pre><code><span class="symbol">'mailer'</span> =&gt; [
+    <span class="symbol">'class'</span> =&gt; <span class="symbol">'yii</span>\swiftmailer\<span class="type">Mailer'</span>,
+    <span class="symbol">'viewPath'</span> =&gt; <span class="char">'@app/mailer'</span>,
+    <span class="symbol">'useFileTransport'</span> =&gt; <span class="literal">false</span>,
+    <span class="symbol">'transport'</span> =&gt; [
+        <span class="symbol">'class'</span> =&gt; <span class="symbol">'Swift_SmtpTransport'</span>,
+        <span class="symbol">'host'</span> =&gt; <span class="symbol">'smtp</span>.<span class="number">163.</span>com',
+        <span class="symbol">'username'</span> =&gt; <span class="symbol">'xdyeung</span>@<span class="number">163.</span>com',
+        <span class="symbol">'password'</span> =&gt; <span class="symbol">'your</span>-password',
+        <span class="symbol">'port'</span> =&gt; <span class="char">'587'</span>,
+        <span class="symbol">'encryption'</span> =&gt; <span class="symbol">'tls'</span>,
         ],
 ],
+</code></pre><h2 id="6-_集成Yii2-user">6. 集成Yii2-user</h2><p>将首页导航栏（frontend/views/layouts/main.php,）指向Yii2-user的控制器路径。原先是指向Bootstrap的菜单，如下所示：</p>
+<pre><code>NavBar::begin([
+    <span class="string">'brandLabel'</span> =&gt; <span class="string">'My Company'</span>,
+    <span class="string">'brandUrl'</span> =&gt; Yii::<span class="variable">$app-</span>&gt;homeUrl,
+    <span class="string">'options'</span> =&gt; [
+        <span class="string">'class'</span> =&gt; <span class="string">'navbar-inverse navbar-fixed-top'</span>,
+    ],
+]);
+<span class="variable">$menuItems</span> = [
+    [<span class="string">'label'</span> =&gt; <span class="string">'Home'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'About'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'Contact'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]],
+];
+
+<span class="keyword">if</span> (Yii::<span class="variable">$app-</span>&gt;user-&gt;isGuest) {
+    <span class="variable">$menuItems</span>[] = [<span class="string">'label'</span> =&gt; <span class="string">'Signup'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/signup'</span>]];
+    <span class="variable">$menuItems</span>[] = [<span class="string">'label'</span> =&gt; <span class="string">'Login'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/login'</span>]];
+} <span class="keyword">else</span> {
+    <span class="variable">$menuItems</span>[] = <span class="string">'&lt;li&gt;'</span>
+        . Html::beginForm([<span class="string">'/site/logout'</span>], <span class="string">'post'</span>)
+        . Html::submitButton(
+            <span class="string">'Logout ('</span> . Yii::<span class="variable">$app-</span>&gt;user-&gt;identity-&gt;username . <span class="string">')'</span>,
+            [<span class="string">'class'</span> =&gt; <span class="string">'btn btn-link'</span>]
+        )
+        . Html::endForm()
+        . <span class="string">'&lt;/li&gt;'</span>;
+}
+echo Nav::widget([
+    <span class="string">'options'</span> =&gt; [<span class="string">'class'</span> =&gt; <span class="string">'navbar-nav navbar-right'</span>],
+    <span class="string">'items'</span> =&gt; <span class="variable">$menuItems</span>,
+]);
+NavBar::end();
+</code></pre><p>改成：</p>
+<pre><code><span class="variable">$navItems</span>=[
+    [<span class="string">'label'</span> =&gt; <span class="string">'Home'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'Status'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/status/index'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'About'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
+    [<span class="string">'label'</span> =&gt; <span class="string">'Contact'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]]
+  ];
+  <span class="keyword">if</span> (Yii::<span class="variable">$app</span>-&gt;user-&gt;isGuest) {
+    array_push(<span class="variable">$navItems</span>,[<span class="string">'label'</span> =&gt; <span class="string">'Sign In'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/user/login'</span>]],[<span class="string">'label'</span> =&gt; <span class="string">'Sign Up'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/user/register'</span>]]);
+  } <span class="keyword">else</span> {
+    array_push(<span class="variable">$navItems</span>,[<span class="string">'label'</span> =&gt; <span class="string">'Logout ('</span> . Yii::<span class="variable">$app</span>-&gt;user-&gt;identity-&gt;username . <span class="string">')'</span>,
+        <span class="string">'url'</span> =&gt; [<span class="string">'/site/logout'</span>],
+        <span class="string">'linkOptions'</span> =&gt; [<span class="string">'data-method'</span> =&gt; <span class="string">'post'</span>]]
+    );
+  }
+<span class="keyword">echo</span> Nav::widget([
+    <span class="string">'options'</span> =&gt; [<span class="string">'class'</span> =&gt; <span class="string">'navbar-nav navbar-right'</span>],
+    <span class="string">'items'</span> =&gt; <span class="variable">$navItems</span>,
+]);
+</code></pre><p>给表添加字段：</p>
+<pre><code><span class="operator"><span class="keyword">alter</span> <span class="keyword">table</span> <span class="keyword">user</span> <span class="keyword">add</span> <span class="string">'status'</span> <span class="built_in">smallint</span>(<span class="number">6</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">'10'</span> <span class="keyword">comment</span> <span class="string">"状态"</span></span>
 </code></pre></span>
       
     </div>
@@ -640,7 +693,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_初始"><span class="nav-text">1. 初始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_开始安装Yii2-user"><span class="nav-text">3. 开始安装Yii2-user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置"><span class="nav-text">4. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_配置SwiftMailer"><span class="nav-text">5. 配置SwiftMailer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_初始"><span class="nav-text">1. 初始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_开始安装Yii2-user"><span class="nav-text">3. 开始安装Yii2-user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置"><span class="nav-text">4. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_激活SwiftMailer"><span class="nav-text">5. 激活SwiftMailer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_集成Yii2-user"><span class="nav-text">6. 集成Yii2-user</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
