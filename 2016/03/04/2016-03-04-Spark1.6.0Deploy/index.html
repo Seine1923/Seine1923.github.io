@@ -62,6 +62,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark-1.6.0集群部署">
 <meta name="twitter:description" content="欢迎来到Spark的世界详细Hadoop-1.6.0集群部署请阅读全文">
+<meta name="twitter:image" content="http://Seine1923.github.io/images/spark/sparkdownload.jpg">
 
 
 
@@ -299,7 +300,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_运行环境">1. 运行环境</h2><p>本文搭建的是Spark Standalone模式，在已搭建好的Hadoop2.6.4集群上部署Spark。</p>
+        <span itemprop="articleBody"><h2 id="1-运行环境"><a href="#1-运行环境" class="headerlink" title="1. 运行环境"></a>1. 运行环境</h2><p>本文搭建的是Spark Standalone模式，在已搭建好的Hadoop2.6.4集群上部署Spark。</p>
 <p>版本信息：</p>
 <ul>
 <li>JDK：1.8.0_74 64位</li>
@@ -307,46 +308,46 @@
 <li>Spark：1.6.0</li>
 <li>Scala：2.12.0-M3</li>
 </ul>
-<h2 id="2-_下载Spark">2. 下载Spark</h2><p><img src="/images/spark/sparkdownload.jpg" alt=""></p>
-<h2 id="3-_安装Scala">3. 安装Scala</h2><h3 id="3-1_解压缩">3.1 解压缩</h3><pre><code>sudo <span class="keyword">mkdir</span> /home/hadoop/<span class="keyword">scala</span>
-sudo tar -zxf <span class="keyword">scala</span>-2.12.0-M3.tgz -C /home/hadoop/<span class="keyword">scala</span>
-</code></pre><h3 id="3-2_修改环境变量">3.2 修改环境变量</h3><pre><code>sudo vim ~/.bashrc  
-SCALA_HOME=/home/hadoop/scala/scala-<span class="number">2.12</span>.<span class="number">0</span>-M3  
-export PATH=<span class="variable">$HADOOP</span>_HOME/bin:<span class="variable">$SCALA</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME/bin:<span class="variable">$JRE</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME:<span class="variable">$PATH</span>
-</code></pre><h3 id="3-3_使配置文件生效">3.3 使配置文件生效</h3><pre><code>source ~/<span class="class">.bashrc</span> 
-</code></pre><h3 id="3-4_显示版本及测试">3.4 显示版本及测试</h3><pre><code><span class="keyword">scala</span> -<span class="keyword">version</span>  
-<span class="keyword">scala</span>  
+<h2 id="2-下载Spark"><a href="#2-下载Spark" class="headerlink" title="2. 下载Spark"></a>2. 下载Spark</h2><p><img src="/images/spark/sparkdownload.jpg" alt=""></p>
+<h2 id="3-安装Scala"><a href="#3-安装Scala" class="headerlink" title="3. 安装Scala"></a>3. 安装Scala</h2><h3 id="3-1-解压缩"><a href="#3-1-解压缩" class="headerlink" title="3.1 解压缩"></a>3.1 解压缩</h3><pre><code>sudo mkdir /home/hadoop/scala
+sudo tar -zxf scala-2.12.0-M3.tgz -C /home/hadoop/scala
+</code></pre><h3 id="3-2-修改环境变量"><a href="#3-2-修改环境变量" class="headerlink" title="3.2 修改环境变量"></a>3.2 修改环境变量</h3><pre><code>sudo vim ~/.bashrc  
+SCALA_HOME=/home/hadoop/scala/scala-2.12.0-M3  
+export PATH=$HADOOP_HOME/bin:$SCALA_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH
+</code></pre><h3 id="3-3-使配置文件生效"><a href="#3-3-使配置文件生效" class="headerlink" title="3.3 使配置文件生效"></a>3.3 使配置文件生效</h3><pre><code>source ~/.bashrc 
+</code></pre><h3 id="3-4-显示版本及测试"><a href="#3-4-显示版本及测试" class="headerlink" title="3.4 显示版本及测试"></a>3.4 显示版本及测试</h3><pre><code>scala -version  
+scala  
 5*5  
-:q or CTRL+<span class="keyword">D</span> 
-</code></pre><h2 id="4-_分发scala到各从节点">4. 分发scala到各从节点</h2><pre><code>scp -r /home/hadoop/scala hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-scp -r /home/hadoop/.bashrc hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-</code></pre><h2 id="5-_安装Spark">5. 安装Spark</h2><h3 id="5-1_解压缩">5.1 解压缩</h3><pre><code>sudo tar -zxf spark-<span class="number">1.6</span><span class="number">.0</span>-bin-hadoop2<span class="number">.6</span>.tgz -C /home/hadoop/  
-</code></pre><h3 id="5-2_配置环境变量">5.2 配置环境变量</h3><pre><code>sudo vim ~/.bashrc  
-export SPARK_HOME=/home/hadoop/spark-<span class="number">1.6</span>-bin-hadoop2.<span class="number">6</span>  
-export PATH=<span class="variable">$SPARK</span>_HOME/bin:<span class="variable">$HADOOP</span>_HOME/bin:<span class="variable">$SCALA</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME/bin:<span class="variable">$JRE</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME:<span class="variable">$PATH</span>   
-</code></pre><h3 id="5-3_使配置生效">5.3 使配置生效</h3><pre><code>source ~/<span class="class">.bashrc</span>  
-</code></pre><h3 id="5-4_spark-env-sh">5.4 spark-env.sh</h3><p>进入spark目录下的conf目录，将spark-env.sh.template拷贝到spark-env.sh，并添加信息:</p>
-<pre><code>cp spark-env.sh.<span class="keyword">template</span> spark-env.sh 
+:q or CTRL+D 
+</code></pre><h2 id="4-分发scala到各从节点"><a href="#4-分发scala到各从节点" class="headerlink" title="4. 分发scala到各从节点"></a>4. 分发scala到各从节点</h2><pre><code>scp -r /home/hadoop/scala hadoop@hadoop2:/home/hadoop/
+scp -r /home/hadoop/.bashrc hadoop@hadoop2:/home/hadoop/
+</code></pre><h2 id="5-安装Spark"><a href="#5-安装Spark" class="headerlink" title="5. 安装Spark"></a>5. 安装Spark</h2><h3 id="5-1-解压缩"><a href="#5-1-解压缩" class="headerlink" title="5.1 解压缩"></a>5.1 解压缩</h3><pre><code>sudo tar -zxf spark-1.6.0-bin-hadoop2.6.tgz -C /home/hadoop/  
+</code></pre><h3 id="5-2-配置环境变量"><a href="#5-2-配置环境变量" class="headerlink" title="5.2 配置环境变量"></a>5.2 配置环境变量</h3><pre><code>sudo vim ~/.bashrc  
+export SPARK_HOME=/home/hadoop/spark-1.6-bin-hadoop2.6  
+export PATH=$SPARK_HOME/bin:$HADOOP_HOME/bin:$SCALA_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH   
+</code></pre><h3 id="5-3-使配置生效"><a href="#5-3-使配置生效" class="headerlink" title="5.3 使配置生效"></a>5.3 使配置生效</h3><pre><code>source ~/.bashrc  
+</code></pre><h3 id="5-4-spark-env-sh"><a href="#5-4-spark-env-sh" class="headerlink" title="5.4 spark-env.sh"></a>5.4 spark-env.sh</h3><p>进入spark目录下的conf目录，将spark-env.sh.template拷贝到spark-env.sh，并添加信息:</p>
+<pre><code>cp spark-env.sh.template spark-env.sh 
 
-<span class="keyword">export</span> JAVA_HOME=/home/hadoop/java/jdk1<span class="number">.8</span><span class="number">.0</span>_74   
-<span class="keyword">export</span> SCALA_HOME=/home/hadoop/scala/scala-<span class="number">2.12</span><span class="number">.0</span>-M3  
-<span class="keyword">export</span> SPARK_MASTER_IP=hadoop1  
-<span class="keyword">export</span> SPARK_WORKER_MEMORY=<span class="number">2</span>g  
-<span class="keyword">export</span> HADOOP_CONF_DIR=/home/hadoop/hadoop-<span class="number">2.6</span><span class="number">.4</span>/conf 
-</code></pre><h3 id="5-5_slavers">5.5 slavers</h3><p>在slavers文件中添加各个从节点hadoop2,hadoop3…</p>
-<h2 id="6-_分发spark到各个从节点">6. 分发spark到各个从节点</h2><pre><code>scp -r /home/hadoop/spark-<span class="number">1.6</span>.<span class="number">0</span>-bin-hadoop2.<span class="number">6</span> hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>  
-scp -r ~<span class="regexp">/.bashrc hadoop@hadoop2:~/</span>  
-</code></pre><h2 id="7-_启动集群">7. 启动集群</h2><h3 id="7-1_启动HDFS">7.1 启动HDFS</h3><pre><code>sbin/<span class="built_in">start</span>-dfs.sh
-</code></pre><h3 id="7-2_启动spark">7.2 启动spark</h3><pre><code>sbin/start-<span class="keyword">all</span>.<span class="keyword">sh</span>
-</code></pre><h3 id="7-3_新进程">7.3 新进程</h3><p>使用jps命令之后，hadoop1主节点出现Master进程，其他从节点出现Worker进程</p>
-<h3 id="7-4_Spark_UI">7.4 Spark UI</h3><pre><code><span class="string">http:</span><span class="comment">//hadoop1:8080</span>
-</code></pre><h3 id="7-5_Spark-Shell">7.5 Spark-Shell</h3><pre><code>bin/spark-<span class="built_in">shell</span>
-</code></pre><h2 id="8-_测试">8. 测试</h2><h3 id="8-1_spark-shell命令行下wordcount测试">8.1 spark-shell命令行下wordcount测试</h3><pre><code><span class="number">1</span>. spark-shell  
-<span class="number">2</span>. val file = sc.<span class="function"><span class="title">textFile</span><span class="params">(<span class="string">"hdfs://hadoop1:9000/input/"</span>)</span></span>  
-<span class="number">3</span>. val count = file.<span class="function"><span class="title">flatMap</span><span class="params">(line=&gt;(line.split(<span class="string">" "</span>)</span></span>)).<span class="function"><span class="title">map</span><span class="params">(word=&gt;(word,<span class="number">1</span>)</span></span>).<span class="function"><span class="title">reduceByKey</span><span class="params">(_+_)</span></span>  
-<span class="number">4</span>. count.<span class="function"><span class="title">collect</span><span class="params">()</span></span>  
-<span class="number">5</span>. count.<span class="function"><span class="title">saveAsTextFile</span><span class="params">(<span class="string">"hdfs://hadoop1:9000/output/wordcount"</span>)</span></span> 
-</code></pre><h3 id="8-2_jar包测试">8.2 jar包测试</h3><pre><code>bin<span class="regexp">/spark-submit --class WordCount.WordCount --master spark:/</span><span class="regexp">/hadoop1:7077 ~/</span>data<span class="regexp">/WordCount.jar hdfs:/</span><span class="regexp">/hadoop1:9000/i</span>nput<span class="regexp">/ hdfs:/</span><span class="regexp">/hadoop1:9000/</span>output<span class="regexp">/</span>
+export JAVA_HOME=/home/hadoop/java/jdk1.8.0_74   
+export SCALA_HOME=/home/hadoop/scala/scala-2.12.0-M3  
+export SPARK_MASTER_IP=hadoop1  
+export SPARK_WORKER_MEMORY=2g  
+export HADOOP_CONF_DIR=/home/hadoop/hadoop-2.6.4/conf 
+</code></pre><h3 id="5-5-slavers"><a href="#5-5-slavers" class="headerlink" title="5.5 slavers"></a>5.5 slavers</h3><p>在slavers文件中添加各个从节点hadoop2,hadoop3…</p>
+<h2 id="6-分发spark到各个从节点"><a href="#6-分发spark到各个从节点" class="headerlink" title="6. 分发spark到各个从节点"></a>6. 分发spark到各个从节点</h2><pre><code>scp -r /home/hadoop/spark-1.6.0-bin-hadoop2.6 hadoop@hadoop2:/home/hadoop/  
+scp -r ~/.bashrc hadoop@hadoop2:~/  
+</code></pre><h2 id="7-启动集群"><a href="#7-启动集群" class="headerlink" title="7. 启动集群"></a>7. 启动集群</h2><h3 id="7-1-启动HDFS"><a href="#7-1-启动HDFS" class="headerlink" title="7.1 启动HDFS"></a>7.1 启动HDFS</h3><pre><code>sbin/start-dfs.sh
+</code></pre><h3 id="7-2-启动spark"><a href="#7-2-启动spark" class="headerlink" title="7.2 启动spark"></a>7.2 启动spark</h3><pre><code>sbin/start-all.sh
+</code></pre><h3 id="7-3-新进程"><a href="#7-3-新进程" class="headerlink" title="7.3 新进程"></a>7.3 新进程</h3><p>使用jps命令之后，hadoop1主节点出现Master进程，其他从节点出现Worker进程</p>
+<h3 id="7-4-Spark-UI"><a href="#7-4-Spark-UI" class="headerlink" title="7.4 Spark UI"></a>7.4 Spark UI</h3><pre><code>http://hadoop1:8080
+</code></pre><h3 id="7-5-Spark-Shell"><a href="#7-5-Spark-Shell" class="headerlink" title="7.5 Spark-Shell"></a>7.5 Spark-Shell</h3><pre><code>bin/spark-shell
+</code></pre><h2 id="8-测试"><a href="#8-测试" class="headerlink" title="8. 测试"></a>8. 测试</h2><h3 id="8-1-spark-shell命令行下wordcount测试"><a href="#8-1-spark-shell命令行下wordcount测试" class="headerlink" title="8.1 spark-shell命令行下wordcount测试"></a>8.1 spark-shell命令行下wordcount测试</h3><pre><code>1. spark-shell  
+2. val file = sc.textFile(&quot;hdfs://hadoop1:9000/input/&quot;)  
+3. val count = file.flatMap(line=&gt;(line.split(&quot; &quot;))).map(word=&gt;(word,1)).reduceByKey(_+_)  
+4. count.collect()  
+5. count.saveAsTextFile(&quot;hdfs://hadoop1:9000/output/wordcount&quot;) 
+</code></pre><h3 id="8-2-jar包测试"><a href="#8-2-jar包测试" class="headerlink" title="8.2 jar包测试"></a>8.2 jar包测试</h3><pre><code>bin/spark-submit --class WordCount.WordCount --master spark://hadoop1:7077 ~/data/WordCount.jar hdfs://hadoop1:9000/input/ hdfs://hadoop1:9000/output/
 </code></pre></span>
       
     </div>
@@ -450,7 +451,7 @@ scp -r ~<span class="regexp">/.bashrc hadoop@hadoop2:~/</span>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -525,7 +526,7 @@ scp -r ~<span class="regexp">/.bashrc hadoop@hadoop2:~/</span>
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_运行环境"><span class="nav-text">1. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_下载Spark"><span class="nav-text">2. 下载Spark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Scala"><span class="nav-text">3. 安装Scala</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_解压缩"><span class="nav-text">3.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_修改环境变量"><span class="nav-text">3.2 修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3_使配置文件生效"><span class="nav-text">3.3 使配置文件生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4_显示版本及测试"><span class="nav-text">3.4 显示版本及测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_分发scala到各从节点"><span class="nav-text">4. 分发scala到各从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_安装Spark"><span class="nav-text">5. 安装Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1_解压缩"><span class="nav-text">5.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2_配置环境变量"><span class="nav-text">5.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3_使配置生效"><span class="nav-text">5.3 使配置生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4_spark-env-sh"><span class="nav-text">5.4 spark-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5_slavers"><span class="nav-text">5.5 slavers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_分发spark到各个从节点"><span class="nav-text">6. 分发spark到各个从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_启动集群"><span class="nav-text">7. 启动集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1_启动HDFS"><span class="nav-text">7.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2_启动spark"><span class="nav-text">7.2 启动spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3_新进程"><span class="nav-text">7.3 新进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4_Spark_UI"><span class="nav-text">7.4 Spark UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5_Spark-Shell"><span class="nav-text">7.5 Spark-Shell</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_测试"><span class="nav-text">8. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1_spark-shell命令行下wordcount测试"><span class="nav-text">8.1 spark-shell命令行下wordcount测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2_jar包测试"><span class="nav-text">8.2 jar包测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运行环境"><span class="nav-text">1. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-下载Spark"><span class="nav-text">2. 下载Spark</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Scala"><span class="nav-text">3. 安装Scala</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-解压缩"><span class="nav-text">3.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-修改环境变量"><span class="nav-text">3.2 修改环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-使配置文件生效"><span class="nav-text">3.3 使配置文件生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-显示版本及测试"><span class="nav-text">3.4 显示版本及测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-分发scala到各从节点"><span class="nav-text">4. 分发scala到各从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-安装Spark"><span class="nav-text">5. 安装Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-解压缩"><span class="nav-text">5.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-配置环境变量"><span class="nav-text">5.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-使配置生效"><span class="nav-text">5.3 使配置生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-spark-env-sh"><span class="nav-text">5.4 spark-env.sh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-slavers"><span class="nav-text">5.5 slavers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-分发spark到各个从节点"><span class="nav-text">6. 分发spark到各个从节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-启动集群"><span class="nav-text">7. 启动集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-启动HDFS"><span class="nav-text">7.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-启动spark"><span class="nav-text">7.2 启动spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-新进程"><span class="nav-text">7.3 新进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-Spark-UI"><span class="nav-text">7.4 Spark UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-Spark-Shell"><span class="nav-text">7.5 Spark-Shell</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-测试"><span class="nav-text">8. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-spark-shell命令行下wordcount测试"><span class="nav-text">8.1 spark-shell命令行下wordcount测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-jar包测试"><span class="nav-text">8.2 jar包测试</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

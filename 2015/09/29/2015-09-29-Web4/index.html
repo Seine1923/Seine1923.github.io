@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Html,JavaScript," />
+  <meta name="keywords" content="Html,CSS,JavaScript," />
 
 
 
@@ -299,34 +299,34 @@
 
       
         <span itemprop="articleBody"><p>29 Sep 2015 - Kumming</p>
-<h2 id="容器">容器</h2><ol>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><ol>
 <li>Div 分隔区域，块容器</li>
 <li>SPAN 行内容器</li>
 </ol>
-<h2 id="Editplus">Editplus</h2><h3 id="随机生成一段单词">随机生成一段单词</h3><ol>
+<h2 id="Editplus"><a href="#Editplus" class="headerlink" title="Editplus"></a>Editplus</h2><h3 id="随机生成一段单词"><a href="#随机生成一段单词" class="headerlink" title="随机生成一段单词"></a>随机生成一段单词</h3><ol>
 <li>lorem + tab</li>
 <li>lorem50 + tab</li>
 </ol>
-<h2 id="叠加样式">叠加样式</h2><pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"class1 class2 class3"</span>&gt;content&lt;/<span class="keyword">div</span>&gt;
+<h2 id="叠加样式"><a href="#叠加样式" class="headerlink" title="叠加样式"></a>叠加样式</h2><pre><code>&lt;div class=&quot;class1 class2 class3&quot;&gt;content&lt;/div&gt;
 </code></pre><p>因此网络中有定义好一些基本样式供开发者直接使用，如著名的BootStrap</p>
-<h2 id="位置描述">位置描述</h2><h3 id="不叠加">不叠加</h3><p>浮动float, left or right</p>
-<h3 id="可叠加">可叠加</h3><p>定位某一元素position:</p>
+<h2 id="位置描述"><a href="#位置描述" class="headerlink" title="位置描述"></a>位置描述</h2><h3 id="不叠加"><a href="#不叠加" class="headerlink" title="不叠加"></a>不叠加</h3><p>浮动float, left or right</p>
+<h3 id="可叠加"><a href="#可叠加" class="headerlink" title="可叠加"></a>可叠加</h3><p>定位某一元素position:</p>
 <ol>
 <li>auto</li>
 <li>绝对定位 <code>img {position:absolute;}</code></li>
 <li>相对定位</li>
 </ol>
-<h4 id="绝对定位">绝对定位</h4><pre><code><span class="tag">img</span> <span class="rules">{<span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">right</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">bottom</span>:<span class="value"><span class="number">100px</span>}</span></span></span>
-</code></pre><h3 id="案例1">案例1</h3><pre><code><span class="class">.class1</span> <span class="rules">{<span class="rule"><span class="attribute">position</span>:<span class="value">relative</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对应该在的位置
-.class2 {position:absolute</span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">100px</span></span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">100px</span>}  相对屏幕边框</span></span></span>
+<h4 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h4><pre><code>img {top:100px; left:100px; right:100px; bottom:100px}
+</code></pre><h3 id="案例1"><a href="#案例1" class="headerlink" title="案例1"></a>案例1</h3><pre><code>.class1 {position:relative; top:100px; left:100px}  相对应该在的位置
+.class2 {position:absolute; top:100px; left:100px}  相对屏幕边框
 </code></pre><p>不管是绝对定位或者相对定位都不在正常流里</p>
-<h3 id="案例2">案例2</h3><pre><code>.<span class="keyword">class</span><span class="number">1</span> {}
-.<span class="keyword">class</span><span class="number">2</span> {}
-.<span class="keyword">class</span><span class="number">1</span>.<span class="keyword">class</span><span class="number">2</span>{}
-&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;content&lt;/p&gt;<span class="comment">//三者叠加</span>
-若.<span class="keyword">class</span> .<span class="keyword">class</span>{} 则是包含关系
-&lt;p <span class="keyword">class</span>=<span class="string">"class1 class2"</span>&gt;
-    &lt;p <span class="keyword">class</span>=<span class="string">"class2&gt;满足条件</span>
+<h3 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h3><pre><code>.class1 {}
+.class2 {}
+.class1.class2{}
+&lt;p class=&quot;class1 class2&quot;&gt;content&lt;/p&gt;//三者叠加
+若.class .class{} 则是包含关系
+&lt;p class=&quot;class1 class2&quot;&gt;
+    &lt;p class=&quot;class2&gt;满足条件
 </code></pre></span>
       
     </div>
@@ -335,9 +335,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
-          
             <a href="/tags/Html/" rel="tag">#Html</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
@@ -430,7 +430,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

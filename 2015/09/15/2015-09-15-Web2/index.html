@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Html,JavaScript," />
+  <meta name="keywords" content="Html,CSS,JavaScript," />
 
 
 
@@ -62,6 +62,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web技术开发(二)">
 <meta name="twitter:description" content="本章将介绍如何实现一个基本的菜单栏：">
+<meta name="twitter:image" content="http://Seine1923.github.io/images/web2/example.png">
 
 
 
@@ -300,45 +301,45 @@
 
       
         <span itemprop="articleBody"><p>15 Sep 2015 - Kumming</p>
-<h3 id="基本样式">基本样式</h3><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"Web技术开发二.html"</span>&gt;</span>YNU<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<h3 id="基本样式"><a href="#基本样式" class="headerlink" title="基本样式"></a>基本样式</h3><pre><code>&lt;a href=&quot;Web技术开发二.html&quot;&gt;YNU&lt;/a&gt;
 link:让浏览器解析加载，典型如样式表文件CSS，统一风格
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-     &lt;!<span class="tag">--</span>声明一个样式表<span class="tag">--</span>&gt;
-     <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
-     <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left}
-</span></span></span></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+&lt;style&gt;
+     &lt;!--声明一个样式表--&gt;
+     ul {list-style-type:none;}
+     li {float:left}
+&lt;/style&gt;
 </code></pre><p>block:块标记，宽度＝父元素，如ul；inline:内联/行内标记，宽度＝内容，如a</p>
-<h3 id="盒子">盒子</h3><p>大小、位置－&gt;盒子模型，任何一个标记为盒子<br>盒子＝内容+边框(border)+padding(内边际)<br>元素 高:height，宽:width<br>盒子与盒子之间：margin</p>
-<h3 id="长度单位：">长度单位：</h3><p>px 像素，相对量，如1080p，指水平方向可显示1080像素<br>em 定义字体多大，1em=16px<br>pt 类如word磅，绝对大小，根据dpi指定，dot per inch<br>公式：px = pt * dpi / 72</p>
-<pre><code>&lt;<span class="attribute">padding</span>&gt;
-     <span class="attribute">left</span>
-     <span class="attribute">right</span>
-     <span class="attribute">top</span> 
-    <span class="attribute">bottom</span>
+<h3 id="盒子"><a href="#盒子" class="headerlink" title="盒子"></a>盒子</h3><p>大小、位置－&gt;盒子模型，任何一个标记为盒子<br>盒子＝内容+边框(border)+padding(内边际)<br>元素 高:height，宽:width<br>盒子与盒子之间：margin</p>
+<h3 id="长度单位："><a href="#长度单位：" class="headerlink" title="长度单位："></a>长度单位：</h3><p>px 像素，相对量，如1080p，指水平方向可显示1080像素<br>em 定义字体多大，1em=16px<br>pt 类如word磅，绝对大小，根据dpi指定，dot per inch<br>公式：px = pt * dpi / 72</p>
+<pre><code>&lt;padding&gt;
+     left
+     right
+     top 
+    bottom
 </code></pre><table><br>    <tr><br>        <td></td><td>top</td><td>right</td><td>bottom</td><td>left</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>2opx</td><td>30px</td><td>40px(带单位)</td><br>    </tr><br>    <tr><br>        <td></td><td>上下</td><td>左右</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><td>20px</td><br>    </tr><br>    <tr><br>        <td></td><td>全部</td><br>    </tr><br>    <tr><br>        <td>padding</td><td>10px</td><br>    </tr><br></table>
 
 <p><strong> 行内标记只有左右边际 </strong></p>
-<h3 id="浏览器渲染模式：">浏览器渲染模式：</h3><ol>
+<h3 id="浏览器渲染模式："><a href="#浏览器渲染模式：" class="headerlink" title="浏览器渲染模式："></a>浏览器渲染模式：</h3><ol>
 <li>正常流</li>
 <li>浮动流float(相对位置，绝对位置)</li>
 </ol>
-<h3 id="颜色表示：">颜色表示：</h3><ol>
+<h3 id="颜色表示："><a href="#颜色表示：" class="headerlink" title="颜色表示："></a>颜色表示：</h3><ol>
 <li>li {float:left; background-color:#fff;} 颜色RGB，自发光；CMYK,反光，用于印刷<br>表示颜色以#号开始，#<em>**；一个</em>的表示0-FF,两个一样简写为一个；</li>
 <li>可用一些单词，如red,yellow…</li>
 <li>函数rgb(十进制，十进制，十进制）</li>
 </ol>
-<h3 id="透明度：">透明度：</h3><pre><code>opacity:<span class="number">0</span>-<span class="number">1</span> 
-</code></pre><h3 id="前景色：">前景色：</h3><pre><code><span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">color</span>:<span class="value">white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;}</span>去掉下划线
-</code></pre><h3 id="状态定义：">状态定义：</h3><p>是伪类，优先正常定义<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:hover &#123;background-color:...&#125; 鼠标悬停</span><br><span class="line">li:first-child &#123;border-radius:<span class="number">8</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">8</span>px&#125; 圆角</span><br><span class="line">   last-child</span><br><span class="line">border即边框，默认为零</span><br></pre></td></tr></table></figure></p>
-<h3 id="案例：">案例：</h3><pre><code><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="tag">ul</span> <span class="rules">{<span class="rule"><span class="attribute">list-style-type</span>:<span class="value">none</span></span>;}</span>
-    <span class="tag">li</span> <span class="rules">{<span class="rule"><span class="attribute">float</span>:<span class="value">left</span></span>; <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#699</span></span></span>; <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">10px</span> <span class="number">20px</span></span></span>;}</span>
-    <span class="rule"><span class="attribute">li</span>:<span class="value">hover {background-color: <span class="hexcolor">#569</span></span></span>;}
-    <span class="rule"><span class="attribute">li</span>:<span class="value">first-child {border-radius:<span class="number">8px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span>}
-    li:last-child {border-radius:<span class="number">0</span> <span class="number">8px</span> <span class="number">8px</span> <span class="number">0</span>}
-    a {color:white</span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span></span>;}
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-</code></pre><h3 id="效果展示：">效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
+<h3 id="透明度："><a href="#透明度：" class="headerlink" title="透明度："></a>透明度：</h3><pre><code>opacity:0-1 
+</code></pre><h3 id="前景色："><a href="#前景色：" class="headerlink" title="前景色："></a>前景色：</h3><pre><code>a {color:white; text-decoration:none;}去掉下划线
+</code></pre><h3 id="状态定义："><a href="#状态定义：" class="headerlink" title="状态定义："></a>状态定义：</h3><p>是伪类，优先正常定义<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> &#123;<span class="attribute">background-color</span>:...&#125; 鼠标悬停</span><br><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:first-child</span> &#123;<span class="attribute">border-radius</span>:<span class="number">8px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">8px</span>&#125; 圆角</span><br><span class="line">   <span class="selector-tag">last-child</span></span><br><span class="line"><span class="selector-tag">border</span>即边框，默认为零</span><br></pre></td></tr></table></figure></p>
+<h3 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h3><pre><code>&lt;style&gt;
+    ul {list-style-type:none;}
+    li {float:left; background-color:#699; padding:10px 20px;}
+    li:hover {background-color: #569;}
+    li:first-child {border-radius:8px 0 0 8px}
+    li:last-child {border-radius:0 8px 8px 0}
+    a {color:white; text-decoration: none;}
+&lt;/style&gt;
+</code></pre><h3 id="效果展示："><a href="#效果展示：" class="headerlink" title="效果展示："></a>效果展示：</h3><p><img src="/images/web2/example.png" alt=""></p>
 </span>
       
     </div>
@@ -347,9 +348,9 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
-          
             <a href="/tags/Html/" rel="tag">#Html</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
@@ -442,7 +443,7 @@ link:让浏览器解析加载，典型如样式表文件CSS，统一风格
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

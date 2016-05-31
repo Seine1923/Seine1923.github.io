@@ -59,10 +59,11 @@
 <meta property="og:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/newsDetail.png">
-<meta property="og:updated_time" content="2016-05-22T09:05:37.216Z">
+<meta property="og:updated_time" content="2016-05-30T13:36:06.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2之News页面展示">
 <meta name="twitter:description" content="本节将详细记录新闻内容从后台添加到前端显示的工作流程详细部署请阅读全文">
+<meta name="twitter:image" content="http://Seine1923.github.io/images/wamp/createNews.png">
 
 
 
@@ -300,128 +301,129 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_后台添加内容">1. 后台添加内容</h2><p>前一节我们通过gii生成了news的model、CRUD后，就可以通过后台添加news内容</p>
+        <span itemprop="articleBody"><h2 id="1-后台添加内容"><a href="#1-后台添加内容" class="headerlink" title="1. 后台添加内容"></a>1. 后台添加内容</h2><p>前一节我们通过gii生成了news的model、CRUD后，就可以通过后台添加news内容</p>
 <p><img src="/images/wamp/createNews.png" alt=""></p>
-<h2 id="2-_main-php">2. main.php</h2><pre><code><span class="variable">$menuItems</span> = [
-    [<span class="string">'label'</span> =&gt; <span class="string">'首页'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/index'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'新闻动态'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/newslist'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'组织机构'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/org'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'留言反馈'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/contact'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'人才招聘'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/zhaopin'</span>]],
-    [<span class="string">'label'</span> =&gt; <span class="string">'关于我们'</span>, <span class="string">'url'</span> =&gt; [<span class="string">'/site/about'</span>]],
+<h2 id="2-main-php"><a href="#2-main-php" class="headerlink" title="2. main.php"></a>2. main.php</h2><pre><code>$menuItems = [
+    [&apos;label&apos; =&gt; &apos;首页&apos;, &apos;url&apos; =&gt; [&apos;/site/index&apos;]],
+    [&apos;label&apos; =&gt; &apos;新闻动态&apos;, &apos;url&apos; =&gt; [&apos;/site/newslist&apos;]],
+    [&apos;label&apos; =&gt; &apos;组织机构&apos;, &apos;url&apos; =&gt; [&apos;/site/org&apos;]],
+    [&apos;label&apos; =&gt; &apos;留言反馈&apos;, &apos;url&apos; =&gt; [&apos;/site/contact&apos;]],
+    [&apos;label&apos; =&gt; &apos;人才招聘&apos;, &apos;url&apos; =&gt; [&apos;/site/zhaopin&apos;]],
+    [&apos;label&apos; =&gt; &apos;关于我们&apos;, &apos;url&apos; =&gt; [&apos;/site/about&apos;]],
 ];
 </code></pre><p>首页（frontend/views/layout/main.php）设置news菜单栏，菜单栏叫做“新闻动态”，点击以后，会跳转到frontend/controllers下的SiteController控制器，找到对应的响应叫actionNewslist</p>
-<h2 id="3-_SiteController-&gt;actionNewslist">3. SiteController-&gt;actionNewslist</h2><pre><code>public <span class="keyword">function</span> actionNewslist(<span class="variable">$offset</span>=<span class="number">0</span>,<span class="variable">$limit</span>=<span class="number">10</span>){
-    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level !=0  ORDER BY top_level DESC"</span>;
-    <span class="variable">$topNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
-    <span class="variable">$sql</span> = <span class="string">"SELECT * FROM news WHERE top_level = 0 ORDER BY time DESC LIMIT "</span>.<span class="variable">$offset</span>.<span class="string">","</span>.<span class="variable">$limit</span>;
-    <span class="variable">$normalNews</span> = News::findBySql(<span class="variable">$sql</span>)-&gt;all();
-    return <span class="variable">$this-</span>&gt;render(<span class="string">'news-list'</span>,[
-            <span class="string">'topNews'</span> =&gt; <span class="variable">$topNews</span>,
-            <span class="string">'normalNews'</span> =&gt; <span class="variable">$normalNews</span>
+<h2 id="3-SiteController-gt-actionNewslist"><a href="#3-SiteController-gt-actionNewslist" class="headerlink" title="3. SiteController-&gt;actionNewslist"></a>3. SiteController-&gt;actionNewslist</h2><pre><code>public function actionNewslist($offset=0,$limit=10){
+    $sql = &quot;SELECT * FROM news WHERE top_level !=0  ORDER BY top_level DESC&quot;;
+    $topNews = News::findBySql($sql)-&gt;all();
+    $sql = &quot;SELECT * FROM news WHERE top_level = 0 ORDER BY time DESC LIMIT &quot;.$offset.&quot;,&quot;.$limit;
+    $normalNews = News::findBySql($sql)-&gt;all();
+    return $this-&gt;render(&apos;news-list&apos;,[
+            &apos;topNews&apos; =&gt; $topNews,
+            &apos;normalNews&apos; =&gt; $normalNews
     ]);
 }
 </code></pre><p>查询数据库，将数据发送（render）给frontend/views/site/news-list</p>
-<h2 id="4-_news-list-php">4. news-list.php</h2><p>获得数据并且与视图结合，形成最终的页面效果展示给用户。</p>
-<pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
-    <span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Html</span>;
+<h2 id="4-news-list-php"><a href="#4-news-list-php" class="headerlink" title="4. news-list.php"></a>4. news-list.php</h2><p>获得数据并且与视图结合，形成最终的页面效果展示给用户。</p>
+<pre><code>&lt;?php
+    use yii\helpers\Html;
 
-    <span class="variable">$this</span>-&gt;title = <span class="string">'新闻'</span>;
-    <span class="variable">$this</span>-&gt;params[<span class="string">'breadcrumbs'</span>][] = <span class="variable">$this</span>-&gt;title;
-<span class="preprocessor">?&gt;</span></span>
-<span class="php"><span class="preprocessor">&lt;?</span>=Html::cssFile(<span class="string">'@web/css/list.css'</span>)<span class="preprocessor">?&gt;</span></span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"main"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"message-list"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"table table-hover"</span>&gt;</span>
-            <span class="comment">&lt;!--&lt;caption&gt;新闻动态&lt;/caption&gt;--&gt;</span>
-            <span class="tag">&lt;<span class="title">thead</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">th</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">th</span>&gt;</span>日期<span class="tag">&lt;/<span class="title">th</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">thead</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">tbody</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$topNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
-            <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span> (<span class="variable">$normalNews</span> <span class="keyword">as</span> <span class="variable">$line</span>):<span class="preprocessor">?&gt;</span></span>
-                <span class="tag">&lt;<span class="title">tr</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=Html::a(<span class="variable">$line</span>-&gt;title,[<span class="string">'site/newsControl'</span>,<span class="string">'id'</span>=&gt;<span class="variable">$line</span>-&gt;id,<span class="string">'title'</span>=&gt;<span class="variable">$line</span>-&gt;title])<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">td</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$line</span>-&gt;time<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">endforeach</span>; <span class="preprocessor">?&gt;</span></span>
-            <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre><h2 id="5-_SiteController-&gt;actionNewsControl">5. SiteController-&gt;actionNewsControl</h2><p>在news-list.php显示的页面中，通过点击新闻标题首先到相应控制器获得数据后，跳转到news.php，并显示相应文章的内容</p>
-<pre><code>public <span class="keyword">function</span> actionNewsControl(<span class="variable">$id</span>){
-    if((<span class="variable">$model</span>=News::findOne(<span class="variable">$id</span>)) == null){
-        throw new NotFoundHttpException(<span class="string">'网页不存在!'</span>);
+    $this-&gt;title = &apos;新闻&apos;;
+    $this-&gt;params[&apos;breadcrumbs&apos;][] = $this-&gt;title;
+?&gt;
+&lt;?=Html::cssFile(&apos;@web/css/list.css&apos;)?&gt;
+&lt;div id=&quot;main&quot;&gt;
+    &lt;div class=&quot;message-list&quot;&gt;
+        &lt;table class=&quot;table table-hover&quot;&gt;
+            &lt;!--&lt;caption&gt;新闻动态&lt;/caption&gt;--&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;标题&lt;/th&gt;
+                &lt;th&gt;日期&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+            &lt;?php foreach ($topNews as $line):?&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;?=Html::a($line-&gt;title,[&apos;site/newsControl&apos;,&apos;id&apos;=&gt;$line-&gt;id,&apos;title&apos;=&gt;$line-&gt;title])?&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;?=$line-&gt;time?&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;?php endforeach; ?&gt;
+            &lt;?php foreach ($normalNews as $line):?&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;&lt;?=Html::a($line-&gt;title,[&apos;site/newsControl&apos;,&apos;id&apos;=&gt;$line-&gt;id,&apos;title&apos;=&gt;$line-&gt;title])?&gt;&lt;/td&gt;
+                    &lt;td&gt;&lt;?=$line-&gt;time?&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;?php endforeach; ?&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 id="5-SiteController-gt-actionNewsControl"><a href="#5-SiteController-gt-actionNewsControl" class="headerlink" title="5. SiteController-&gt;actionNewsControl"></a>5. SiteController-&gt;actionNewsControl</h2><p>在news-list.php显示的页面中，通过点击新闻标题首先到相应控制器获得数据后，跳转到news.php，并显示相应文章的内容</p>
+<pre><code>public function actionNewsControl($id){
+    if(($model=News::findOne($id)) == null){
+        throw new NotFoundHttpException(&apos;网页不存在!&apos;);
     }else{
-        return <span class="variable">$this-</span>&gt;render(<span class="string">'news'</span>,[<span class="string">'model'</span> =&gt; <span class="variable">$model</span>]);
+        return $this-&gt;render(&apos;news&apos;,[&apos;model&apos; =&gt; $model]);
     }
 }
-</code></pre><h2 id="5-_news-php">5. news.php</h2><pre><code><span class="php"><span class="preprocessor">&lt;?php</span>
-<span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">html</span>;
-<span class="variable">$this</span>-&gt;title = <span class="variable">$model</span>-&gt;title;
-<span class="preprocessor">?&gt;</span></span>
-<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-    <span class="class">.time</span>,<span class="class">.author</span><span class="rules">{
-        <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
-        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-    }</span>
-    <span class="class">.author</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> <span class="number">950px</span></span></span>;
-    }</span>
-    <span class="class">.info</span><span class="rules">{
-        <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#eee</span></span></span>;
-        <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;
-    }</span>
-    <span class="class">.news-content</span><span class="rules">{
-        <span class="rule"><span class="attribute">text-indent</span>:<span class="value"><span class="number">2em</span></span></span>;
-    }</span>
-</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-<span class="tag">&lt;<span class="title">acticle</span> <span class="attribute">class</span>=<span class="value">"news"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">head</span> <span class="attribute">class</span>=<span class="value">"news-head"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"news-title"</span>&gt;</span><span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;title<span class="preprocessor">?&gt;</span></span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"info"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"time"</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;time<span class="preprocessor">?&gt;</span></span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"author"</span>&gt;</span>
-            <span class="php"><span class="preprocessor">&lt;?</span>=<span class="variable">$model</span>-&gt;author<span class="preprocessor">?&gt;</span></span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">br</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"news-content"</span>&gt;</span>
-    <span class="php"><span class="preprocessor">&lt;?</span>=\yii\helpers\Markdown::process(<span class="variable">$model</span>-&gt;content)<span class="preprocessor">?&gt;</span></span>
-    <span class="tag">&lt;/<span class="title">section</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">acticle</span>&gt;</span>
-</code></pre><h2 id="6_效果">6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
+</code></pre><h2 id="5-news-php"><a href="#5-news-php" class="headerlink" title="5. news.php"></a>5. news.php</h2><pre><code>&lt;?php
+use yii\helpers\html;
+$this-&gt;title = $model-&gt;title;
+?&gt;
+&lt;style&gt;
+    .time,.author{
+        display: inline-block;
+        float: left;
+    }
+    .author{
+        margin-left: 950px;
+    }
+    .info{
+        background: #eee;
+        border-radius: 5px;
+    }
+    .news-content{
+        text-indent:2em;
+    }
+&lt;/style&gt;
+&lt;acticle class=&quot;news&quot;&gt;
+    &lt;head class=&quot;news-head&quot;&gt;
+        &lt;h1 class=&quot;news-title&quot;&gt;&lt;?=$model-&gt;title?&gt;&lt;/h1&gt;
+    &lt;/head&gt;
+    &lt;div class=&quot;info&quot;&gt;
+        &lt;div class=&quot;time&quot;&gt;
+            &lt;?=$model-&gt;time?&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;author&quot;&gt;
+            &lt;?=$model-&gt;author?&gt;
+        &lt;/div&gt;
+        &lt;br&gt;
+    &lt;/div&gt;
+    &lt;section class=&quot;news-content&quot;&gt;
+    &lt;?=\yii\helpers\Markdown::process($model-&gt;content)?&gt;
+    &lt;/section&gt;
+&lt;/acticle&gt;
+</code></pre><h2 id="6-效果"><a href="#6-效果" class="headerlink" title="6 效果"></a>6 效果</h2><p><img src="/images/wamp/newsDetail.png" alt=""></p>
 <p>可以看到内容已经成果显示，但是可以看到几乎没有样式，为了使文档更富有色彩，可以在后台添加富文本编辑框，对内容样式修改后就可以看到富文本的效果。具体下节演示。</p>
-<h2 id="7_开启url美化">7 开启url美化</h2><p>在不开启Yii2的enablePrettyUrl模式之前，我们访问新闻列表时的url是这样的：</p>
-<pre><code><span class="string">http:</span><span class="comment">//localhost:8080/web/index.php?r=site%2Fnewslist</span>
+<h2 id="7-开启url美化"><a href="#7-开启url美化" class="headerlink" title="7 开启url美化"></a>7 开启url美化</h2><p>在不开启Yii2的enablePrettyUrl模式之前，我们访问新闻列表时的url是这样的：</p>
+<pre><code>http://localhost:8080/web/index.php?r=site%2Fnewslist
 </code></pre><p>来到frontend\config\main.php</p>
-<pre><code><span class="string">'urlManager'</span> =&gt; [
-        <span class="string">'enablePrettyUrl'</span> =&gt; <span class="keyword">true</span>,
-        <span class="string">'showScriptName'</span> =&gt; <span class="keyword">false</span>,
-        <span class="string">'rules'</span> =&gt; [
+<pre><code>&apos;urlManager&apos; =&gt; [
+        &apos;enablePrettyUrl&apos; =&gt; true,
+        &apos;showScriptName&apos; =&gt; false,
+        &apos;rules&apos; =&gt; [
         ],
     ],
 </code></pre><p>在frontend/web/目录下新建一个.htaccess文件，附如下内容：<br>    RewriteEngine on</p>
-<pre><code><span class="comment"># If a directory or a file exists, use it directly</span>
-<span class="keyword"><span class="common">RewriteCond</span></span> <span class="cbracket">%{REQUEST_FILENAME}</span> !-f
-<span class="keyword"><span class="common">RewriteCond</span></span> <span class="cbracket">%{REQUEST_FILENAME}</span> !-d
-<span class="comment"># Otherwise forward it to index.php</span>
-<span class="keyword"><span class="common">RewriteRule</span></span> . index.php
+<pre><code># If a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Otherwise forward it to index.php
+RewriteRule . index.php
 </code></pre><p>检查apache目录下配置文件httpd.conf下是否开启以下功能：</p>
-<pre><code><span class="keyword"><span class="common">LoadModule</span></span> rewrite_module modules/mod_rewrite.so
-</code></pre><p>开启后，就可以通过<code>http://localhost:8080/web/index.php/site/newslist</code>开访问内容了。</p>
+<pre><code>LoadModule rewrite_module modules/mod_rewrite.so
+</code></pre><p>以及DocumentRoot下Direction中是否设置了<code>AllowOverride ALL</code></p>
+<p>开启后，就可以通过<code>http://localhost:8080/web/index.php/site/newslist</code>开访问内容了。</p>
 </span>
       
     </div>
@@ -525,7 +527,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -600,7 +602,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_SiteController->actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_SiteController->actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6_效果"><span class="nav-text">6 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7_开启url美化"><span class="nav-text">7 开启url美化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-后台添加内容"><span class="nav-text">1. 后台添加内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-main-php"><span class="nav-text">2. main.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SiteController-gt-actionNewslist"><span class="nav-text">3. SiteController->actionNewslist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-news-list-php"><span class="nav-text">4. news-list.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-SiteController-gt-actionNewsControl"><span class="nav-text">5. SiteController->actionNewsControl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-news-php"><span class="nav-text">5. news.php</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-效果"><span class="nav-text">6 效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-开启url美化"><span class="nav-text">7 开启url美化</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

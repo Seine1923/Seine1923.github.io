@@ -65,6 +65,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark日志设置">
 <meta name="twitter:description" content="欢迎来到SparkLog的世界详细SparkLog集群部署请阅读全文">
+<meta name="twitter:image" content="http://Seine1923.github.io/images/spark/n2.png">
 
 
 
@@ -302,21 +303,21 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>我们在运行Spark任务的时候，通过hadoop1:4040可以查看到当前的运行状态，包括各节点的任务量，完成的任务量等，可是当任务结束后，就访问不到这些信息了。本文将配置spark的运行日志，使得可以在任务结束后，依然可以查看到该任务执行过程中的各项系数。这不仅可以使我们对spark系统有更深入的了解，还可以便于我们查找程序问题，调试程序。</p>
-<h2 id="2-_配置">2. 配置</h2><h3 id="2-1_spark-default-conf">2.1 spark-default.conf</h3><p>在spark安装目录下的conf目录下，将spark-default.conf.template 改名为 spark-default.conf，并添加如下内容：</p>
+        <span itemprop="articleBody"><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>我们在运行Spark任务的时候，通过hadoop1:4040可以查看到当前的运行状态，包括各节点的任务量，完成的任务量等，可是当任务结束后，就访问不到这些信息了。本文将配置spark的运行日志，使得可以在任务结束后，依然可以查看到该任务执行过程中的各项系数。这不仅可以使我们对spark系统有更深入的了解，还可以便于我们查找程序问题，调试程序。</p>
+<h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><h3 id="2-1-spark-default-conf"><a href="#2-1-spark-default-conf" class="headerlink" title="2.1 spark-default.conf"></a>2.1 spark-default.conf</h3><p>在spark安装目录下的conf目录下，将spark-default.conf.template 改名为 spark-default.conf，并添加如下内容：</p>
 <pre><code>spark.eventLog.enabled true 
-spark.eventLog.dir <span class="link_url">file:/home/hadoop/log/spark</span>[<span class="link_label">hdfs://hadoop1:9000/log/spark</span>]
+spark.eventLog.dir file:/home/hadoop/log/spark[hdfs://hadoop1:9000/log/spark]
 spark.eventLog.compress true
 </code></pre><blockquote>
 <p>spark.eventLog.dir<br>默认值：file://tmp/spark-events<br>保存日志相关信息的路径，可以是hdfs://开头的HDFS路径，也可以是file://开头的本地路径，但都需要提前创建目录。</p>
 </blockquote>
-<h3 id="2-2_spark-env-sh">2.2 spark-env.sh</h3><p>添加如下内容：</p>
-<pre><code>Export SPARK_HISTORY_OPTS=-Dspark<span class="class">.history</span><span class="class">.fs</span><span class="class">.logDirectory</span>=hadoop1:<span class="number">9000</span>/log/spark -Dspark<span class="class">.history</span><span class="class">.ui</span><span class="class">.port</span>=<span class="number">18080</span> -Dspark<span class="class">.history</span><span class="class">.retainedApplications</span>=<span class="number">3</span> 
+<h3 id="2-2-spark-env-sh"><a href="#2-2-spark-env-sh" class="headerlink" title="2.2 spark-env.sh"></a>2.2 spark-env.sh</h3><p>添加如下内容：</p>
+<pre><code>Export SPARK_HISTORY_OPTS=-Dspark.history.fs.logDirectory=hadoop1:9000/log/spark -Dspark.history.ui.port=18080 -Dspark.history.retainedApplications=3 
 </code></pre><blockquote>
 <p>spark.history.retainedApplications<br>默认值：50<br>在内存中保存Application历史记录的个数，如果超过这个值，旧的应用程序信息将被删除，当再次访问已被删除的应用信息时需要重新构建页面。</p>
 </blockquote>
-<h2 id="3-_启动">3. 启动</h2><p>SPARK_HOME/conf下：执行./start-history-server.sh，以后执行sbin/start-all.sh就可以了。</p>
-<h2 id="4-_演示">4. 演示</h2><p>执行一个wordcount实例后产生的日志</p>
+<h2 id="3-启动"><a href="#3-启动" class="headerlink" title="3. 启动"></a>3. 启动</h2><p>SPARK_HOME/conf下：执行./start-history-server.sh，以后执行sbin/start-all.sh就可以了。</p>
+<h2 id="4-演示"><a href="#4-演示" class="headerlink" title="4. 演示"></a>4. 演示</h2><p>执行一个wordcount实例后产生的日志</p>
 <p><img src="/images/spark/n2.png" alt=""></p>
 <p>点击应用名字WordCountAPP后即可查看各项情况</p>
 <p><img src="/images/spark/n3.png" alt=""></p>
@@ -423,7 +424,7 @@ spark.eventLog.compress true
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -498,7 +499,7 @@ spark.eventLog.compress true
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_spark-default-conf"><span class="nav-text">2.1 spark-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_spark-env-sh"><span class="nav-text">2.2 spark-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_启动"><span class="nav-text">3. 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_演示"><span class="nav-text">4. 演示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置"><span class="nav-text">2. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-spark-default-conf"><span class="nav-text">2.1 spark-default.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-spark-env-sh"><span class="nav-text">2.2 spark-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-启动"><span class="nav-text">3. 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-演示"><span class="nav-text">4. 演示</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

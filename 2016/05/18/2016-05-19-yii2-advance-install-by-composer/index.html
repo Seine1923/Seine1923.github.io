@@ -78,6 +78,7 @@
 3. 安装Yii2高级版切换到D:\目录下，按住Shift同时右键，选择“在此处打开命令窗口”，输入以下命令安装：
 
 安装 Composer asset plugin，它是通过 Composer 管理 bower 和 npm 包">
+<meta name="twitter:image" content="http://Seine1923.github.io/images/wamp/dongxublog-install.png">
 
 
 
@@ -315,30 +316,30 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_安装Composer">1. 安装Composer</h2><p><a href="https://getcomposer.org/download/" target="_blank" rel="external">GetComposer</a>: Composer-Setup.exe，安装后自动会设置环境变量。</p>
-<h2 id="2-_更新">2. 更新</h2><p>composer self-update </p>
-<h2 id="3-_安装Yii2高级版">3. 安装Yii2高级版</h2><p>切换到D:\目录下，按住Shift同时右键，选择“在此处打开命令窗口”，输入以下命令安装：</p>
+        <span itemprop="articleBody"><h2 id="1-安装Composer"><a href="#1-安装Composer" class="headerlink" title="1. 安装Composer"></a>1. 安装Composer</h2><p><a href="https://getcomposer.org/download/" target="_blank" rel="external">GetComposer</a>: Composer-Setup.exe，安装后自动会设置环境变量。</p>
+<h2 id="2-更新"><a href="#2-更新" class="headerlink" title="2. 更新"></a>2. 更新</h2><p>composer self-update </p>
+<h2 id="3-安装Yii2高级版"><a href="#3-安装Yii2高级版" class="headerlink" title="3. 安装Yii2高级版"></a>3. 安装Yii2高级版</h2><p>切换到D:\目录下，按住Shift同时右键，选择“在此处打开命令窗口”，输入以下命令安装：</p>
 <ol>
 <li><p>安装 Composer asset plugin，它是通过 Composer 管理 bower 和 npm 包所必须的，此命令全局生效，一劳永逸。</p>
-<pre><code><span class="label">composer</span> <span class="preprocessor">global</span> <span class="preprocessor">require</span> <span class="string">"fxp/composer-asset-plugin:~1.1.1"</span>
+<pre><code>composer global require &quot;fxp/composer-asset-plugin:~1.1.1&quot;
 </code></pre></li>
 <li><p>安装基础版命令（仅供参考）</p>
-<pre><code>composer <span class="operator"><span class="keyword">create</span>-<span class="keyword">project</span> <span class="comment">--prefer-dist yiisoft/yii2-app-basic basic</span></span>
+<pre><code>composer create-project --prefer-dist yiisoft/yii2-app-basic basic
 </code></pre></li>
 <li><p>安装高级版</p>
-<pre><code>composer <span class="operator"><span class="keyword">create</span>-<span class="keyword">project</span> <span class="comment">--prefer-dist yiisoft/yii2-app-advanced dongxublog</span></span>
+<pre><code>composer create-project --prefer-dist yiisoft/yii2-app-advanced dongxublog
 </code></pre><p> <img src="/images/wamp/dongxublog-install.png" alt=""><br> <img src="/images/wamp/dongxublog-file.png" alt=""></p>
 </li>
 <li><p>初始化项目</p>
 <p> 切换到项目目录，输入命令：</p>
-<pre><code><span class="title">php</span> init  
+<pre><code>php init  
 </code></pre><p>  <img src="/images/wamp/dongxublog-init.png" alt=""></p>
 </li>
 <li><p>检验</p>
 <p> 首先将项目目录设为Web访问目录，然后在浏览器中输入：</p>
-<pre><code><span class="symbol">http:</span>/<span class="regexp">/dongxublog:8080/frontend</span><span class="regexp">/web/index</span>.php
+<pre><code>http://dongxublog:8080/frontend/web/index.php
 </code></pre><p> <img src="/images/wamp/dongxublog-index.png" alt=""></p>
-<pre><code><span class="symbol">http:</span>/<span class="regexp">/dongxublog:8080/backend</span><span class="regexp">/web/index</span>.php?r=site<span class="variable">%2Flogin</span>
+<pre><code>http://dongxublog:8080/backend/web/index.php?r=site%2Flogin
 </code></pre><p> <img src="/images/wamp/dongxublog-backend.png" alt=""></p>
 </li>
 </ol>
@@ -445,7 +446,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -520,7 +521,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_安装Composer"><span class="nav-text">1. 安装Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_更新"><span class="nav-text">2. 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装Yii2高级版"><span class="nav-text">3. 安装Yii2高级版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装Composer"><span class="nav-text">1. 安装Composer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更新"><span class="nav-text">2. 更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装Yii2高级版"><span class="nav-text">3. 安装Yii2高级版</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

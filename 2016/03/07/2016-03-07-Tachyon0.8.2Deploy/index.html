@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hadoop-2.6.4,Spark-1.6.0,Tachyon-0.8.0," />
+  <meta name="keywords" content="Spark-1.6.0,Hadoop-2.6.4,Tachyon-0.8.0," />
 
 
 
@@ -298,8 +298,8 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_简介">1. 简介</h2><p>Tachyon是一个分布式内存文件系统，可以在集群里以访问内存的速度来访问存在tachyon里的文件。Tachyon是架构在最底层的分布式文件存储和上层的各种计算框架之间的一种中间件。主要职责是将那些不需要落地到DFS里的文件，落地到分布式内存文件系统中，来达到共享内存，从而提高效率。同时可以减少内存冗余，GC时间等。当前最新版本为1.0.0,并且改名为Alluxio。</p>
-<h2 id="2-_运行环境">2. 运行环境</h2><p>在已搭建好的Hadoop2.6.4+Spark-1.6.0集群上部署Tachyon。</p>
+        <span itemprop="articleBody"><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>Tachyon是一个分布式内存文件系统，可以在集群里以访问内存的速度来访问存在tachyon里的文件。Tachyon是架构在最底层的分布式文件存储和上层的各种计算框架之间的一种中间件。主要职责是将那些不需要落地到DFS里的文件，落地到分布式内存文件系统中，来达到共享内存，从而提高效率。同时可以减少内存冗余，GC时间等。当前最新版本为1.0.0,并且改名为Alluxio。</p>
+<h2 id="2-运行环境"><a href="#2-运行环境" class="headerlink" title="2. 运行环境"></a>2. 运行环境</h2><p>在已搭建好的Hadoop2.6.4+Spark-1.6.0集群上部署Tachyon。</p>
 <p>版本信息：</p>
 <ul>
 <li>JDK：1.8.0_74 64位</li>
@@ -308,42 +308,42 @@
 <li>Spark：1.6.0</li>
 <li>Tachyon: 0.8.2</li>
 </ul>
-<h2 id="3-_安装">3. 安装</h2><p>下载tachyon-0.8.2-hadoop2.6-bin.tar.gz,解压缩到/home/hadoop/目录下。</p>
-<h2 id="4-_配置">4. 配置</h2><h3 id="4-1_slavers">4.1 slavers</h3><p>在$TACHYON_HOME/conf目录下的workers节点添加各个从节点hadoop2,hadoop3…</p>
-<h3 id="4-2_tachyon-env-sh">4.2 tachyon-env.sh</h3><p>在$TACHYON_HOME/conf目录下把tachyon-env.sh.template复制为tachyon-env.sh,在这里需要修改TachyonMaster地址及底层文件系统路径。</p>
-<pre><code><span class="keyword">export</span> JAVA_HOME=/home/hadoop/java/jdk1<span class="number">.8</span><span class="number">.0</span>_74  
-<span class="keyword">export</span> JAVA=<span class="string">"$JAVA_HOME/bin/java"</span>  
-<span class="keyword">export</span> TACHYON_MASTER_ADDRESS=hadoop1  
-<span class="keyword">export</span> TACHYON_UNDERFS_ADDRESS=hdfs:<span class="comment">//hadoop1:9000  </span>
-</code></pre><h2 id="5-_分发Tachyon">5. 分发Tachyon</h2><pre><code>scp -r /home/hadoop/tachyon-<span class="number">0.8</span>.<span class="number">2</span> hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-</code></pre><h2 id="6-_启动Tachyon">6. 启动Tachyon</h2><h3 id="6-1_启动HDFS">6.1 启动HDFS</h3><pre><code>hadoop-<span class="number">2.6</span><span class="number">.4</span>/sbin/start-dfs.sh
-</code></pre><h3 id="6-2_格式化Tachyon">6.2 格式化Tachyon</h3><pre><code><span class="keyword">bin/tachyon </span>format
-</code></pre><h3 id="6-3_启动Tachyon">6.3 启动Tachyon</h3><pre><code>bin/tachyon-start<span class="class">.sh</span> all SudoMount 
-</code></pre><h3 id="6-4_验证">6.4 验证</h3><pre><code><span class="title">JPS</span>  
+<h2 id="3-安装"><a href="#3-安装" class="headerlink" title="3. 安装"></a>3. 安装</h2><p>下载tachyon-0.8.2-hadoop2.6-bin.tar.gz,解压缩到/home/hadoop/目录下。</p>
+<h2 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a>4. 配置</h2><h3 id="4-1-slavers"><a href="#4-1-slavers" class="headerlink" title="4.1 slavers"></a>4.1 slavers</h3><p>在$TACHYON_HOME/conf目录下的workers节点添加各个从节点hadoop2,hadoop3…</p>
+<h3 id="4-2-tachyon-env-sh"><a href="#4-2-tachyon-env-sh" class="headerlink" title="4.2 tachyon-env.sh"></a>4.2 tachyon-env.sh</h3><p>在$TACHYON_HOME/conf目录下把tachyon-env.sh.template复制为tachyon-env.sh,在这里需要修改TachyonMaster地址及底层文件系统路径。</p>
+<pre><code>export JAVA_HOME=/home/hadoop/java/jdk1.8.0_74  
+export JAVA=&quot;$JAVA_HOME/bin/java&quot;  
+export TACHYON_MASTER_ADDRESS=hadoop1  
+export TACHYON_UNDERFS_ADDRESS=hdfs://hadoop1:9000  
+</code></pre><h2 id="5-分发Tachyon"><a href="#5-分发Tachyon" class="headerlink" title="5. 分发Tachyon"></a>5. 分发Tachyon</h2><pre><code>scp -r /home/hadoop/tachyon-0.8.2 hadoop@hadoop2:/home/hadoop/
+</code></pre><h2 id="6-启动Tachyon"><a href="#6-启动Tachyon" class="headerlink" title="6. 启动Tachyon"></a>6. 启动Tachyon</h2><h3 id="6-1-启动HDFS"><a href="#6-1-启动HDFS" class="headerlink" title="6.1 启动HDFS"></a>6.1 启动HDFS</h3><pre><code>hadoop-2.6.4/sbin/start-dfs.sh
+</code></pre><h3 id="6-2-格式化Tachyon"><a href="#6-2-格式化Tachyon" class="headerlink" title="6.2 格式化Tachyon"></a>6.2 格式化Tachyon</h3><pre><code>bin/tachyon format
+</code></pre><h3 id="6-3-启动Tachyon"><a href="#6-3-启动Tachyon" class="headerlink" title="6.3 启动Tachyon"></a>6.3 启动Tachyon</h3><pre><code>bin/tachyon-start.sh all SudoMount 
+</code></pre><h3 id="6-4-验证"><a href="#6-4-验证" class="headerlink" title="6.4 验证"></a>6.4 验证</h3><pre><code>JPS  
 TachyonMaster  
 TachyonWorker
-</code></pre><h3 id="6-5_Web_UI">6.5 Web UI</h3><pre><code><span class="string">http:</span><span class="comment">//hadoop1:19999</span>
-</code></pre><h2 id="7-_Tachyon上运行Spark">7. Tachyon上运行Spark</h2><h3 id="7-1_core-site-xml">7.1 core-site.xml</h3><p>在$SPARK_HOME/conf目录下新建core-site.xml,添加内容，并分发到各个从节点</p>
-<pre><code><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>   
-　　<span class="tag">&lt;<span class="title">property</span>&gt;</span>   
-　　　　<span class="tag">&lt;<span class="title">name</span>&gt;</span>fs.tachyon.impl<span class="tag">&lt;/<span class="title">name</span>&gt;</span>   
-　　　　<span class="tag">&lt;<span class="title">value</span>&gt;</span>tachyon.hadoop.TFS<span class="tag">&lt;/<span class="title">value</span>&gt;</span>   
-　　<span class="tag">&lt;/<span class="title">property</span>&gt;</span>   
-<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>  
-</code></pre><h3 id="7-2_启动Spark集群">7.2 启动Spark集群</h3><pre><code>sbin/start-all<span class="class">.sh</span> 
-</code></pre><h3 id="7-3_测试">7.3 测试</h3><ol>
+</code></pre><h3 id="6-5-Web-UI"><a href="#6-5-Web-UI" class="headerlink" title="6.5 Web UI"></a>6.5 Web UI</h3><pre><code>http://hadoop1:19999
+</code></pre><h2 id="7-Tachyon上运行Spark"><a href="#7-Tachyon上运行Spark" class="headerlink" title="7. Tachyon上运行Spark"></a>7. Tachyon上运行Spark</h2><h3 id="7-1-core-site-xml"><a href="#7-1-core-site-xml" class="headerlink" title="7.1 core-site.xml"></a>7.1 core-site.xml</h3><p>在$SPARK_HOME/conf目录下新建core-site.xml,添加内容，并分发到各个从节点</p>
+<pre><code>&lt;configuration&gt;   
+　　&lt;property&gt;   
+　　　　&lt;name&gt;fs.tachyon.impl&lt;/name&gt;   
+　　　　&lt;value&gt;tachyon.hadoop.TFS&lt;/value&gt;   
+　　&lt;/property&gt;   
+&lt;/configuration&gt;  
+</code></pre><h3 id="7-2-启动Spark集群"><a href="#7-2-启动Spark集群" class="headerlink" title="7.2 启动Spark集群"></a>7.2 启动Spark集群</h3><pre><code>sbin/start-all.sh 
+</code></pre><h3 id="7-3-测试"><a href="#7-3-测试" class="headerlink" title="7.3 测试"></a>7.3 测试</h3><ol>
 <li><p>使用Tachyon命令行准备测试数据文件</p>
-<pre><code>cd <span class="regexp">/home/</span>hadoop<span class="regexp">/tachyon-0.8.2/</span>bin   
-.<span class="regexp">/tachyon tfs copyFromLocal /</span>localdata /tachyoninput  
-.<span class="regexp">/tachyon tfs ls /</span> 
+<pre><code>cd /home/hadoop/tachyon-0.8.2/bin   
+./tachyon tfs copyFromLocal /localdata /tachyoninput  
+./tachyon tfs ls / 
 </code></pre></li>
 <li><p>启动Spark-shell</p>
-<pre><code><span class="keyword">bin/spark-shell </span> 
+<pre><code>bin/spark-shell  
 </code></pre></li>
 <li><p>对测试数据文件进行计数并另存为</p>
-<pre><code>scala&gt;val s = sc.<span class="function"><span class="title">textFile</span><span class="params">(<span class="string">"tachyon://hadoop1:19998/tachyoninput"</span>)</span></span>   
-scala&gt;s.<span class="function"><span class="title">count</span><span class="params">()</span></span>  
-scala&gt;s.<span class="function"><span class="title">saveAsTextFile</span><span class="params">(<span class="string">"tachyon://hadoop1:19998/outputdata"</span>)</span></span> 
+<pre><code>scala&gt;val s = sc.textFile(&quot;tachyon://hadoop1:19998/tachyoninput&quot;)   
+scala&gt;s.count()  
+scala&gt;s.saveAsTextFile(&quot;tachyon://hadoop1:19998/outputdata&quot;) 
 </code></pre></li>
 </ol>
 </span>
@@ -354,9 +354,9 @@ scala&gt;s.<span class="function"><span class="title">saveAsTextFile</span><span
       
         <div class="post-tags">
           
-            <a href="/tags/Hadoop-2-6-4/" rel="tag">#Hadoop-2.6.4</a>
-          
             <a href="/tags/Spark-1-6-0/" rel="tag">#Spark-1.6.0</a>
+          
+            <a href="/tags/Hadoop-2-6-4/" rel="tag">#Hadoop-2.6.4</a>
           
             <a href="/tags/Tachyon-0-8-0/" rel="tag">#Tachyon-0.8.0</a>
           
@@ -449,7 +449,7 @@ scala&gt;s.<span class="function"><span class="title">saveAsTextFile</span><span
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -524,7 +524,7 @@ scala&gt;s.<span class="function"><span class="title">saveAsTextFile</span><span
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_运行环境"><span class="nav-text">2. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_安装"><span class="nav-text">3. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_配置"><span class="nav-text">4. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1_slavers"><span class="nav-text">4.1 slavers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2_tachyon-env-sh"><span class="nav-text">4.2 tachyon-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_分发Tachyon"><span class="nav-text">5. 分发Tachyon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_启动Tachyon"><span class="nav-text">6. 启动Tachyon</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1_启动HDFS"><span class="nav-text">6.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2_格式化Tachyon"><span class="nav-text">6.2 格式化Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3_启动Tachyon"><span class="nav-text">6.3 启动Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4_验证"><span class="nav-text">6.4 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5_Web_UI"><span class="nav-text">6.5 Web UI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_Tachyon上运行Spark"><span class="nav-text">7. Tachyon上运行Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1_core-site-xml"><span class="nav-text">7.1 core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2_启动Spark集群"><span class="nav-text">7.2 启动Spark集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3_测试"><span class="nav-text">7.3 测试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text">1. 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-运行环境"><span class="nav-text">2. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装"><span class="nav-text">3. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置"><span class="nav-text">4. 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-slavers"><span class="nav-text">4.1 slavers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-tachyon-env-sh"><span class="nav-text">4.2 tachyon-env.sh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分发Tachyon"><span class="nav-text">5. 分发Tachyon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-启动Tachyon"><span class="nav-text">6. 启动Tachyon</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-启动HDFS"><span class="nav-text">6.1 启动HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-格式化Tachyon"><span class="nav-text">6.2 格式化Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-启动Tachyon"><span class="nav-text">6.3 启动Tachyon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-验证"><span class="nav-text">6.4 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-Web-UI"><span class="nav-text">6.5 Web UI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Tachyon上运行Spark"><span class="nav-text">7. Tachyon上运行Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-core-site-xml"><span class="nav-text">7.1 core-site.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-启动Spark集群"><span class="nav-text">7.2 启动Spark集群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-测试"><span class="nav-text">7.3 测试</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

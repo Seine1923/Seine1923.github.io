@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Big Data,Deploy,Hadoop2.6.4," />
+  <meta name="keywords" content="Big Data,Hadoop2.6.4,Deploy," />
 
 
 
@@ -298,16 +298,16 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="1-_运行环境">1. 运行环境</h2><p>JDK和Hadoop版本：</p>
+        <span itemprop="articleBody"><h2 id="1-运行环境"><a href="#1-运行环境" class="headerlink" title="1. 运行环境"></a>1. 运行环境</h2><p>JDK和Hadoop版本：</p>
 <ul>
 <li>JDK：1.8.0_74 64位</li>
 <li>Hadoop 2.6.4</li>
 </ul>
-<h2 id="2-_安装vim">2. 安装vim</h2><p>vim是我个人比较熟悉的文本编辑器，系统中默认有vi或者gedit，如果对这些熟悉，可不用安装vim  </p>
-<pre><code>sudo apt-<span class="built_in">get</span> install <span class="keyword">vim</span>  
-</code></pre><h2 id="3-_更改主机名">3. 更改主机名</h2><p>更改主机名是为了使集群中的机器更为方便识别，通常为master, slaver1, slaver2…或者hadoop1, hadoop2, hadoop3…格式，本文采用第二种格式。  </p>
-<pre><code>sudo vim <span class="regexp">/etc/</span>hostsname
-</code></pre><h2 id="4-_更改主机解析地址">4. 更改主机解析地址</h2><p>为了使集群更好管理，通常将各个节点的IP设为局域网IP，步骤为：  </p>
+<h2 id="2-安装vim"><a href="#2-安装vim" class="headerlink" title="2. 安装vim"></a>2. 安装vim</h2><p>vim是我个人比较熟悉的文本编辑器，系统中默认有vi或者gedit，如果对这些熟悉，可不用安装vim  </p>
+<pre><code>sudo apt-get install vim  
+</code></pre><h2 id="3-更改主机名"><a href="#3-更改主机名" class="headerlink" title="3. 更改主机名"></a>3. 更改主机名</h2><p>更改主机名是为了使集群中的机器更为方便识别，通常为master, slaver1, slaver2…或者hadoop1, hadoop2, hadoop3…格式，本文采用第二种格式。  </p>
+<pre><code>sudo vim /etc/hostsname
+</code></pre><h2 id="4-更改主机解析地址"><a href="#4-更改主机解析地址" class="headerlink" title="4. 更改主机解析地址"></a>4. 更改主机解析地址</h2><p>为了使集群更好管理，通常将各个节点的IP设为局域网IP，步骤为：  </p>
 <ul>
 <li>新建以太网</li>
 <li>选择IPV4，手动</li>
@@ -315,232 +315,232 @@
 <li><p>重启网络：sudo /etc/init.d/networking restart   </p>
 <pre><code>sudo vim /etc/hosts
 
-<span class="number">192.162</span><span class="number">.1</span><span class="number">.10</span> hadoop1
-<span class="number">192.168</span><span class="number">.1</span><span class="number">.20</span> hadoop2
-<span class="number">192.168</span><span class="number">.1</span><span class="number">.30</span> hadoop3
-<span class="number">192.168</span><span class="number">.1</span><span class="number">.40</span> hadoop4    
+192.162.1.10 hadoop1
+192.168.1.20 hadoop2
+192.168.1.30 hadoop3
+192.168.1.40 hadoop4    
 </code></pre></li>
 </ul>
-<h2 id="5-_创建hadoop-group用户组和hadoop用户">5. 创建hadoop-group用户组和hadoop用户</h2><h3 id="5-1_新建hadoop－group用户组">5.1 新建hadoop－group用户组</h3><pre><code><span class="label">sudo</span> <span class="keyword">addgroup </span>hadoop-group
-</code></pre><h3 id="5-2_新建hadoop用户并加入到hadoop-group用户组中">5.2 新建hadoop用户并加入到hadoop-group用户组中</h3><pre><code>sudo adduser <span class="comment">--ingroup hadoop-group hadoop</span>
-</code></pre><h3 id="5-3_给hadoop用户赋予root权限">5.3 给hadoop用户赋予root权限</h3><pre><code><span class="keyword">sudo</span> vim /etc/sudoers
+<h2 id="5-创建hadoop-group用户组和hadoop用户"><a href="#5-创建hadoop-group用户组和hadoop用户" class="headerlink" title="5. 创建hadoop-group用户组和hadoop用户"></a>5. 创建hadoop-group用户组和hadoop用户</h2><h3 id="5-1-新建hadoop－group用户组"><a href="#5-1-新建hadoop－group用户组" class="headerlink" title="5.1 新建hadoop－group用户组"></a>5.1 新建hadoop－group用户组</h3><pre><code>sudo addgroup hadoop-group
+</code></pre><h3 id="5-2-新建hadoop用户并加入到hadoop-group用户组中"><a href="#5-2-新建hadoop用户并加入到hadoop-group用户组中" class="headerlink" title="5.2 新建hadoop用户并加入到hadoop-group用户组中"></a>5.2 新建hadoop用户并加入到hadoop-group用户组中</h3><pre><code>sudo adduser --ingroup hadoop-group hadoop
+</code></pre><h3 id="5-3-给hadoop用户赋予root权限"><a href="#5-3-给hadoop用户赋予root权限" class="headerlink" title="5.3 给hadoop用户赋予root权限"></a>5.3 给hadoop用户赋予root权限</h3><pre><code>sudo vim /etc/sudoers
 
-<span class="keyword">root</span> <span class="literal">ALL</span>=(<span class="literal">ALL</span>:<span class="literal">ALL</span>) <span class="literal">ALL</span>
-<span class="keyword">hadoop</span> <span class="literal">ALL</span>=(<span class="literal">ALL</span>:<span class="literal">ALL</span>) <span class="literal">ALL</span>
-</code></pre><h2 id="6-_安装SSH">6. 安装SSH</h2><h3 id="6-1_更新apt-get">6.1 更新apt-get</h3><pre><code>sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
-</code></pre><h3 id="6-2_安装openssh-server服务">6.2 安装openssh-server服务</h3><pre><code>sudo apt-get <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span></span>
-</code></pre><h3 id="6-3_建立ssh免密码登录各节点">6.3 建立ssh免密码登录各节点</h3><ol>
+root ALL=(ALL:ALL) ALL
+hadoop ALL=(ALL:ALL) ALL
+</code></pre><h2 id="6-安装SSH"><a href="#6-安装SSH" class="headerlink" title="6. 安装SSH"></a>6. 安装SSH</h2><h3 id="6-1-更新apt-get"><a href="#6-1-更新apt-get" class="headerlink" title="6.1 更新apt-get"></a>6.1 更新apt-get</h3><pre><code>sudo apt-get update
+</code></pre><h3 id="6-2-安装openssh-server服务"><a href="#6-2-安装openssh-server服务" class="headerlink" title="6.2 安装openssh-server服务"></a>6.2 安装openssh-server服务</h3><pre><code>sudo apt-get install openssh-server
+</code></pre><h3 id="6-3-建立ssh免密码登录各节点"><a href="#6-3-建立ssh免密码登录各节点" class="headerlink" title="6.3 建立ssh免密码登录各节点"></a>6.3 建立ssh免密码登录各节点</h3><ol>
 <li><p>创建ssh-key</p>
-<pre><code>ssh-keygen -t rsa -<span class="keyword">P</span> <span class="string">""</span>
+<pre><code>ssh-keygen -t rsa -P &quot;&quot;
 </code></pre></li>
 <li><p>对于master,进入~/.ssh/目录下，将id_rsa.pub追加到authorized_keys授权文件中    </p>
-<pre><code>cat id_rsa<span class="class">.pub</span> &gt;&gt; authorized_keys    或
-cp id_rsa<span class="class">.pub</span> authorized_keys
+<pre><code>cat id_rsa.pub &gt;&gt; authorized_keys    或
+cp id_rsa.pub authorized_keys
 </code></pre></li>
 <li><p>对于slaver节点，将master的authorized_keys复制到~/.ssh目录下。同时设置属性如下：</p>
-<pre><code>chmod <span class="number">600</span> authorized_key <span class="comment">//改变文件的权限为600</span>
-chgrp hadoop-<span class="keyword">group</span> authorized_keys <span class="comment">//改变文件所属用户组</span>
-chown hadoop authorized_keys <span class="comment">//改变文件所属用户</span>
+<pre><code>chmod 600 authorized_key //改变文件的权限为600
+chgrp hadoop-group authorized_keys //改变文件所属用户组
+chown hadoop authorized_keys //改变文件所属用户
 </code></pre></li>
 <li><p>关闭防火墙</p>
-<pre><code>sudo ufw <span class="built_in">disable</span>
+<pre><code>sudo ufw disable
 </code></pre></li>
 <li><p>测试从节点，并退出</p>
 <pre><code>ssh hadoop2
-<span class="keyword">exit</span>
+exit
 </code></pre></li>
 </ol>
-<h3 id="6-4_配置文件">6.4 配置文件</h3><p>ssh的配置文件文件在/etc/ssh/sshd_config</p>
-<h3 id="6-5_注意">6.5 注意</h3><p>如果当前已有节点更新了机器名，则需要把~/.ssh/文件下的known_hosts文件删除，重新记录节点，否则有可能会信息冲突。</p>
-<h2 id="7-_安装JDK">7. 安装JDK</h2><h3 id="7-1_解压缩">7.1 解压缩</h3><ol>
+<h3 id="6-4-配置文件"><a href="#6-4-配置文件" class="headerlink" title="6.4 配置文件"></a>6.4 配置文件</h3><p>ssh的配置文件文件在/etc/ssh/sshd_config</p>
+<h3 id="6-5-注意"><a href="#6-5-注意" class="headerlink" title="6.5 注意"></a>6.5 注意</h3><p>如果当前已有节点更新了机器名，则需要把~/.ssh/文件下的known_hosts文件删除，重新记录节点，否则有可能会信息冲突。</p>
+<h2 id="7-安装JDK"><a href="#7-安装JDK" class="headerlink" title="7. 安装JDK"></a>7. 安装JDK</h2><h3 id="7-1-解压缩"><a href="#7-1-解压缩" class="headerlink" title="7.1 解压缩"></a>7.1 解压缩</h3><ol>
 <li><p>在/home/hadoop/下新建java目录</p>
-<pre><code><span class="built_in">mkdir</span> java
+<pre><code>mkdir java
 </code></pre></li>
 <li><p>将jdk-8u40-linux-i586.tar.gz文件解压至目标文件夹</p>
-<pre><code>sudo tar -xzvf jdk-<span class="number">8</span>u40-linux-i586<span class="class">.tar</span><span class="class">.gz</span> -C /home/hadoop/java
+<pre><code>sudo tar -xzvf jdk-8u40-linux-i586.tar.gz -C /home/hadoop/java
 </code></pre></li>
 </ol>
-<h3 id="7-2_配置环境变量">7.2 配置环境变量</h3><ol>
+<h3 id="7-2-配置环境变量"><a href="#7-2-配置环境变量" class="headerlink" title="7.2 配置环境变量"></a>7.2 配置环境变量</h3><ol>
 <li><p>打开./bashrc文件</p>
-<pre><code><span class="title">vim</span> ~/.bashrc
+<pre><code>vim ~/.bashrc
 </code></pre><p> 注意：/etc/profile为全局配置文件，配置后对所有用户生效；~/.bashrc为用户局部配置文<br> 件，只对当前用户生效。</p>
 </li>
 <li><p>添加如下变量</p>
-<pre><code>export JAVA_HOME=/home/hadoop/java/jdk1.<span class="number">8.0_74</span>    
-export JRE_HOME=/home/hadoop/java/jdk1.<span class="number">8.0_74</span>/jre      
-export CLASSPATH=.:<span class="variable">$JAVA</span>_HOME/lib:<span class="variable">$JRE</span>_HOME/lib:<span class="variable">$CLASSPATH</span>    
-export PATH=<span class="variable">$JAVA</span>_HOME/bin:<span class="variable">$JRE</span>_HOME/bin:<span class="variable">$JAVA</span>_HOME:<span class="variable">$PATH</span> 
+<pre><code>export JAVA_HOME=/home/hadoop/java/jdk1.8.0_74    
+export JRE_HOME=/home/hadoop/java/jdk1.8.0_74/jre      
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH    
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH 
 </code></pre></li>
 <li><p>使该文件生效</p>
-<pre><code><span class="built_in">source</span> ~/.bashrc
+<pre><code>source ~/.bashrc
 </code></pre></li>
 </ol>
-<h3 id="7-3_检查是否安装成功">7.3 检查是否安装成功</h3><pre><code>java -<span class="property">version</span>
-</code></pre><h3 id="7-4_向各节点复制jdk安装文件及配置文件">7.4 向各节点复制jdk安装文件及配置文件</h3><pre><code>scp -r /home/hadoop/java hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-scp -r /home/hadoop/.bashrc hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-</code></pre><h2 id="8-_安装hadoop">8. 安装hadoop</h2><h3 id="8-1_解压缩">8.1 解压缩</h3><pre><code>sudo tar -xzvf hadoop-<span class="number">2.6</span>.<span class="number">4</span><span class="class">.tar</span><span class="class">.gz</span> -C ~/
-</code></pre><h3 id="8-2_修改hadoop配置文件">8.2 修改hadoop配置文件</h3><ol>
+<h3 id="7-3-检查是否安装成功"><a href="#7-3-检查是否安装成功" class="headerlink" title="7.3 检查是否安装成功"></a>7.3 检查是否安装成功</h3><pre><code>java -version
+</code></pre><h3 id="7-4-向各节点复制jdk安装文件及配置文件"><a href="#7-4-向各节点复制jdk安装文件及配置文件" class="headerlink" title="7.4 向各节点复制jdk安装文件及配置文件"></a>7.4 向各节点复制jdk安装文件及配置文件</h3><pre><code>scp -r /home/hadoop/java hadoop@hadoop2:/home/hadoop/
+scp -r /home/hadoop/.bashrc hadoop@hadoop2:/home/hadoop/
+</code></pre><h2 id="8-安装hadoop"><a href="#8-安装hadoop" class="headerlink" title="8. 安装hadoop"></a>8. 安装hadoop</h2><h3 id="8-1-解压缩"><a href="#8-1-解压缩" class="headerlink" title="8.1 解压缩"></a>8.1 解压缩</h3><pre><code>sudo tar -xzvf hadoop-2.6.4.tar.gz -C ~/
+</code></pre><h3 id="8-2-修改hadoop配置文件"><a href="#8-2-修改hadoop配置文件" class="headerlink" title="8.2 修改hadoop配置文件"></a>8.2 修改hadoop配置文件</h3><ol>
 <li><p>hadoop-env.sh</p>
-<pre><code><span class="keyword">export</span> JAVA_HOME=/home/hadoop/java/jdk1<span class="number">.8</span><span class="number">.0</span>_74
+<pre><code>export JAVA_HOME=/home/hadoop/java/jdk1.8.0_74
 </code></pre></li>
 <li><p>core-site.xml</p>
-<pre><code><span class="variable">&lt;configuration&gt;</span>
-    <span class="variable">&lt;property&gt;</span>
-        <span class="variable">&lt;name&gt;</span>fs.defaultFS<span class="variable">&lt;/name&gt;</span>
-        <span class="variable">&lt;value&gt;</span>hdfs://Master:9000<span class="variable">&lt;/value&gt;</span>
-    <span class="variable">&lt;/property&gt;</span>
-    <span class="variable">&lt;property&gt;</span>
-        <span class="variable">&lt;name&gt;</span>io.file.buffer.size<span class="variable">&lt;/name&gt;</span>
-        <span class="variable">&lt;value&gt;</span>131072<span class="variable">&lt;/value&gt;</span>
-    <span class="variable">&lt;/property&gt;</span>
-    <span class="variable">&lt;property&gt;</span>
-        <span class="variable">&lt;name&gt;</span>hadoop.tmp.dir<span class="variable">&lt;/name&gt;</span>
-        <span class="variable">&lt;value&gt;</span>file:/home/hadoop/tmp<span class="variable">&lt;/value&gt;</span>
-        <span class="variable">&lt;description&gt;</span>Abase for other temporary directories.<span class="variable">&lt;/description&gt;</span>
-    <span class="variable">&lt;/property&gt;</span>
-    <span class="variable">&lt;property&gt;</span>
-        <span class="variable">&lt;name&gt;</span>hadoop.proxyuser.hduser.hosts<span class="variable">&lt;/name&gt;</span>
-        <span class="variable">&lt;value&gt;</span><span class="keyword">*</span><span class="variable">&lt;/value&gt;</span>
-        <span class="variable">&lt;/property&gt;</span>
-    <span class="variable">&lt;property&gt;</span>
-        <span class="variable">&lt;name&gt;</span>hadoop.proxyuser.hduser.groups<span class="variable">&lt;/name&gt;</span>
-        <span class="variable">&lt;value&gt;</span><span class="keyword">*</span><span class="variable">&lt;/value&gt;</span>
-    <span class="variable">&lt;/property&gt;</span>
-<span class="variable">&lt;/configuration&gt;</span>
+<pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;fs.defaultFS&lt;/name&gt;
+        &lt;value&gt;hdfs://Master:9000&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;io.file.buffer.size&lt;/name&gt;
+        &lt;value&gt;131072&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+        &lt;value&gt;file:/home/hadoop/tmp&lt;/value&gt;
+        &lt;description&gt;Abase for other temporary directories.&lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.proxyuser.hduser.hosts&lt;/name&gt;
+        &lt;value&gt;*&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hadoop.proxyuser.hduser.groups&lt;/name&gt;
+        &lt;value&gt;*&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre></li>
 <li><p>hdfs-site.xml</p>
-<pre><code><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:9001<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>file:/home/hadoop/dfs/name<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>file:/home/hadoop/dfs/data<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>1<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>dfs.webhdfs.enabled<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>true<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
+        &lt;value&gt;Master:9001&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+        &lt;value&gt;file:/home/hadoop/dfs/name&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+        &lt;value&gt;file:/home/hadoop/dfs/data&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.replication&lt;/name&gt;
+        &lt;value&gt;1&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.webhdfs.enabled&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre></li>
 <li><p>mapred-site.xml.template重命名为mapred-site.xml</p>
-<pre><code><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.jobhistory.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:10020<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:19888<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+        &lt;value&gt;Master:10020&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+        &lt;value&gt;Master:19888&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre></li>
 <li><p>yarn-site.xml</p>
-<pre><code><span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.nodemanager.aux-services.mapreduce.shuffle.class<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>org.apache.hadoop.mapred.ShuffleHandler<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.resourcemanager.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:8032<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.resourcemanager.scheduler.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:8030<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.resourcemanager.resource-tracker.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:8031<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.resourcemanager.admin.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:8033<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">name</span>&gt;</span>yarn.resourcemanager.webapp.address<span class="tag">&lt;/<span class="title">name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">value</span>&gt;</span>Master:8088<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<pre><code>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;
+        &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.address&lt;/name&gt;
+        &lt;value&gt;Master:8032&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.scheduler.address&lt;/name&gt;
+        &lt;value&gt;Master:8030&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.resource-tracker.address&lt;/name&gt;
+        &lt;value&gt;Master:8031&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.admin.address&lt;/name&gt;
+        &lt;value&gt;Master:8033&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.webapp.address&lt;/name&gt;
+        &lt;value&gt;Master:8088&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
 </code></pre></li>
 </ol>
-<h3 id="8-3_添加hadoop路径到-/bashrc">8.3 添加hadoop路径到./bashrc</h3><pre><code>export HADOOP_HOME=/home/hadoop/hadoop
-export PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP</span>_HOME/bin
-</code></pre><h3 id="8-4_修改slavers文件">8.4 修改slavers文件</h3><p>添加slaver节点机器名（hadoop2, hadoop3, hadoop4 …）到slavers文件中</p>
-<h3 id="8-5_向各从节点复制hadoop">8.5 向各从节点复制hadoop</h3><pre><code>scp -r /home/hadoop/hadoop-<span class="number">2.6</span>.<span class="number">4</span> hadoop<span class="variable">@hadoop2</span><span class="symbol">:/home/hadoop/</span>
-scp -r /home/hadoop/hadoop-<span class="number">2.6</span>.<span class="number">4</span> hadoop<span class="variable">@hadoop3</span><span class="symbol">:/home/hadoop/</span>
-</code></pre><h3 id="8-6_在hadoop1节点上格式化hdfs">8.6 在hadoop1节点上格式化hdfs</h3><pre><code><span class="keyword">bin/hdfs </span>namenode -format
-</code></pre><h3 id="8-7_启动hdfs">8.7 启动hdfs</h3><pre><code>sbin/<span class="built_in">start</span>-dfs.sh
-</code></pre><h3 id="8-8_启动yarn">8.8 启动yarn</h3><pre><code>sbin/<span class="built_in">start</span>-yarn.sh
-</code></pre><h3 id="8-9_jps查看进程">8.9 jps查看进程</h3><ol>
+<h3 id="8-3-添加hadoop路径到-bashrc"><a href="#8-3-添加hadoop路径到-bashrc" class="headerlink" title="8.3 添加hadoop路径到./bashrc"></a>8.3 添加hadoop路径到./bashrc</h3><pre><code>export HADOOP_HOME=/home/hadoop/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+</code></pre><h3 id="8-4-修改slavers文件"><a href="#8-4-修改slavers文件" class="headerlink" title="8.4 修改slavers文件"></a>8.4 修改slavers文件</h3><p>添加slaver节点机器名（hadoop2, hadoop3, hadoop4 …）到slavers文件中</p>
+<h3 id="8-5-向各从节点复制hadoop"><a href="#8-5-向各从节点复制hadoop" class="headerlink" title="8.5 向各从节点复制hadoop"></a>8.5 向各从节点复制hadoop</h3><pre><code>scp -r /home/hadoop/hadoop-2.6.4 hadoop@hadoop2:/home/hadoop/
+scp -r /home/hadoop/hadoop-2.6.4 hadoop@hadoop3:/home/hadoop/
+</code></pre><h3 id="8-6-在hadoop1节点上格式化hdfs"><a href="#8-6-在hadoop1节点上格式化hdfs" class="headerlink" title="8.6 在hadoop1节点上格式化hdfs"></a>8.6 在hadoop1节点上格式化hdfs</h3><pre><code>bin/hdfs namenode -format
+</code></pre><h3 id="8-7-启动hdfs"><a href="#8-7-启动hdfs" class="headerlink" title="8.7 启动hdfs"></a>8.7 启动hdfs</h3><pre><code>sbin/start-dfs.sh
+</code></pre><h3 id="8-8-启动yarn"><a href="#8-8-启动yarn" class="headerlink" title="8.8 启动yarn"></a>8.8 启动yarn</h3><pre><code>sbin/start-yarn.sh
+</code></pre><h3 id="8-9-jps查看进程"><a href="#8-9-jps查看进程" class="headerlink" title="8.9 jps查看进程"></a>8.9 jps查看进程</h3><ol>
 <li><p>hadoop1节点</p>
-<pre><code><span class="title">Jps</span>
+<pre><code>Jps
 NameNode
 SecondaryNameNode
 ResourceManager
 </code></pre></li>
 <li><p>其他节点</p>
-<pre><code><span class="title">Jps</span>
+<pre><code>Jps
 NodeManager
 DataNode
 </code></pre></li>
 </ol>
-<h3 id="8-10_注意事项">8.10 注意事项</h3><ol>
+<h3 id="8-10-注意事项"><a href="#8-10-注意事项" class="headerlink" title="8.10 注意事项"></a>8.10 注意事项</h3><ol>
 <li>如果需要重新格式化namenode,需要把各节点主目录下的dfs,tmp文件夹删除</li>
 <li>以上hadoop配置文件只是部分范例，在实际应用中，应该根据集群规模配置，还有很多配置细节需要进一步掌握。</li>
 </ol>
-<h2 id="9-_测试">9. 测试</h2><h3 id="9-1_Web_UI">9.1 Web UI</h3><pre><code><span class="string">http:</span><span class="comment">//hadoop1:50070</span>
-</code></pre><h3 id="9-2_命令行">9.2 命令行</h3><ol>
+<h2 id="9-测试"><a href="#9-测试" class="headerlink" title="9. 测试"></a>9. 测试</h2><h3 id="9-1-Web-UI"><a href="#9-1-Web-UI" class="headerlink" title="9.1 Web UI"></a>9.1 Web UI</h3><pre><code>http://hadoop1:50070
+</code></pre><h3 id="9-2-命令行"><a href="#9-2-命令行" class="headerlink" title="9.2 命令行"></a>9.2 命令行</h3><ol>
 <li><p>查看DataNode信息</p>
-<pre><code><span class="keyword">bin/hdfs </span>dfsadmin -report
+<pre><code>bin/hdfs dfsadmin -report
 </code></pre></li>
 <li><p>使Datanode节点退役</p>
-<pre><code><span class="keyword">bin/hadoop </span>dfsadmin -decommission datanodename
+<pre><code>bin/hadoop dfsadmin -decommission datanodename
 </code></pre></li>
 <li><p>集群置于安全模式下</p>
-<pre><code><span class="keyword">bin/hadoop </span>dfsadmin -safenode enter
+<pre><code>bin/hadoop dfsadmin -safenode enter
 </code></pre></li>
 <li><p>集群关闭安全模式</p>
-<pre><code><span class="keyword">bin/hadoop </span>dfsadmin -safenode leave
+<pre><code>bin/hadoop dfsadmin -safenode leave
 </code></pre></li>
 <li><p>帮助</p>
-<pre><code><span class="keyword">bin/hadoop </span>dfsadmin -help
+<pre><code>bin/hadoop dfsadmin -help
 </code></pre></li>
 </ol>
-<h3 id="9-3_WordCount">9.3 WordCount</h3><pre><code>bin<span class="regexp">/hdfs dfs -put /</span>home<span class="regexp">/hadoop/</span>desktop<span class="regexp">/testfile /i</span>nput
-bin<span class="regexp">/hadoop jar ~/</span>hadoop-<span class="number">2.6</span>.<span class="number">4</span><span class="regexp">/share/</span>hadoop<span class="regexp">/mapreduce/</span>hadoop-mapreduce-examples-<span class="number">2.6</span>.<span class="number">4</span>.jar wordcount <span class="regexp">/input/</span> <span class="regexp">/output/</span>wordcount
-</code></pre><h2 id="10_其他">10 其他</h2><ol>
+<h3 id="9-3-WordCount"><a href="#9-3-WordCount" class="headerlink" title="9.3 WordCount"></a>9.3 WordCount</h3><pre><code>bin/hdfs dfs -put /home/hadoop/desktop/testfile /input
+bin/hadoop jar ~/hadoop-2.6.4/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.4.jar wordcount /input/ /output/wordcount
+</code></pre><h2 id="10-其他"><a href="#10-其他" class="headerlink" title="10 其他"></a>10 其他</h2><ol>
 <li><p>权限不够时，将文件所属改为hadoop</p>
-<pre><code>chgrp users (-R) <span class="built_in">document</span> <span class="comment">//改变文件所用户组</span>
-chown user (-R) <span class="built_in">document</span> <span class="comment">//改变文件所有者</span>
-chmod <span class="number">755</span> (-R) <span class="built_in">document</span> <span class="comment">//改变文件的权限</span>
+<pre><code>chgrp users (-R) document //改变文件所用户组
+chown user (-R) document //改变文件所有者
+chmod 755 (-R) document //改变文件的权限
 </code></pre></li>
 <li><p>hdfs文件的相关的命令</p>
-<pre><code>hdfs:<span class="comment">//hadoop1:9000/       hdfs根目录</span>
-bin/hdfs dfs -<span class="keyword">mkdir</span> /<span class="keyword">input</span>   在hdfs上新建一个<span class="keyword">input</span>文件夹
-bin/hdfs dfs -copyFromLocal /localdata /<span class="keyword">input</span>  或
-bin/hdfs dfs -put /localdata /<span class="keyword">input</span>   上传本地文件到hdfs的<span class="keyword">input</span>文件夹下
-bin/hdfs dfs -<span class="keyword">cat</span> /output/wordcount<span class="comment">/* 查看wordcount下的文件  </span>
+<pre><code>hdfs://hadoop1:9000/       hdfs根目录
+bin/hdfs dfs -mkdir /input   在hdfs上新建一个input文件夹
+bin/hdfs dfs -copyFromLocal /localdata /input  或
+bin/hdfs dfs -put /localdata /input   上传本地文件到hdfs的input文件夹下
+bin/hdfs dfs -cat /output/wordcount/* 查看wordcount下的文件  
 </code></pre></li>
 <li><p>安装htop可以查看系统进程信息</p>
-<pre><code>sudo apt-<span class="keyword">get</span> install htop
+<pre><code>sudo apt-get install htop
 </code></pre></li>
 </ol>
 </span>
@@ -553,9 +553,9 @@ bin/hdfs dfs -<span class="keyword">cat</span> /output/wordcount<span class="com
           
             <a href="/tags/Big-Data/" rel="tag">#Big Data</a>
           
-            <a href="/tags/Deploy/" rel="tag">#Deploy</a>
-          
             <a href="/tags/Hadoop2-6-4/" rel="tag">#Hadoop2.6.4</a>
+          
+            <a href="/tags/Deploy/" rel="tag">#Deploy</a>
           
         </div>
       
@@ -646,7 +646,7 @@ bin/hdfs dfs -<span class="keyword">cat</span> /output/wordcount<span class="com
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -721,7 +721,7 @@ bin/hdfs dfs -<span class="keyword">cat</span> /output/wordcount<span class="com
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_运行环境"><span class="nav-text">1. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_安装vim"><span class="nav-text">2. 安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_更改主机名"><span class="nav-text">3. 更改主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_更改主机解析地址"><span class="nav-text">4. 更改主机解析地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-_创建hadoop-group用户组和hadoop用户"><span class="nav-text">5. 创建hadoop-group用户组和hadoop用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1_新建hadoop－group用户组"><span class="nav-text">5.1 新建hadoop－group用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2_新建hadoop用户并加入到hadoop-group用户组中"><span class="nav-text">5.2 新建hadoop用户并加入到hadoop-group用户组中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3_给hadoop用户赋予root权限"><span class="nav-text">5.3 给hadoop用户赋予root权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-_安装SSH"><span class="nav-text">6. 安装SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1_更新apt-get"><span class="nav-text">6.1 更新apt-get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2_安装openssh-server服务"><span class="nav-text">6.2 安装openssh-server服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3_建立ssh免密码登录各节点"><span class="nav-text">6.3 建立ssh免密码登录各节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4_配置文件"><span class="nav-text">6.4 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5_注意"><span class="nav-text">6.5 注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-_安装JDK"><span class="nav-text">7. 安装JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1_解压缩"><span class="nav-text">7.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2_配置环境变量"><span class="nav-text">7.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3_检查是否安装成功"><span class="nav-text">7.3 检查是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4_向各节点复制jdk安装文件及配置文件"><span class="nav-text">7.4 向各节点复制jdk安装文件及配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-_安装hadoop"><span class="nav-text">8. 安装hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1_解压缩"><span class="nav-text">8.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2_修改hadoop配置文件"><span class="nav-text">8.2 修改hadoop配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3_添加hadoop路径到-/bashrc"><span class="nav-text">8.3 添加hadoop路径到./bashrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4_修改slavers文件"><span class="nav-text">8.4 修改slavers文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-5_向各从节点复制hadoop"><span class="nav-text">8.5 向各从节点复制hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-6_在hadoop1节点上格式化hdfs"><span class="nav-text">8.6 在hadoop1节点上格式化hdfs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-7_启动hdfs"><span class="nav-text">8.7 启动hdfs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8_启动yarn"><span class="nav-text">8.8 启动yarn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-9_jps查看进程"><span class="nav-text">8.9 jps查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-10_注意事项"><span class="nav-text">8.10 注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-_测试"><span class="nav-text">9. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1_Web_UI"><span class="nav-text">9.1 Web UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2_命令行"><span class="nav-text">9.2 命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3_WordCount"><span class="nav-text">9.3 WordCount</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10_其他"><span class="nav-text">10 其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-运行环境"><span class="nav-text">1. 运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装vim"><span class="nav-text">2. 安装vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-更改主机名"><span class="nav-text">3. 更改主机名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-更改主机解析地址"><span class="nav-text">4. 更改主机解析地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-创建hadoop-group用户组和hadoop用户"><span class="nav-text">5. 创建hadoop-group用户组和hadoop用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-新建hadoop－group用户组"><span class="nav-text">5.1 新建hadoop－group用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-新建hadoop用户并加入到hadoop-group用户组中"><span class="nav-text">5.2 新建hadoop用户并加入到hadoop-group用户组中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-给hadoop用户赋予root权限"><span class="nav-text">5.3 给hadoop用户赋予root权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-安装SSH"><span class="nav-text">6. 安装SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-更新apt-get"><span class="nav-text">6.1 更新apt-get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-安装openssh-server服务"><span class="nav-text">6.2 安装openssh-server服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-建立ssh免密码登录各节点"><span class="nav-text">6.3 建立ssh免密码登录各节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-配置文件"><span class="nav-text">6.4 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-5-注意"><span class="nav-text">6.5 注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-安装JDK"><span class="nav-text">7. 安装JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-解压缩"><span class="nav-text">7.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-配置环境变量"><span class="nav-text">7.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-检查是否安装成功"><span class="nav-text">7.3 检查是否安装成功</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-向各节点复制jdk安装文件及配置文件"><span class="nav-text">7.4 向各节点复制jdk安装文件及配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-安装hadoop"><span class="nav-text">8. 安装hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-解压缩"><span class="nav-text">8.1 解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-修改hadoop配置文件"><span class="nav-text">8.2 修改hadoop配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-添加hadoop路径到-bashrc"><span class="nav-text">8.3 添加hadoop路径到./bashrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-修改slavers文件"><span class="nav-text">8.4 修改slavers文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-5-向各从节点复制hadoop"><span class="nav-text">8.5 向各从节点复制hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-6-在hadoop1节点上格式化hdfs"><span class="nav-text">8.6 在hadoop1节点上格式化hdfs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-7-启动hdfs"><span class="nav-text">8.7 启动hdfs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8-启动yarn"><span class="nav-text">8.8 启动yarn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-9-jps查看进程"><span class="nav-text">8.9 jps查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-10-注意事项"><span class="nav-text">8.10 注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-测试"><span class="nav-text">9. 测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-Web-UI"><span class="nav-text">9.1 Web UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-命令行"><span class="nav-text">9.2 命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-WordCount"><span class="nav-text">9.3 WordCount</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-其他"><span class="nav-text">10 其他</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

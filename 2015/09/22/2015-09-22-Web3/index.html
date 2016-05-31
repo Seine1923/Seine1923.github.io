@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,Html,JavaScript," />
+  <meta name="keywords" content="Html,CSS,JavaScript," />
 
 
 
@@ -299,20 +299,20 @@
 
       
         <span itemprop="articleBody"><p>22 Sep 2015 - Kumming</p>
-<h2 id="html中使用样式表的三种方式">html中使用样式表的三种方式</h2><ol>
+<h2 id="html中使用样式表的三种方式"><a href="#html中使用样式表的三种方式" class="headerlink" title="html中使用样式表的三种方式"></a>html中使用样式表的三种方式</h2><ol>
 <li>style 适用于当前网页，页内定义.</li>
 <li>.css 共享所有风格，link通常放在head内.<code>link rel=&quot;stylesheet&quot; href=&quot;style.css</code>最常用.</li>
 <li>直接定义标签上，内联/行内标记’ul style=” “‘</li>
 </ol>
-<h3 id="优先级3&gt;1&gt;2,即越靠近越优先">优先级3&gt;1&gt;2,即越靠近越优先</h3><h2 id="样式规则">样式规则</h2><h3 id="选择符_{样式属性：样式值;}">选择符 {样式属性：样式值;}</h3><h4 id="数值">数值</h4><ul>
+<h3 id="优先级3-gt-1-gt-2-即越靠近越优先"><a href="#优先级3-gt-1-gt-2-即越靠近越优先" class="headerlink" title="优先级3&gt;1&gt;2,即越靠近越优先"></a>优先级3&gt;1&gt;2,即越靠近越优先</h3><h2 id="样式规则"><a href="#样式规则" class="headerlink" title="样式规则"></a>样式规则</h2><h3 id="选择符-样式属性：样式值"><a href="#选择符-样式属性：样式值" class="headerlink" title="选择符 {样式属性：样式值;}"></a>选择符 {样式属性：样式值;}</h3><h4 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h4><ul>
 <li>长度</li>
 <li>大小</li>
 <li>百分比：通常为100%</li>
 <li>颜色：以#开始</li>
 <li>函数：rgb(),rgba(),url(),hsl()</li>
 </ul>
-<h4 id="调试">调试</h4><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p>
-<h4 id="选择符">选择符</h4><ol>
+<h4 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h4><p>调度样式通常在属性前加数字当使该属性无效以测试效果。</p>
+<h4 id="选择符"><a href="#选择符" class="headerlink" title="选择符"></a>选择符</h4><ol>
 <li>标记选择符</li>
 <li>ID选择符</li>
 <li>类选择符</li>
@@ -320,18 +320,18 @@
 <li>并列关系</li>
 <li>属性选择符</li>
 </ol>
-<h4 id="1-标记选择符">1.标记选择符</h4><pre><code><span class="tag">a</span> {<span class="attribute">color</span>:white}
-</code></pre><h4 id="2-ID选择符">2.ID选择符</h4><pre><code><span class="id">#menu</span> 
-&lt;<span class="tag">ul</span> id=<span class="string">"menu"</span> style=<span class="string">""</span>&gt;
-</code></pre><h4 id="3-类选择符">3.类选择符</h4><pre><code>.menuItem {<span class="keyword">float</span>:left... 
-li <span class="keyword">class</span>=<span class="string">"menuItem"</span>
-</code></pre><h4 id="4-包含关系/上下文选择符">4.包含关系/上下文选择符</h4><pre><code><span class="keyword">menu</span> li {<span class="keyword">float</span>... 
-须是li,其次要在id为<span class="keyword">menu</span>下的包含
-</code></pre><h4 id="5-并列关系">5.并列关系</h4><pre><code>选择符<span class="number">1</span>，选择符<span class="number">2.</span>...  共用，多个重叠
-</code></pre><h4 id="6-属性选择符">6.属性选择符</h4><pre><code>p[<span class="type">text</span>]{}
-p <span class="type">text</span>=<span class="string">"忽略值"</span> &lt;br/&gt;
-p[<span class="type">text</span>=<span class="string">"abc"</span>]{} &lt;br/&gt;
-p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
+<h4 id="1-标记选择符"><a href="#1-标记选择符" class="headerlink" title="1.标记选择符"></a>1.标记选择符</h4><pre><code>a {color:white}
+</code></pre><h4 id="2-ID选择符"><a href="#2-ID选择符" class="headerlink" title="2.ID选择符"></a>2.ID选择符</h4><pre><code>#menu 
+&lt;ul id=&quot;menu&quot; style=&quot;&quot;&gt;
+</code></pre><h4 id="3-类选择符"><a href="#3-类选择符" class="headerlink" title="3.类选择符"></a>3.类选择符</h4><pre><code>.menuItem {float:left... 
+li class=&quot;menuItem&quot;
+</code></pre><h4 id="4-包含关系-上下文选择符"><a href="#4-包含关系-上下文选择符" class="headerlink" title="4.包含关系/上下文选择符"></a>4.包含关系/上下文选择符</h4><pre><code>menu li {float... 
+须是li,其次要在id为menu下的包含
+</code></pre><h4 id="5-并列关系"><a href="#5-并列关系" class="headerlink" title="5.并列关系"></a>5.并列关系</h4><pre><code>选择符1，选择符2....  共用，多个重叠
+</code></pre><h4 id="6-属性选择符"><a href="#6-属性选择符" class="headerlink" title="6.属性选择符"></a>6.属性选择符</h4><pre><code>p[text]{}
+p text=&quot;忽略值&quot; &lt;br/&gt;
+p[text=&quot;abc&quot;]{} &lt;br/&gt;
+p text=&quot;abc&quot;  &lt;br/&gt;
 </code></pre></span>
       
     </div>
@@ -340,9 +340,9 @@ p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
-          
             <a href="/tags/Html/" rel="tag">#Html</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
@@ -435,7 +435,7 @@ p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -510,7 +510,7 @@ p <span class="type">text</span>=<span class="string">"abc"</span>  &lt;br/&gt;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html中使用样式表的三种方式"><span class="nav-text">html中使用样式表的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级3>1>2,即越靠近越优先"><span class="nav-text">优先级3>1>2,即越靠近越优先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式规则"><span class="nav-text">样式规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择符_{样式属性：样式值;}"><span class="nav-text">选择符 {样式属性：样式值;}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值"><span class="nav-text">数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调试"><span class="nav-text">调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择符"><span class="nav-text">选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-标记选择符"><span class="nav-text">1.标记选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ID选择符"><span class="nav-text">2.ID选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-类选择符"><span class="nav-text">3.类选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-包含关系/上下文选择符"><span class="nav-text">4.包含关系/上下文选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-并列关系"><span class="nav-text">5.并列关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-属性选择符"><span class="nav-text">6.属性选择符</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html中使用样式表的三种方式"><span class="nav-text">html中使用样式表的三种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级3-gt-1-gt-2-即越靠近越优先"><span class="nav-text">优先级3>1>2,即越靠近越优先</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式规则"><span class="nav-text">样式规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择符-样式属性：样式值"><span class="nav-text">选择符 {样式属性：样式值;}</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值"><span class="nav-text">数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调试"><span class="nav-text">调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择符"><span class="nav-text">选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-标记选择符"><span class="nav-text">1.标记选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ID选择符"><span class="nav-text">2.ID选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-类选择符"><span class="nav-text">3.类选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-包含关系-上下文选择符"><span class="nav-text">4.包含关系/上下文选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-并列关系"><span class="nav-text">5.并列关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-属性选择符"><span class="nav-text">6.属性选择符</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
