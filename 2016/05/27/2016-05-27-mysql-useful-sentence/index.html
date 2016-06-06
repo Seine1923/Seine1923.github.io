@@ -61,7 +61,7 @@ UPDATE 表名 SEt 字段名=&amp;apos;字符串&amp;apos; WHERE 字段=&amp;apos
 <meta property="og:description" content="1. 创建数据库create database yii2basic
 2. 修改字段值UPDATE 表名 SET 字段名=REPLACE(字段名,&amp;apos;原字符串&amp;apos;,&amp;apos;替换的字符串&amp;apos;) WHERE 已知的字段名 LIKE &amp;apos;%原字符串%&amp;apos;  
 UPDATE 表名 SEt 字段名=&amp;apos;字符串&amp;apos; WHERE 字段=&amp;apos;替换的">
-<meta property="og:updated_time" content="2016-05-27T08:18:25.690Z">
+<meta property="og:updated_time" content="2016-06-04T05:54:50.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL常用命令">
 <meta name="twitter:description" content="1. 创建数据库create database yii2basic
@@ -312,6 +312,7 @@ update user set groups=0 where id=1
 </code></pre><h2 id="3-关闭safe-mode"><a href="#3-关闭safe-mode" class="headerlink" title="3. 关闭safe mode"></a>3. 关闭safe mode</h2><pre><code>SET SQL_SAFE_UPDATES=0; 
 </code></pre><h2 id="4-删除表中指定内容"><a href="#4-删除表中指定内容" class="headerlink" title="4. 删除表中指定内容"></a>4. 删除表中指定内容</h2><pre><code>delete from auth_assignment where user_id=2
 </code></pre><h2 id="5-删除表中所有内容"><a href="#5-删除表中所有内容" class="headerlink" title="5. 删除表中所有内容"></a>5. 删除表中所有内容</h2><pre><code>delete from auth_assignment
+</code></pre><h2 id="6-修改字段类型"><a href="#6-修改字段类型" class="headerlink" title="6. 修改字段类型"></a>6. 修改字段类型</h2><pre><code>alter table user modify column groups varchar(50);
 </code></pre></span>
       
     </div>
@@ -333,8 +334,8 @@ update user set groups=0 where id=1
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/" rel="next" title="基于Yii2高级模板DbManager	的RBAC配置与开发">
-                <i class="fa fa-chevron-left"></i> 基于Yii2高级模板DbManager	的RBAC配置与开发
+              <a href="/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/" rel="next" title="基于Yii2高级模板DbManager的RBAC配置与开发">
+                <i class="fa fa-chevron-left"></i> 基于Yii2高级模板DbManager的RBAC配置与开发
               </a>
             
           </div>
@@ -486,7 +487,7 @@ update user set groups=0 where id=1
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建数据库"><span class="nav-text">1. 创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改字段值"><span class="nav-text">2. 修改字段值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭safe-mode"><span class="nav-text">3. 关闭safe mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-删除表中指定内容"><span class="nav-text">4. 删除表中指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-删除表中所有内容"><span class="nav-text">5. 删除表中所有内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建数据库"><span class="nav-text">1. 创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-修改字段值"><span class="nav-text">2. 修改字段值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关闭safe-mode"><span class="nav-text">3. 关闭safe mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-删除表中指定内容"><span class="nav-text">4. 删除表中指定内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-删除表中所有内容"><span class="nav-text">5. 删除表中所有内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-修改字段类型"><span class="nav-text">6. 修改字段类型</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

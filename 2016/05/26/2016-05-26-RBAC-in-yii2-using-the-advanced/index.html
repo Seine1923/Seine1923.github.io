@@ -51,36 +51,39 @@
 
 
 
-<meta name="description" content="1. 配置authManagercommon/config/main.php
+<meta name="description" content="yii2搭建完美后台并实现rbac权限控制实例教程yii2 rbac权限控制详细操作步骤
+1. 配置authManagercommon/config/main.php
 return [
     // ...
     &amp;apos;components&amp;apos; =&amp;gt; [
         &amp;apos;authManager&amp;apos; =&amp;gt; [
-            &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\rbac\DbManager&amp;apos;">
+            &amp;apos;cla">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Yii2高级模板DbManager	的RBAC配置与开发">
+<meta property="og:title" content="基于Yii2高级模板DbManager的RBAC配置与开发">
 <meta property="og:url" content="http://Seine1923.github.io/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/index.html">
 <meta property="og:site_name" content="Seine1923">
-<meta property="og:description" content="1. 配置authManagercommon/config/main.php
+<meta property="og:description" content="yii2搭建完美后台并实现rbac权限控制实例教程yii2 rbac权限控制详细操作步骤
+1. 配置authManagercommon/config/main.php
 return [
     // ...
     &amp;apos;components&amp;apos; =&amp;gt; [
         &amp;apos;authManager&amp;apos; =&amp;gt; [
-            &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\rbac\DbManager&amp;apos;">
+            &amp;apos;cla">
 <meta property="og:image" content="http://Seine1923.github.io/\images\wamp\rbac-hierarchy-1.png">
 <meta property="og:image" content="http://Seine1923.github.io/\images\wamp\rbac-hierarchy-2.png">
 <meta property="og:image" content="http://Seine1923.github.io/\images\wamp\rbac-access-check-1.png">
 <meta property="og:image" content="http://Seine1923.github.io/\images\wamp\rbac-access-check-2.png">
 <meta property="og:image" content="http://Seine1923.github.io/\images\wamp\rbac-access-check-3.png">
-<meta property="og:updated_time" content="2016-05-27T01:48:30.543Z">
+<meta property="og:updated_time" content="2016-05-31T11:43:55.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Yii2高级模板DbManager	的RBAC配置与开发">
-<meta name="twitter:description" content="1. 配置authManagercommon/config/main.php
+<meta name="twitter:title" content="基于Yii2高级模板DbManager的RBAC配置与开发">
+<meta name="twitter:description" content="yii2搭建完美后台并实现rbac权限控制实例教程yii2 rbac权限控制详细操作步骤
+1. 配置authManagercommon/config/main.php
 return [
     // ...
     &amp;apos;components&amp;apos; =&amp;gt; [
         &amp;apos;authManager&amp;apos; =&amp;gt; [
-            &amp;apos;class&amp;apos; =&amp;gt; &amp;apos;yii\rbac\DbManager&amp;apos;">
+            &amp;apos;cla">
 <meta name="twitter:image" content="http://Seine1923.github.io/\images\wamp\rbac-hierarchy-1.png">
 
 
@@ -93,7 +96,7 @@ return [
   };
 </script>
 
-  <title> 基于Yii2高级模板DbManager	的RBAC配置与开发 | Seine1923 </title>
+  <title> 基于Yii2高级模板DbManager的RBAC配置与开发 | Seine1923 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +262,7 @@ return [
             
             
               
-                基于Yii2高级模板DbManager	的RBAC配置与开发
+                基于Yii2高级模板DbManager的RBAC配置与开发
               
             
           </h1>
@@ -304,7 +307,7 @@ return [
           
 			
 			
-		  	 <span id="/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/"class="leancloud_visitors"  data-flag-title="基于Yii2高级模板DbManager	的RBAC配置与开发">
+		  	 <span id="/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/"class="leancloud_visitors"  data-flag-title="基于Yii2高级模板DbManager的RBAC配置与开发">
             &nbsp; | &nbsp; 阅读次数
             </span>
 		  
@@ -319,7 +322,8 @@ return [
       
 
       
-        <span itemprop="articleBody"><h2 id="1-配置authManager"><a href="#1-配置authManager" class="headerlink" title="1. 配置authManager"></a>1. 配置authManager</h2><p>common/config/main.php</p>
+        <span itemprop="articleBody"><p><a href="http://www.manks.top/article/yii2_frame_rbac_template" target="_blank" rel="external">yii2搭建完美后台并实现rbac权限控制实例教程</a><br><a href="http://www.manks.top/yii2_rbac_description.html" target="_blank" rel="external">yii2 rbac权限控制详细操作步骤</a></p>
+<h2 id="1-配置authManager"><a href="#1-配置authManager" class="headerlink" title="1. 配置authManager"></a>1. 配置authManager</h2><p>common/config/main.php</p>
 <pre><code>return [
     // ...
     &apos;components&apos; =&gt; [
@@ -610,7 +614,7 @@ $auth-&gt;addChild($admin, $author);
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/"
-           data-title="基于Yii2高级模板DbManager	的RBAC配置与开发" data-url="http://Seine1923.github.io/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/">
+           data-title="基于Yii2高级模板DbManager的RBAC配置与开发" data-url="http://Seine1923.github.io/2016/05/26/2016-05-26-RBAC-in-yii2-using-the-advanced/">
       </div>
     
   </div>
