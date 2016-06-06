@@ -61,7 +61,7 @@
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/richText.png">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/redactor.gif">
 <meta property="og:image" content="http://Seine1923.github.io/images/wamp/accesslog.png">
-<meta property="og:updated_time" content="2016-05-17T04:30:22.059Z">
+<meta property="og:updated_time" content="2016-06-06T12:29:20.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2之后台集成富文本编辑器">
 <meta name="twitter:description" content="本节将详细记录Yii2后台集成富文本编辑器的步骤详细部署请阅读全文">
@@ -316,15 +316,16 @@
 ],
 </code></pre><h2 id="3-backend-views-news-form-php"><a href="#3-backend-views-news-form-php" class="headerlink" title="3. backend\views\news_form.php"></a>3. backend\views\news_form.php</h2><p>将<code>&lt;?= $form-&gt;field($model, &#39;content&#39;)-&gt;textarea([&#39;rows&#39; =&gt; 6]) ?&gt;</code>替换成<code>&lt;?= $form-&gt;field($model, &#39;content&#39;)-&gt;widget(\yii\redactor\widgets\Redactor::className()) ?&gt;</code></p>
 <h2 id="4-效果"><a href="#4-效果" class="headerlink" title="4. 效果"></a>4. 效果</h2><p><img src="/images/wamp/richText.png" alt=""></p>
-<h2 id="5-图片支持"><a href="#5-图片支持" class="headerlink" title="5. 图片支持"></a>5. 图片支持</h2><p>首先需要在web/目录下创建一个uploads/目录，这是Redactor默认的上传图片的存放目录；然后我们还需要修改一下backend\config\main.php这个文件中的Redactor的配置：</p>
+<h2 id="5-图片支持"><a href="#5-图片支持" class="headerlink" title="5. 图片支持"></a>5. 图片支持</h2><p>我们还需要修改一下backend\config\main.php这个文件中的Redactor的配置：</p>
 <pre><code>&apos;modules&apos; =&gt; [
     &apos;redactor&apos; =&gt; [
         &apos;class&apos; =&gt; &apos;yii\redactor\RedactorModule&apos;,
-        &apos;uploadDir&apos; =&gt; &apos;@backend/web/uploads&apos;,
+        &apos;uploadDir&apos; =&gt; &apos;@webroot/uploads&apos;,
+        &apos;uploadUrl&apos; =&gt; &apos;@web/uploads&apos;,
         &apos;imageAllowExtensions&apos;=&gt;[&apos;jpg&apos;,&apos;png&apos;,&apos;gif&apos;]
     ],
 ],
-</code></pre><p>uploadUrl还不确定怎么设置，让其默认就好了。我们这里指定了上传图片的类型，演示时只支持jpg，png 和gif这三种，最后在backend\views\news_form.php中进行相应的设置：</p>
+</code></pre><p>在yiidoc/yii2-redactor/RedactorModule.php中默认配置的是<code>&#39;uploadDir&#39; =&gt; &#39;@webroot/uploads&#39;</code>和<code>&#39;uploadUrl&#39; =&gt; &#39;@web/uploads&#39;</code>，我们在backend\config\main.php中也同样如此设置，然后在<code>\web\admin\</code>下新建一个<code>uploads</code>文件夹即可，注意之所以是<code>\web\admin</code>是因为程序的入口脚本就是在该目录下。我们这里指定了上传图片的类型，演示时只支持jpg，png 和gif这三种，最后在backend\views\news_form.php中进行相应的设置：</p>
 <pre><code> &lt;?= $form-&gt;field($model, &apos;content&apos;)-&gt;widget(\yii\redactor\widgets\Redactor::className(), [
     &apos;clientOptions&apos; =&gt; [
         &apos;imageManagerJson&apos; =&gt; [&apos;/redactor/upload/image-json&apos;],
